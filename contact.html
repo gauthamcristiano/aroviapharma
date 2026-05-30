@@ -2,13 +2,16 @@
 <html>
 
 <head>
-  <title>Contact - Arovia Pharma</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Arovia Pharma</title>
 
   <style>
     body {
       background-color: #e0f4f7;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       margin: 0;
+      color: #0A2540;
     }
 
     nav {
@@ -24,32 +27,147 @@
       font-weight: bold;
     }
 
-    .product-box {
+    nav a:hover {
+      color: #90e0ef;
+    }
+
+    .page-banner {
+      background: #005B60;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .page-banner img {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .contact-card {
       background: white;
-      max-width: 600px;
-      margin: 50px auto;
       padding: 30px;
       border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #0077b6;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #0A2540;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #005B60;
+    }
+
+    footer {
+      background: #0A2540;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        padding: 10px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<nav>
+  <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
     <a href="products.html">Products</a>
     <a href="contact.html">Contact</a>
-</nav>
+  </nav>
 
-<div class="product-box">
-    <h2>Contact Us</h2>
+  <div class="page-banner">
+    <img src="logo 2.jpeg" alt="Arovia Pharma Logo">
+    <h1>Contact Us</h1>
+    <p>We Would Love to Hear From You</p>
+  </div>
 
-    <p>📞 Phone: 8525964772</p>
-    <p>📧 Email: info@aroviapharma.com</p>
-    <p>📍 Villupuram, Tamil Nadu, India</p>
-</div>
+  <div class="container">
+
+    <div class="contact-card">
+      <h2>Get in Touch</h2>
+
+      <p><strong>Address:</strong><br>
+      Arovia Pharma Pvt. Ltd.<br>
+      #2, Purushothaman Nagar,<br>
+      Tamil Nadu, India</p>
+
+      <p><strong>Phone:</strong><br>
+      +91 73583 65884<br>
+      +91 85259 64772</p>
+
+      <p><strong>Email:</strong><br>
+      aroviapharma@gmail.com</p>
+
+      <p><strong>Business Hours:</strong><br>
+      Monday - Saturday<br>
+      11:00 AM - 10:00 PM</p>
+    </div>
+
+    <div class="contact-card">
+      <h2>Send Us a Message</h2>
+
+      <form>
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <input type="text" placeholder="Subject">
+
+        <textarea rows="5" placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.
+  </footer>
 
 </body>
+
 </html>
