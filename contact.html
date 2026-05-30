@@ -7,16 +7,21 @@
   <title>Contact Us - Arovia Pharma</title>
 
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #e0f4f7;
+      background: #f4f8fb;
       font-family: Arial, sans-serif;
       margin: 0;
       color: #0A2540;
     }
 
     nav {
-      background: #0A2540;
-      padding: 15px;
+      background: linear-gradient(135deg, #0A2540, #005B60);
+      padding: 18px;
       text-align: center;
     }
 
@@ -25,21 +30,22 @@
       text-decoration: none;
       padding: 15px;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #90e0ef;
+      color: #00B4D8;
     }
 
     .page-banner {
-      background: #005B60;
+      background: linear-gradient(135deg, #0A2540, #005B60);
       color: white;
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
 
     .page-banner img {
-      width: 100px;
+      width: 120px;
       margin-bottom: 15px;
     }
 
@@ -52,17 +58,39 @@
     .contact-card {
       background: white;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       margin-bottom: 30px;
+      border-top: 5px solid #00B4D8;
+      transition: 0.3s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
     }
 
     h2 {
-      color: #0077b6;
+      color: #005B60;
     }
 
     p {
       line-height: 1.8;
+    }
+
+    .map-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #005B60, #00B4D8);
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .map-btn:hover {
+      transform: translateY(-3px);
     }
 
     form {
@@ -71,41 +99,51 @@
       gap: 15px;
     }
 
-    input, textarea {
+    input,
+    textarea {
       padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: 1px solid #d0d0d0;
+      border-radius: 8px;
       font-size: 16px;
     }
 
     button {
-      background: #0A2540;
+      background: linear-gradient(135deg, #005B60, #00B4D8);
       color: white;
       border: none;
-      padding: 12px;
-      border-radius: 5px;
+      padding: 14px;
+      border-radius: 30px;
       cursor: pointer;
       font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     button:hover {
-      background: #005B60;
+      transform: translateY(-3px);
     }
 
     footer {
-      background: #0A2540;
+      background: linear-gradient(135deg, #0A2540, #005B60);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       margin-top: 40px;
     }
 
     @media (max-width: 768px) {
+
       nav a {
         display: block;
         padding: 10px;
       }
+
+      .page-banner img {
+        width: 100px;
+      }
+
     }
+
   </style>
 </head>
 
@@ -120,48 +158,56 @@
 
   <div class="page-banner">
     <img src="logo 2.jpeg" alt="Arovia Pharma Logo">
+
     <h1>Contact Us</h1>
+
     <p>We Would Love to Hear From You</p>
   </div>
 
   <div class="container">
 
     <div class="contact-card">
+
       <h2>Get in Touch</h2>
 
-      <p><strong>Address:</strong><br>
-      Arovia Pharma Pvt. Ltd.<br>
-      #2, Purushothaman Nagar,<br>
-      Tamil Nadu, India</p>
+      <p>
+        <strong>Address:</strong><br>
+        Arovia Pharma Pvt. Ltd.<br>
+        #2, Purushothaman Nagar,<br>
+        Tamil Nadu, India
+      </p>
+
+      <a href="https://maps.app.goo.gl/uinTijMmVubUWYaq7?g_st=ac"
+         target="_blank"
+         class="map-btn">
+         View on Google Maps
+      </a>
 
       <p>
-  <a href="https://maps.app.goo.gl/uinTijMmVubUWYaq7?g_st=ac" 
-     target="_blank"
-     style="background:#005B60;
-            color:white;
-            padding:10px 20px;
-            text-decoration:none;
-            border-radius:5px;">
-    View on Google Maps
-  </a>
-</p>
+        <strong>Phone:</strong><br>
+        +91 73583 65884<br>
+        +91 85259 64772
+      </p>
 
-      <p><strong>Phone:</strong><br>
-      +91 73583 65884<br>
-      +91 85259 64772</p>
+      <p>
+        <strong>Email:</strong><br>
+        aroviapharma@gmail.com
+      </p>
 
-      <p><strong>Email:</strong><br>
-      aroviapharma@gmail.com</p>
+      <p>
+        <strong>Business Hours:</strong><br>
+        Monday - Saturday<br>
+        11:00 AM - 10:00 PM
+      </p>
 
-      <p><strong>Business Hours:</strong><br>
-      Monday - Saturday<br>
-      11:00 AM - 10:00 PM</p>
     </div>
 
     <div class="contact-card">
+
       <h2>Send Us a Message</h2>
 
       <form>
+
         <input type="text" placeholder="Your Name" required>
 
         <input type="email" placeholder="Your Email" required>
@@ -171,7 +217,9 @@
         <textarea rows="5" placeholder="Your Message"></textarea>
 
         <button type="submit">Send Message</button>
+
       </form>
+
     </div>
 
   </div>
