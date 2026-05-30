@@ -2,15 +2,17 @@
 <html>
 
 <head>
-  <title>Arovia Pharma</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arovia Pharma Pvt. Ltd.</title>
 
   <style>
-
     body {
       background-color: #e0f4f7;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      color: #0A2540;
     }
 
     header {
@@ -30,8 +32,8 @@
     }
 
     header p {
-      color: #0A2540;
-      margin-top: 5px;
+      margin-top: 8px;
+      font-size: 18px;
     }
 
     nav {
@@ -53,26 +55,83 @@
 
     .brand-banner {
       width: 100%;
-      height: 200px;
+      height: 220px;
       background-image: url('1000447689.jpg');
       background-size: contain;
       background-repeat: repeat-x;
       background-position: center;
-      margin-bottom: 30px;
     }
 
-    section {
-      padding: 40px;
+    .hero {
       text-align: center;
+      padding: 50px 20px;
     }
 
-    .product-box {
-      background: white;
+    .hero h2 {
+      color: #005B60;
+      font-size: 32px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .button-container {
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0A2540;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      margin: 5px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #005B60;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #005B60;
+      margin-top: 40px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
       padding: 20px;
-      margin: 15px auto;
+    }
+
+    .feature-box {
+      background: white;
+      width: 280px;
+      padding: 20px;
       border-radius: 10px;
       box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
-      max-width: 500px;
+    }
+
+    .feature-box h3 {
+      color: #005B60;
+    }
+
+    .about-preview {
+      background: white;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     footer {
@@ -80,8 +139,19 @@
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
     }
 
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        padding: 10px;
+      }
+
+      .hero h2 {
+        font-size: 26px;
+      }
+    }
   </style>
 </head>
 
@@ -90,59 +160,80 @@
   <header>
     <img src="logo 2.jpeg" alt="Arovia Pharma Logo" class="header-logo">
 
-    <h1>Arovia Pharma Pvt Ltd</h1>
-    <p>The Path to Health</p>
+    <h1>Arovia Pharma Pvt. Ltd.</h1>
+    <p>Trusted Healthcare Solutions for a Healthier Tomorrow</p>
   </header>
-
-  <div class="brand-banner"></div>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
     <a href="products.html">Products</a>
     <a href="contact.html">Contact</a>
-</nav>
+  </nav>
 
-  <section>
+  <div class="brand-banner"></div>
 
-<div id="home" class="product-box">
-
-    <h2>Welcome to Arovia Pharma Pvt. Ltd.</h2>
-
-    <p><strong>Driven by Science, Defined by Care.</strong></p>
+  <section class="hero">
+    <h2>Welcome to Arovia Pharma</h2>
 
     <p>
-        Arovia Pharma is committed to delivering high-quality
-        pharmaceutical solutions that improve healthcare and
-        enhance lives. Through innovation, integrity, and excellence,
-        we strive to be a trusted partner in the healthcare industry.
+      Arovia Pharma is committed to delivering high-quality
+      pharmaceutical solutions that improve healthcare and
+      enhance lives. Through innovation, integrity, and excellence,
+      we strive to be a trusted partner in the healthcare industry.
     </p>
 
-</div>
-
-<h2>Why Choose Arovia Pharma?</h2>
-
-<div class="product-box">
-    <h3>Quality Assurance</h3>
-    <p>Committed to maintaining the highest standards in every product and service.</p>
-</div>
-
-<div class="product-box">
-    <h3>Innovation</h3>
-    <p>Focused on research-driven healthcare solutions for a better future.</p>
-</div>
-
-<div class="product-box">
-    <h3>Customer Trust</h3>
-    <p>Building long-term relationships through reliability and excellence.</p>
-</div>
-    
-    
+    <div class="button-container">
+      <a href="about.html" class="btn">Learn More</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
   </section>
 
+  <h2 class="section-title">Why Choose Arovia Pharma?</h2>
+
+  <div class="features">
+
+    <div class="feature-box">
+      <h3>Quality Assurance</h3>
+      <p>
+        We are committed to maintaining the highest standards
+        in every product and service.
+      </p>
+    </div>
+
+    <div class="feature-box">
+      <h3>Innovation</h3>
+      <p>
+        Focused on research-driven healthcare solutions
+        for a better future.
+      </p>
+    </div>
+
+    <div class="feature-box">
+      <h3>Customer Trust</h3>
+      <p>
+        Building long-term relationships through
+        reliability and excellence.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="about-preview">
+    <h2>Our Commitment</h2>
+
+    <p>
+      At Arovia Pharma, we believe healthcare is more than medicine.
+      It is about improving lives through quality, innovation,
+      and ethical practices. Our commitment is to support healthcare
+      professionals and communities with dependable pharmaceutical solutions.
+    </p>
+  </div>
+
   <footer>
-    © 2026 Arovia Pharma Pvt Ltd. All Rights Reserved.
+    © 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.
   </footer>
 
 </body>
+
 </html>
