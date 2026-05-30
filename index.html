@@ -13,18 +13,18 @@
     }
 
     body {
-      background: #f4f8fb;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      background: #f4f8fb;
       color: #0A2540;
     }
 
     header {
       background: white;
-      padding: 40px;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 40px 20px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
     }
 
     .header-logo {
@@ -33,24 +33,21 @@
     }
 
     header h1 {
-      color: #005B60;
+      color: #0A2540;
       margin: 0;
       font-size: 36px;
     }
 
     header p {
-      margin-top: 8px;
+      color: #005B60;
       font-size: 18px;
-      color: #555;
+      margin-top: 10px;
     }
 
     nav {
-      background: linear-gradient(90deg, #0A2540, #005B60);
+      background: linear-gradient(135deg, #0A2540, #005B60);
       padding: 18px;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
 
     nav a {
@@ -62,7 +59,7 @@
     }
 
     nav a:hover {
-      color: #90e0ef;
+      color: #00B4D8;
     }
 
     .brand-banner {
@@ -80,7 +77,7 @@
 
     .hero h2 {
       color: #005B60;
-      font-size: 36px;
+      font-size: 38px;
       margin-bottom: 20px;
     }
 
@@ -97,25 +94,26 @@
 
     .btn {
       display: inline-block;
-      background: linear-gradient(135deg, #0077b6, #005B60);
-      color: white;
       text-decoration: none;
-      padding: 14px 28px;
-      margin: 5px;
+      color: white;
+      background: linear-gradient(135deg, #005B60, #00B4D8);
+      padding: 14px 30px;
+      margin: 8px;
       border-radius: 30px;
       font-weight: bold;
       transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .btn:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
     }
 
     .section-title {
       text-align: center;
       color: #005B60;
-      margin-top: 50px;
-      font-size: 32px;
+      margin-top: 20px;
+      font-size: 34px;
     }
 
     .features {
@@ -123,7 +121,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 25px;
-      padding: 30px;
+      padding: 40px 20px;
     }
 
     .feature-box {
@@ -133,6 +131,7 @@
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       transition: 0.3s;
+      border-top: 5px solid #00B4D8;
     }
 
     .feature-box:hover {
@@ -147,7 +146,7 @@
     .about-preview {
       background: white;
       max-width: 950px;
-      margin: 50px auto;
+      margin: 40px auto;
       padding: 35px;
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
@@ -163,7 +162,7 @@
     }
 
     footer {
-      background: linear-gradient(90deg, #0A2540, #005B60);
+      background: linear-gradient(135deg, #0A2540, #005B60);
       color: white;
       text-align: center;
       padding: 25px;
@@ -185,6 +184,10 @@
         width: 90%;
       }
 
+      .header-logo {
+        width: 90px;
+      }
+
     }
 
   </style>
@@ -193,11 +196,13 @@
 <body>
 
   <header>
+
     <img src="logo 2.jpeg" alt="Arovia Pharma Logo" class="header-logo">
 
     <h1>Arovia Pharma Pvt. Ltd.</h1>
 
     <p>Trusted Healthcare Solutions for a Healthier Tomorrow</p>
+
   </header>
 
   <nav>
@@ -234,24 +239,21 @@
     <div class="feature-box">
       <h3>Quality Assurance</h3>
       <p>
-        We maintain the highest standards in every product
-        and service we provide.
+        We maintain the highest standards in every product and service.
       </p>
     </div>
 
     <div class="feature-box">
       <h3>Innovation</h3>
       <p>
-        Research-driven healthcare solutions focused on
-        improving lives and advancing healthcare.
+        Research-driven healthcare solutions designed for the future.
       </p>
     </div>
 
     <div class="feature-box">
       <h3>Customer Trust</h3>
       <p>
-        Building lasting relationships through reliability,
-        transparency, and excellence.
+        Building long-term relationships through reliability and excellence.
       </p>
     </div>
 
