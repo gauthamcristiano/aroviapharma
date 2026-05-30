@@ -7,8 +7,13 @@
   <title>Arovia Pharma Pvt. Ltd.</title>
 
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #e0f4f7;
+      background: #f4f8fb;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
@@ -16,9 +21,10 @@
     }
 
     header {
-      background-color: #ffffff;
+      background: white;
       padding: 40px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
     .header-logo {
@@ -29,24 +35,30 @@
     header h1 {
       color: #005B60;
       margin: 0;
+      font-size: 36px;
     }
 
     header p {
       margin-top: 8px;
       font-size: 18px;
+      color: #555;
     }
 
     nav {
-      background-color: #0A2540;
-      padding: 15px;
+      background: linear-gradient(90deg, #0A2540, #005B60);
+      padding: 18px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 0 15px;
+      padding: 0 18px;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -55,103 +67,126 @@
 
     .brand-banner {
       width: 100%;
-      height: 220px;
+      height: 250px;
       background-image: url('1000447689.jpg');
-      background-size: contain;
-      background-repeat: repeat-x;
+      background-size: cover;
       background-position: center;
     }
 
     .hero {
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
 
     .hero h2 {
       color: #005B60;
-      font-size: 32px;
+      font-size: 36px;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 800px;
+      max-width: 850px;
       margin: auto;
       line-height: 1.8;
       font-size: 17px;
     }
 
     .button-container {
-      margin-top: 25px;
+      margin-top: 30px;
     }
 
     .btn {
       display: inline-block;
-      background: #0A2540;
+      background: linear-gradient(135deg, #0077b6, #005B60);
       color: white;
       text-decoration: none;
-      padding: 12px 25px;
+      padding: 14px 28px;
       margin: 5px;
-      border-radius: 6px;
+      border-radius: 30px;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      background: #005B60;
+      transform: translateY(-3px);
     }
 
     .section-title {
       text-align: center;
       color: #005B60;
-      margin-top: 40px;
+      margin-top: 50px;
+      font-size: 32px;
     }
 
     .features {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
+      gap: 25px;
+      padding: 30px;
     }
 
     .feature-box {
       background: white;
-      width: 280px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-8px);
     }
 
     .feature-box h3 {
       color: #005B60;
+      margin-top: 0;
     }
 
     .about-preview {
       background: white;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+      max-width: 950px;
+      margin: 50px auto;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       text-align: center;
+    }
+
+    .about-preview h2 {
+      color: #005B60;
+    }
+
+    .about-preview p {
+      line-height: 1.8;
     }
 
     footer {
-      background: #0A2540;
+      background: linear-gradient(90deg, #0A2540, #005B60);
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 25px;
+      margin-top: 50px;
     }
 
     @media (max-width: 768px) {
+
       nav a {
         display: block;
         padding: 10px;
       }
 
       .hero h2 {
-        font-size: 26px;
+        font-size: 28px;
       }
+
+      .feature-box {
+        width: 90%;
+      }
+
     }
+
   </style>
 </head>
 
@@ -161,6 +196,7 @@
     <img src="logo 2.jpeg" alt="Arovia Pharma Logo" class="header-logo">
 
     <h1>Arovia Pharma Pvt. Ltd.</h1>
+
     <p>Trusted Healthcare Solutions for a Healthier Tomorrow</p>
   </header>
 
@@ -174,6 +210,7 @@
   <div class="brand-banner"></div>
 
   <section class="hero">
+
     <h2>Welcome to Arovia Pharma</h2>
 
     <p>
@@ -187,6 +224,7 @@
       <a href="about.html" class="btn">Learn More</a>
       <a href="contact.html" class="btn">Contact Us</a>
     </div>
+
   </section>
 
   <h2 class="section-title">Why Choose Arovia Pharma?</h2>
@@ -196,38 +234,40 @@
     <div class="feature-box">
       <h3>Quality Assurance</h3>
       <p>
-        We are committed to maintaining the highest standards
-        in every product and service.
+        We maintain the highest standards in every product
+        and service we provide.
       </p>
     </div>
 
     <div class="feature-box">
       <h3>Innovation</h3>
       <p>
-        Focused on research-driven healthcare solutions
-        for a better future.
+        Research-driven healthcare solutions focused on
+        improving lives and advancing healthcare.
       </p>
     </div>
 
     <div class="feature-box">
       <h3>Customer Trust</h3>
       <p>
-        Building long-term relationships through
-        reliability and excellence.
+        Building lasting relationships through reliability,
+        transparency, and excellence.
       </p>
     </div>
 
   </div>
 
   <div class="about-preview">
+
     <h2>Our Commitment</h2>
 
     <p>
-      At Arovia Pharma, we believe healthcare is more than medicine.
-      It is about improving lives through quality, innovation,
-      and ethical practices. Our commitment is to support healthcare
-      professionals and communities with dependable pharmaceutical solutions.
+      At Arovia Pharma, healthcare is more than medicine.
+      We are committed to supporting healthcare professionals
+      and communities through quality products, innovation,
+      ethical practices, and dependable pharmaceutical solutions.
     </p>
+
   </div>
 
   <footer>
