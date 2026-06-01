@@ -2,231 +2,276 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Arovia Pharma</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>Contact Us - Arovia Pharma Pvt. Ltd.</title>
 
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      background: #f4f8fb;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      color: #0A2540;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    nav {
-      background: linear-gradient(135deg, #0A2540, #005B60);
-      padding: 18px;
-      text-align: center;
-    }
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f8fb;
+    color:#0A2540;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 15px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+nav{
+    background:#0A2540;
+    padding:18px;
+    text-align:center;
+}
 
-    nav a:hover {
-      color: #00B4D8;
-    }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
 
-    .page-banner {
-      background: linear-gradient(135deg, #0A2540, #005B60);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
+nav a:hover{
+    color:#00B4D8;
+}
 
-    .page-banner img {
-      width: 120px;
-      margin-bottom: 15px;
-    }
+.hero{
+    height:450px;
+    background:
+    linear-gradient(
+    rgba(10,37,64,0.75),
+    rgba(0,91,96,0.75)),
+    url('1000447689.jpg');
 
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-    }
+    background-size:cover;
+    background-position:center;
 
-    .contact-card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
-      border-top: 5px solid #00B4D8;
-      transition: 0.3s;
-    }
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-    .contact-card:hover {
-      transform: translateY(-5px);
-    }
+    text-align:center;
+    color:white;
+}
 
-    h2 {
-      color: #005B60;
-    }
+.hero img{
+    width:130px;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
 
-    p {
-      line-height: 1.8;
-    }
+.hero h1{
+    font-size:50px;
+    margin-bottom:10px;
+}
 
-    .map-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #005B60, #00B4D8);
-      color: white;
-      text-decoration: none;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin-top: 10px;
-      transition: 0.3s;
-    }
+.hero p{
+    font-size:22px;
+}
 
-    .map-btn:hover {
-      transform: translateY(-3px);
-    }
+.container{
+    max-width:1200px;
+    margin:50px auto;
+    padding:20px;
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
 
-    input,
-    textarea {
-      padding: 12px;
-      border: 1px solid #d0d0d0;
-      border-radius: 8px;
-      font-size: 16px;
-    }
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
 
-    button {
-      background: linear-gradient(135deg, #005B60, #00B4D8);
-      color: white;
-      border: none;
-      padding: 14px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+.card h2{
+    color:#005B60;
+    margin-bottom:20px;
+}
 
-    button:hover {
-      transform: translateY(-3px);
-    }
+.card p{
+    line-height:1.9;
+}
 
-    footer {
-      background: linear-gradient(135deg, #0A2540, #005B60);
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 40px;
-    }
+.btn{
+    display:inline-block;
+    background:#005B60;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-top:15px;
+}
 
-    @media (max-width: 768px) {
+.btn:hover{
+    background:#00727a;
+}
 
-      nav a {
-        display: block;
-        padding: 10px;
-      }
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
 
-      .page-banner img {
-        width: 100px;
-      }
+input,
+textarea{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
 
-    }
+button{
+    background:#005B60;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-  </style>
+button:hover{
+    background:#00727a;
+}
+
+.info-box{
+    margin-top:20px;
+    background:#f8fbfd;
+    padding:15px;
+    border-left:5px solid #00B4D8;
+    border-radius:10px;
+}
+
+footer{
+    background:#0A2540;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+@media(max-width:768px){
+
+nav a{
+display:block;
+padding:10px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="products.html">Products</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-  <div class="page-banner">
-    <img src="logo 2.jpeg" alt="Arovia Pharma Logo">
+<section class="hero">
 
-    <h1>Contact Us</h1>
+<img src="logo 2.jpeg" alt="Arovia Pharma Logo">
 
-    <p>We Would Love to Hear From You</p>
-  </div>
+<h1>Contact Us</h1>
 
-  <div class="container">
+<p>We Would Love to Hear From You</p>
 
-    <div class="contact-card">
+</section>
 
-      <h2>Get in Touch</h2>
+<div class="container">
 
-      <p>
-        <strong>Address:</strong><br>
-        Arovia Pharma Pvt. Ltd.<br>
-        #2, Purushothaman Nagar,<br>
-        Tamil Nadu, India
-      </p>
+<div class="card">
 
-      <a href="https://maps.app.goo.gl/uinTijMmVubUWYaq7?g_st=ac"
-         target="_blank"
-         class="map-btn">
-         View on Google Maps
-      </a>
+<h2>Get In Touch</h2>
 
-      <p>
-        <strong>Phone:</strong><br>
-        +91 73583 65884<br>
-        +91 85259 64772
-      </p>
+<div class="info-box">
+<strong>Address</strong><br>
+Arovia Pharma Pvt. Ltd.<br>
+#2, Purushothaman Nagar,<br>
+Tamil Nadu, India
+</div>
 
-      <p>
-        <strong>Email:</strong><br>
-        aroviapharma@gmail.com
-      </p>
+<div class="info-box">
+<strong>Phone</strong><br>
++91 73583 65884<br>
++91 85259 64772
+</div>
 
-      <p>
-        <strong>Business Hours:</strong><br>
-        Monday - Saturday<br>
-        11:00 AM - 10:00 PM
-      </p>
+<div class="info-box">
+<strong>Email</strong><br>
+aroviapharma@gmail.com
+</div>
 
-    </div>
+<div class="info-box">
+<strong>Business Hours</strong><br>
+Monday - Saturday<br>
+11:00 AM - 10:00 PM
+</div>
 
-    <div class="contact-card">
+<a href="https://maps.app.goo.gl/uinTijMmVubUWYaq7?g_st=ac"
+target="_blank"
+class="btn">
+View Location
+</a>
 
-      <h2>Send Us a Message</h2>
+</div>
 
-      <form>
+<div class="card">
 
-        <input type="text" placeholder="Your Name" required>
+<h2>Send Us A Message</h2>
 
-        <input type="email" placeholder="Your Email" required>
+<form>
 
-        <input type="text" placeholder="Subject">
+<input type="text" placeholder="Your Name" required>
 
-        <textarea rows="5" placeholder="Your Message"></textarea>
+<input type="email" placeholder="Your Email" required>
 
-        <button type="submit">Send Message</button>
+<input type="text" placeholder="Subject">
 
-      </form>
+<textarea rows="6" placeholder="Your Message"></textarea>
 
-    </div>
+<button type="submit">
+Send Message
+</button>
 
-  </div>
+</form>
 
-  <footer>
-    © 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.
-  </footer>
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.
+
+</footer>
 
 </body>
 
