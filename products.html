@@ -4,19 +4,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products - Arovia Pharma</title>
+
+<title>Products - Arovia Pharma Pvt. Ltd.</title>
 
 <style>
 
-body{
-    background:#f4f8fb;
-    font-family:Arial,sans-serif;
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f8fb;
     color:#0A2540;
 }
 
 nav{
-    background:linear-gradient(135deg,#0A2540,#005B60);
+    background:#0A2540;
     padding:18px;
     text-align:center;
 }
@@ -24,7 +30,7 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    padding:15px;
+    margin:0 15px;
     font-weight:bold;
 }
 
@@ -32,55 +38,127 @@ nav a:hover{
     color:#00B4D8;
 }
 
-.page-banner{
-    background:linear-gradient(135deg,#0A2540,#005B60);
-    color:white;
+.hero{
+    height:450px;
+    background:
+    linear-gradient(
+    rgba(10,37,64,0.75),
+    rgba(0,91,96,0.75)),
+    url('1000447689.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
     text-align:center;
-    padding:60px 20px;
+    color:white;
 }
 
-.page-banner img{
-    width:120px;
-    margin-bottom:15px;
+.hero img{
+    width:130px;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:22px;
 }
 
 .container{
-    max-width:1000px;
-    margin:40px auto;
+    max-width:1200px;
+    margin:50px auto;
     padding:20px;
 }
 
-.product-section{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:30px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-.product-section h2{
+.section-title{
+    text-align:center;
     color:#005B60;
-    border-bottom:3px solid #00B4D8;
-    padding-bottom:10px;
+    margin-bottom:30px;
+    font-size:36px;
 }
 
-.product-section ul{
-    line-height:2;
+.category{
+    background:white;
+    margin-bottom:30px;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.category h2{
+    color:#005B60;
+    margin-bottom:20px;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.product-card{
+    background:#f8fbfd;
+    border-left:5px solid #00B4D8;
+    padding:15px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.enquiry{
+    text-align:center;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.btn{
+    display:inline-block;
+    background:#005B60;
+    color:white;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.btn:hover{
+    background:#00727a;
 }
 
 footer{
-    background:linear-gradient(135deg,#0A2540,#005B60);
+    background:#0A2540;
     color:white;
     text-align:center;
     padding:25px;
-    margin-top:40px;
+    margin-top:50px;
 }
 
 @media(max-width:768px){
 
 nav a{
-    display:block;
-    padding:10px;
+display:block;
+padding:10px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:18px;
 }
 
 }
@@ -97,91 +175,111 @@ nav a{
 <a href="contact.html">Contact</a>
 </nav>
 
-<div class="page-banner">
+<section class="hero">
 
 <img src="logo 2.jpeg" alt="Arovia Pharma Logo">
 
 <h1>Our Products</h1>
 
-    <p>
-27 Healthcare Products Across Multiple Categories
-</p>
+<p>27 Healthcare Products Across Multiple Categories</p>
 
-<p>Quality Healthcare Solutions</p>
-
-</div>
+</section>
 
 <div class="container">
 
-<div class="product-section">
+<h2 class="section-title">Product Portfolio</h2>
+
+<div class="category">
+
 <h2>💊 Tablets & Capsules</h2>
-<ul>
-<li>Arovimet G2</li>
-<li>Arovimet GV2</li>
-<li>Telvishal H</li>
-<li>Moxovia-CV 625</li>
-<li>Moxovia-CV 457</li>
-<li>Aroclear-M Tablets</li>
-<li>Aropraz-40</li>
-<li>Aropraz-DSR</li>
-<li>Aroviz-RD</li>
-<li>Arovit Must</li>
-<li>Acerole-P</li>
-<li>Acerole-SP</li>
-<li>Colcaff-CO</li>
-<li>Doxylence-LB</li>
-<li>Diclovia-AQ</li>
-</ul>
+
+<div class="products-grid">
+
+<div class="product-card">Arovimet G2</div>
+<div class="product-card">Arovimet GV2</div>
+<div class="product-card">Telvishal H</div>
+<div class="product-card">Moxovia-CV 625</div>
+<div class="product-card">Moxovia-CV 457</div>
+<div class="product-card">Aroclear-M Tablets</div>
+<div class="product-card">Aropraz-40</div>
+<div class="product-card">Aropraz-DSR</div>
+<div class="product-card">Aroviz-RD</div>
+<div class="product-card">Arovit Must</div>
+<div class="product-card">Acerole-P</div>
+<div class="product-card">Acerole-SP</div>
+<div class="product-card">Colcaff-CO</div>
+<div class="product-card">Doxylence-LB</div>
+<div class="product-card">Diclovia-AQ</div>
+
 </div>
 
-<div class="product-section">
+</div>
+
+<div class="category">
+
 <h2>🍯 Syrups</h2>
-<ul>
-<li>Aroclear-M Syrup</li>
-<li>Chotavit</li>
-<li>Reliva-250</li>
-<li>Fenorinic</li>
-<li>Arocough-LS</li>
-<li>Rid Cough-DX</li>
-<li>Little D3</li>
-<li>Gutvion</li>
-</ul>
+
+<div class="products-grid">
+
+<div class="product-card">Aroclear-M Syrup</div>
+<div class="product-card">Chotavit</div>
+<div class="product-card">Reliva-250</div>
+<div class="product-card">Fenorinic</div>
+<div class="product-card">Arocough-LS</div>
+<div class="product-card">Rid Cough-DX</div>
+<div class="product-card">Little D3</div>
+<div class="product-card">Gutvion</div>
+
 </div>
 
-<div class="product-section">
+</div>
+
+<div class="category">
+
 <h2>🧴 Ointments</h2>
-<ul>
-<li>Mupract 5gm</li>
-</ul>
+
+<div class="products-grid">
+<div class="product-card">Mupract 5gm</div>
 </div>
 
-<div class="product-section">
+</div>
+
+<div class="category">
+
 <h2>🌿 Lotions</h2>
-<ul>
-<li>Calaglint-AE</li>
-</ul>
+
+<div class="products-grid">
+<div class="product-card">Calaglint-AE</div>
 </div>
 
-<div class="product-section">
+</div>
+
+<div class="category">
+
 <h2>🧼 Soaps</h2>
-<ul>
-<li>Aroket</li>
-<li>Lulivia</li>
-</ul>
+
+<div class="products-grid">
+<div class="product-card">Aroket</div>
+<div class="product-card">Lulivia</div>
 </div>
 
-    <div style="text-align:center; margin-top:40px;">
-  <a href="contact.html"
-     style="background:#005B60;
-            color:white;
-            padding:12px 25px;
-            text-decoration:none;
-            border-radius:6px;
-            font-weight:bold;">
-     Contact for Product Enquiries
-  </a>
 </div>
-    
+
+<div class="enquiry">
+
+<h2>Need More Information?</h2>
+
+<p>
+For product details, availability, and business enquiries,
+please contact our team.
+</p>
+
+<a href="contact.html" class="btn">
+Contact Us
+</a>
+
+</div>
+
 </div>
 
 <footer>
