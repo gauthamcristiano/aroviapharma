@@ -2,280 +2,312 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arovia Pharma Pvt. Ltd.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>Arovia Pharma Pvt. Ltd.</title>
 
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f8fb;
-      color: #0A2540;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    header {
-      background: white;
-      text-align: center;
-      padding: 40px 20px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-    }
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f8fb;
+    color:#0A2540;
+}
 
-    .header-logo {
-      width: 120px;
-      margin-bottom: 10px;
-    }
+nav{
+    background:#0A2540;
+    padding:18px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
 
-    header h1 {
-      color: #0A2540;
-      margin: 0;
-      font-size: 36px;
-    }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
 
-    header p {
-      color: #005B60;
-      font-size: 18px;
-      margin-top: 10px;
-    }
+nav a:hover{
+    color:#00B4D8;
+}
 
-    nav {
-      background: linear-gradient(135deg, #0A2540, #005B60);
-      padding: 18px;
-      text-align: center;
-    }
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(
+    rgba(10,37,64,0.75),
+    rgba(0,91,96,0.75)),
+    url('1000447689.jpg');
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0 18px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+    background-size:cover;
+    background-position:center;
 
-    nav a:hover {
-      color: #00B4D8;
-    }
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-    .brand-banner {
-      width: 100%;
-      height: 250px;
-      background-image: url('1000447689.jpg');
-      background-size: cover;
-      background-position: center;
-    }
+    text-align:center;
+    color:white;
+    padding:20px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-    }
+.hero img{
+    width:130px;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
 
-    .hero h2 {
-      color: #005B60;
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
+.hero h1{
+    font-size:55px;
+    margin-bottom:10px;
+}
 
-    .hero p {
-      max-width: 850px;
-      margin: auto;
-      line-height: 1.8;
-      font-size: 17px;
-    }
+.hero p{
+    font-size:22px;
+    margin-bottom:25px;
+}
 
-    .button-container {
-      margin-top: 30px;
-    }
+.btn{
+    display:inline-block;
+    background:#00B4D8;
+    color:white;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:30px;
+    margin:5px;
+    font-weight:bold;
+}
 
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(135deg, #005B60, #00B4D8);
-      padding: 14px 30px;
-      margin: 8px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+.btn:hover{
+    background:#0096c7;
+}
 
-    .btn:hover {
-      transform: translateY(-4px);
-    }
+.section-title{
+    text-align:center;
+    color:#005B60;
+    font-size:36px;
+    margin-top:50px;
+    margin-bottom:30px;
+}
 
-    .section-title {
-      text-align: center;
-      color: #005B60;
-      margin-top: 20px;
-      font-size: 34px;
-    }
+.about{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+    text-align:center;
+    line-height:1.8;
+}
 
-    .features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      padding: 40px 20px;
-    }
+.features{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:20px;
+}
 
-    .feature-box {
-      background: white;
-      width: 300px;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      transition: 0.3s;
-      border-top: 5px solid #00B4D8;
-    }
+.card{
+    width:300px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-    .feature-box:hover {
-      transform: translateY(-8px);
-    }
+.card h3{
+    color:#005B60;
+    margin-bottom:10px;
+}
 
-    .feature-box h3 {
-      color: #005B60;
-      margin-top: 0;
-    }
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:40px 20px;
+}
 
-    .about-preview {
-      background: white;
-      max-width: 950px;
-      margin: 40px auto;
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+.stat{
+    width:220px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-    .about-preview h2 {
-      color: #005B60;
-    }
+.stat h2{
+    color:#00B4D8;
+    font-size:36px;
+}
 
-    .about-preview p {
-      line-height: 1.8;
-    }
+.products{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:20px;
+}
 
-    footer {
-      background: linear-gradient(135deg, #0A2540, #005B60);
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 50px;
-    }
+.product{
+    width:280px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
 
-    @media (max-width: 768px) {
+footer{
+    margin-top:50px;
+    background:#0A2540;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
 
-      nav a {
-        display: block;
-        padding: 10px;
-      }
+@media(max-width:768px){
 
-      .hero h2 {
-        font-size: 28px;
-      }
+.hero h1{
+font-size:36px;
+}
 
-      .feature-box {
-        width: 90%;
-      }
+.hero p{
+font-size:18px;
+}
 
-      .header-logo {
-        width: 90px;
-      }
+nav a{
+display:block;
+padding:10px;
+}
 
-    }
+}
 
-  </style>
+</style>
 </head>
 
 <body>
 
-  <header>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="products.html">Products</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-    <img src="logo 2.jpeg" alt="Arovia Pharma Logo" class="header-logo">
+<section class="hero">
 
-    <h1>Arovia Pharma Pvt. Ltd.</h1>
+<img src="logo 2.jpeg" alt="Arovia Pharma Logo">
 
-    <p>The Path To Health</p>
+<h1>Arovia Pharma Pvt. Ltd.</h1>
 
-  </header>
+<p>The Path To Health</p>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<a href="about.html" class="btn">Learn More</a>
+<a href="contact.html" class="btn">Contact Us</a>
 
-  <div class="brand-banner"></div>
+</section>
 
-  <section class="hero">
+<h2 class="section-title">Welcome to Arovia Pharma</h2>
 
-    <h2>Welcome to Arovia Pharma</h2>
+<div class="about">
 
-    <p>
-      Arovia Pharma is committed to delivering high-quality
-      pharmaceutical solutions that improve healthcare and
-      enhance lives. Through innovation, integrity, and excellence,
-      we strive to be a trusted partner in the healthcare industry.
-    </p>
+<p>
+Arovia Pharma Pvt. Ltd. is committed to delivering high-quality
+pharmaceutical products and healthcare solutions. Through innovation,
+integrity, and excellence, we strive to improve lives and contribute
+to a healthier future for communities worldwide.
+</p>
 
-    <div class="button-container">
-      <a href="about.html" class="btn">Learn More</a>
-      <a href="contact.html" class="btn">Contact Us</a>
-    </div>
+</div>
 
-  </section>
+<h2 class="section-title">Why Choose Us?</h2>
 
-  <h2 class="section-title">Why Choose Arovia Pharma?</h2>
+<div class="features">
 
-  <div class="features">
+<div class="card">
+<h3>Quality Assurance</h3>
+<p>
+Every product is developed with strict quality standards and reliability.
+</p>
+</div>
 
-    <div class="feature-box">
-      <h3>Quality Assurance</h3>
-      <p>
-        We maintain the highest standards in every product and service.
-      </p>
-    </div>
+<div class="card">
+<h3>Innovation</h3>
+<p>
+Research-driven healthcare solutions for modern medical needs.
+</p>
+</div>
 
-    <div class="feature-box">
-      <h3>Innovation</h3>
-      <p>
-        Research-driven healthcare solutions designed for the future.
-      </p>
-    </div>
+<div class="card">
+<h3>Customer Trust</h3>
+<p>
+Building long-term relationships through dependable service.
+</p>
+</div>
 
-    <div class="feature-box">
-      <h3>Customer Trust</h3>
-      <p>
-        Building long-term relationships through reliability and excellence.
-      </p>
-    </div>
+</div>
 
-  </div>
+<h2 class="section-title">Our Commitment</h2>
 
-  <div class="about-preview">
+<div class="stats">
 
-    <h2>Our Commitment</h2>
+<div class="stat">
+<h2>100%</h2>
+<p>Quality Focused</p>
+</div>
 
-    <p>
-      At Arovia Pharma, healthcare is more than medicine.
-      We are committed to supporting healthcare professionals
-      and communities through quality products, innovation,
-      ethical practices, and dependable pharmaceutical solutions.
-    </p>
+<div class="stat">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
 
-  </div>
+<div class="stat">
+<h2>50+</h2>
+<p>Healthcare Partners</p>
+</div>
 
-  <footer>
-    © 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.
-  </footer>
+</div>
+
+<h2 class="section-title">Product Categories</h2>
+
+<div class="products">
+
+<div class="product">
+<h3>Tablets</h3>
+<p>Reliable and effective tablet formulations.</p>
+</div>
+
+<div class="product">
+<h3>Capsules</h3>
+<p>Quality capsule-based pharmaceutical products.</p>
+</div>
+
+<div class="product">
+<h3>Syrups</h3>
+<p>Healthcare solutions for patients of all ages.</p>
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.</p>
+
+</footer>
 
 </body>
-
 </html>
