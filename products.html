@@ -1,292 +1,668 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Products - Arovia Pharma Pvt. Ltd.</title>
+<title>Products | Arovia Pharma Pvt. Ltd.</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f8fb;
-    color:#0A2540;
+background:#f4f8fb;
+color:#0A2540;
 }
 
+/* NAVBAR */
+
 nav{
-    background:#0A2540;
-    padding:18px;
-    text-align:center;
+background:#0A2540;
+padding:18px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+position:sticky;
+top:0;
+z-index:999;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
 }
 
 nav a:hover{
-    color:#00B4D8;
+color:#00B4D8;
 }
 
+/* HERO */
+
 .hero{
-    height:450px;
-    background:
-    linear-gradient(
-    rgba(10,37,64,0.75),
-    rgba(0,91,96,0.75)),
-    url('1000447689.jpg');
+height:480px;
+background:
+linear-gradient(rgba(10,37,64,.82),rgba(0,91,96,.82)),
+url("1000447689.jpg");
 
-    background-size:cover;
-    background-position:center;
+background-size:cover;
+background-position:center;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+color:white;
 }
 
 .hero img{
-    width:130px;
-    background:white;
-    padding:10px;
-    border-radius:15px;
-    margin-bottom:20px;
+width:140px;
+background:white;
+padding:12px;
+border-radius:18px;
+margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:50px;
-    margin-bottom:10px;
+font-size:55px;
+margin-bottom:15px;
 }
 
 .hero p{
-    font-size:22px;
+font-size:22px;
+max-width:700px;
+line-height:1.6;
 }
 
+/* CONTAINER */
+
 .container{
-    max-width:1200px;
-    margin:50px auto;
-    padding:20px;
+width:90%;
+max-width:1300px;
+margin:auto;
+padding:60px 0;
 }
 
 .section-title{
-    text-align:center;
-    color:#005B60;
-    margin-bottom:30px;
-    font-size:36px;
+text-align:center;
+font-size:40px;
+color:#005B60;
+margin-bottom:20px;
 }
 
-.category{
-    background:white;
-    margin-bottom:30px;
-    border-radius:15px;
-    padding:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+.section-subtitle{
+text-align:center;
+color:#666;
+margin-bottom:40px;
+font-size:18px;
 }
 
-.category h2{
-    color:#005B60;
-    margin-bottom:20px;
+/* SEARCH */
+
+.search-box{
+display:flex;
+justify-content:center;
+margin-bottom:40px;
 }
 
-.products-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+.search-box input{
+
+width:100%;
+max-width:650px;
+
+padding:16px 22px;
+
+font-size:17px;
+
+border:none;
+
+border-radius:40px;
+
+outline:none;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+/* FILTERS */
+
+.filters{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-bottom:50px;
+}
+
+.filter-btn{
+
+padding:12px 22px;
+
+background:white;
+
+border:2px solid #00B4D8;
+
+border-radius:30px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.filter-btn:hover{
+
+background:#00B4D8;
+
+color:white;
+
+}
+
+/* FEATURED */
+
+.featured{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-bottom:70px;
+
 }
 
 .product-card{
-    background:#f8fbfd;
-    border-left:5px solid #00B4D8;
-    padding:15px;
-    border-radius:10px;
-    font-weight:bold;
+
+background:white;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.35s;
+
+text-align:center;
+
 }
 
-.enquiry{
-    text-align:center;
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+.product-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+
 }
 
-.btn{
-    display:inline-block;
-    background:#005B60;
-    color:white;
-    text-decoration:none;
-    padding:14px 30px;
-    border-radius:30px;
-    font-weight:bold;
-    margin-top:20px;
+.product-card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:contain;
+
+padding:18px;
+
+background:white;
+
 }
 
-.btn:hover{
-    background:#00727a;
+.product-card h3{
+
+padding:15px 10px 8px;
+
+color:#005B60;
+
 }
 
-footer{
-    background:#0A2540;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:50px;
+.product-card p{
+
+padding:0 15px 20px;
+
+font-size:14px;
+
+color:#666;
+
+line-height:1.6;
+
 }
+
+.category{
+
+margin-bottom:60px;
+
+}
+
+.category h2{
+
+margin-bottom:25px;
+
+color:#005B60;
+
+font-size:32px;
+
+padding-bottom:10px;
+
+border-bottom:3px solid #00B4D8;
+
+}
+
+.products-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:25px;
+
+}
+
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
-nav a{
-display:block;
-padding:10px;
-}
-
 .hero h1{
-font-size:36px;
+
+font-size:38px;
+
 }
 
 .hero p{
+
 font-size:18px;
+
+}
+
+nav{
+
+gap:15px;
+
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <nav>
+
 <a href="index.html">Home</a>
+
 <a href="about.html">About Us</a>
+
 <a href="products.html">Products</a>
+
 <a href="contact.html">Contact</a>
+
 </nav>
 
 <section class="hero">
 
 <img src="logo 2.jpeg" alt="Arovia Pharma Logo">
 
-<h1>Our Products</h1>
+<h1>Our Product Portfolio</h1>
 
-<p>27 Healthcare Products Across Multiple Categories</p>
+<p>
+
+Delivering quality healthcare products with trust, innovation and excellence across India.
+
+</p>
 
 </section>
 
 <div class="container">
 
-<h2 class="section-title">Product Portfolio</h2>
+<h2 class="section-title">
 
-<div class="category">
+Our Products
+
+</h2>
+
+<p class="section-subtitle">
+
+Explore our complete range of pharmaceutical products.
+
+</p>
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search products...">
+
+</div>
+
+<div class="filters">
+
+<button class="filter-btn">All</button>
+
+<button class="filter-btn">Tablets</button>
+
+<button class="filter-btn">Syrups</button>
+
+<button class="filter-btn">Injectables</button>
+
+<button class="filter-btn">Ointments</button>
+
+<button class="filter-btn">Lotions</button>
+
+<button class="filter-btn">Soaps</button>
+
+</div>
+
+<h2 class="section-title">
+
+⭐ Featured Products
+
+</h2>
+
+<div class="featured">
+
+<div class="product-card">
+
+<img src="acerole p.png">
+
+<h3>Acerole-P</h3>
+
+<p>Pain Relief Tablets</p>
+
+</div>
+
+<div class="product-card">
+
+<img src="aroclear.png">
+
+<h3>Aroclear-M Syrup</h3>
+
+<p>Anti-Allergic Syrup</p>
+
+</div>
+
+<div class="product-card">
+
+<img src="aroket.png">
+
+<h3>Aroket</h3>
+
+<p>Medicated Soap</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+TABLETS & CAPSULES
+=========================== -->
+
+<div class="category" id="tablets">
 
 <h2>💊 Tablets & Capsules</h2>
 
 <div class="products-grid">
 
-<div class="product-card">Arovimet G2</div>
-<div class="product-card">Arovimet GV2</div>
-<div class="product-card">Telvishal H</div>
-<div class="product-card">Moxovia-CV 625</div>
-<div class="product-card">Moxovia-CV 457</div>
-<div class="product-card">Aroclear-M Tablets</div>
-<div class="product-card">Aropraz-40</div>
-<div class="product-card">Aropraz-DSR</div>
-<div class="product-card">Aroviz-RD</div>
-<div class="product-card">Arovit Must</div>
-<div class="product-card">Acerole-P</div>
-<div class="product-card">Acerole-SP</div>
-<div class="product-card">Colcaff-CP</div>
-<div class="product-card">Doxylence-LB</div>
+<div class="product-card">
+<img src="acerole p.png" alt="Acerole P">
+<h3>Acerole-P</h3>
+<p>Pain Relief Tablet</p>
+</div>
 
+<div class="product-card">
+<img src="acerole sp.png" alt="Acerole SP">
+<h3>Acerole-SP</h3>
+<p>Pain & Inflammation Relief</p>
+</div>
+
+<div class="product-card">
+<img src="aroclear m tab.png" alt="Aroclear M Tablet">
+<h3>Aroclear-M Tablets</h3>
+<p>Anti-Allergic Tablets</p>
+</div>
+
+<div class="product-card">
+<img src="aropraz dsr.png" alt="Aropraz DSR">
+<h3>Aropraz-DSR</h3>
+<p>Acidity & Gastric Care</p>
+</div>
+
+<div class="product-card">
+<img src="aroviz rd.png" alt="Aroviz RD">
+<h3>Aroviz-RD</h3>
+<p>Vitamin Supplement</p>
+</div>
+
+<div class="product-card">
+<img src="arovit must.png" alt="Arovit Must">
+<h3>Arovit Must</h3>
+<p>Nutritional Supplement</p>
+</div>
+
+<div class="product-card">
+<h3>Arovimet G2</h3>
+<p>Anti Diabetic Tablet</p>
+</div>
+
+<div class="product-card">
+<h3>Arovimet GV2</h3>
+<p>Anti Diabetic Tablet</p>
+</div>
+
+<div class="product-card">
+<h3>Telvishal-H</h3>
+<p>Blood Pressure Tablet</p>
+</div>
+
+<div class="product-card">
+<h3>Moxovia-CV 625</h3>
+<p>Antibiotic Tablet</p>
+</div>
+
+<div class="product-card">
+<h3>Moxovia-CV 457</h3>
+<p>Antibiotic Suspension Tablet</p>
+</div>
+
+<div class="product-card">
+<h3>Aropraz-40</h3>
+<p>Acidity Care</p>
+</div>
+
+<div class="product-card">
+<h3>Colcaff-CP</h3>
+<p>Pain Relief Tablet</p>
+</div>
+
+<div class="product-card">
+<h3>Doxylence-LB</h3>
+<p>Antibiotic Capsule</p>
 </div>
 
 </div>
 
-<div class="category">
+</div>
 
-<h2>🍯 Syrups and Drops</h2>
+<!-- ===========================
+SYRUPS
+=========================== -->
+
+<div class="category" id="syrups">
+
+<h2>🍯 Syrups & Drops</h2>
 
 <div class="products-grid">
 
-<div class="product-card">Aroclear-M Syrup</div>
-<div class="product-card">Chotavit Drops</div>
-<div class="product-card">Reliva-250</div>
-<div class="product-card">Fenorinic</div>
-<div class="product-card">Arocough-LS</div>
-<div class="product-card">Rid Cough-DX</div>
-<div class="product-card">Little D3</div>
-<div class="product-card">Gutvion</div>
+<div class="product-card">
+<img src="aroclear.png" alt="Aroclear M Syrup">
+<h3>Aroclear-M Syrup</h3>
+<p>Anti-Allergic Syrup</p>
+</div>
 
+<div class="product-card">
+<img src="arocough.png" alt="Arocough LS">
+<h3>Arocough-LS</h3>
+<p>Cough Syrup</p>
+</div>
+
+<div class="product-card">
+<h3>Chotavit Drops</h3>
+<p>Multivitamin Drops</p>
+</div>
+
+<div class="product-card">
+<h3>Reliva-250</h3>
+<p>Pediatric Syrup</p>
+</div>
+
+<div class="product-card">
+<h3>Fenorinic</h3>
+<p>Pain Relief Syrup</p>
+</div>
+
+<div class="product-card">
+<h3>Rid Cough-DX</h3>
+<p>Dry Cough Syrup</p>
+</div>
+
+<div class="product-card">
+<h3>Little D3</h3>
+<p>Vitamin D3 Drops</p>
+</div>
+
+<div class="product-card">
+<h3>Gutvion</h3>
+<p>Digestive Syrup</p>
 </div>
 
 </div>
 
-<div class="category">
+</div>
 
-    <h2>🍯 Injectables</h2>
+<!-- ===========================
+INJECTABLES
+=========================== -->
+
+<div class="category" id="injectables">
+
+<h2>💉 Injectables</h2>
 
 <div class="products-grid">
-    
-<div class="product-card">Diclovia A&Q</div>
-<div class="product-card">Arovinerve</div>
-  
+
+<div class="product-card">
+<h3>Diclovia A&Q</h3>
+<p>Pain Management Injection</p>
+</div>
+
+<div class="product-card">
+<h3>Arovinerve</h3>
+<p>Neuro Care Injection</p>
 </div>
 
 </div>
 
-<div class="category">
+</div>
+
+<!-- ===========================
+OINTMENTS
+=========================== -->
+
+<div class="category" id="ointments">
 
 <h2>🧴 Ointments</h2>
 
 <div class="products-grid">
-<div class="product-card">Mupract 5gm</div>
 
+<div class="product-card">
+<h3>Mupract 5gm</h3>
+<p>Skin Care Ointment</p>
 </div>
 
 </div>
 
-<div class="category">
+</div>
+
+<!-- ===========================
+LOTIONS
+=========================== -->
+
+<div class="category" id="lotions">
 
 <h2>🌿 Lotions</h2>
 
 <div class="products-grid">
-<div class="product-card">Calaglint-AE</div>
 
+<div class="product-card">
+<h3>Calaglint-AE</h3>
+<p>Skin Care Lotion</p>
 </div>
 
 </div>
 
-<div class="category">
+</div>
 
-<h2>🧼 Soaps</h2>
+<!-- ===========================
+SOAPS
+=========================== -->
+
+<div class="category" id="soaps">
+
+<h2>🧼 Medicated Soaps</h2>
 
 <div class="products-grid">
-<div class="product-card">Aroket</div>
-<div class="product-card">Lulivia</div>
+
+<div class="product-card">
+
+<img src="aroket.png" alt="Aroket Soap">
+
+<h3>Aroket</h3>
+
+<p>Medicated Ketoconazole Soap</p>
+
+</div>
+
+<div class="product-card">
+
+<h3>Lulivia</h3>
+
+<p>Antifungal Medicated Soap</p>
 
 </div>
 
 </div>
+
+</div>
+
+<!-- ===========================
+ENQUIRY SECTION
+=========================== -->
 
 <div class="enquiry">
 
 <h2>Need More Information?</h2>
 
 <p>
-For product details, availability, and business enquiries,
-please contact our team.
+For product details, pricing, availability, distributorship and business enquiries,
+our team is always ready to assist you.
 </p>
 
 <a href="contact.html" class="btn">
@@ -297,9 +673,193 @@ Contact Us
 
 </div>
 
+<!-- ===========================
+FOOTER
+=========================== -->
+
 <footer>
+
+<div style="max-width:1200px;margin:auto;padding:20px;">
+
+<h2 style="margin-bottom:15px;">
+Arovia Pharma Pvt. Ltd.
+</h2>
+
+<p style="margin-bottom:10px;">
+Delivering Quality Healthcare Products with Trust & Excellence.
+</p>
+
+<p style="margin-bottom:20px;">
+Email: aroviapharma@gmail.com |
+Phone: +91 XXXXX XXXXX
+</p>
+
+<hr style="opacity:.2;margin:20px 0;">
+
+<p>
 © 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.
+</p>
+
+</div>
+
 </footer>
+
+<style>
+
+.enquiry{
+
+background:white;
+
+padding:60px 30px;
+
+margin-top:70px;
+
+text-align:center;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.enquiry h2{
+
+font-size:36px;
+
+color:#005B60;
+
+margin-bottom:20px;
+
+}
+
+.enquiry p{
+
+font-size:18px;
+
+color:#666;
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.7;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:15px 35px;
+
+background:#005B60;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:40px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#00838f;
+
+transform:translateY(-3px);
+
+}
+
+footer{
+
+margin-top:70px;
+
+background:#0A2540;
+
+color:white;
+
+text-align:center;
+
+}
+
+</style>
+
+<script>
+
+/* ========= SEARCH ========= */
+
+const searchInput=document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",function(){
+
+let filter=this.value.toUpperCase();
+
+let cards=document.querySelectorAll(".product-card");
+
+cards.forEach(card=>{
+
+let text=card.innerText.toUpperCase();
+
+if(text.indexOf(filter)>-1){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+});
+
+
+/* ========= FILTER BUTTONS ========= */
+
+const buttons=document.querySelectorAll(".filter-btn");
+
+buttons.forEach(button=>{
+
+button.addEventListener("click",function(){
+
+const value=this.innerText.toLowerCase();
+
+document.querySelectorAll(".category").forEach(category=>{
+
+if(value==="all"){
+
+category.style.display="block";
+
+}
+
+else{
+
+if(category.id===value){
+
+category.style.display="block";
+
+}else{
+
+category.style.display="none";
+
+}
+
+}
+
+});
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
