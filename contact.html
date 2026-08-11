@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="description" content="Contact Arovia Pharma Pvt. Ltd. for pharmaceutical product enquiries, distributorship, availability and business opportunities.">
+
 <title>Contact | Arovia Pharma Pvt. Ltd.</title>
 
 <style>
@@ -522,9 +524,19 @@ nav{
     font-size:14px;
 }
 
+.info-content a{
+    color:#667780;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.info-content a:hover{
+    color:#00A6C7;
+}
+
 
 /* =========================================================
-   BUTTON
+   BUTTONS
    ========================================================= */
 
 .btn{
@@ -558,6 +570,15 @@ nav{
     transform:translateY(-3px);
 
     box-shadow:0 10px 25px rgba(0,180,216,.25);
+}
+
+.whatsapp-btn{
+    margin-left:10px;
+    background:#0A2540;
+}
+
+.whatsapp-btn:hover{
+    background:#00B4D8;
 }
 
 
@@ -657,6 +678,29 @@ textarea{
     transform:translateY(-3px);
 
     box-shadow:0 10px 25px rgba(0,180,216,.25);
+}
+
+
+/* =========================================================
+   FORM STATUS
+   ========================================================= */
+
+.form-note{
+    display:none;
+
+    margin-top:5px;
+
+    padding:12px 15px;
+
+    border-radius:10px;
+
+    background:#eefbfd;
+
+    color:#005B60;
+
+    font-size:13px;
+
+    line-height:1.5;
 }
 
 
@@ -827,7 +871,7 @@ footer{
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   REVEAL
    ========================================================= */
 
 .reveal{
@@ -1019,6 +1063,36 @@ footer{
         grid-column:auto;
     }
 
+    .btn{
+        width:100%;
+    }
+
+    .whatsapp-btn{
+        margin-left:0;
+        margin-top:12px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
 }
 
 </style>
@@ -1074,7 +1148,8 @@ Contact
 <button
 class="menu-toggle"
 id="menuToggle"
-aria-label="Open navigation menu">
+aria-label="Open navigation menu"
+aria-expanded="false">
 
 <span></span> <span></span> <span></span>
 
@@ -1231,8 +1306,15 @@ Phone
 
 <span>
 
-+91 73583 65884<br>
+<a href="tel:+917358365884">
++91 73583 65884
+</a>
+
+<br>
+
+<a href="tel:+918525964772">
 +91 85259 64772
+</a>
 
 </span>
 
@@ -1253,7 +1335,11 @@ Email
 </strong>
 
 <span>
+
+<a href="mailto:aroviapharma@gmail.com">
 aroviapharma@gmail.com
+</a>
+
 </span>
 
 </div>
@@ -1295,6 +1381,16 @@ View Location →
 
 </a>
 
+<a
+href="https://wa.me/917358365884"
+target="_blank"
+rel="noopener noreferrer"
+class="btn whatsapp-btn">
+
+WhatsApp Us →
+
+</a>
+
 </div>
 
 <!-- =====================================================
@@ -1310,15 +1406,12 @@ Send Us A Message
 <p class="contact-card-intro">
 
 Have a question or business enquiry?
-Send us a message and our team can get
-back to you.
+Send us a message and your email app
+will open with the enquiry prepared.
 
 </p>
 
-<form
-action="mailto:aroviapharma@gmail.com"
-method="post"
-enctype="text/plain">
+<form id="contactForm">
 
 <div class="form-group">
 
@@ -1329,7 +1422,7 @@ Your Name
 <input
 type="text"
 id="name"
-name="Name"
+name="name"
 placeholder="Enter your name"
 required>
 
@@ -1344,7 +1437,7 @@ Your Email
 <input
 type="email"
 id="email"
-name="Email"
+name="email"
 placeholder="Enter your email"
 required>
 
@@ -1359,8 +1452,9 @@ Subject
 <input
 type="text"
 id="subject"
-name="Subject"
-placeholder="What is your enquiry about?">
+name="subject"
+placeholder="What is your enquiry about?"
+required>
 
 </div>
 
@@ -1372,7 +1466,7 @@ Message
 
 <textarea
 id="message"
-name="Message"
+name="message"
 placeholder="Write your message here..."
 required></textarea>
 
@@ -1385,6 +1479,15 @@ class="submit-btn">
 Send Message →
 
 </button>
+
+<div
+class="form-note"
+id="formNote">
+
+Your email application should open shortly.
+Please review the message and send it.
+
+</div>
 
 </form>
 
@@ -1419,7 +1522,7 @@ connect with the Arovia Pharma team.
 </div>
 
 <a
-href="mailto:aroviapharma@gmail.com"
+href="mailto:aroviapharma@gmail.com?subject=Arovia%20Pharma%20Business%20Enquiry"
 class="btn">
 
 Email Arovia →
@@ -1534,9 +1637,15 @@ const navLinks =
 document.getElementById("navLinks");
 
 
-menuToggle.addEventListener("click",function(){
+menuToggle.addEventListener("click", function(){
 
+const isOpen =
 navLinks.classList.toggle("show");
+
+menuToggle.setAttribute(
+"aria-expanded",
+isOpen
+);
 
 });
 
@@ -1544,11 +1653,78 @@ navLinks.classList.toggle("show");
 document.querySelectorAll(".nav-links a")
 .forEach(link => {
 
-link.addEventListener("click",function(){
+link.addEventListener("click", function(){
 
 navLinks.classList.remove("show");
 
+menuToggle.setAttribute(
+"aria-expanded",
+"false"
+);
+
 });
+
+});
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+const contactForm =
+document.getElementById("contactForm");
+
+const formNote =
+document.getElementById("formNote");
+
+
+contactForm.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+
+const name =
+document.getElementById("name").value.trim();
+
+const email =
+document.getElementById("email").value.trim();
+
+const subject =
+document.getElementById("subject").value.trim();
+
+const message =
+document.getElementById("message").value.trim();
+
+
+if(!name || !email || !subject || !message){
+
+return;
+
+}
+
+
+const emailSubject =
+encodeURIComponent(
+"Arovia Pharma Enquiry - " + subject
+);
+
+
+const emailBody =
+encodeURIComponent(
+"Name: " + name +
+"\nEmail: " + email +
+"\n\nMessage:\n" + message
+);
+
+
+formNote.style.display = "block";
+
+
+window.location.href =
+"mailto:aroviapharma@gmail.com" +
+"?subject=" + emailSubject +
+"&body=" + emailBody;
+
 
 });
 
