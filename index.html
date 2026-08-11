@@ -16,11 +16,17 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,sans-serif;
     background:#f4f8fb;
     color:#0A2540;
 }
+
+/* ================= NAVIGATION ================= */
 
 nav{
     background:#0A2540;
@@ -36,14 +42,18 @@ nav a{
     text-decoration:none;
     margin:0 15px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 nav a:hover{
     color:#00B4D8;
 }
 
+/* ================= HERO ================= */
+
 .hero{
     height:100vh;
+
     background:
     linear-gradient(
     rgba(10,37,64,0.75),
@@ -81,6 +91,8 @@ nav a:hover{
     margin-bottom:25px;
 }
 
+/* ================= BUTTONS ================= */
+
 .btn{
     display:inline-block;
     background:#00B4D8;
@@ -90,17 +102,19 @@ nav a:hover{
     border-radius:30px;
     margin:5px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 .btn:hover{
     background:#0096c7;
+    transform:translateY(-2px);
 }
 
-/* INTRO VIDEO */
+/* ================= VIDEO SECTION ================= */
 
 .video-section{
     max-width:1100px;
-    margin:60px auto;
+    margin:70px auto;
     padding:20px;
     text-align:center;
 }
@@ -108,37 +122,49 @@ nav a:hover{
 .video-section h2{
     color:#005B60;
     font-size:36px;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .video-section p{
     max-width:750px;
     margin:0 auto 30px;
-    line-height:1.7;
+    line-height:1.8;
+    color:#4b5d6b;
 }
+
+/* VIDEO FRAME */
 
 .video-container{
     width:100%;
     max-width:1000px;
     margin:auto;
+    aspect-ratio:16/9;
     border-radius:20px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
     background:#000;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.18);
 }
 
-.video-container video{
+.video-container iframe{
     width:100%;
+    height:100%;
+    border:0;
     display:block;
 }
+
+/* ================= SECTION TITLES ================= */
 
 .section-title{
     text-align:center;
     color:#005B60;
     font-size:36px;
-    margin-top:50px;
+    margin-top:60px;
     margin-bottom:30px;
 }
+
+/* ================= ABOUT ================= */
 
 .about{
     max-width:1000px;
@@ -147,6 +173,8 @@ nav a:hover{
     text-align:center;
     line-height:1.8;
 }
+
+/* ================= FEATURES ================= */
 
 .features{
     display:flex;
@@ -161,13 +189,26 @@ nav a:hover{
     background:white;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
 }
 
 .card h3{
     color:#005B60;
     margin-bottom:10px;
 }
+
+/* ================= STATS ================= */
 
 .stats{
     display:flex;
@@ -183,13 +224,24 @@ nav a:hover{
     padding:25px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.stat:hover{
+    transform:translateY(-5px);
 }
 
 .stat h2{
     color:#00B4D8;
     font-size:36px;
+    margin-bottom:8px;
 }
+
+/* ================= PRODUCTS ================= */
 
 .products{
     display:flex;
@@ -204,89 +256,170 @@ nav a:hover{
     background:white;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
     text-align:center;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.1);
+
+    transition:0.3s;
 }
 
+.product:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
+}
+
+.product h3{
+    color:#005B60;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
 footer{
-    margin-top:50px;
+    margin-top:60px;
     background:#0A2540;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:30px 20px;
 }
+
+footer p{
+    font-size:14px;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:768px){
 
-.hero h1{
-font-size:36px;
-}
+    .hero{
+        height:90vh;
+    }
 
-.hero p{
-font-size:18px;
-}
+    .hero h1{
+        font-size:36px;
+    }
 
-nav a{
-display:block;
-padding:10px;
-}
+    .hero p{
+        font-size:18px;
+    }
 
-.video-section h2{
-font-size:28px;
-}
+    .hero img{
+        width:110px;
+    }
+
+    nav{
+        padding:12px;
+    }
+
+    nav a{
+        display:block;
+        padding:8px;
+        margin:0;
+    }
+
+    .video-section{
+        margin:45px auto;
+        padding:15px;
+    }
+
+    .video-section h2{
+        font-size:28px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+    .card{
+        width:90%;
+    }
+
+    .stat{
+        width:90%;
+    }
+
+    .product{
+        width:90%;
+    }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
+
 <a href="index.html">Home</a>
 <a href="about.html">About Us</a>
 <a href="products.html">Products</a>
 <a href="contact.html">Contact</a>
+
 </nav>
+
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-<img src="logo 2.jpeg" alt="Arovia Pharma Logo">
+<img
+src="logo 2.jpeg"
+alt="Arovia Pharma Logo">
 
 <h1>Arovia Pharma Pvt. Ltd.</h1>
 
 <p>The Path To Health</p>
 
-<a href="about.html" class="btn">Learn More</a>
-<a href="contact.html" class="btn">Contact Us</a>
+<a href="about.html" class="btn">
+Learn More
+</a>
+
+<a href="contact.html" class="btn">
+Contact Us
+</a>
 
 </section>
 
 
-<!-- AROVIA INTRO VIDEO -->
+<!-- ================= AROVIA INTRO VIDEO ================= -->
 
 <section class="video-section">
 
 <h2>Discover Arovia Pharma</h2>
 
 <p>
-Explore our journey, our vision, and our commitment to quality,
-trust, and innovation in healthcare.
+Explore our vision, our journey, and our commitment to
+quality, trust, and innovation in healthcare.
 </p>
 
 <div class="video-container">
 
-<video controls preload="metadata">
-<source src="arovia-intro.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<iframe
+src="https://www.youtube.com/embed/i9XkNuG-YdQ"
+title="Arovia Pharma - The Path To Health"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 
 </div>
 
 </section>
 
 
-<h2 class="section-title">Welcome to Arovia Pharma</h2>
+<!-- ================= WELCOME ================= -->
+
+<h2 class="section-title">
+Welcome to Arovia Pharma
+</h2>
 
 <div class="about">
 
@@ -300,84 +433,148 @@ to a healthier future for communities worldwide.
 </div>
 
 
-<h2 class="section-title">Why Choose Us?</h2>
+<!-- ================= WHY CHOOSE US ================= -->
+
+<h2 class="section-title">
+Why Choose Us?
+</h2>
 
 <div class="features">
 
 <div class="card">
+
 <h3>Quality Assurance</h3>
+
 <p>
-Every product is developed with strict quality standards and reliability.
+Every product is developed with strict quality standards
+and reliability.
 </p>
+
 </div>
 
+
 <div class="card">
+
 <h3>Innovation</h3>
+
 <p>
 Research-driven healthcare solutions for modern medical needs.
 </p>
+
 </div>
 
+
 <div class="card">
+
 <h3>Customer Trust</h3>
+
 <p>
 Building long-term relationships through dependable service.
 </p>
-</div>
 
 </div>
 
+</div>
 
-<h2 class="section-title">Our Commitment</h2>
+
+<!-- ================= COMMITMENT ================= -->
+
+<h2 class="section-title">
+Our Commitment
+</h2>
 
 <div class="stats">
 
 <div class="stat">
+
 <h2>100%</h2>
-<p>Quality Focused</p>
+
+<p>
+Quality Focused
+</p>
+
 </div>
 
+
 <div class="stat">
+
 <h2>24/7</h2>
-<p>Support</p>
+
+<p>
+Support
+</p>
+
 </div>
+
 
 <div class="stat">
+
 <h2>50+</h2>
-<p>Healthcare Partners</p>
-</div>
+
+<p>
+Healthcare Partners
+</p>
 
 </div>
 
+</div>
 
-<h2 class="section-title">Product Categories</h2>
+
+<!-- ================= PRODUCT CATEGORIES ================= -->
+
+<h2 class="section-title">
+Product Categories
+</h2>
 
 <div class="products">
 
 <div class="product">
+
 <h3>Tablets</h3>
-<p>Reliable and effective tablet formulations.</p>
+
+<p>
+Reliable and effective tablet formulations.
+</p>
+
 </div>
 
+
 <div class="product">
+
 <h3>Capsules</h3>
-<p>Quality capsule-based pharmaceutical products.</p>
+
+<p>
+Quality capsule-based pharmaceutical products.
+</p>
+
 </div>
+
 
 <div class="product">
+
 <h3>Syrups</h3>
-<p>Healthcare solutions for patients of all ages.</p>
-</div>
+
+<p>
+Healthcare solutions for patients of all ages.
+</p>
 
 </div>
 
+</div>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p>© 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.</p>
+<p>
+© 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.
+</p>
 
 </footer>
 
+
 </body>
+
 </html>
 ```
