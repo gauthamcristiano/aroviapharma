@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact Us - Arovia Pharma Pvt. Ltd.</title>
+<title>Contact | Arovia Pharma Pvt. Ltd.</title>
 
 <style>
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 *{
     margin:0;
@@ -15,170 +21,1003 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:Arial,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:#f4f8fb;
     color:#0A2540;
+    overflow-x:hidden;
 }
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
 nav{
     background:#0A2540;
-    padding:18px;
-    text-align:center;
+    min-height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-nav a{
+.nav-container{
+    width:90%;
+    max-width:1250px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+
+    background:white;
+    padding:5px;
+    border-radius:10px;
+}
+
+.nav-links{
+    list-style:none;
+
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.nav-links a{
     color:white;
     text-decoration:none;
-    margin:0 15px;
+
+    font-size:15px;
     font-weight:bold;
+
+    position:relative;
+    padding:10px 0;
+
+    transition:.3s;
 }
 
-nav a:hover{
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:0;
+
+    width:0;
+    height:2px;
+
+    background:#00B4D8;
+
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
     color:#00B4D8;
 }
 
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+.nav-contact{
+    background:#00B4D8;
+    padding:11px 22px !important;
+    border-radius:30px;
+    color:white !important;
+}
+
+.nav-contact::after{
+    display:none;
+}
+
+.nav-contact:hover{
+    background:white;
+    color:#005B60 !important;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.menu-toggle{
+    display:none;
+
+    background:none;
+    border:none;
+
+    cursor:pointer;
+
+    width:35px;
+}
+
+.menu-toggle span{
+    display:block;
+
+    height:3px;
+    margin:6px 0;
+
+    background:white;
+    border-radius:5px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero{
-    height:450px;
+    min-height:470px;
+
     background:
     linear-gradient(
-    rgba(10,37,64,0.75),
-    rgba(0,91,96,0.75)),
-    url('1000447689.jpg');
+        115deg,
+        rgba(10,37,64,.92),
+        rgba(0,91,96,.82)
+    ),
+    url("1000447689.jpg");
 
     background-size:cover;
     background-position:center;
 
+    color:white;
+
     display:flex;
-    flex-direction:column;
-    justify-content:center;
     align-items:center;
 
-    text-align:center;
-    color:white;
+    padding:70px 5%;
 }
 
-.hero img{
-    width:130px;
-    background:white;
-    padding:10px;
-    border-radius:15px;
-    margin-bottom:20px;
+.hero-content{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+
+    align-items:center;
+    gap:60px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    color:#9de9f5;
+
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+}
+
+.eyebrow-dot{
+    width:9px;
+    height:9px;
+
+    background:#00B4D8;
+
+    border-radius:50%;
+
+    box-shadow:0 0 15px rgba(0,180,216,.8);
 }
 
 .hero h1{
-    font-size:50px;
-    margin-bottom:10px;
+    font-size:clamp(45px,6vw,76px);
+
+    line-height:1.02;
+
+    margin-bottom:25px;
+
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:#00B4D8;
 }
 
 .hero p{
-    font-size:22px;
+    max-width:650px;
+
+    font-size:20px;
+    line-height:1.7;
+
+    color:#dceef3;
 }
 
-.container{
-    max-width:1200px;
-    margin:50px auto;
-    padding:20px;
 
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.hero-visual{
+    position:relative;
+
+    width:330px;
+    height:330px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.orbit{
+    position:absolute;
+
+    border:1px solid rgba(0,180,216,.35);
+
+    border-radius:50%;
+
+    animation:rotate 14s linear infinite;
+}
+
+.orbit-one{
+    width:280px;
+    height:280px;
+}
+
+.orbit-two{
+    width:220px;
+    height:220px;
+
+    animation-duration:10s;
+    animation-direction:reverse;
+}
+
+.orbit-three{
+    width:160px;
+    height:160px;
+
+    animation-duration:7s;
+}
+
+.hero-logo{
+    width:145px;
+    height:145px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.3),
+        0 0 40px rgba(0,180,216,.15);
+
+    z-index:2;
+}
+
+.hero-logo img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container{
+    width:90%;
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:90px 0;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+    align-items:end;
+
+    margin-bottom:50px;
+}
+
+.section-label{
+    color:#00A6C7;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+}
+
+.section-heading h2{
+    font-size:48px;
+
+    line-height:1.05;
+
+    color:#0A2540;
+}
+
+.section-heading p{
+    color:#667780;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   CONTACT GRID
+   ========================================================= */
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
     gap:30px;
 }
 
-.card{
+
+/* =========================================================
+   CONTACT CARD
+   ========================================================= */
+
+.contact-card{
     background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:
+        0 15px 40px rgba(10,37,64,.07);
+
+    border:1px solid rgba(10,37,64,.05);
 }
 
-.card h2{
+.contact-card h2{
+    font-size:30px;
+
     color:#005B60;
-    margin-bottom:20px;
+
+    margin-bottom:10px;
 }
 
-.card p{
-    line-height:1.9;
+.contact-card-intro{
+    color:#71808a;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
 }
+
+
+/* =========================================================
+   INFORMATION BOXES
+   ========================================================= */
+
+.info-list{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.info-box{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    background:#f7fbfd;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    border-left:4px solid #00B4D8;
+
+    transition:.3s;
+}
+
+.info-box:hover{
+    transform:translateX(5px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.info-icon{
+    min-width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#0A2540;
+
+    color:white;
+
+    border-radius:12px;
+
+    font-size:19px;
+}
+
+.info-content strong{
+    display:block;
+
+    color:#005B60;
+
+    margin-bottom:5px;
+
+    font-size:15px;
+}
+
+.info-content span{
+    color:#667780;
+
+    line-height:1.6;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
 
 .btn{
-    display:inline-block;
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    margin-top:25px;
+
+    padding:14px 25px;
+
     background:#005B60;
+
     color:white;
+
     text-decoration:none;
-    padding:14px 28px;
-    border-radius:30px;
+
+    border-radius:40px;
+
     font-weight:bold;
-    margin-top:15px;
+
+    transition:.3s;
 }
 
 .btn:hover{
-    background:#00727a;
+    background:#00B4D8;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,180,216,.25);
 }
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
 
 form{
     display:flex;
+
     flex-direction:column;
-    gap:15px;
+
+    gap:17px;
+}
+
+.form-group{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+}
+
+.form-group label{
+    font-size:13px;
+
+    font-weight:bold;
+
+    color:#005B60;
 }
 
 input,
 textarea{
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
+
+    width:100%;
+
+    padding:15px 17px;
+
+    border:1px solid #dce5e9;
+
+    border-radius:12px;
+
+    background:#fbfdfe;
+
+    color:#0A2540;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    outline:none;
+
+    transition:.3s;
 }
 
-button{
-    background:#005B60;
-    color:white;
+input:focus,
+textarea:focus{
+
+    border-color:#00B4D8;
+
+    background:white;
+
+    box-shadow:0 0 0 4px rgba(0,180,216,.08);
+}
+
+textarea{
+    resize:vertical;
+
+    min-height:145px;
+}
+
+.submit-btn{
+
     border:none;
-    padding:14px;
-    border-radius:30px;
-    font-size:16px;
+
+    background:#005B60;
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:40px;
+
+    font-size:15px;
+
     font-weight:bold;
+
     cursor:pointer;
+
+    transition:.3s;
 }
 
-button:hover{
-    background:#00727a;
+.submit-btn:hover{
+
+    background:#00B4D8;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,180,216,.25);
 }
 
-.info-box{
-    margin-top:20px;
-    background:#f8fbfd;
-    padding:15px;
-    border-left:5px solid #00B4D8;
-    border-radius:10px;
+
+/* =========================================================
+   BUSINESS SECTION
+   ========================================================= */
+
+.business-section{
+
+    margin-top:35px;
+
+    padding:45px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #0A2540,
+            #005B60
+        );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
 }
+
+.business-section .section-label{
+    color:#8de7f5;
+}
+
+.business-section h2{
+    font-size:36px;
+
+    margin-bottom:12px;
+}
+
+.business-section p{
+    color:#d5e8ed;
+
+    line-height:1.7;
+
+    max-width:700px;
+}
+
+.business-section .btn{
+    background:white;
+
+    color:#005B60;
+
+    white-space:nowrap;
+}
+
+.business-section .btn:hover{
+    background:#00B4D8;
+
+    color:white;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer{
-    background:#0A2540;
+    background:#071c31;
+
     color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:50px;
+
+    padding:65px 5% 25px;
 }
 
-@media(max-width:768px){
+.footer-grid{
+    width:90%;
+    max-width:1250px;
 
-nav a{
-display:block;
-padding:10px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:60px;
+
+    padding-bottom:45px;
 }
 
-.hero h1{
-font-size:36px;
+.footer-brand{
+    max-width:400px;
 }
 
-.hero p{
-font-size:18px;
+.footer-logo{
+    width:70px;
+
+    background:white;
+
+    padding:7px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
 }
 
-.container{
-grid-template-columns:1fr;
+.footer-brand p{
+    color:#aebfc7;
+
+    line-height:1.7;
 }
+
+.footer-column{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:13px;
+}
+
+.footer-column h4{
+    color:white;
+
+    font-size:16px;
+
+    margin-bottom:8px;
+}
+
+.footer-column a{
+    color:#aebfc7;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.footer-column a:hover{
+    color:#00B4D8;
+
+    transform:translateX(4px);
+}
+
+.footer-bottom{
+    width:90%;
+    max-width:1250px;
+
+    margin:auto;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    color:#879aa4;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.reveal{
+    animation:fadeUp .8s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:850px){
+
+    .nav-container{
+        width:88%;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:78px;
+        left:0;
+
+        width:100%;
+
+        background:#0A2540;
+
+        display:none;
+
+        flex-direction:column;
+
+        gap:0;
+
+        padding:15px 0 25px;
+
+        box-shadow:0 10px 25px rgba(0,0,0,.15);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links li{
+        width:100%;
+
+        text-align:center;
+    }
+
+    .nav-links a{
+        display:block;
+
+        padding:13px;
+    }
+
+    .nav-contact{
+        display:inline-block !important;
+
+        margin-top:5px;
+    }
+
+    .hero{
+        padding:60px 5%;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:40px;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .hero-visual{
+        width:270px;
+        height:270px;
+    }
+
+    .orbit-one{
+        width:230px;
+        height:230px;
+    }
+
+    .orbit-two{
+        width:180px;
+        height:180px;
+    }
+
+    .orbit-three{
+        width:130px;
+        height:130px;
+    }
+
+    .hero-logo{
+        width:120px;
+        height:120px;
+    }
+
+    .section-heading{
+        grid-template-columns:1fr;
+
+        gap:15px;
+    }
+
+    .section-heading h2{
+        font-size:40px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .business-section{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+
+        gap:40px;
+    }
+
+    .footer-brand{
+        grid-column:1/-1;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+}
+
+
+@media(max-width:550px){
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .container{
+        padding:60px 0;
+    }
+
+    .contact-card{
+        padding:25px;
+    }
+
+    .business-section{
+        padding:30px 25px;
+    }
+
+    .business-section h2{
+        font-size:29px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-brand{
+        grid-column:auto;
+    }
 
 }
 
@@ -188,77 +1027,363 @@ grid-template-columns:1fr;
 
 <body>
 
+<!-- =========================================================
+     NAVBAR
+     ========================================================= -->
+
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="products.html">Products</a>
-<a href="contact.html">Contact</a>
+
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+
+<img
+src="logo (1).jpeg"
+alt="Arovia Pharma">
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About Us
+</a>
+</li>
+
+<li>
+<a href="products.html">
+Products
+</a>
+</li>
+
+<li>
+<a href="contact.html" class="nav-contact active">
+Contact
+</a>
+</li>
+
+</ul>
+
+<button
+class="menu-toggle"
+id="menuToggle"
+aria-label="Open navigation menu">
+
+<span></span> <span></span> <span></span>
+
+</button>
+
+</div>
+
 </nav>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
 <section class="hero">
 
-<img src="logo 2.jpeg" alt="Arovia Pharma Logo">
+<div class="hero-content">
 
-<h1>Contact Us</h1>
+<div class="reveal">
 
-<p>We Would Love to Hear From You</p>
+<div class="eyebrow">
+
+<span class="eyebrow-dot"></span>
+
+Connect with Arovia Pharma
+
+</div>
+
+<h1>
+
+Let's talk about <span>health.</span>
+
+</h1>
+
+<p>
+
+Whether you have a product enquiry,
+business opportunity or simply want to
+connect with our team, we're here to help.
+
+</p>
+
+</div>
+
+<div class="hero-visual">
+
+<div class="orbit orbit-one"></div>
+
+<div class="orbit orbit-two"></div>
+
+<div class="orbit orbit-three"></div>
+
+<div class="hero-logo">
+
+<img
+src="logo 2.jpeg"
+alt="Arovia Pharma Logo">
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
+<!-- =========================================================
+     CONTACT CONTENT
+     ========================================================= -->
+
 <div class="container">
 
-<div class="card">
+<div class="section-heading reveal">
 
-<h2>Get In Touch</h2>
+<div>
+
+<div class="section-label">
+Get In Touch
+</div>
+
+<h2>
+We're here to
+help.
+</h2>
+
+</div>
+
+<p>
+
+Have questions about our pharmaceutical
+portfolio, availability, distributorship or
+business opportunities? Reach out to the
+Arovia Pharma team.
+
+</p>
+
+</div>
+
+<div class="contact-grid">
+
+<!-- =====================================================
+     CONTACT INFORMATION
+     ===================================================== -->
+
+<div class="contact-card reveal">
+
+<h2>
+Contact Information
+</h2>
+
+<p class="contact-card-intro">
+
+Connect with us through any of the channels
+below. Our team will be happy to assist you.
+
+</p>
+
+<div class="info-list">
 
 <div class="info-box">
-<strong>Address</strong><br>
+
+<div class="info-icon">
+⌖
+</div>
+
+<div class="info-content">
+
+<strong>
+Address
+</strong>
+
+<span>
+
 Arovia Pharma Pvt. Ltd.<br>
 #2, Purushothaman Nagar,<br>
 Tamil Nadu, India
+
+</span>
+
+</div>
+
 </div>
 
 <div class="info-box">
-<strong>Phone</strong><br>
+
+<div class="info-icon">
+☎
+</div>
+
+<div class="info-content">
+
+<strong>
+Phone
+</strong>
+
+<span>
+
 +91 73583 65884<br>
 +91 85259 64772
+
+</span>
+
+</div>
+
 </div>
 
 <div class="info-box">
-<strong>Email</strong><br>
+
+<div class="info-icon">
+✉
+</div>
+
+<div class="info-content">
+
+<strong>
+Email
+</strong>
+
+<span>
 aroviapharma@gmail.com
+</span>
+
+</div>
+
 </div>
 
 <div class="info-box">
-<strong>Business Hours</strong><br>
+
+<div class="info-icon">
+◷
+</div>
+
+<div class="info-content">
+
+<strong>
+Business Hours
+</strong>
+
+<span>
+
 Monday - Saturday<br>
 11:00 AM - 10:00 PM
+
+</span>
+
 </div>
 
-<a href="https://maps.app.goo.gl/uinTijMmVubUWYaq7?g_st=ac"
+</div>
+
+</div>
+
+<a
+href="https://maps.app.goo.gl/uinTijMmVubUWYaq7?g_st=ac"
 target="_blank"
+rel="noopener noreferrer"
 class="btn">
-View Location
+
+View Location →
+
 </a>
 
 </div>
 
-<div class="card">
+<!-- =====================================================
+     MESSAGE FORM
+     ===================================================== -->
 
-<h2>Send Us A Message</h2>
+<div class="contact-card reveal">
 
-<form>
+<h2>
+Send Us A Message
+</h2>
 
-<input type="text" placeholder="Your Name" required>
+<p class="contact-card-intro">
 
-<input type="email" placeholder="Your Email" required>
+Have a question or business enquiry?
+Send us a message and our team can get
+back to you.
 
-<input type="text" placeholder="Subject">
+</p>
 
-<textarea rows="6" placeholder="Your Message"></textarea>
+<form
+action="mailto:aroviapharma@gmail.com"
+method="post"
+enctype="text/plain">
 
-<button type="submit">
-Send Message
+<div class="form-group">
+
+<label for="name">
+Your Name
+</label>
+
+<input
+type="text"
+id="name"
+name="Name"
+placeholder="Enter your name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="email">
+Your Email
+</label>
+
+<input
+type="email"
+id="email"
+name="Email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="subject">
+Subject
+</label>
+
+<input
+type="text"
+id="subject"
+name="Subject"
+placeholder="What is your enquiry about?">
+
+</div>
+
+<div class="form-group">
+
+<label for="message">
+Message
+</label>
+
+<textarea
+id="message"
+name="Message"
+placeholder="Write your message here..."
+required></textarea>
+
+</div>
+
+<button
+type="submit"
+class="submit-btn">
+
+Send Message →
+
 </button>
 
 </form>
@@ -267,11 +1392,168 @@ Send Message
 
 </div>
 
+<!-- =========================================================
+     BUSINESS ENQUIRY
+     ========================================================= -->
+
+<div class="business-section reveal">
+
+<div>
+
+<div class="section-label">
+Business Enquiries
+</div>
+
+<h2>
+Looking to work with Arovia?
+</h2>
+
+<p>
+
+For product details, availability,
+distributorship and business enquiries,
+connect with the Arovia Pharma team.
+
+</p>
+
+</div>
+
+<a
+href="mailto:aroviapharma@gmail.com"
+class="btn">
+
+Email Arovia →
+
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer>
 
-© 2026 Arovia Pharma Pvt. Ltd. All Rights Reserved.
+<div class="footer-grid">
+
+<div class="footer-brand">
+
+<img
+src="logo 2.jpeg"
+alt="Arovia Pharma"
+class="footer-logo">
+
+<p>
+
+Arovia Pharma Pvt. Ltd.
+
+<br><br>
+
+The Path To Health.
+
+<br><br>
+
+Quality • Trust • Innovation
+
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h4>
+Explore
+</h4>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="about.html">
+About Us
+</a>
+
+<a href="products.html">
+Products
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+<div class="footer-column">
+
+<h4>
+Arovia
+</h4>
+
+<a href="about.html">
+Our Story
+</a>
+
+<a href="products.html">
+Pharmaceutical Portfolio
+</a>
+
+<a href="contact.html">
+Business Enquiries
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<span>
+© 2026 Arovia Pharma Pvt. Ltd.
+</span>
+
+<span>
+The Path To Health
+</span>
+
+</div>
 
 </footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+menuToggle.addEventListener("click",function(){
+
+navLinks.classList.toggle("show");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+link.addEventListener("click",function(){
+
+navLinks.classList.remove("show");
+
+});
+
+});
+
+
+</script>
 
 </body>
 
