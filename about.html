@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="Learn about Arovia Pharma Pvt. Ltd., our purpose, mission, vision, values and commitment to quality, trust and innovation.">
+      content="Learn about Arovia Pharma Pvt. Ltd., our mission, vision, values and commitment to quality, trust and innovation.">
 
-<meta name="theme-color" content="#0A2540">
+<meta name="theme-color"
+      content="#0A2540">
+
+<meta name="color-scheme"
+      content="light">
 
 <title>About Us | Arovia Pharma Pvt. Ltd.</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet">
+
 
 <style>
 
 /* =========================================================
    AROVIA PHARMA
-   ABOUT US 2.1
+   ABOUT US 3.0
 ========================================================= */
 
 :root{
+
     --navy:#0A2540;
     --deep:#04131F;
     --teal:#005B60;
@@ -37,10 +53,18 @@ content="Learn about Arovia Pharma Pvt. Ltd., our purpose, mission, vision, valu
 
     --line:rgba(10,37,64,.10);
 
-    --shadow:0 25px 80px rgba(4,19,31,.12);
+    --shadow:
+        0 25px 80px rgba(4,19,31,.12);
 
     --radius:28px;
+
+    --max:1200px;
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -50,12 +74,20 @@ content="Learn about Arovia Pharma Pvt. Ltd., our purpose, mission, vision, valu
 
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:90px;
 }
 
 body{
-    font-family:"DM Sans",Arial,sans-serif;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
     color:var(--text);
+
     background:#fff;
+
     overflow-x:hidden;
 }
 
@@ -69,8 +101,8 @@ img{
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 button{
@@ -97,11 +129,42 @@ button{
 
 
 /* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:3px;
+
+    z-index:2000;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--mint)
+        );
+}
+
+
+/* =========================================================
    GLOBAL
 ========================================================= */
 
 .container{
-    width:min(1200px,88%);
+
+    width:
+        min(
+            var(--max),
+            88%
+        );
+
     margin:auto;
 }
 
@@ -110,20 +173,23 @@ button{
 }
 
 .label{
+
     margin-bottom:18px;
 
+    color:var(--teal);
+
     font-size:11px;
+
     font-weight:800;
 
     letter-spacing:3px;
-    text-transform:uppercase;
 
-    color:var(--teal);
+    text-transform:uppercase;
 }
 
 .dark .label,
-.hero .label,
-.commitment .label{
+.commitment .label,
+.hero .label{
     color:var(--mint);
 }
 
@@ -131,12 +197,41 @@ h1,
 h2,
 h3,
 h4{
-    font-family:"Manrope",sans-serif;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+}
+
+.section-heading{
+
+    max-width:760px;
+
+    margin-bottom:55px;
+}
+
+.section-heading h2{
+
+    color:var(--navy);
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            68px
+        );
+
+    line-height:.98;
+
+    letter-spacing:-4px;
 }
 
 .reveal{
+
     opacity:0;
-    transform:translateY(30px);
+
+    transform:
+        translateY(30px);
 
     transition:
         opacity .8s ease,
@@ -144,28 +239,47 @@ h4{
 }
 
 .reveal.active{
+
     opacity:1;
+
     transform:none;
 }
 
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
 
     min-height:52px;
-    padding:0 25px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:
+        0 25px;
 
     border-radius:999px;
 
     font-size:13px;
+
     font-weight:800;
 
-    transition:.3s ease;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease,
+        color .3s ease;
 }
 
 .btn-primary{
+
     color:#fff;
 
     background:
@@ -176,31 +290,43 @@ h4{
         );
 
     box-shadow:
-        0 15px 40px rgba(0,180,216,.20);
+        0 15px 40px
+        rgba(0,180,216,.20);
 }
 
 .btn-primary:hover{
-    transform:translateY(-4px);
+
+    transform:
+        translateY(-4px);
 
     box-shadow:
-        0 22px 50px rgba(0,180,216,.32);
+        0 22px 50px
+        rgba(0,180,216,.32);
 }
 
 .btn-glass{
+
     color:#fff;
 
-    border:1px solid rgba(255,255,255,.24);
+    border:
+        1px solid
+        rgba(255,255,255,.24);
 
-    background:rgba(255,255,255,.07);
+    background:
+        rgba(255,255,255,.07);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:
+        blur(15px);
 }
 
 .btn-glass:hover{
+
     background:#fff;
+
     color:var(--navy);
 
-    transform:translateY(-4px);
+    transform:
+        translateY(-4px);
 }
 
 
@@ -209,6 +335,7 @@ h4{
 ========================================================= */
 
 .navbar{
+
     position:fixed;
 
     top:0;
@@ -220,30 +347,42 @@ h4{
 
     padding:20px 0;
 
-    transition:.35s ease;
+    transition:
+        padding .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
 }
 
 .navbar.scrolled{
+
     padding:11px 0;
 
-    background:rgba(255,255,255,.92);
+    background:
+        rgba(255,255,255,.94);
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:
+        blur(20px);
 
     box-shadow:
-        0 10px 40px rgba(4,19,31,.08);
+        0 10px 40px
+        rgba(4,19,31,.08);
 }
 
 .nav-inner{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
 .logo img{
+
     width:145px;
 
-    transition:.3s ease;
+    transition:
+        width .3s ease;
 }
 
 .navbar.scrolled .logo img{
@@ -251,7 +390,9 @@ h4{
 }
 
 .nav-links{
+
     display:flex;
+
     align-items:center;
 
     gap:32px;
@@ -260,11 +401,13 @@ h4{
 }
 
 .nav-links a{
+
     position:relative;
 
     color:#fff;
 
     font-size:13px;
+
     font-weight:700;
 
     transition:.3s ease;
@@ -275,6 +418,7 @@ h4{
 }
 
 .nav-links a::after{
+
     content:"";
 
     position:absolute;
@@ -292,11 +436,14 @@ h4{
 
 .nav-links a:hover::after,
 .nav-links a.active::after{
+
     width:100%;
 }
 
 .nav-contact{
-    padding:11px 20px;
+
+    padding:
+        11px 20px;
 
     border:
         1px solid
@@ -310,11 +457,14 @@ h4{
 }
 
 .nav-contact:hover{
+
     background:var(--teal);
+
     color:#fff!important;
 }
 
 .menu-toggle{
+
     display:none;
 
     width:45px;
@@ -324,12 +474,14 @@ h4{
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.10);
+    background:
+        rgba(255,255,255,.10);
 
     cursor:pointer;
 }
 
 .menu-toggle span{
+
     display:block;
 
     width:19px;
@@ -343,6 +495,7 @@ h4{
 }
 
 .navbar.scrolled .menu-toggle{
+
     background:var(--ice);
 }
 
@@ -351,6 +504,7 @@ h4{
 }
 
 .menu-toggle.open span:nth-child(1){
+
     transform:
         translateY(6px)
         rotate(45deg);
@@ -361,6 +515,7 @@ h4{
 }
 
 .menu-toggle.open span:nth-child(3){
+
     transform:
         translateY(-6px)
         rotate(-45deg);
@@ -372,9 +527,11 @@ h4{
 ========================================================= */
 
 .hero{
+
     min-height:92svh;
 
     display:flex;
+
     align-items:center;
 
     position:relative;
@@ -384,17 +541,20 @@ h4{
     color:#fff;
 
     background:
+
         linear-gradient(
             110deg,
             rgba(4,19,31,.98),
             rgba(5,43,57,.94) 55%,
             rgba(0,91,96,.82)
         ),
+
         url("1000447689.jpg")
         center/cover no-repeat;
 }
 
 .hero::before{
+
     content:"";
 
     position:absolute;
@@ -405,14 +565,15 @@ h4{
     right:-300px;
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+        translateY(-50%);
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(0,180,216,.20),
+            rgba(0,180,216,.22),
             transparent 68%
         );
 
@@ -420,6 +581,7 @@ h4{
 }
 
 .hero::after{
+
     content:"";
 
     position:absolute;
@@ -427,42 +589,48 @@ h4{
     inset:0;
 
     background-image:
+
         linear-gradient(
             rgba(255,255,255,.04) 1px,
             transparent 1px
         ),
+
         linear-gradient(
             90deg,
             rgba(255,255,255,.04) 1px,
             transparent 1px
         );
 
-    background-size:70px 70px;
+    background-size:
+        70px 70px;
 
     opacity:.15;
 }
 
 .hero-inner{
+
     position:relative;
 
     z-index:2;
 
-    width:min(1250px,90%);
+    width:
+        min(
+            1250px,
+            90%
+        );
 
     margin:auto;
 
     padding:
-        150px
-        80px
-        90px;
+        150px 50px 90px;
 }
 
 .hero-grid{
+
     display:grid;
 
     grid-template-columns:
-        1fr
-        .9fr;
+        1fr .9fr;
 
     gap:60px;
 
@@ -470,13 +638,17 @@ h4{
 }
 
 .eyebrow{
+
     display:inline-flex;
 
     align-items:center;
 
     gap:10px;
 
-    padding:9px 15px;
+    padding:
+        9px 15px;
+
+    margin-bottom:28px;
 
     border:
         1px solid
@@ -487,21 +659,22 @@ h4{
     background:
         rgba(255,255,255,.06);
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:
+        blur(14px);
 
     color:#d9f7f5;
 
     font-size:10px;
+
     font-weight:800;
 
     letter-spacing:2.5px;
 
     text-transform:uppercase;
-
-    margin-bottom:28px;
 }
 
 .dot{
+
     width:7px;
     height:7px;
 
@@ -512,16 +685,19 @@ h4{
     box-shadow:
         0 0 18px var(--mint);
 
-    animation:pulse 2s infinite;
+    animation:
+        pulse 2s infinite;
 }
 
 @keyframes pulse{
+
     50%{
         transform:scale(1.35);
     }
 }
 
 .hero h1{
+
     font-size:
         clamp(
             52px,
@@ -537,13 +713,17 @@ h4{
 }
 
 .hero h1 span{
+
     display:block;
 
     color:var(--mint);
 }
 
 .hero-copy{
+
     max-width:650px;
+
+    margin-bottom:34px;
 
     color:
         rgba(255,255,255,.72);
@@ -551,11 +731,10 @@ h4{
     font-size:18px;
 
     line-height:1.8;
-
-    margin-bottom:34px;
 }
 
 .hero-actions{
+
     display:flex;
 
     gap:13px;
@@ -564,9 +743,12 @@ h4{
 }
 
 
-/* HERO VISUAL */
+/* =========================================================
+   HERO VISUAL
+========================================================= */
 
 .hero-visual{
+
     min-height:480px;
 
     display:grid;
@@ -577,6 +759,7 @@ h4{
 }
 
 .orbit{
+
     position:absolute;
 
     border:
@@ -590,6 +773,7 @@ h4{
 }
 
 .orbit::before{
+
     content:"";
 
     position:absolute;
@@ -609,19 +793,23 @@ h4{
 }
 
 .o1{
+
     width:430px;
     height:430px;
 }
 
 .o2{
+
     width:325px;
     height:325px;
 
     animation-duration:13s;
+
     animation-direction:reverse;
 }
 
 .o3{
+
     width:225px;
     height:225px;
 
@@ -629,12 +817,14 @@ h4{
 }
 
 @keyframes spin{
+
     to{
         transform:rotate(360deg);
     }
 }
 
 .hero-logo{
+
     position:relative;
 
     z-index:2;
@@ -648,7 +838,8 @@ h4{
     background:#fff;
 
     box-shadow:
-        0 30px 100px rgba(0,0,0,.30);
+        0 30px 100px
+        rgba(0,0,0,.30);
 
     animation:
         float 5s ease-in-out infinite;
@@ -659,6 +850,7 @@ h4{
 }
 
 .hero-logo::after{
+
     content:"";
 
     position:absolute;
@@ -673,17 +865,21 @@ h4{
 }
 
 @keyframes float{
+
     50%{
-        transform:translateY(-12px);
+        transform:
+            translateY(-12px);
     }
 }
 
 .hero-badge{
+
     position:absolute;
 
     z-index:4;
 
-    padding:12px 16px;
+    padding:
+        12px 16px;
 
     border:
         1px solid
@@ -694,9 +890,11 @@ h4{
     background:
         rgba(255,255,255,.08);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:
+        blur(15px);
 
     font-size:10px;
+
     font-weight:800;
 
     letter-spacing:1.2px;
@@ -705,11 +903,13 @@ h4{
 }
 
 .badge1{
+
     top:10%;
     right:0;
 }
 
 .badge2{
+
     bottom:10%;
     left:0;
 }
@@ -724,19 +924,21 @@ h4{
 }
 
 .intro-grid{
+
     display:grid;
 
     grid-template-columns:
-        .75fr
-        1.25fr;
+        .75fr 1.25fr;
 
     gap:90px;
 
     align-items:start;
 }
 
-.intro h2,
-.section-title{
+.intro h2{
+
+    color:var(--navy);
+
     font-size:
         clamp(
             44px,
@@ -747,8 +949,6 @@ h4{
     line-height:.98;
 
     letter-spacing:-4px;
-
-    color:var(--navy);
 }
 
 .intro h2 span{
@@ -756,31 +956,31 @@ h4{
 }
 
 .intro-content p{
-    font-size:17px;
 
-    line-height:1.9;
+    margin-bottom:20px;
 
     color:var(--muted);
 
-    margin-bottom:20px;
+    font-size:17px;
+
+    line-height:1.9;
 }
 
 .statement{
+
     margin-top:32px;
 
-    padding:25px 28px;
+    padding:
+        25px 28px;
 
     border-left:
         3px solid
         var(--cyan);
 
-    background:var(--ice);
-
     border-radius:
-        0
-        18px
-        18px
-        0;
+        0 18px 18px 0;
+
+    background:var(--ice);
 
     color:var(--navy);
 
@@ -791,35 +991,90 @@ h4{
 
 
 /* =========================================================
-   OUR APPROACH
+   AT A GLANCE
 ========================================================= */
 
-.approach{
+.glance{
+
     background:var(--ice);
 }
 
-.section-heading{
-    max-width:760px;
+.glance-grid{
 
-    margin-bottom:55px;
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
 }
 
-.section-heading h2{
-    font-size:
-        clamp(
-            42px,
-            5vw,
-            68px
-        );
+.glance-card{
 
-    line-height:1;
+    padding:
+        34px 25px;
 
-    letter-spacing:-4px;
+    min-height:190px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius:24px;
+
+    transition:.35s ease;
+}
+
+.glance-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:var(--shadow);
+}
+
+.glance-number{
+
+    margin-bottom:45px;
+
+    color:var(--cyan);
+
+    font-size:28px;
+
+    font-weight:800;
+}
+
+.glance-card h3{
+
+    margin-bottom:8px;
 
     color:var(--navy);
+
+    font-size:19px;
+}
+
+.glance-card p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   APPROACH
+========================================================= */
+
+.approach{
+    background:#fff;
 }
 
 .approach-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -829,9 +1084,10 @@ h4{
 }
 
 .approach-card{
-    padding:38px;
 
     min-height:300px;
+
+    padding:38px;
 
     background:#fff;
 
@@ -849,16 +1105,20 @@ h4{
 }
 
 .approach-card:hover{
-    transform:translateY(-8px);
+
+    transform:
+        translateY(-8px);
 
     box-shadow:var(--shadow);
 }
 
 .approach-icon{
+
     width:52px;
     height:52px;
 
     display:grid;
+
     place-items:center;
 
     margin-bottom:55px;
@@ -871,17 +1131,21 @@ h4{
         rgba(0,180,216,.10);
 
     font-size:22px;
+
+    font-weight:800;
 }
 
 .approach-card h3{
+
+    margin-bottom:12px;
+
     color:var(--navy);
 
     font-size:25px;
-
-    margin-bottom:12px;
 }
 
 .approach-card p{
+
     color:var(--muted);
 
     font-size:14px;
@@ -895,10 +1159,11 @@ h4{
 ========================================================= */
 
 .mission{
-    background:#fff;
+    background:var(--ice);
 }
 
 .mv-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -908,6 +1173,7 @@ h4{
 }
 
 .mv-card{
+
     min-height:360px;
 
     padding:42px;
@@ -932,6 +1198,7 @@ h4{
 }
 
 .mv-card::before{
+
     content:"";
 
     position:absolute;
@@ -949,12 +1216,15 @@ h4{
 }
 
 .mv-card:hover{
-    transform:translateY(-8px);
+
+    transform:
+        translateY(-8px);
 
     box-shadow:var(--shadow);
 }
 
 .mv-number{
+
     margin-bottom:90px;
 
     color:var(--teal);
@@ -967,14 +1237,16 @@ h4{
 }
 
 .mv-card h3{
+
+    margin-bottom:18px;
+
     color:var(--navy);
 
     font-size:34px;
-
-    margin-bottom:18px;
 }
 
 .mv-card p{
+
     max-width:560px;
 
     color:var(--muted);
@@ -986,10 +1258,11 @@ h4{
 
 
 /* =========================================================
-   VALUES
+   CORE VALUES
 ========================================================= */
 
 .dark{
+
     position:relative;
 
     overflow:hidden;
@@ -1000,6 +1273,7 @@ h4{
 }
 
 .dark::before{
+
     content:"";
 
     position:absolute;
@@ -1019,6 +1293,7 @@ h4{
 }
 
 .values-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -1033,9 +1308,11 @@ h4{
 }
 
 .value-card{
+
     min-height:280px;
 
-    padding:48px 38px;
+    padding:
+        48px 38px;
 
     background:var(--deep);
 
@@ -1043,6 +1320,7 @@ h4{
 }
 
 .value-card:hover{
+
     background:
         linear-gradient(
             145deg,
@@ -1050,10 +1328,14 @@ h4{
             rgba(10,37,64,.80)
         );
 
-    transform:translateY(-7px);
+    transform:
+        translateY(-7px);
 }
 
 .value-number{
+
+    margin-bottom:45px;
+
     color:var(--mint);
 
     font-size:10px;
@@ -1061,17 +1343,17 @@ h4{
     font-weight:800;
 
     letter-spacing:2px;
-
-    margin-bottom:45px;
 }
 
 .value-card h3{
-    font-size:29px;
 
     margin-bottom:14px;
+
+    font-size:29px;
 }
 
 .value-card p{
+
     color:
         rgba(255,255,255,.60);
 
@@ -1090,6 +1372,7 @@ h4{
 }
 
 .product-tags{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -1100,7 +1383,9 @@ h4{
 }
 
 .product-tag{
-    padding:14px 20px;
+
+    padding:
+        14px 20px;
 
     border:
         1px solid
@@ -1120,13 +1405,15 @@ h4{
 }
 
 .product-tag:hover{
+
     color:#fff;
 
     background:var(--teal);
 
     border-color:var(--teal);
 
-    transform:translateY(-3px);
+    transform:
+        translateY(-3px);
 }
 
 
@@ -1135,6 +1422,7 @@ h4{
 ========================================================= */
 
 .commitment{
+
     position:relative;
 
     overflow:hidden;
@@ -1152,6 +1440,7 @@ h4{
 }
 
 .commitment::before{
+
     content:"";
 
     position:absolute;
@@ -1162,7 +1451,8 @@ h4{
     right:-250px;
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+        translateY(-50%);
 
     border:
         1px solid
@@ -1172,6 +1462,7 @@ h4{
 }
 
 .commitment::after{
+
     content:"";
 
     position:absolute;
@@ -1182,7 +1473,8 @@ h4{
     right:-110px;
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+        translateY(-50%);
 
     border:
         1px solid
@@ -1192,6 +1484,7 @@ h4{
 }
 
 .commitment-content{
+
     position:relative;
 
     z-index:2;
@@ -1200,6 +1493,9 @@ h4{
 }
 
 .commitment h2{
+
+    margin-bottom:25px;
+
     font-size:
         clamp(
             50px,
@@ -1210,11 +1506,10 @@ h4{
     line-height:.95;
 
     letter-spacing:-5px;
-
-    margin-bottom:25px;
 }
 
 .commitment p{
+
     max-width:760px;
 
     color:
@@ -1231,12 +1526,16 @@ h4{
 ========================================================= */
 
 .cta{
+
     text-align:center;
 
     background:#fff;
 }
 
 .cta h2{
+
+    margin-bottom:22px;
+
     color:var(--navy);
 
     font-size:
@@ -1249,8 +1548,6 @@ h4{
     line-height:.96;
 
     letter-spacing:-5px;
-
-    margin-bottom:22px;
 }
 
 .cta h2 span{
@@ -1258,12 +1555,11 @@ h4{
 }
 
 .cta p{
+
     max-width:620px;
 
     margin:
-        0
-        auto
-        32px;
+        0 auto 32px;
 
     color:var(--muted);
 
@@ -1276,7 +1572,9 @@ h4{
 ========================================================= */
 
 footer{
-    padding:80px 0 25px;
+
+    padding:
+        80px 0 25px;
 
     color:#fff;
 
@@ -1284,12 +1582,11 @@ footer{
 }
 
 .footer-grid{
+
     display:grid;
 
     grid-template-columns:
-        1.5fr
-        1fr
-        1fr;
+        1.5fr 1fr 1fr;
 
     gap:60px;
 
@@ -1301,6 +1598,7 @@ footer{
 }
 
 .footer-logo{
+
     width:160px;
 
     padding:10px;
@@ -1313,6 +1611,7 @@ footer{
 }
 
 .footer-brand p{
+
     max-width:350px;
 
     color:
@@ -1324,6 +1623,9 @@ footer{
 }
 
 .footer-column h4{
+
+    margin-bottom:22px;
+
     color:var(--mint);
 
     font-size:11px;
@@ -1331,30 +1633,32 @@ footer{
     letter-spacing:2px;
 
     text-transform:uppercase;
-
-    margin-bottom:22px;
 }
 
 .footer-column a{
+
     display:block;
+
+    margin-bottom:14px;
 
     color:
         rgba(255,255,255,.62);
 
     font-size:14px;
 
-    margin-bottom:14px;
-
     transition:.3s ease;
 }
 
 .footer-column a:hover{
+
     color:#fff;
 
-    transform:translateX(4px);
+    transform:
+        translateX(4px);
 }
 
 .footer-bottom{
+
     display:flex;
 
     justify-content:space-between;
@@ -1377,16 +1681,22 @@ footer{
 @media(max-width:950px){
 
     .nav-links{
+
         position:fixed;
 
         top:0;
         right:-100%;
 
-        width:min(330px,86%);
+        width:
+            min(
+                330px,
+                86%
+            );
 
         height:100svh;
 
-        padding:100px 40px;
+        padding:
+            100px 40px;
 
         flex-direction:column;
 
@@ -1409,12 +1719,14 @@ footer{
 
     .nav-links a,
     .navbar.scrolled .nav-links a{
+
         color:#fff;
 
         font-size:17px;
     }
 
     .nav-contact{
+
         border:0;
 
         padding:0;
@@ -1425,19 +1737,20 @@ footer{
     }
 
     .hero-grid{
+
         grid-template-columns:1fr;
 
         text-align:center;
     }
 
     .hero-copy{
+
         margin:
-            0
-            auto
-            34px;
+            0 auto 34px;
     }
 
     .hero-actions{
+
         justify-content:center;
     }
 
@@ -1446,27 +1759,37 @@ footer{
     }
 
     .intro-grid{
+
         grid-template-columns:1fr;
 
         gap:40px;
     }
 
+    .glance-grid{
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
     .approach-grid{
+
         grid-template-columns:1fr;
     }
 
     .mv-grid{
+
         grid-template-columns:1fr;
     }
 
     .values-grid{
+
         grid-template-columns:1fr;
     }
 
     .footer-grid{
+
         grid-template-columns:
-            1fr
-            1fr;
+            1fr 1fr;
     }
 }
 
@@ -1494,13 +1817,13 @@ footer{
     }
 
     .hero-inner{
+
         padding:
-            120px
-            0
-            70px;
+            120px 0 70px;
     }
 
     .hero h1{
+
         font-size:50px;
 
         letter-spacing:-3.5px;
@@ -1511,6 +1834,7 @@ footer{
     }
 
     .hero-actions{
+
         flex-direction:column;
     }
 
@@ -1523,38 +1847,46 @@ footer{
     }
 
     .o1{
+
         width:270px;
         height:270px;
     }
 
     .o2{
+
         width:210px;
         height:210px;
     }
 
     .o3{
+
         width:155px;
         height:155px;
     }
 
     .hero-logo{
+
         width:145px;
 
         padding:20px;
     }
 
     .hero-badge{
+
         font-size:8px;
 
-        padding:9px 11px;
+        padding:
+            9px 11px;
     }
 
     .badge1{
+
         top:4%;
         right:0;
     }
 
     .badge2{
+
         bottom:4%;
         left:0;
     }
@@ -1565,10 +1897,21 @@ footer{
 
     .intro h2,
     .section-heading h2{
+
         letter-spacing:-3px;
     }
 
+    .glance-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .glance-card{
+        min-height:160px;
+    }
+
     .mv-card{
+
         min-height:320px;
 
         padding:32px;
@@ -1587,12 +1930,14 @@ footer{
     }
 
     .footer-grid{
+
         grid-template-columns:1fr;
 
         gap:40px;
     }
 
     .footer-bottom{
+
         flex-direction:column;
     }
 }
@@ -1611,39 +1956,55 @@ footer{
     *,
     *::before,
     *::after{
+
         animation-duration:.01ms!important;
+
         transition-duration:.01ms!important;
     }
 
     .reveal{
+
         opacity:1;
+
         transform:none;
     }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
+<div class="scroll-progress"
+     id="scrollProgress"></div>
+
+
 <!-- ======================================================
      NAVIGATION
 ====================================================== -->
 
-<header class="navbar" id="navbar">
+<header class="navbar"
+        id="navbar">
 
     <div class="container nav-inner">
 
-        <a href="index.html" class="logo">
+        <a href="index.html"
+           class="logo"
+           aria-label="Arovia Pharma Home">
+
             <img
                 src="logo (1).jpeg"
                 alt="Arovia Pharma Pvt. Ltd."
             >
+
         </a>
 
-        <ul class="nav-links" id="navLinks">
+
+        <ul class="nav-links"
+            id="navLinks">
 
             <li>
                 <a href="index.html">
@@ -1652,8 +2013,12 @@ footer{
             </li>
 
             <li>
-                <a href="about.html" class="active">
+                <a href="about.html"
+                   class="active"
+                   aria-current="page">
+
                     About Us
+
                 </a>
             </li>
 
@@ -1664,22 +2029,29 @@ footer{
             </li>
 
             <li>
-                <a href="contact.html" class="nav-contact">
+                <a href="contact.html"
+                   class="nav-contact">
+
                     Contact
+
                 </a>
             </li>
 
         </ul>
 
+
         <button
             class="menu-toggle"
             id="menuToggle"
+            type="button"
             aria-label="Open navigation menu"
             aria-expanded="false"
-        >
+            aria-controls="navLinks">
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
     </div>
@@ -1700,42 +2072,62 @@ footer{
 
         <div class="hero-grid">
 
+
             <div class="reveal">
 
                 <div class="eyebrow">
+
                     <span class="dot"></span>
+
                     About Arovia
+
                 </div>
 
+
                 <h1>
+
                     The purpose
                     <br>
+
                     behind the
-                    <span>path.</span>
+
+                    <span>
+                        path.
+                    </span>
+
                 </h1>
 
+
                 <p class="hero-copy">
-                    Discover the purpose, values and commitment
-                    that shape Arovia Pharma and guide our
-                    approach to healthcare.
+
+                    Discover the purpose, values and
+                    commitment that shape Arovia Pharma
+                    and guide our approach to healthcare.
+
                 </p>
+
 
                 <div class="hero-actions">
 
                     <a
                         href="#who-we-are"
-                        class="btn btn-primary"
-                    >
+                        class="btn btn-primary">
+
                         Discover Arovia
+
                         <span>↓</span>
+
                     </a>
+
 
                     <a
                         href="products.html"
-                        class="btn btn-glass"
-                    >
+                        class="btn btn-glass">
+
                         Explore Products
+
                         <span>↗</span>
+
                     </a>
 
                 </div>
@@ -1746,22 +2138,31 @@ footer{
             <div class="hero-visual reveal">
 
                 <div class="orbit o1"></div>
+
                 <div class="orbit o2"></div>
+
                 <div class="orbit o3"></div>
 
+
                 <div class="hero-badge badge1">
+
                     Quality • Trust
+
                 </div>
 
+
                 <div class="hero-badge badge2">
+
                     Driven by Purpose
+
                 </div>
+
 
                 <div class="hero-logo">
 
                     <img
                         src="logo 2.jpeg"
-                        alt="Arovia Pharma Logo"
+                        alt="Arovia Pharma logo"
                     >
 
                 </div>
@@ -1781,12 +2182,12 @@ footer{
 
 <section
     class="section intro"
-    id="who-we-are"
->
+    id="who-we-are">
 
     <div class="container">
 
         <div class="intro-grid">
+
 
             <div class="reveal">
 
@@ -1794,10 +2195,17 @@ footer{
                     Who We Are
                 </div>
 
+
                 <h2>
+
                     Healthcare
+
                     <br>
-                    <span>with purpose.</span>
+
+                    <span>
+                        with purpose.
+                    </span>
+
                 </h2>
 
             </div>
@@ -1806,30 +2214,42 @@ footer{
             <div class="intro-content reveal">
 
                 <p>
-                    Arovia Pharma Pvt. Ltd. is dedicated to
-                    delivering quality pharmaceutical products
-                    and healthcare solutions that contribute
-                    to better health.
+
+                    Arovia Pharma Pvt. Ltd. is dedicated
+                    to delivering quality pharmaceutical
+                    products and healthcare solutions
+                    that contribute to better health.
+
                 </p>
 
-                <p>
-                    We believe meaningful progress in healthcare
-                    comes from combining quality, responsibility,
-                    innovation and long-term trust.
-                </p>
 
                 <p>
-                    Our approach is centered around dependable
-                    pharmaceutical solutions, responsible business
-                    practices and a continuous commitment to
-                    improvement.
+
+                    We believe meaningful progress in
+                    healthcare comes from combining
+                    quality, responsibility, innovation
+                    and long-term trust.
+
                 </p>
+
+
+                <p>
+
+                    Our approach is centered around
+                    dependable pharmaceutical solutions,
+                    responsible business practices and
+                    a continuous commitment to improvement.
+
+                </p>
+
 
                 <div class="statement">
-                    At Arovia, the path forward is defined by
-                    what we stand for: quality in our work,
+
+                    At Arovia, the path forward is defined
+                    by what we stand for: quality in our work,
                     trust in our relationships and purpose
                     in every step.
+
                 </div>
 
             </div>
@@ -1842,12 +2262,124 @@ footer{
 
 
 <!-- ======================================================
+     AROVIA AT A GLANCE
+====================================================== -->
+
+<section
+    class="section glance"
+    id="arovia-at-a-glance">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="label">
+                Arovia At A Glance
+            </div>
+
+            <h2>
+
+                What defines
+                <br>
+                our journey.
+
+            </h2>
+
+        </div>
+
+
+        <div class="glance-grid">
+
+
+            <article class="glance-card reveal">
+
+                <div class="glance-number">
+                    01
+                </div>
+
+                <h3>
+                    Quality
+                </h3>
+
+                <p>
+                    Focused on dependable pharmaceutical
+                    solutions and consistent standards.
+                </p>
+
+            </article>
+
+
+            <article class="glance-card reveal">
+
+                <div class="glance-number">
+                    02
+                </div>
+
+                <h3>
+                    Trust
+                </h3>
+
+                <p>
+                    Building lasting relationships through
+                    reliability and responsibility.
+                </p>
+
+            </article>
+
+
+            <article class="glance-card reveal">
+
+                <div class="glance-number">
+                    03
+                </div>
+
+                <h3>
+                    Innovation
+                </h3>
+
+                <p>
+                    Looking forward and continuously seeking
+                    better approaches to healthcare.
+                </p>
+
+            </article>
+
+
+            <article class="glance-card reveal">
+
+                <div class="glance-number">
+                    04
+                </div>
+
+                <h3>
+                    Purpose
+                </h3>
+
+                <p>
+                    Keeping healthcare and meaningful progress
+                    at the center of our direction.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
      OUR APPROACH
 ====================================================== -->
 
-<section class="section approach">
+<section
+    class="section approach"
+    id="our-approach">
 
     <div class="container">
+
 
         <div class="section-heading reveal">
 
@@ -1856,9 +2388,11 @@ footer{
             </div>
 
             <h2>
+
                 Built around
                 <br>
                 what matters.
+
             </h2>
 
         </div>
@@ -1878,10 +2412,12 @@ footer{
                 </h3>
 
                 <p>
-                    We place quality at the center of our
-                    approach, focusing on dependable
-                    pharmaceutical solutions and consistent
-                    standards.
+
+                    We place quality at the center
+                    of our approach, focusing on
+                    dependable pharmaceutical
+                    solutions and consistent standards.
+
                 </p>
 
             </article>
@@ -1898,9 +2434,12 @@ footer{
                 </h3>
 
                 <p>
-                    We believe sustainable progress comes
-                    from responsible decisions, strong
-                    relationships and continuous learning.
+
+                    We believe sustainable progress
+                    comes from responsible decisions,
+                    strong relationships and continuous
+                    learning.
+
                 </p>
 
             </article>
@@ -1917,9 +2456,12 @@ footer{
                 </h3>
 
                 <p>
-                    We remain focused on improving our
-                    capabilities and exploring better ways
-                    to respond to evolving healthcare needs.
+
+                    We remain focused on improving
+                    our capabilities and exploring
+                    better ways to respond to evolving
+                    healthcare needs.
+
                 </p>
 
             </article>
@@ -1936,9 +2478,12 @@ footer{
      MISSION & VISION
 ====================================================== -->
 
-<section class="section mission">
+<section
+    class="section mission"
+    id="our-direction">
 
     <div class="container">
+
 
         <div class="section-heading reveal">
 
@@ -1947,9 +2492,11 @@ footer{
             </div>
 
             <h2>
+
                 Purpose that
                 <br>
                 moves us forward.
+
             </h2>
 
         </div>
@@ -1969,10 +2516,13 @@ footer{
                 </h3>
 
                 <p>
-                    To provide safe, effective and dependable
-                    pharmaceutical solutions while maintaining
-                    strong standards of quality, reliability
-                    and customer satisfaction.
+
+                    To provide safe, effective and
+                    dependable pharmaceutical solutions
+                    while maintaining strong standards
+                    of quality, reliability and customer
+                    satisfaction.
+
                 </p>
 
             </article>
@@ -1989,10 +2539,13 @@ footer{
                 </h3>
 
                 <p>
+
                     To build a trusted pharmaceutical
-                    organization that contributes meaningfully
-                    to healthcare through quality, innovation,
-                    responsibility and continuous improvement.
+                    organization that contributes
+                    meaningfully to healthcare through
+                    quality, innovation, responsibility
+                    and continuous improvement.
+
                 </p>
 
             </article>
@@ -2009,9 +2562,12 @@ footer{
      CORE VALUES
 ====================================================== -->
 
-<section class="section dark">
+<section
+    class="section dark"
+    id="our-values">
 
     <div class="container">
+
 
         <div class="section-heading reveal">
 
@@ -2020,9 +2576,11 @@ footer{
             </div>
 
             <h2 style="color:#fff">
+
                 Three principles.
                 <br>
                 One purpose.
+
             </h2>
 
         </div>
@@ -2042,8 +2600,11 @@ footer{
                 </h3>
 
                 <p>
-                    A commitment to dependable pharmaceutical
-                    solutions and consistent standards.
+
+                    A commitment to dependable
+                    pharmaceutical solutions and
+                    consistent standards.
+
                 </p>
 
             </article>
@@ -2060,8 +2621,11 @@ footer{
                 </h3>
 
                 <p>
-                    Building meaningful relationships through
-                    reliability, integrity and responsibility.
+
+                    Building meaningful relationships
+                    through reliability, integrity
+                    and responsibility.
+
                 </p>
 
             </article>
@@ -2078,8 +2642,11 @@ footer{
                 </h3>
 
                 <p>
-                    Continuously looking forward and embracing
-                    better ways to serve evolving healthcare needs.
+
+                    Continuously looking forward and
+                    embracing better ways to serve
+                    evolving healthcare needs.
+
                 </p>
 
             </article>
@@ -2096,9 +2663,12 @@ footer{
      PRODUCT EXPERTISE
 ====================================================== -->
 
-<section class="section products">
+<section
+    class="section products"
+    id="product-expertise">
 
     <div class="container">
+
 
         <div class="section-heading reveal">
 
@@ -2107,15 +2677,18 @@ footer{
             </div>
 
             <h2>
+
                 Solutions across
                 <br>
                 healthcare.
+
             </h2>
 
         </div>
 
 
         <div class="product-tags reveal">
+
 
             <span class="product-tag">
                 Tablets
@@ -2145,6 +2718,7 @@ footer{
                 Medicated Soaps
             </span>
 
+
         </div>
 
     </div>
@@ -2156,7 +2730,9 @@ footer{
      COMMITMENT
 ====================================================== -->
 
-<section class="commitment">
+<section
+    class="commitment"
+    id="our-commitment">
 
     <div class="container">
 
@@ -2171,12 +2747,14 @@ footer{
             </h2>
 
             <p>
-                At Arovia Pharma, healthcare is more than
-                medicine. We are committed to supporting
-                healthcare professionals and communities
-                through dependable pharmaceutical products,
-                responsible practices and continuous
-                improvement.
+
+                At Arovia Pharma, healthcare is more
+                than medicine. We are committed to
+                supporting healthcare professionals
+                and communities through dependable
+                pharmaceutical products, responsible
+                practices and continuous improvement.
+
             </p>
 
         </div>
@@ -2199,22 +2777,31 @@ footer{
         </div>
 
         <h2>
+
             Explore the
             <br>
-            <span>Arovia portfolio.</span>
+
+            <span>
+                Arovia portfolio.
+            </span>
+
         </h2>
 
         <p>
-            Discover our pharmaceutical product categories
-            and learn more about the solutions we are building
-            for healthcare.
+
+            Discover our pharmaceutical product
+            categories and learn more about the
+            solutions we are building for healthcare.
+
         </p>
+
 
         <a
             href="products.html"
-            class="btn btn-primary"
-        >
+            class="btn btn-primary">
+
             Explore Products →
+
         </a>
 
     </div>
@@ -2233,6 +2820,7 @@ footer{
 
     <div class="container">
 
+
         <div class="footer-grid">
 
 
@@ -2244,12 +2832,19 @@ footer{
                     class="footer-logo"
                 >
 
+
                 <p>
+
                     Arovia Pharma Pvt. Ltd.
+
                     <br><br>
+
                     The Path To Health.
+
                     <br><br>
+
                     Quality • Trust • Innovation
+
                 </p>
 
             </div>
@@ -2260,6 +2855,7 @@ footer{
                 <h4>
                     Explore
                 </h4>
+
 
                 <a href="index.html">
                     Home
@@ -2285,6 +2881,7 @@ footer{
                 <h4>
                     Discover
                 </h4>
+
 
                 <a href="#who-we-are">
                     Who We Are
@@ -2340,8 +2937,13 @@ const menuToggle =
 const navLinks =
     document.getElementById("navLinks");
 
+const scrollProgress =
+    document.getElementById("scrollProgress");
 
-/* NAVBAR SCROLL */
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 function updateNavbar(){
 
@@ -2355,20 +2957,59 @@ function updateNavbar(){
 window.addEventListener(
     "scroll",
     updateNavbar,
-    {passive:true}
+    {
+        passive:true
+    }
 );
 
 updateNavbar();
 
 
-/* MOBILE MENU */
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+function updateProgress(){
+
+    const scrollTop =
+        window.scrollY;
+
+    const pageHeight =
+        document.documentElement.scrollHeight
+        - window.innerHeight;
+
+    const progress =
+        pageHeight > 0
+            ? (scrollTop / pageHeight) * 100
+            : 0;
+
+    scrollProgress.style.width =
+        progress + "%";
+}
+
+window.addEventListener(
+    "scroll",
+    updateProgress,
+    {
+        passive:true
+    }
+);
+
+updateProgress();
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 menuToggle.addEventListener(
     "click",
     () => {
 
         const open =
-            navLinks.classList.toggle("active");
+            navLinks.classList.toggle(
+                "active"
+            );
 
         menuToggle.classList.toggle(
             "open",
@@ -2396,7 +3037,9 @@ menuToggle.addEventListener(
 );
 
 
-/* CLOSE MENU AFTER CLICK */
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
 
 document
     .querySelectorAll(".nav-links a")
@@ -2406,9 +3049,13 @@ document
             "click",
             () => {
 
-                navLinks.classList.remove("active");
+                navLinks.classList.remove(
+                    "active"
+                );
 
-                menuToggle.classList.remove("open");
+                menuToggle.classList.remove(
+                    "open"
+                );
 
                 menuToggle.setAttribute(
                     "aria-expanded",
@@ -2430,7 +3077,9 @@ document
     });
 
 
-/* SCROLL REVEAL */
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
 const observer =
     new IntersectionObserver(
@@ -2438,7 +3087,9 @@ const observer =
 
             entries.forEach(entry => {
 
-                if(entry.isIntersecting){
+                if(
+                    entry.isIntersecting
+                ){
 
                     entry.target.classList.add(
                         "active"
@@ -2463,22 +3114,30 @@ document
     .querySelectorAll(".reveal")
     .forEach(element => {
 
-        observer.observe(element);
+        observer.observe(
+            element
+        );
 
     });
 
 
-/* HERO ALWAYS VISIBLE */
+/* =========================================================
+   HERO VISIBILITY
+========================================================= */
 
 window.addEventListener(
     "load",
     () => {
 
         document
-            .querySelectorAll(".hero .reveal")
+            .querySelectorAll(
+                ".hero .reveal"
+            )
             .forEach(element => {
 
-                element.classList.add("active");
+                element.classList.add(
+                    "active"
+                );
 
             });
 
@@ -2486,10 +3145,39 @@ window.addEventListener(
 );
 
 
-/* JAVASCRIPT FALLBACK */
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
 
-document.documentElement.classList.add(
-    "js-enabled"
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key === "Escape" &&
+            navLinks.classList.contains("active")
+        ){
+
+            navLinks.classList.remove(
+                "active"
+            );
+
+            menuToggle.classList.remove(
+                "open"
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+        }
+
+    }
 );
 
 </script>
