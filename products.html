@@ -1,3940 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description"
-content="Explore the pharmaceutical product portfolio of Arovia Pharma Pvt. Ltd., including tablets, capsules, syrups, injectables, ointments, lotions and medicated soaps.">
-
+<meta name="description" content="Explore the Arovia Pharma pharmaceutical portfolio across tablets, capsules, syrups, drops, injectables, ointments, lotions and medicated soaps.">
+<meta name="theme-color" content="#061827">
 <title>Products | Arovia Pharma</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-
-/* =========================================================
-   AROVIA PHARMA
-   PRODUCTS PAGE 3.1
-   ========================================================= */
-
 :root{
-
-    --navy:#183C5C;
-    --navy-dark:#0B253C;
-
-    --teal:#008A85;
-    --teal-dark:#006F6B;
-    --aqua:#20A7A2;
-    --mint:#A8DED5;
-
-    --ice:#F2FAF9;
-    --ice-2:#E8F6F4;
-
-    --white:#FFFFFF;
-
-    --text:#183C5C;
-    --muted:#657784;
-
-    --border:rgba(24,60,92,0.10);
-
-    --shadow:
-    0 20px 60px rgba(12,38,61,0.11);
-
-    --radius:24px;
-
-}
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-
-    font-family:
-    Inter,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-    background:var(--white);
-
-    color:var(--text);
-
-    overflow-x:hidden;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button,
-input{
-    font-family:inherit;
-}
-
-
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:var(--ice);
-}
-
-::-webkit-scrollbar-thumb{
-    background:var(--teal);
-    border-radius:20px;
-}
-
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-.navbar{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    padding:18px 5%;
-
-    transition:
-    background .4s ease,
-    padding .4s ease,
-    box-shadow .4s ease;
-}
-
-.navbar.scrolled{
-
-    background:
-    rgba(255,255,255,.93);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    padding:11px 5%;
-
-    box-shadow:
-    0 10px 40px rgba(12,38,61,.10);
-}
-
-.nav-container{
-
-    max-width:1250px;
-
-    margin:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-}
-
-.logo img{
-
-    width:145px;
-
-    display:block;
-
-    transition:.3s;
-}
-
-.navbar.scrolled .logo img{
-    width:125px;
-}
-
-.nav-links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:38px;
-
-    list-style:none;
-}
-
-.nav-links a{
-
-    position:relative;
-
-    color:white;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    transition:.3s;
-}
-
-.navbar.scrolled .nav-links a{
-    color:var(--navy);
-}
-
-.nav-links a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    bottom:-7px;
-
-    width:0;
-    height:2px;
-
-    background:var(--teal);
-
-    transition:.3s;
-}
-
-.nav-links a:hover::after{
-    width:100%;
-}
-
-.nav-links a:hover{
-    color:var(--teal);
-}
-
-.nav-links .active{
-    color:var(--mint);
-}
-
-.navbar.scrolled .nav-links .active{
-    color:var(--teal);
-}
-
-.nav-links .active::after{
-    width:100%;
-}
-
-.nav-contact{
-
-    padding:11px 21px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.5);
-
-    border-radius:50px;
-}
-
-.navbar.scrolled .nav-contact{
-    border-color:var(--teal);
-}
-
-.nav-contact:hover{
-
-    background:var(--teal);
-
-    color:white !important;
-}
-
-
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
-
-.menu-toggle{
-
-    display:none;
-
-    width:45px;
-    height:45px;
-
-    border:0;
-
-    background:
-    rgba(255,255,255,.12);
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    position:relative;
-
-    z-index:1002;
-}
-
-.menu-toggle span{
-
-    display:block;
-
-    width:20px;
-    height:2px;
-
-    margin:4px auto;
-
-    background:white;
-
-    transition:.3s;
-}
-
-.navbar.scrolled .menu-toggle{
-    background:var(--ice);
-}
-
-.navbar.scrolled .menu-toggle span{
-    background:var(--navy);
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.products-hero{
-
-    min-height:690px;
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    overflow:hidden;
-
-    background:
-
-    linear-gradient(
-        120deg,
-        rgba(7,28,45,.98),
-        rgba(24,60,92,.94),
-        rgba(0,111,107,.86)
-    ),
-
-    url("1000447689.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-}
-
-.products-hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(
-        circle at 75% 25%,
-        rgba(32,167,162,.28),
-        transparent 30%
-    ),
-
-    radial-gradient(
-        circle at 15% 85%,
-        rgba(155,216,206,.12),
-        transparent 30%
-    );
-}
-
-.products-hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:650px;
-    height:650px;
-
-    right:-300px;
-    bottom:-380px;
-
-    border:
-    1px solid
-    rgba(168,222,213,.18);
-
-    border-radius:50%;
-
-    box-shadow:
-    0 0 0 80px rgba(168,222,213,.025),
-    0 0 0 160px rgba(168,222,213,.018);
-}
-
-.products-hero-content{
-
-    width:100%;
-
-    max-width:1250px;
-
-    margin:auto;
-
-    padding:
-    150px 5% 100px;
-
-    position:relative;
-
-    z-index:5;
-}
-
-.products-hero-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1.05fr
-    .95fr;
-
-    align-items:center;
-
-    gap:70px;
-}
-
-
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
-
-.eyebrow{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:
-    9px 16px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.22);
-
-    background:
-    rgba(255,255,255,.07);
-
-    backdrop-filter:blur(10px);
-
-    border-radius:50px;
-
-    color:#DDF8F5;
-
-    font-size:11px;
-
-    font-weight:800;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    margin-bottom:25px;
-}
-
-.eyebrow-dot{
-
-    width:7px;
-    height:7px;
-
-    background:var(--mint);
-
-    border-radius:50%;
-
-    box-shadow:
-    0 0 18px var(--mint);
-}
-
-.products-hero h1{
-
-    color:white;
-
-    font-size:
-    clamp(52px,7vw,88px);
-
-    line-height:.96;
-
-    letter-spacing:-5px;
-
-    font-weight:800;
-
-    margin-bottom:28px;
-
-    max-width:800px;
-}
-
-.products-hero h1 span{
-    color:var(--mint);
-}
-
-.products-hero p{
-
-    max-width:630px;
-
-    color:
-    rgba(255,255,255,.76);
-
-    font-size:18px;
-
-    line-height:1.85;
-}
-
-
-/* =========================================================
-   HERO STATS
-   ========================================================= */
-
-.hero-stats{
-
-    display:flex;
-
-    gap:35px;
-
-    margin-top:38px;
-
-    flex-wrap:wrap;
-}
-
-.hero-stat{
-
-    padding-left:18px;
-
-    border-left:
-    2px solid
-    rgba(168,222,213,.5);
-}
-
-.hero-stat strong{
-
-    display:block;
-
-    color:white;
-
-    font-size:25px;
-
-    line-height:1;
-}
-
-.hero-stat span{
-
-    display:block;
-
-    color:
-    rgba(255,255,255,.55);
-
-    font-size:11px;
-
-    margin-top:7px;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-}
-
-
-/* =========================================================
-   HERO VISUAL
-   ========================================================= */
-
-.hero-visual{
-
-    min-height:430px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    position:relative;
-}
-
-.orbit{
-
-    position:absolute;
-
-    border:
-    1px solid
-    rgba(168,222,213,.20);
-
-    border-radius:50%;
-
-    animation:
-    rotateOrbit 18s linear infinite;
-}
-
-.orbit-one{
-
-    width:420px;
-    height:420px;
-}
-
-.orbit-two{
-
-    width:320px;
-    height:320px;
-
-    animation-duration:13s;
-
-    animation-direction:reverse;
-}
-
-.orbit-three{
-
-    width:220px;
-    height:220px;
-
-    animation-duration:9s;
-}
-
-.orbit::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:9px;
-    height:9px;
-
-    background:var(--mint);
-
-    border-radius:50%;
-
-    top:14px;
-    left:50%;
-
-    box-shadow:
-    0 0 25px var(--mint);
-}
-
-.hero-glow{
-
-    position:absolute;
-
-    width:230px;
-    height:230px;
-
-    background:
-    rgba(32,167,162,.20);
-
-    filter:blur(55px);
-
-    border-radius:50%;
-}
-
-.hero-logo{
-
-    width:205px;
-
-    padding:25px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.96);
-
-    box-shadow:
-    0 30px 90px
-    rgba(0,0,0,.30);
-
-    position:relative;
-
-    z-index:3;
-
-    animation:
-    floatingLogo 4s ease-in-out infinite;
-}
-
-.hero-logo img{
-    width:100%;
-    display:block;
-}
-
-@keyframes rotateOrbit{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-@keyframes floatingLogo{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-
-}
-
-
-/* =========================================================
-   PORTFOLIO
-   ========================================================= */
-
-.portfolio{
-
-    padding:
-    115px 5% 80px;
-
-    background:white;
-}
-
-.container{
-
-    max-width:1250px;
-
-    margin:auto;
-}
-
-.portfolio-heading{
-
-    display:grid;
-
-    grid-template-columns:
-    .8fr
-    1.2fr;
-
-    gap:70px;
-
-    align-items:end;
-
-    margin-bottom:50px;
-}
-
-.section-label{
-
-    color:var(--teal);
-
-    font-size:11px;
-
-    font-weight:800;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    margin-bottom:18px;
-}
-
-.portfolio-heading h2{
-
-    font-size:
-    clamp(40px,5vw,65px);
-
-    line-height:.98;
-
-    letter-spacing:-3px;
-
-    color:var(--navy);
-}
-
-.portfolio-heading p{
-
-    color:var(--muted);
-
-    font-size:16px;
-
-    line-height:1.85;
-
-    max-width:600px;
-}
-
-
-/* =========================================================
-   SEARCH
-   ========================================================= */
-
-.search-wrapper{
-
-    max-width:850px;
-
-    margin:
-    0 auto 22px;
-
-    position:relative;
-}
-
-.search-wrapper input{
-
-    width:100%;
-
-    padding:
-    19px 25px 19px 57px;
-
-    border:
-    1px solid
-    rgba(1,130,126,.13);
-
-    border-radius:50px;
-
-    outline:none;
-
-    font-size:15px;
-
-    color:var(--navy);
-
-    background:#F7FCFB;
-
-    box-shadow:
-    0 12px 40px
-    rgba(12,38,61,.055);
-
-    transition:.3s;
-}
-
-.search-wrapper input:focus{
-
-    border-color:var(--teal);
-
-    background:white;
-
-    box-shadow:
-    0 15px 45px
-    rgba(1,130,126,.13);
-}
-
-.search-icon{
-
-    position:absolute;
-
-    left:22px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:var(--teal);
-
-    font-size:21px;
-}
-
-
-/* =========================================================
-   FILTERS
-   ========================================================= */
-
-.filters{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:9px;
-
-    margin-bottom:75px;
-}
-
-.filter-btn{
-
-    padding:
-    11px 18px;
-
-    border:
-    1px solid
-    rgba(1,130,126,.15);
-
-    background:white;
-
-    color:var(--navy);
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    transition:.3s;
-}
-
-.filter-btn:hover{
-
-    background:var(--ice);
-
-    border-color:var(--teal);
-
-    transform:translateY(-2px);
-}
-
-.filter-btn.active{
-
-    background:
-    linear-gradient(
-        135deg,
-        var(--aqua),
-        var(--teal)
-    );
-
-    color:white;
-
-    border-color:transparent;
-
-    box-shadow:
-    0 9px 24px
-    rgba(1,130,126,.24);
-}
-
-
-/* =========================================================
-   RESULT STATUS
-   ========================================================= */
-
-.result-status{
-
-    text-align:center;
-
-    color:var(--muted);
-
-    font-size:13px;
-
-    margin-top:-45px;
-
-    margin-bottom:55px;
-}
-
-
-/* =========================================================
-   FEATURED
-   ========================================================= */
-
-.featured-section{
-    padding:10px 0 65px;
-}
-
-.featured-heading{
-
-    display:flex;
-
-    align-items:end;
-
-    justify-content:space-between;
-
-    gap:30px;
-
-    margin-bottom:32px;
-}
-
-.featured-heading h2{
-
-    font-size:
-    clamp(35px,4vw,50px);
-
-    line-height:1;
-
-    letter-spacing:-2px;
-
-    color:var(--navy);
-}
-
-.featured-heading p{
-
-    color:var(--muted);
-
-    max-width:450px;
-
-    line-height:1.7;
-
-    font-size:14px;
-}
-
-.featured-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:22px;
-}
-
-
-/* =========================================================
-   PRODUCT CARD
-   ========================================================= */
-
-.product-card{
-
-    position:relative;
-
-    background:white;
-
-    border-radius:var(--radius);
-
-    overflow:hidden;
-
-    border:
-    1px solid
-    rgba(1,130,126,.10);
-
-    box-shadow:
-    0 10px 35px
-    rgba(12,38,61,.055);
-
-    transition:
-    transform .4s ease,
-    box-shadow .4s ease,
-    border-color .4s ease;
-
-    display:flex;
-
-    flex-direction:column;
-}
-
-.product-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:
-    0 25px 65px
-    rgba(12,38,61,.13);
-
-    border-color:
-    rgba(1,130,126,.22);
-}
-
-
-/* =========================================================
-   PRODUCT IMAGE
-   ========================================================= */
-
-.product-image{
-
-    height:260px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-
-    radial-gradient(
-        circle at 50% 45%,
-        rgba(32,167,162,.08),
-        transparent 50%
-    ),
-
-    linear-gradient(
-        145deg,
-        #F8FCFC,
-        #EAF7F5
-    );
-
-    padding:25px;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.product-image::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    border:
-    1px solid
-    rgba(1,130,126,.09);
-
-    border-radius:50%;
-
-    right:-80px;
-    top:-80px;
-}
-
-.product-image::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:110px;
-    height:110px;
-
-    border:
-    1px solid
-    rgba(1,130,126,.06);
-
-    border-radius:50%;
-
-    left:-55px;
-    bottom:-55px;
-}
-
-.product-image img{
-
-    max-width:100%;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:contain;
-
-    position:relative;
-
-    z-index:2;
-
-    transition:
-    transform .45s ease;
-}
-
-.product-card:hover .product-image img{
-    transform:scale(1.06);
-}
-
-
-/* =========================================================
-   IMAGE PLACEHOLDER
-   ========================================================= */
-
-.no-image{
-
-    width:85px;
-    height:85px;
-
-    border-radius:26px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-    rgba(1,130,126,.08);
-
-    border:
-    1px solid
-    rgba(1,130,126,.10);
-
-    color:var(--teal);
-
-    font-size:28px;
-
-    font-weight:700;
-
-    position:relative;
-
-    z-index:2;
-}
-
-
-/* =========================================================
-   PRODUCT INFO
-   ========================================================= */
-
-.product-info{
-
-    padding:
-    24px 25px 28px;
-
-    position:relative;
-}
-
-.product-category{
-
-    display:inline-block;
-
-    color:var(--teal);
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-
-    margin-bottom:10px;
-
-    padding:
-    5px 9px;
-
-    background:
-    rgba(1,130,126,.07);
-
-    border-radius:30px;
-}
-
-.product-card h3{
-
-    color:var(--navy);
-
-    font-size:20px;
-
-    margin-bottom:10px;
-
-    line-height:1.2;
-}
-
-.product-card p{
-
-    color:var(--muted);
-
-    font-size:13px;
-
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   CATEGORY
-   ========================================================= */
-
-.category{
-
-    margin-top:90px;
-
-    scroll-margin-top:100px;
-}
-
-.category-heading{
-
-    display:flex;
-
-    align-items:end;
-
-    justify-content:space-between;
-
-    gap:30px;
-
-    margin-bottom:30px;
-
-    padding-bottom:20px;
-
-    border-bottom:
-    1px solid
-    rgba(24,60,92,.09);
-}
-
-.category-title{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-}
-
-.category-number{
-
-    width:46px;
-    height:46px;
-
-    border-radius:15px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(32,167,162,.15),
-        rgba(1,130,126,.07)
-    );
-
-    color:var(--teal);
-
-    font-size:15px;
-
-    font-weight:800;
-}
-
-.category-heading h2{
-
-    font-size:30px;
-
-    color:var(--navy);
-
-    letter-spacing:-1px;
-}
-
-.category-heading p{
-
-    color:var(--muted);
-
-    font-size:13px;
-}
-
-
-/* =========================================================
-   PRODUCT GRID
-   ========================================================= */
-
-.products-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:22px;
-}
-
-
-/* =========================================================
-   EMPTY STATE
-   ========================================================= */
-
-.empty-state{
-
-    display:none;
-
-    text-align:center;
-
-    padding:60px 20px;
-
-    background:var(--ice);
-
-    border-radius:25px;
-
-    margin-top:20px;
-}
-
-.empty-state.show{
-    display:block;
-}
-
-.empty-icon{
-
-    width:65px;
-    height:65px;
-
-    margin:
-    0 auto 18px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:20px;
-
-    background:
-    rgba(1,130,126,.09);
-
-    color:var(--teal);
-
-    font-size:25px;
-}
-
-.empty-state h3{
-
-    color:var(--navy);
-
-    margin-bottom:8px;
-}
-
-.empty-state p{
-
-    color:var(--muted);
-
-    font-size:14px;
-}
-
-
-/* =========================================================
-   ENQUIRY
-   ========================================================= */
-
-.enquiry{
-
-    margin-top:115px;
-
-    padding:
-    95px 30px;
-
-    text-align:center;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:32px;
-
-    background:
-
-    linear-gradient(
-        110deg,
-        var(--navy-dark),
-        #006F6B
-    );
-
-    color:white;
-
-    box-shadow:
-    0 30px 75px
-    rgba(12,38,61,.18);
-}
-
-.enquiry::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    border:
-    1px solid
-    rgba(168,222,213,.16);
-
-    border-radius:50%;
-
-    right:-180px;
-    top:-220px;
-
-    box-shadow:
-    0 0 0 80px rgba(168,222,213,.025);
-}
-
-.enquiry::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    border:
-    1px solid
-    rgba(168,222,213,.08);
-
-    border-radius:50%;
-
-    left:-180px;
-    bottom:-180px;
-}
-
-.enquiry-content{
-
-    position:relative;
-
-    z-index:2;
-}
-
-.enquiry .section-label{
-    color:var(--mint);
-}
-
-.enquiry h2{
-
-    font-size:
-    clamp(38px,5vw,60px);
-
-    line-height:1;
-
-    letter-spacing:-3px;
-
-    margin-bottom:20px;
-}
-
-.enquiry p{
-
-    max-width:650px;
-
-    margin:auto;
-
-    color:
-    rgba(255,255,255,.70);
-
-    font-size:16px;
-
-    line-height:1.8;
-}
-
-.btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    padding:
-    14px 26px;
-
-    border-radius:50px;
-
-    font-size:14px;
-
-    font-weight:700;
-
-    transition:
-    transform .3s,
-    box-shadow .3s;
-}
-
-.btn-primary{
-
-    margin-top:30px;
-
-    background:white;
-
-    color:var(--navy);
-
-    box-shadow:
-    0 12px 30px
-    rgba(0,0,0,.18);
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 18px 40px
-    rgba(0,0,0,.25);
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer{
-
-    background:var(--navy-dark);
-
-    color:white;
-
-    padding:
-    70px 5% 25px;
-
-    margin-top:110px;
-}
-
-.footer-grid{
-
-    max-width:1250px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-    1.5fr
-    1fr
-    1fr;
-
-    gap:60px;
-
-    padding-bottom:60px;
-
-    border-bottom:
-    1px solid
-    rgba(255,255,255,.10);
-}
-
-.footer-logo{
-
-    width:160px;
-
-    background:white;
-
-    padding:10px;
-
-    border-radius:12px;
-
-    margin-bottom:20px;
-}
-
-.footer-brand p{
-
-    color:
-    rgba(255,255,255,.55);
-
-    line-height:1.8;
-
-    max-width:350px;
-
-    font-size:14px;
-}
-
-.footer-column h4{
-
-    font-size:13px;
-
-    margin-bottom:22px;
-
-    color:var(--mint);
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-}
-
-.footer-column a{
-
-    display:block;
-
-    color:
-    rgba(255,255,255,.65);
-
-    font-size:14px;
-
-    margin-bottom:14px;
-
-    transition:.3s;
-}
-
-.footer-column a:hover{
-
-    color:white;
-
-    transform:translateX(4px);
-}
-
-.footer-bottom{
-
-    max-width:1250px;
-
-    margin:auto;
-
-    padding-top:25px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    color:
-    rgba(255,255,255,.4);
-
-    font-size:12px;
-}
-
-
-/* =========================================================
-   REVEAL
-   ========================================================= */
-
-.reveal{
-
-    opacity:0;
-
-    transform:translateY(30px);
-
-    transition:
-    opacity .8s ease,
-    transform .8s ease;
-}
-
-.reveal.active{
-
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-
-/* =========================================================
-   HIDDEN
-   ========================================================= */
-
-.product-card.hidden{
-    display:none;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
+ --navy:#0A2540;--deep:#04131F;--teal:#005B60;--cyan:#00B4D8;
+ --mint:#9BD8CE;--ice:#F3FAFB;--white:#fff;--text:#12344D;--muted:#667987;
+ --line:rgba(10,37,64,.10);--shadow:0 25px 80px rgba(4,19,31,.12);--radius:28px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",Arial,sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+body.modal-open,body.menu-open{overflow:hidden}
+a{text-decoration:none;color:inherit}button,input{font:inherit}
+::selection{background:var(--cyan);color:#fff}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--ice)}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:20px}
+.container{width:min(1250px,88%);margin:auto}
+.section-label{font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:17px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s ease}
+.reveal.active{opacity:1;transform:none}
+
+/* NAV */
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 0;transition:.4s}
+.navbar.scrolled{padding:11px 0;background:rgba(255,255,255,.92);backdrop-filter:blur(22px);box-shadow:0 10px 40px rgba(4,19,31,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo img{width:145px;transition:.3s}.navbar.scrolled .logo img{width:125px}
+.nav-links{display:flex;align-items:center;gap:34px;list-style:none}
+.nav-links a{position:relative;color:#fff;font-size:13px;font-weight:800;transition:.3s}
+.navbar.scrolled .nav-links a{color:var(--navy)}
+.nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--cyan);transition:.3s}
+.nav-links a:hover:after,.nav-links a.active:after{width:100%}
+.nav-contact{padding:11px 20px;border:1px solid rgba(255,255,255,.35);border-radius:999px}
+.navbar.scrolled .nav-contact{border-color:var(--teal)}
+.nav-contact:hover{background:var(--teal);color:#fff!important}
+.menu-toggle{display:none;width:45px;height:45px;border:0;border-radius:50%;background:rgba(255,255,255,.1);cursor:pointer;z-index:1002}
+.menu-toggle span{display:block;width:19px;height:2px;margin:4px auto;background:#fff;transition:.3s}
+.navbar.scrolled .menu-toggle{background:var(--ice)}.navbar.scrolled .menu-toggle span{background:var(--navy)}
+.menu-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-toggle.open span:nth-child(2){opacity:0}.menu-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* HERO */
+.hero{
+ min-height:91svh;display:flex;align-items:center;position:relative;overflow:hidden;color:#fff;
+ background:linear-gradient(110deg,rgba(4,19,31,.98),rgba(5,43,57,.94) 50%,rgba(0,91,96,.82)),
+ url("1000447689.jpg") center/cover;
+}
+.hero:before{content:"";position:absolute;width:750px;height:750px;right:-290px;top:50%;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle,rgba(0,180,216,.22),transparent 67%);filter:blur(18px)}
+.hero:after{content:"";position:absolute;inset:0;opacity:.14;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:70px 70px}
+.hero-inner{width:min(1320px,90%);margin:auto;padding:145px 0 85px;position:relative;z-index:3}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:65px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 15px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(14px);color:#d9f7f5;font-size:10px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;margin-bottom:27px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px var(--mint);animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.35)}}
+.hero h1{font-family:"Manrope";font-size:clamp(55px,7.3vw,100px);line-height:.9;letter-spacing:-6px;margin-bottom:28px}
+.hero h1 span{display:block;color:var(--mint)}
+.hero-copy{max-width:680px;color:rgba(255,255,255,.72);font-size:18px;line-height:1.85;margin-bottom:34px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:999px;font-size:13px;font-weight:800;cursor:pointer;transition:.35s}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--teal));color:#fff;box-shadow:0 15px 40px rgba(0,180,216,.2)}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(0,180,216,.32)}
+.btn-glass{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);color:#fff;backdrop-filter:blur(15px)}
+.btn-glass:hover{background:#fff;color:var(--navy);transform:translateY(-4px)}
+.hero-metrics{display:flex;gap:28px;flex-wrap:wrap;margin-top:38px}
+.metric{padding-left:15px;border-left:2px solid rgba(155,216,206,.55)}
+.metric strong{display:block;font-family:"Manrope";font-size:24px;line-height:1}
+.metric span{display:block;color:rgba(255,255,255,.5);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;margin-top:7px}
+.hero-visual{min-height:500px;display:grid;place-items:center;position:relative}
+.orbit{position:absolute;border:1px solid rgba(155,216,206,.2);border-radius:50%;animation:spin 18s linear infinite}
+.orbit:before{content:"";position:absolute;width:8px;height:8px;top:10px;left:50%;border-radius:50%;background:var(--mint);box-shadow:0 0 22px var(--mint)}
+.o1{width:450px;height:450px}.o2{width:340px;height:340px;animation-duration:13s;animation-direction:reverse}.o3{width:245px;height:245px;animation-duration:9s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-logo{width:225px;padding:27px;border-radius:50%;background:#fff;position:relative;z-index:2;box-shadow:0 30px 100px rgba(0,0,0,.3);animation:float 5s ease-in-out infinite}
+.hero-logo:after{content:"";position:absolute;inset:-12px;border:1px solid rgba(155,216,206,.28);border-radius:50%}
+@keyframes float{50%{transform:translateY(-12px)}}
+.hero-chip{position:absolute;z-index:4;padding:11px 15px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:rgba(255,255,255,.08);backdrop-filter:blur(15px);font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+.chip1{top:11%;right:0}.chip2{bottom:12%;left:0}
+
+/* PORTFOLIO */
+.portfolio{padding:125px 0 90px;background:#fff}
+.portfolio-head{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:end;margin-bottom:45px}
+.portfolio-head h2{font-family:"Manrope";font-size:clamp(44px,5.2vw,70px);line-height:.98;letter-spacing:-4px;color:var(--navy)}
+.portfolio-head p{max-width:610px;color:var(--muted);font-size:16px;line-height:1.85}
+.search-box{max-width:900px;margin:0 auto 18px;position:relative}
+.search-box input{width:100%;height:60px;padding:0 55px 0 58px;border:1px solid rgba(0,91,96,.13);outline:none;border-radius:999px;background:#f7fcfb;color:var(--navy);font-size:14px;box-shadow:0 12px 40px rgba(4,19,31,.05);transition:.3s}
+.search-box input:focus{background:#fff;border-color:var(--teal);box-shadow:0 15px 45px rgba(0,91,96,.12)}
+.search-icon{position:absolute;left:22px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--teal)}
+.clear-search{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer;display:none}
+.clear-search.show{display:block}.clear-search:hover{background:var(--ice)}
+.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:25px}
+.filter{padding:10px 16px;border:1px solid rgba(0,91,96,.14);background:#fff;color:var(--navy);border-radius:999px;cursor:pointer;font-size:11px;font-weight:800;transition:.3s}
+.filter:hover{transform:translateY(-2px);border-color:var(--teal);background:var(--ice)}
+.filter.active{background:linear-gradient(135deg,var(--cyan),var(--teal));color:#fff;border-color:transparent;box-shadow:0 9px 24px rgba(0,91,96,.22)}
+.result-status{text-align:center;color:var(--muted);font-size:12px;margin-bottom:58px}
+
+/* CATEGORY + CARDS */
+.category{margin-top:78px;scroll-margin-top:105px}
+.category-head{display:flex;align-items:end;justify-content:space-between;gap:25px;padding-bottom:20px;margin-bottom:27px;border-bottom:1px solid var(--line)}
+.category-title{display:flex;align-items:center;gap:14px}
+.category-number{width:45px;height:45px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(145deg,rgba(0,180,216,.13),rgba(0,91,96,.07));color:var(--teal);font-size:13px;font-weight:800}
+.category-head h2{font-family:"Manrope";font-size:30px;letter-spacing:-1px;color:var(--navy)}
+.category-head p{font-size:12px;color:var(--muted)}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product-card{background:#fff;border:1px solid rgba(0,91,96,.1);border-radius:25px;overflow:hidden;box-shadow:0 10px 35px rgba(4,19,31,.05);transition:.4s;display:flex;flex-direction:column}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 25px 65px rgba(4,19,31,.13);border-color:rgba(0,91,96,.22)}
+.product-card.hidden{display:none}
+.product-image{height:250px;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(0,180,216,.09),transparent 52%),linear-gradient(145deg,#f8fcfc,#e9f6f5)}
+.product-image:before{content:"";position:absolute;width:180px;height:180px;right:-80px;top:-80px;border:1px solid rgba(0,91,96,.09);border-radius:50%}
+.product-image:after{content:"";position:absolute;width:110px;height:110px;left:-55px;bottom:-55px;border:1px solid rgba(0,91,96,.07);border-radius:50%}
+.product-image img{width:100%;height:100%;object-fit:contain;position:relative;z-index:2;transition:.45s}
+.product-card:hover .product-image img{transform:scale(1.06)}
+.no-image{width:82px;height:82px;border-radius:25px;display:grid;place-items:center;background:rgba(0,91,96,.07);border:1px solid rgba(0,91,96,.1);color:var(--teal);font-size:25px;font-weight:800;position:relative;z-index:2}
+.product-info{padding:23px 24px 25px;display:flex;flex-direction:column;flex:1}
+.product-category{align-self:flex-start;padding:5px 9px;border-radius:30px;background:rgba(0,91,96,.07);color:var(--teal);font-size:8px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.product-info h3{font-family:"Manrope";color:var(--navy);font-size:20px;line-height:1.2;margin-bottom:9px}
+.product-info p{color:var(--muted);font-size:12.5px;line-height:1.7}
+.product-action{margin-top:20px;padding-top:15px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;color:var(--teal);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.product-action span:last-child{width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:var(--ice);font-size:16px;transition:.3s}
+.product-card:hover .product-action span:last-child{background:var(--teal);color:#fff;transform:rotate(-45deg)}
+.empty-state{display:none;text-align:center;padding:70px 20px;margin-top:30px;border-radius:28px;background:var(--ice)}
+.empty-state.show{display:block}.empty-icon{width:64px;height:64px;margin:0 auto 17px;display:grid;place-items:center;border-radius:20px;background:rgba(0,91,96,.08);color:var(--teal);font-size:24px}
+.empty-state h3{font-family:"Manrope";color:var(--navy);margin-bottom:7px}.empty-state p{font-size:13px;color:var(--muted)}
+
+/* ENQUIRY */
+.enquiry{margin-top:110px;padding:95px 30px;text-align:center;position:relative;overflow:hidden;border-radius:32px;background:linear-gradient(110deg,var(--deep),var(--teal));color:#fff;box-shadow:0 30px 75px rgba(4,19,31,.18)}
+.enquiry:before{content:"";position:absolute;width:520px;height:520px;right:-200px;top:-250px;border:1px solid rgba(155,216,206,.15);border-radius:50%;box-shadow:0 0 0 80px rgba(155,216,206,.02)}
+.enquiry:after{content:"";position:absolute;width:300px;height:300px;left:-190px;bottom:-190px;border:1px solid rgba(155,216,206,.08);border-radius:50%}
+.enquiry-content{position:relative;z-index:2}.enquiry .section-label{color:var(--mint)}
+.enquiry h2{font-family:"Manrope";font-size:clamp(40px,5.3vw,65px);line-height:.98;letter-spacing:-4px;margin-bottom:20px}
+.enquiry p{max-width:650px;margin:auto;color:rgba(255,255,255,.7);font-size:16px;line-height:1.8}
+.enquiry .btn{margin-top:30px;background:#fff;color:var(--navy)}.enquiry .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.24)}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:2000;display:none;place-items:center;padding:20px;background:rgba(4,19,31,.72);backdrop-filter:blur(12px)}
+.modal.show{display:grid}
+.modal-box{width:min(780px,94vw);max-height:90vh;overflow:auto;background:#fff;border-radius:30px;box-shadow:0 35px 100px rgba(0,0,0,.3);position:relative}
+.modal-top{display:grid;grid-template-columns:.8fr 1.2fr;min-height:400px}
+.modal-image{display:flex;align-items:center;justify-content:center;padding:35px;background:linear-gradient(145deg,#f7fcfc,#e8f6f4)}
+.modal-image img{width:100%;height:100%;object-fit:contain;max-height:350px}.modal-image .no-image{width:100px;height:100px}
+.modal-content{padding:45px 40px}.modal-content .product-category{margin-bottom:15px}
+.modal-content h2{font-family:"Manrope";font-size:42px;letter-spacing:-2px;color:var(--navy);margin-bottom:16px}
+.modal-content p{color:var(--muted);line-height:1.8;font-size:14px}
+.modal-note{margin-top:25px;padding:16px;border-radius:15px;background:var(--ice);color:var(--muted);font-size:11px;line-height:1.6}
+.modal-close{position:absolute;right:16px;top:16px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--navy);font-size:22px;cursor:pointer;z-index:3;box-shadow:0 5px 20px rgba(0,0,0,.08)}
+.modal-close:hover{background:var(--teal);color:#fff}
+
+/* FOOTER */
+footer{background:var(--deep);color:#fff;padding:80px 0 25px;margin-top:110px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-logo{width:160px;background:#fff;padding:10px;border-radius:12px;margin-bottom:20px}.footer-brand p{color:rgba(255,255,255,.55);font-size:14px;line-height:1.8;max-width:350px}
+.footer-column h4{color:var(--mint);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px}
+.footer-column a{display:block;color:rgba(255,255,255,.62);font-size:14px;margin-bottom:14px;transition:.3s}.footer-column a:hover{color:#fff;transform:translateX(4px)}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:24px;color:rgba(255,255,255,.36);font-size:12px}
+
+/* MOBILE */
 @media(max-width:900px){
-
-    .nav-links{
-
-        position:fixed;
-
-        top:0;
-        right:-100%;
-
-        width:280px;
-
-        height:100vh;
-
-        background:var(--navy-dark);
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        justify-content:center;
-
-        padding:40px;
-
-        gap:25px;
-
-        transition:.4s;
-
-        box-shadow:
-        -20px 0 60px rgba(0,0,0,.2);
-    }
-
-    .nav-links.active{
-        right:0;
-    }
-
-    .nav-links a,
-    .navbar.scrolled .nav-links a{
-
-        color:white;
-
-        font-size:17px;
-    }
-
-    .nav-contact{
-
-        border:0;
-
-        padding:0;
-    }
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .products-hero-grid{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .products-hero p{
-        margin:auto;
-    }
-
-    .hero-stats{
-        justify-content:center;
-    }
-
-    .hero-visual{
-        min-height:340px;
-    }
-
-    .orbit-one{
-        width:320px;
-        height:320px;
-    }
-
-    .orbit-two{
-        width:245px;
-        height:245px;
-    }
-
-    .orbit-three{
-        width:175px;
-        height:175px;
-    }
-
-    .hero-logo{
-        width:160px;
-    }
-
-    .portfolio-heading{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .featured-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .products-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
+ .nav-links{position:fixed;right:-100%;top:0;width:min(330px,86%);height:100svh;padding:100px 40px;background:var(--deep);flex-direction:column;align-items:flex-start;gap:28px;transition:.4s;box-shadow:-20px 0 60px rgba(0,0,0,.25)}
+ .nav-links.active{right:0}.nav-links a,.navbar.scrolled .nav-links a{color:#fff;font-size:17px}.nav-contact{border:0;padding:0}.menu-toggle{display:block}
+ .hero-grid{grid-template-columns:1fr;text-align:center}.hero-copy{margin:auto auto 34px}.hero-actions,.hero-metrics{justify-content:center}.hero-visual{min-height:390px}
+ .o1{width:350px;height:350px}.o2{width:270px;height:270px}.o3{width:200px;height:200px}.hero-logo{width:180px}
+ .portfolio-head{grid-template-columns:1fr;gap:28px}.products-grid{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}.modal-top{grid-template-columns:1fr}.modal-image{min-height:260px}.modal-content{padding:35px}
 }
-
-
 @media(max-width:600px){
-
-    .navbar{
-        padding:14px 5%;
-    }
-
-    .logo img{
-        width:120px;
-    }
-
-    .navbar.scrolled .logo img{
-        width:110px;
-    }
-
-    .products-hero{
-        min-height:760px;
-    }
-
-    .products-hero-content{
-        padding:125px 6% 70px;
-    }
-
-    .products-hero h1{
-
-        font-size:49px;
-
-        letter-spacing:-3px;
-    }
-
-    .products-hero p{
-        font-size:15px;
-    }
-
-    .hero-stats{
-        gap:22px;
-    }
-
-    .hero-stat strong{
-        font-size:21px;
-    }
-
-    .hero-visual{
-        min-height:270px;
-    }
-
-    .orbit-one{
-        width:250px;
-        height:250px;
-    }
-
-    .orbit-two{
-        width:195px;
-        height:195px;
-    }
-
-    .orbit-three{
-        width:145px;
-        height:145px;
-    }
-
-    .hero-logo{
-        width:140px;
-    }
-
-    .portfolio{
-        padding:
-        80px 6% 50px;
-    }
-
-    .portfolio-heading h2{
-        letter-spacing:-2px;
-    }
-
-    .featured-grid,
-    .products-grid{
-        grid-template-columns:1fr;
-    }
-
-    .featured-heading{
-        align-items:flex-start;
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .category{
-        margin-top:70px;
-    }
-
-    .category-heading{
-        align-items:flex-start;
-        flex-direction:column;
-        gap:12px;
-    }
-
-    .category-heading h2{
-        font-size:26px;
-    }
-
-    .product-image{
-        height:260px;
-    }
-
-    .enquiry{
-
-        margin-top:80px;
-
-        padding:
-        70px 25px;
-    }
-
-    footer{
-        margin-top:80px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .footer-bottom{
-        flex-direction:column;
-    }
-
+ .container{width:88%}.navbar{padding:14px 0}.logo img{width:120px}.navbar.scrolled .logo img{width:110px}
+ .hero-inner{padding:120px 0 70px}.hero h1{font-size:50px;letter-spacing:-3.5px}.hero-copy{font-size:15px;line-height:1.7}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}
+ .hero-metrics{gap:16px}.metric strong{font-size:20px}.hero-visual{min-height:295px}.o1{width:270px;height:270px}.o2{width:210px;height:210px}.o3{width:155px;height:155px}.hero-logo{width:145px;padding:20px}
+ .hero-chip{font-size:8px;padding:9px 11px}.chip1{top:4%;right:0}.chip2{bottom:5%;left:0}
+ .portfolio{padding:88px 0 55px}.portfolio-head h2{letter-spacing:-3px}
+ .products-grid{grid-template-columns:1fr}.category{margin-top:65px}.category-head{align-items:flex-start;flex-direction:column;gap:12px}.category-head h2{font-size:26px}
+ .product-image{height:255px}.enquiry{margin-top:80px;padding:70px 24px}footer{margin-top:80px}.footer-grid{grid-template-columns:1fr;gap:40px}.footer-bottom{flex-direction:column}
+ .modal-content h2{font-size:34px}.modal-image{min-height:230px}.modal-content{padding:30px 25px}
 }
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    html{
-        scroll-behavior:auto;
-    }
-
-    *,
-    *::before,
-    *::after{
-
-        animation-duration:.01ms !important;
-
-        animation-iteration-count:1 !important;
-
-        transition-duration:.01ms !important;
-    }
-
-}
-
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
-
 </head>
 
-
 <body>
-
-
-<!-- =======================================================
-     NAVIGATION
-     ======================================================= -->
-
 <header class="navbar" id="navbar">
-
-<div class="nav-container">
-
-    <a href="index.html" class="logo">
-
-        <img
-        src="logo (1).jpeg"
-        alt="Arovia Pharma">
-
-    </a>
-
-
-    <ul class="nav-links" id="navLinks">
-
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-
-        <li>
-            <a href="about.html">
-                About Us
-            </a>
-        </li>
-
-        <li>
-            <a href="products.html" class="active">
-                Products
-            </a>
-        </li>
-
-        <li>
-            <a href="contact.html" class="nav-contact">
-                Contact
-            </a>
-        </li>
-
-    </ul>
-
-
-    <button
-    class="menu-toggle"
-    id="menuToggle"
-    aria-label="Open navigation menu">
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </button>
-
-</div>
-
+ <div class="container nav-inner">
+  <a href="index.html" class="logo"><img src="logo (1).jpeg" alt="Arovia Pharma"></a>
+  <ul class="nav-links" id="navLinks">
+   <li><a href="index.html">Home</a></li>
+   <li><a href="about.html">About Us</a></li>
+   <li><a href="products.html" class="active">Products</a></li>
+   <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+ </div>
 </header>
 
-
-<!-- =======================================================
-     HERO
-     ======================================================= -->
-
-<section class="products-hero">
-
-<div class="products-hero-content">
-
-<div class="products-hero-grid">
-
-
-<div class="reveal">
-
-    <div class="eyebrow">
-
-        <span class="eyebrow-dot"></span>
-
-        Arovia Pharmaceutical Portfolio
-
+<main>
+<section class="hero">
+ <div class="hero-inner">
+  <div class="hero-grid">
+   <div class="reveal">
+    <div class="eyebrow"><span class="dot"></span>Arovia Pharmaceutical Portfolio</div>
+    <h1>Solutions for<br>better <span>health.</span></h1>
+    <p class="hero-copy">Explore the Arovia Pharma portfolio across multiple pharmaceutical formulations, presented with a focus on quality, reliability and a clear commitment to healthcare.</p>
+    <div class="hero-actions">
+     <a href="#portfolio" class="btn btn-primary">Explore Portfolio ↓</a>
+     <a href="contact.html" class="btn btn-glass">Business Enquiry ↗</a>
     </div>
-
-
-    <h1>
-
-        Solutions for
-        better
-        <span>health.</span>
-
-    </h1>
-
-
-    <p>
-
-        Explore the Arovia Pharma portfolio,
-        spanning pharmaceutical formulations
-        designed around quality, reliability
-        and evolving healthcare needs.
-
-    </p>
-
-
-    <div class="hero-stats">
-
-        <div class="hero-stat">
-
-            <strong>06</strong>
-
-            <span>Categories</span>
-
-        </div>
-
-
-        <div class="hero-stat">
-
-            <strong>30+</strong>
-
-            <span>Products</span>
-
-        </div>
-
-
-        <div class="hero-stat">
-
-            <strong>01</strong>
-
-            <span>Commitment</span>
-
-        </div>
-
+    <div class="hero-metrics">
+     <div class="metric"><strong>06</strong><span>Categories</span></div>
+     <div class="metric"><strong>27</strong><span>Listed products</span></div>
+     <div class="metric"><strong>01</strong><span>Commitment</span></div>
     </div>
-
-</div>
-
-
-<div class="hero-visual">
-
-    <div class="hero-glow"></div>
-
-    <div class="orbit orbit-one"></div>
-
-    <div class="orbit orbit-two"></div>
-
-    <div class="orbit orbit-three"></div>
-
-
-    <div class="hero-logo">
-
-        <img
-        src="logo 2.jpeg"
-        alt="Arovia Pharma Logo">
-
-    </div>
-
-</div>
-
-
-</div>
-
-</div>
-
+   </div>
+   <div class="hero-visual reveal">
+    <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+    <div class="hero-chip chip1">Quality • Trust</div>
+    <div class="hero-chip chip2">Driven by Purpose</div>
+    <div class="hero-logo"><img src="logo 2.jpeg" alt="Arovia Pharma Logo"></div>
+   </div>
+  </div>
+ </div>
 </section>
 
-
-<!-- =======================================================
-     PORTFOLIO
-     ======================================================= -->
-
-<section class="portfolio">
-
-<div class="container">
-
-
-<div class="portfolio-heading reveal">
-
-<div>
-
-    <div class="section-label">
-        Our Portfolio
-    </div>
-
-    <h2>
-        Pharmaceutical
-        solutions.
-    </h2>
-
-</div>
-
-
-<p>
-
-    Browse the Arovia Pharma portfolio
-    by category or search for a specific
-    product. Explore our formulations
-    across multiple healthcare segments.
-
-</p>
-
-</div>
-
-
-<!-- SEARCH -->
-
-<div class="search-wrapper reveal">
-
-    <span class="search-icon">
-        ⌕
-    </span>
-
-    <input
-    type="text"
-    id="searchInput"
-    placeholder="Search by product name or composition..."
-    aria-label="Search products">
-
-</div>
-
-
-<!-- FILTERS -->
-
-<div class="filters reveal">
-
-    <button class="filter-btn active" data-filter="all">
-        All
-    </button>
-
-    <button class="filter-btn" data-filter="tablets">
-        Tablets & Capsules
-    </button>
-
-    <button class="filter-btn" data-filter="syrups">
-        Syrups & Drops
-    </button>
-
-    <button class="filter-btn" data-filter="injectables">
-        Injectables
-    </button>
-
-    <button class="filter-btn" data-filter="ointments">
-        Ointments
-    </button>
-
-    <button class="filter-btn" data-filter="lotions">
-        Lotions
-    </button>
-
-    <button class="filter-btn" data-filter="soaps">
-        Medicated Soaps
-    </button>
-
-</div>
-
-
-<div class="result-status" id="resultStatus">
-    Showing all products
-</div>
-
-
-<!-- =======================================================
-     FEATURED
-     ======================================================= -->
-
-<div class="featured-section">
-
-
-<div class="featured-heading reveal">
-
-<div>
-
-    <div class="section-label">
-        Featured
-    </div>
-
-    <h2>
-        Selected products.
-    </h2>
-
-</div>
-
-<p>
-
-    A selection of products from
-    the Arovia pharmaceutical portfolio.
-
-</p>
-
-</div>
-
-
-<div class="featured-grid">
-
-
-<!-- Acerole-P -->
-
-<div
-class="product-card reveal"
-data-category="tablets"
-data-search="acerole p aceclofenac paracetamol pain relief tablets">
-
-<div class="product-image">
-
-<img
-src="images/products/acerole p.png"
-alt="Acerole-P">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>
-    Acerole-P
-</h3>
-
-<p>
-    Aceclofenac 100 mg +
-    Paracetamol 325 mg Tablets
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Aroclear-M -->
-
-<div
-class="product-card reveal"
-data-category="syrups"
-data-search="aroclear m montelukast levocetirizine syrup">
-
-<div class="product-image">
-
-<img
-src="images/products/aroclear.png"
-alt="Aroclear-M Syrup">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Syrup
-</div>
-
-<h3>
-    Aroclear-M Syrup
-</h3>
-
-<p>
-    Montelukast Sodium &
-    Levocetirizine Dihydrochloride Syrup
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Aroket -->
-
-<div
-class="product-card reveal"
-data-category="soaps"
-data-search="aroket ketoconazole soap medicated soap">
-
-<div class="product-image">
-
-<img
-src="images/products/aroket.png"
-alt="Aroket Soap">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Medicated Soap
-</div>
-
-<h3>
-    Aroket
-</h3>
-
-<p>
-    Ketoconazole Soap
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     TABLETS
-     ======================================================= -->
-
-<div
-class="category"
-id="tablets"
-data-category="tablets">
-
-<div class="category-heading reveal">
-
-<div class="category-title">
-
-<div class="category-number">
-    01
-</div>
-
-<h2>
-    Tablets & Capsules
-</h2>
-
-</div>
-
-<p>
-    Pharmaceutical solid formulations
-</p>
-
-</div>
-
-
-<div class="products-grid">
-
-
-<!-- Acerole-P -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="acerole p aceclofenac paracetamol tablets">
-
-<div class="product-image">
-
-<img
-src="images/products/acerole p.png"
-alt="Acerole-P">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Acerole-P</h3>
-
-<p>
-    Aceclofenac 100 mg +
-    Paracetamol 325 mg Tablets
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Acerole-SP -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="acerole sp aceclofenac paracetamol serratiopeptidase">
-
-<div class="product-image">
-
-<img
-src="images/products/acerole sp.png"
-alt="Acerole-SP">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Acerole-SP</h3>
-
-<p>
-    Aceclofenac 100 mg +
-    Paracetamol 325 mg +
-    Serratiopeptidase 15 mg
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Aroclear-M Tablets -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="aroclear m tablet montelukast levocetirizine">
-
-<div class="product-image">
-
-<img
-src="images/products/aroclear m tab.png"
-alt="Aroclear-M Tablets">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Aroclear-M Tablets</h3>
-
-<p>
-    Montelukast 10 mg +
-    Levocetirizine 5 mg Tablets
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Aropraz-DSR -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="aropraz dsr pantoprazole domperidone capsule">
-
-<div class="product-image">
-
-<img
-src="images/products/aropraz dsr.png"
-alt="Aropraz-DSR">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Capsules
-</div>
-
-<h3>Aropraz-DSR</h3>
-
-<p>
-    Pantoprazole Gastro-resistant 40 mg
-    & Domperidone Prolonged-release 30 mg
-    Capsules I.P.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Aroviz-RD -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="aroviz rd rabeprazole domperidone capsule">
-
-<div class="product-image">
-
-<img
-src="images/products/aroviz rd.png"
-alt="Aroviz-RD">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Capsules
-</div>
-
-<h3>Aroviz-RD</h3>
-
-<p>
-    Rabeprazole Sodium 20 mg &
-    Domperidone 30 mg (SR) Capsule
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Arovit Must -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="arovit must multivitamin multimineral antioxidant">
-
-<div class="product-image">
-
-<img
-src="images/products/arovit must.png"
-alt="Arovit Must">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Arovit Must</h3>
-
-<p>
-    Multivitamin, Multimineral &
-    Antioxidant Tablets
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Arovimet G2 -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="arovimet g2 glimepiride metformin">
-
-<div class="product-image">
-
-<div class="no-image">+</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Arovimet G2</h3>
-
-<p>
-    Glimepiride 2 mg with
-    Metformin Hydrochloride 500 mg
-    Prolonged-Release Tablets
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Arovimet GV2 -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="arovimet gv2 glimepiride metformin voglibose">
-
-<div class="product-image">
-
-<div class="no-image">+</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Arovimet GV2</h3>
-
-<p>
-    Glimepiride 2 mg +
-    Metformin HCl 500 mg (SR) +
-    Voglibose 0.2 mg
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Telvishal-H -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="telvishal h telmisartan hydrochlorothiazide">
-
-<div class="product-image">
-
-<div class="no-image">+</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Telvishal-H</h3>
-
-<p>
-    Telmisartan 40 mg &
-    Hydrochlorothiazide 12.5 mg
-    Tablets
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Moxovia-CV 625 -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="moxovia cv 625 amoxycillin clavulanate">
-
-<div class="product-image">
-
-<img
-src="images/products/moxovia 625.png"
-alt="Moxovia-CV 625">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Moxovia-CV 625</h3>
-
-<p>
-    Amoxycillin 500 mg &
-    Potassium Clavulanate 125 mg
-    Tablets
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Aropraz-40 -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="aropraz 40 pantoprazole tablet">
-
-<div class="product-image">
-
-<div class="no-image">+</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Aropraz-40</h3>
-
-<p>
-    Pantoprazole 40 mg Tablet
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Colcaff-CP -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="colcaff cp paracetamol phenylephrine caffeine diphenhydramine">
-
-<div class="product-image">
-
-<img
-src="images/products/colcaff.png"
-alt="Colcaff-CP">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Tablets
-</div>
-
-<h3>Colcaff-CP</h3>
-
-<p>
-    Paracetamol, Phenylephrine HCl,
-    Caffeine & Diphenhydramine HCl
-    Tablets
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Doxylence-LB -->
-
-<div class="product-card reveal"
-data-category="tablets"
-data-search="doxylence lb doxycycline lactic acid bacillus">
-
-<div class="product-image">
-
-<img
-src="images/products/doxylence lb.png"
-alt="Doxylence-LB">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Capsules
-</div>
-
-<h3>Doxylence-LB</h3>
-
-<p>
-    Doxycycline &
-    Lactic Acid Bacillus Capsules
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     SYRUPS
-     ======================================================= -->
-
-<div
-class="category"
-id="syrups"
-data-category="syrups">
-
-<div class="category-heading reveal">
-
-<div class="category-title">
-
-<div class="category-number">
-    02
-</div>
-
-<h2>
-    Syrups & Drops
-</h2>
-
-</div>
-
-<p>
-    Liquid pharmaceutical formulations
-</p>
-
-</div>
-
-
-<div class="products-grid">
-
-
-<!-- Aroclear-M Syrup -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="aroclear m syrup montelukast levocetirizine">
-
-<div class="product-image">
-
-<img
-src="images/products/aroclear.png"
-alt="Aroclear-M Syrup">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Syrup
-</div>
-
-<h3>Aroclear-M Syrup</h3>
-
-<p>
-    Montelukast Sodium &
-    Levocetirizine Dihydrochloride Syrup
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Arocough-LS -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="arocough ls levosalbutamol ambroxol guaiphenesin">
-
-<div class="product-image">
-
-<img
-src="images/products/arocough.png"
-alt="Arocough-LS">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Syrup
-</div>
-
-<h3>Arocough-LS</h3>
-
-<p>
-    Levosalbutamol, Ambroxol HCl &
-    Guaiphenesin Syrup
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Moxovia-CV 457 -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="moxovia cv 457 amoxycillin clavulanate oral suspension">
-
-<div class="product-image">
-
-<img
-src="images/products/moxovia 457.png"
-alt="Moxovia-CV 457">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Oral Suspension
-</div>
-
-<h3>Moxovia-CV 457</h3>
-
-<p>
-    Amoxycillin & Potassium
-    Clavulanate Oral Suspension IP
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Chotavit Drops -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="chotavit drops multivitamin multimineral">
-
-<div class="product-image">
-
-<img
-src="images/products/chotavit.png"
-alt="Chotavit Drops">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Drops
-</div>
-
-<h3>Chotavit Drops</h3>
-
-<p>
-    Multivitamin &
-    Multimineral Drops
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Reliva-250 -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="reliva 250 paracetamol pediatric oral suspension">
-
-<div class="product-image">
-
-<img
-src="images/products/reliva.png"
-alt="Reliva-250">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Oral Suspension
-</div>
-
-<h3>Reliva-250</h3>
-
-<p>
-    Paracetamol Pediatric
-    Oral Suspension IP
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Fenorinic -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="fenorinic phenylephrine chlorpheniramine syrup">
-
-<div class="product-image">
-
-<img
-src="images/products/fenorinic.png"
-alt="Fenorinic Syrup">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Syrup
-</div>
-
-<h3>Fenorinic</h3>
-
-<p>
-    Phenylephrine Hydrochloride &
-    Chlorpheniramine Maleate Syrup I.P.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Rid Cough-DX -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="rid cough dx dextromethorphan chlorpheniramine phenylephrine">
-
-<div class="product-image">
-
-<div class="no-image">○</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Syrup
-</div>
-
-<h3>Rid Cough-DX</h3>
-
-<p>
-    Dextromethorphan Hydrobromide,
-    Chlorpheniramine Maleate &
-    Phenylephrine Hydrochloride Syrup
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Little D3 -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="little d3 cholecalciferol vitamin d3 drops">
-
-<div class="product-image">
-
-<img
-src="images/products/little d3.png"
-alt="Little D3 Drops">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Drops
-</div>
-
-<h3>Little D3</h3>
-
-<p>
-    Cholecalciferol
-    (Vitamin D3) Drops
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Gutvion -->
-
-<div class="product-card reveal"
-data-category="syrups"
-data-search="gutvion prebiotic probiotic zinc gluconate">
-
-<div class="product-image">
-
-<div class="no-image">+</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Oral Suspension
-</div>
-
-<h3>Gutvion</h3>
-
-<p>
-    Prebiotic & Probiotic with
-    Zinc Gluconate Oral Suspension
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     INJECTABLES
-     ======================================================= -->
-
-<div
-class="category"
-id="injectables"
-data-category="injectables">
-
-<div class="category-heading reveal">
-
-<div class="category-title">
-
-<div class="category-number">
-    03
-</div>
-
-<h2>Injectables</h2>
-
-</div>
-
-<p>
-    Injectable pharmaceutical formulations
-</p>
-
-</div>
-
-
-<div class="products-grid">
-
-
-<!-- Diclovia A&Q -->
-
-<div class="product-card reveal"
-data-category="injectables"
-data-search="diclovia aq diclofenac sodium injection">
-
-<div class="product-image">
-
-<img
-src="images/products/diclovia aq.png"
-alt="Diclovia A&Q">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Injection
-</div>
-
-<h3>Diclovia A&Q</h3>
-
-<p>
-    Diclofenac Sodium
-    Injection IP
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Arovinerve -->
-
-<div class="product-card reveal"
-data-category="injectables"
-data-search="arovinerve neuro care injection">
-
-<div class="product-image">
-
-<div class="no-image">+</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Injection
-</div>
-
-<h3>Arovinerve</h3>
-
-<p>
-    Neuro Care Injection
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     OINTMENTS
-     ======================================================= -->
-
-<div
-class="category"
-id="ointments"
-data-category="ointments">
-
-<div class="category-heading reveal">
-
-<div class="category-title">
-
-<div class="category-number">
-    04
-</div>
-
-<h2>Ointments</h2>
-
-</div>
-
-<p>
-    Topical pharmaceutical formulations
-</p>
-
-</div>
-
-
-<div class="products-grid">
-
-
-<!-- Mupract -->
-
-<div class="product-card reveal"
-data-category="ointments"
-data-search="mupract mupirocin ointment">
-
-<div class="product-image">
-
-<img
-src="images/products/mupract.png"
-alt="Mupract 5gm">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Ointment
-</div>
-
-<h3>Mupract 5gm</h3>
-
-<p>
-    Mupirocin
-    Ointment IP
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     LOTIONS
-     ======================================================= -->
-
-<div
-class="category"
-id="lotions"
-data-category="lotions">
-
-<div class="category-heading reveal">
-
-<div class="category-title">
-
-<div class="category-number">
-    05
-</div>
-
-<h2>Lotions</h2>
-
-</div>
-
-<p>
-    Topical healthcare formulations
-</p>
-
-</div>
-
-
-<div class="products-grid">
-
-
-<!-- Calaglint-AE -->
-
-<div class="product-card reveal"
-data-category="lotions"
-data-search="calaglint ae calamine light liquid paraffin vitamin e aloe vera">
-
-<div class="product-image">
-
-<div class="no-image">+</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Lotion
-</div>
-
-<h3>Calaglint-AE</h3>
-
-<p>
-    Calamine, Light Liquid Paraffin,
-    Vitamin E & Aloe Vera
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     SOAPS
-     ======================================================= -->
-
-<div
-class="category"
-id="soaps"
-data-category="soaps">
-
-<div class="category-heading reveal">
-
-<div class="category-title">
-
-<div class="category-number">
-    06
-</div>
-
-<h2>Medicated Soaps</h2>
-
-</div>
-
-<p>
-    Medicated cleansing formulations
-</p>
-
-</div>
-
-
-<div class="products-grid">
-
-
-<!-- Aroket -->
-
-<div class="product-card reveal"
-data-category="soaps"
-data-search="aroket ketoconazole soap">
-
-<div class="product-image">
-
-<img
-src="images/products/aroket.png"
-alt="Aroket">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Medicated Soap
-</div>
-
-<h3>Aroket</h3>
-
-<p>
-    Ketoconazole Soap
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Lulivia -->
-
-<div class="product-card reveal"
-data-category="soaps"
-data-search="lulivia luliconazole">
-
-<div class="product-image">
-
-<div class="no-image">+</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-    Medicated Soap
-</div>
-
-<h3>Lulivia</h3>
-
-<p>
-    Luliconazole 1% w/w
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     EMPTY STATE
-     ======================================================= -->
-
-<div class="empty-state" id="emptyState">
-
-<div class="empty-icon">
-    ⌕
-</div>
-
-<h3>
-    No products found
-</h3>
-
-<p>
-    Try another product name, composition
-    or category.
-</p>
-
-</div>
-
-
-<!-- =======================================================
-     ENQUIRY
-     ======================================================= -->
-
-<div class="enquiry reveal">
-
-<div class="enquiry-content">
-
-<div class="section-label">
-    Business Enquiries
-</div>
-
-<h2>
-    Need more information?
-</h2>
-
-<p>
-
-    For product details, availability,
-    distributorship and business enquiries,
-    connect with the Arovia Pharma team.
-
-</p>
-
-<a
-href="contact.html"
-class="btn btn-primary">
-
-    Contact Arovia →
-
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
+<section class="portfolio" id="portfolio">
+ <div class="container">
+  <div class="portfolio-head reveal">
+   <div><div class="section-label">Our Portfolio</div><h2>Pharmaceutical<br>solutions.</h2></div>
+   <p>Browse the Arovia portfolio by formulation category or search for a specific product, composition or active ingredient.</p>
+  </div>
+
+  <div class="search-box reveal">
+   <span class="search-icon">⌕</span>
+   <input id="searchInput" type="search" placeholder="Search product name, composition or ingredient..." aria-label="Search products">
+   <button class="clear-search" id="clearSearch" aria-label="Clear search">×</button>
+  </div>
+
+  <div class="filters reveal">
+   <button class="filter active" data-filter="all">All</button>
+   <button class="filter" data-filter="tablets">Tablets & Capsules</button>
+   <button class="filter" data-filter="syrups">Syrups & Drops</button>
+   <button class="filter" data-filter="injectables">Injectables</button>
+   <button class="filter" data-filter="ointments">Ointments</button>
+   <button class="filter" data-filter="lotions">Lotions</button>
+   <button class="filter" data-filter="soaps">Medicated Soaps</button>
+  </div>
+  <div class="result-status" id="resultStatus">Showing all 27 listed products</div>
+
+  <div class="category" id="tablets" data-category="tablets">
+   <div class="category-head reveal"><div class="category-title"><div class="category-number">01</div><h2>Tablets & Capsules</h2></div><p>Pharmaceutical solid formulations</p></div>
+   <div class="products-grid">
+    <article class="product-card reveal" data-category="tablets" data-search="acerole p aceclofenac paracetamol tablets" data-name="Acerole-P" data-type="Tablets" data-composition="Aceclofenac 100 mg + Paracetamol 325 mg Tablets" data-image="images/products/acerole p.png"><div class="product-image"><img src="images/products/acerole p.png" alt="Acerole-P"></div><div class="product-info"><span class="product-category">Tablets</span><h3>Acerole-P</h3><p>Aceclofenac 100 mg + Paracetamol 325 mg Tablets</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="acerole sp aceclofenac paracetamol serratiopeptidase" data-name="Acerole-SP" data-type="Tablets" data-composition="Aceclofenac 100 mg + Paracetamol 325 mg + Serratiopeptidase 15 mg" data-image="images/products/acerole sp.png"><div class="product-image"><img src="images/products/acerole sp.png" alt="Acerole-SP"></div><div class="product-info"><span class="product-category">Tablets</span><h3>Acerole-SP</h3><p>Aceclofenac 100 mg + Paracetamol 325 mg + Serratiopeptidase 15 mg</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="aroclear m tablet montelukast levocetirizine" data-name="Aroclear-M Tablets" data-type="Tablets" data-composition="Montelukast 10 mg + Levocetirizine 5 mg Tablets" data-image="images/products/aroclear m tab.png"><div class="product-image"><img src="images/products/aroclear m tab.png" alt="Aroclear-M Tablets"></div><div class="product-info"><span class="product-category">Tablets</span><h3>Aroclear-M Tablets</h3><p>Montelukast 10 mg + Levocetirizine 5 mg Tablets</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="aropraz dsr pantoprazole domperidone capsule" data-name="Aropraz-DSR" data-type="Capsules" data-composition="Pantoprazole Gastro-resistant 40 mg & Domperidone Prolonged-release 30 mg Capsules I.P." data-image="images/products/aropraz dsr.png"><div class="product-image"><img src="images/products/aropraz dsr.png" alt="Aropraz-DSR"></div><div class="product-info"><span class="product-category">Capsules</span><h3>Aropraz-DSR</h3><p>Pantoprazole Gastro-resistant 40 mg & Domperidone Prolonged-release 30 mg Capsules I.P.</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="aroviz rd rabeprazole domperidone capsule" data-name="Aroviz-RD" data-type="Capsules" data-composition="Rabeprazole Sodium 20 mg & Domperidone 30 mg (SR) Capsule" data-image="images/products/aroviz rd.png"><div class="product-image"><img src="images/products/aroviz rd.png" alt="Aroviz-RD"></div><div class="product-info"><span class="product-category">Capsules</span><h3>Aroviz-RD</h3><p>Rabeprazole Sodium 20 mg & Domperidone 30 mg (SR) Capsule</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="arovit must multivitamin multimineral antioxidant" data-name="Arovit Must" data-type="Tablets" data-composition="Multivitamin, Multimineral & Antioxidant Tablets" data-image="images/products/arovit must.png"><div class="product-image"><img src="images/products/arovit must.png" alt="Arovit Must"></div><div class="product-info"><span class="product-category">Tablets</span><h3>Arovit Must</h3><p>Multivitamin, Multimineral & Antioxidant Tablets</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="arovimet g2 glimepiride metformin" data-name="Arovimet G2" data-type="Tablets" data-composition="Glimepiride 2 mg with Metformin Hydrochloride 500 mg Prolonged-Release Tablets"><div class="product-image"><div class="no-image">+</div></div><div class="product-info"><span class="product-category">Tablets</span><h3>Arovimet G2</h3><p>Glimepiride 2 mg with Metformin Hydrochloride 500 mg Prolonged-Release Tablets</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="arovimet gv2 glimepiride metformin voglibose" data-name="Arovimet GV2" data-type="Tablets" data-composition="Glimepiride 2 mg + Metformin HCl 500 mg (SR) + Voglibose 0.2 mg"><div class="product-image"><div class="no-image">+</div></div><div class="product-info"><span class="product-category">Tablets</span><h3>Arovimet GV2</h3><p>Glimepiride 2 mg + Metformin HCl 500 mg (SR) + Voglibose 0.2 mg</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="telvishal h telmisartan hydrochlorothiazide" data-name="Telvishal-H" data-type="Tablets" data-composition="Telmisartan 40 mg & Hydrochlorothiazide 12.5 mg Tablets"><div class="product-image"><div class="no-image">+</div></div><div class="product-info"><span class="product-category">Tablets</span><h3>Telvishal-H</h3><p>Telmisartan 40 mg & Hydrochlorothiazide 12.5 mg Tablets</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="moxovia cv 625 amoxycillin clavulanate" data-name="Moxovia-CV 625" data-type="Tablets" data-composition="Amoxycillin 500 mg & Potassium Clavulanate 125 mg Tablets" data-image="images/products/moxovia 625.png"><div class="product-image"><img src="images/products/moxovia 625.png" alt="Moxovia-CV 625"></div><div class="product-info"><span class="product-category">Tablets</span><h3>Moxovia-CV 625</h3><p>Amoxycillin 500 mg & Potassium Clavulanate 125 mg Tablets</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="aropraz 40 pantoprazole tablet" data-name="Aropraz-40" data-type="Tablets" data-composition="Pantoprazole 40 mg Tablet"><div class="product-image"><div class="no-image">+</div></div><div class="product-info"><span class="product-category">Tablets</span><h3>Aropraz-40</h3><p>Pantoprazole 40 mg Tablet</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="colcaff cp paracetamol phenylephrine caffeine diphenhydramine" data-name="Colcaff-CP" data-type="Tablets" data-composition="Paracetamol, Phenylephrine HCl, Caffeine & Diphenhydramine HCl Tablets" data-image="images/products/colcaff.png"><div class="product-image"><img src="images/products/colcaff.png" alt="Colcaff-CP"></div><div class="product-info"><span class="product-category">Tablets</span><h3>Colcaff-CP</h3><p>Paracetamol, Phenylephrine HCl, Caffeine & Diphenhydramine HCl Tablets</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="tablets" data-search="doxylence lb doxycycline lactic acid bacillus" data-name="Doxylence-LB" data-type="Capsules" data-composition="Doxycycline & Lactic Acid Bacillus Capsules" data-image="images/products/doxylence lb.png"><div class="product-image"><img src="images/products/doxylence lb.png" alt="Doxylence-LB"></div><div class="product-info"><span class="product-category">Capsules</span><h3>Doxylence-LB</h3><p>Doxycycline & Lactic Acid Bacillus Capsules</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+   </div>
+  </div>
+
+  <div class="category" id="syrups" data-category="syrups">
+   <div class="category-head reveal"><div class="category-title"><div class="category-number">02</div><h2>Syrups & Drops</h2></div><p>Liquid pharmaceutical formulations</p></div>
+   <div class="products-grid">
+    <article class="product-card reveal" data-category="syrups" data-search="aroclear m syrup montelukast levocetirizine" data-name="Aroclear-M Syrup" data-type="Syrup" data-composition="Montelukast Sodium & Levocetirizine Dihydrochloride Syrup" data-image="images/products/aroclear.png"><div class="product-image"><img src="images/products/aroclear.png" alt="Aroclear-M Syrup"></div><div class="product-info"><span class="product-category">Syrup</span><h3>Aroclear-M Syrup</h3><p>Montelukast Sodium & Levocetirizine Dihydrochloride Syrup</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="syrups" data-search="arocough ls levosalbutamol ambroxol guaiphenesin" data-name="Arocough-LS" data-type="Syrup" data-composition="Levosalbutamol, Ambroxol HCl & Guaiphenesin Syrup" data-image="images/products/arocough.png"><div class="product-image"><img src="images/products/arocough.png" alt="Arocough-LS"></div><div class="product-info"><span class="product-category">Syrup</span><h3>Arocough-LS</h3><p>Levosalbutamol, Ambroxol HCl & Guaiphenesin Syrup</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="syrups" data-search="moxovia cv 457 amoxycillin clavulanate oral suspension" data-name="Moxovia-CV 457" data-type="Oral Suspension" data-composition="Amoxycillin & Potassium Clavulanate Oral Suspension IP" data-image="images/products/moxovia 457.png"><div class="product-image"><img src="images/products/moxovia 457.png" alt="Moxovia-CV 457"></div><div class="product-info"><span class="product-category">Oral Suspension</span><h3>Moxovia-CV 457</h3><p>Amoxycillin & Potassium Clavulanate Oral Suspension IP</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="syrups" data-search="chotavit drops multivitamin multimineral" data-name="Chotavit Drops" data-type="Drops" data-composition="Multivitamin & Multimineral Drops" data-image="images/products/chotavit.png"><div class="product-image"><img src="images/products/chotavit.png" alt="Chotavit Drops"></div><div class="product-info"><span class="product-category">Drops</span><h3>Chotavit Drops</h3><p>Multivitamin & Multimineral Drops</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="syrups" data-search="reliva 250 paracetamol pediatric oral suspension" data-name="Reliva-250" data-type="Oral Suspension" data-composition="Paracetamol Pediatric Oral Suspension IP" data-image="images/products/reliva.png"><div class="product-image"><img src="images/products/reliva.png" alt="Reliva-250"></div><div class="product-info"><span class="product-category">Oral Suspension</span><h3>Reliva-250</h3><p>Paracetamol Pediatric Oral Suspension IP</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="syrups" data-search="fenorinic phenylephrine chlorpheniramine syrup" data-name="Fenorinic" data-type="Syrup" data-composition="Phenylephrine Hydrochloride & Chlorpheniramine Maleate Syrup I.P." data-image="images/products/fenorinic.png"><div class="product-image"><img src="images/products/fenorinic.png" alt="Fenorinic Syrup"></div><div class="product-info"><span class="product-category">Syrup</span><h3>Fenorinic</h3><p>Phenylephrine Hydrochloride & Chlorpheniramine Maleate Syrup I.P.</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="syrups" data-search="rid cough dx dextromethorphan chlorpheniramine phenylephrine" data-name="Rid Cough-DX" data-type="Syrup" data-composition="Dextromethorphan Hydrobromide, Chlorpheniramine Maleate & Phenylephrine Hydrochloride Syrup"><div class="product-image"><div class="no-image">○</div></div><div class="product-info"><span class="product-category">Syrup</span><h3>Rid Cough-DX</h3><p>Dextromethorphan Hydrobromide, Chlorpheniramine Maleate & Phenylephrine Hydrochloride Syrup</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="syrups" data-search="little d3 cholecalciferol vitamin d3 drops" data-name="Little D3" data-type="Drops" data-composition="Cholecalciferol (Vitamin D3) Drops" data-image="images/products/little d3.png"><div class="product-image"><img src="images/products/little d3.png" alt="Little D3 Drops"></div><div class="product-info"><span class="product-category">Drops</span><h3>Little D3</h3><p>Cholecalciferol (Vitamin D3) Drops</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="syrups" data-search="gutvion prebiotic probiotic zinc gluconate" data-name="Gutvion" data-type="Oral Suspension" data-composition="Prebiotic & Probiotic with Zinc Gluconate Oral Suspension"><div class="product-image"><div class="no-image">+</div></div><div class="product-info"><span class="product-category">Oral Suspension</span><h3>Gutvion</h3><p>Prebiotic & Probiotic with Zinc Gluconate Oral Suspension</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+   </div>
+  </div>
+
+  <div class="category" id="injectables" data-category="injectables">
+   <div class="category-head reveal"><div class="category-title"><div class="category-number">03</div><h2>Injectables</h2></div><p>Injectable pharmaceutical formulations</p></div>
+   <div class="products-grid">
+    <article class="product-card reveal" data-category="injectables" data-search="diclovia aq diclofenac sodium injection" data-name="Diclovia A&Q" data-type="Injection" data-composition="Diclofenac Sodium Injection IP" data-image="images/products/diclovia aq.png"><div class="product-image"><img src="images/products/diclovia aq.png" alt="Diclovia A&Q"></div><div class="product-info"><span class="product-category">Injection</span><h3>Diclovia A&Q</h3><p>Diclofenac Sodium Injection IP</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="injectables" data-search="arovinerve neuro care injection" data-name="Arovinerve" data-type="Injection" data-composition="Neuro Care Injection"><div class="product-image"><div class="no-image">+</div></div><div class="product-info"><span class="product-category">Injection</span><h3>Arovinerve</h3><p>Neuro Care Injection</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+   </div>
+  </div>
+
+  <div class="category" id="ointments" data-category="ointments">
+   <div class="category-head reveal"><div class="category-title"><div class="category-number">04</div><h2>Ointments</h2></div><p>Topical pharmaceutical formulations</p></div>
+   <div class="products-grid">
+    <article class="product-card reveal" data-category="ointments" data-search="mupract mupirocin ointment" data-name="Mupract 5gm" data-type="Ointment" data-composition="Mupirocin Ointment IP" data-image="images/products/mupract.png"><div class="product-image"><img src="images/products/mupract.png" alt="Mupract 5gm"></div><div class="product-info"><span class="product-category">Ointment</span><h3>Mupract 5gm</h3><p>Mupirocin Ointment IP</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+   </div>
+  </div>
+
+  <div class="category" id="lotions" data-category="lotions">
+   <div class="category-head reveal"><div class="category-title"><div class="category-number">05</div><h2>Lotions</h2></div><p>Topical healthcare formulations</p></div>
+   <div class="products-grid">
+    <article class="product-card reveal" data-category="lotions" data-search="calaglint ae calamine light liquid paraffin vitamin e aloe vera" data-name="Calaglint-AE" data-type="Lotion" data-composition="Calamine, Light Liquid Paraffin, Vitamin E & Aloe Vera"><div class="product-image"><div class="no-image">+</div></div><div class="product-info"><span class="product-category">Lotion</span><h3>Calaglint-AE</h3><p>Calamine, Light Liquid Paraffin, Vitamin E & Aloe Vera</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+   </div>
+  </div>
+
+  <div class="category" id="soaps" data-category="soaps">
+   <div class="category-head reveal"><div class="category-title"><div class="category-number">06</div><h2>Medicated Soaps</h2></div><p>Medicated cleansing formulations</p></div>
+   <div class="products-grid">
+    <article class="product-card reveal" data-category="soaps" data-search="aroket ketoconazole soap" data-name="Aroket" data-type="Medicated Soap" data-composition="Ketoconazole Soap" data-image="images/products/aroket.png"><div class="product-image"><img src="images/products/aroket.png" alt="Aroket"></div><div class="product-info"><span class="product-category">Medicated Soap</span><h3>Aroket</h3><p>Ketoconazole Soap</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+    <article class="product-card reveal" data-category="soaps" data-search="lulivia luliconazole" data-name="Lulivia" data-type="Medicated Soap" data-composition="Luliconazole 1% w/w"><div class="product-image"><div class="no-image">+</div></div><div class="product-info"><span class="product-category">Medicated Soap</span><h3>Lulivia</h3><p>Luliconazole 1% w/w</p><div class="product-action"><span>Product details</span><span>→</span></div></div></article>
+   </div>
+  </div>
+
+  <div class="empty-state" id="emptyState">
+   <div class="empty-icon">⌕</div><h3>No products found</h3><p>Try another product name, composition, ingredient or category.</p>
+  </div>
+
+  <div class="enquiry reveal">
+   <div class="enquiry-content">
+    <div class="section-label">Business Enquiries</div>
+    <h2>Need more information?</h2>
+    <p>For product details, availability, distributorship and business enquiries, connect with the Arovia Pharma team.</p>
+    <a href="contact.html" class="btn">Contact Arovia →</a>
+   </div>
+  </div>
+ </div>
 </section>
-
-
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
+</main>
 
 <footer>
-
-<div class="footer-grid">
-
-
-<div class="footer-brand">
-
-<img
-src="logo 2.jpeg"
-alt="Arovia Pharma"
-class="footer-logo">
-
-<p>
-
-    Arovia Pharma Pvt. Ltd.
-
-    <br><br>
-
-    The Path To Health.
-
-    <br><br>
-
-    Quality • Trust • Innovation
-
-</p>
-
-</div>
-
-
-<div class="footer-column">
-
-<h4>
-    Explore
-</h4>
-
-<a href="index.html">
-    Home
-</a>
-
-<a href="about.html">
-    About Us
-</a>
-
-<a href="products.html">
-    Products
-</a>
-
-<a href="contact.html">
-    Contact
-</a>
-
-</div>
-
-
-<div class="footer-column">
-
-<h4>
-    Arovia
-</h4>
-
-<a href="about.html">
-    Our Story
-</a>
-
-<a href="products.html">
-    Pharmaceutical Portfolio
-</a>
-
-<a href="contact.html">
-    Business Enquiries
-</a>
-
-</div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-<span>
-    © 2026 Arovia Pharma Pvt. Ltd.
-</span>
-
-<span>
-    The Path To Health
-</span>
-
-</div>
-
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-brand"><img src="logo 2.jpeg" alt="Arovia Pharma" class="footer-logo"><p>Arovia Pharma Pvt. Ltd.<br><br>The Path To Health.<br><br>Quality • Trust • Innovation</p></div>
+   <div class="footer-column"><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="contact.html">Contact</a></div>
+   <div class="footer-column"><h4>Portfolio</h4><a href="#tablets">Tablets & Capsules</a><a href="#syrups">Syrups & Drops</a><a href="#injectables">Injectables</a><a href="#ointments">Ointments</a><a href="#lotions">Lotions</a><a href="#soaps">Medicated Soaps</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Arovia Pharma Pvt. Ltd.</span><span>The Path To Health</span></div>
+ </div>
 </footer>
 
-
-<!-- =======================================================
-     JAVASCRIPT
-     ======================================================= -->
+<div class="modal" id="productModal" aria-hidden="true">
+ <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <button class="modal-close" id="modalClose" aria-label="Close product details">×</button>
+  <div class="modal-top">
+   <div class="modal-image" id="modalImage"></div>
+   <div class="modal-content">
+    <span class="product-category" id="modalType">Product</span>
+    <h2 id="modalName">Product</h2>
+    <p id="modalComposition">Composition</p>
+    <div class="modal-note">Product information shown here is for portfolio identification. For prescribing, dosage, contraindications or other clinical information, consult the official product information and a qualified healthcare professional.</div>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:25px">Enquire About Product →</a>
+   </div>
+  </div>
+ </div>
+</div>
 
 <script>
+const navbar=document.getElementById("navbar");
+const menuToggle=document.getElementById("menuToggle");
+const navLinks=document.getElementById("navLinks");
 
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-const navbar =
-document.getElementById("navbar");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 50){
-
-        navbar.classList.add("scrolled");
-
-    }else{
-
-        navbar.classList.remove("scrolled");
-
-    }
-
+window.addEventListener("scroll",()=>navbar.classList.toggle("scrolled",window.scrollY>45),{passive:true});
+menuToggle.addEventListener("click",()=>{
+ const open=navLinks.classList.toggle("active");
+ menuToggle.classList.toggle("open",open);
+ menuToggle.setAttribute("aria-expanded",String(open));
+ document.body.classList.toggle("menu-open",open);
 });
+document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>{
+ navLinks.classList.remove("active");menuToggle.classList.remove("open");
+ menuToggle.setAttribute("aria-expanded","false");document.body.classList.remove("menu-open");
+}));
 
-
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
-
-const menuToggle =
-document.getElementById("menuToggle");
-
-const navLinks =
-document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", () => {
-
-    navLinks.classList.toggle("active");
-
-});
-
-
-document.querySelectorAll(".nav-links a")
-.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
-
-    });
-
-});
-
-
-/* =========================================================
-   SEARCH + FILTER
-   ========================================================= */
-
-const searchInput =
-document.getElementById("searchInput");
-
-const filterButtons =
-document.querySelectorAll(".filter-btn");
-
-const productCards =
-document.querySelectorAll(".product-card");
-
-const categories =
-document.querySelectorAll(".category");
-
-const emptyState =
-document.getElementById("emptyState");
-
-const resultStatus =
-document.getElementById("resultStatus");
-
-let activeFilter = "all";
-
+const searchInput=document.getElementById("searchInput");
+const clearSearch=document.getElementById("clearSearch");
+const filterButtons=document.querySelectorAll(".filter");
+const cards=[...document.querySelectorAll(".product-card")];
+const categories=[...document.querySelectorAll(".category")];
+const resultStatus=document.getElementById("resultStatus");
+const emptyState=document.getElementById("emptyState");
+let activeFilter="all";
 
 function updateProducts(){
+ const query=searchInput.value.toLowerCase().trim();
+ clearSearch.classList.toggle("show",!!query);
+ let count=0;
 
-    const search =
-    searchInput.value
-    .toLowerCase()
-    .trim();
+ cards.forEach(card=>{
+   const matchesCategory=activeFilter==="all" || card.dataset.category===activeFilter;
+   const haystack=((card.innerText||"")+" "+(card.dataset.search||"")).toLowerCase();
+   const matchesSearch=!query || haystack.includes(query);
+   const visible=matchesCategory && matchesSearch;
+   card.classList.toggle("hidden",!visible);
+   if(visible) count++;
+ });
 
-    let visibleCount = 0;
+ categories.forEach(category=>{
+   const hasVisible=[...category.querySelectorAll(".product-card")].some(card=>!card.classList.contains("hidden"));
+   category.style.display=hasVisible?"block":"none";
+ });
 
+ emptyState.classList.toggle("show",count===0);
 
-    productCards.forEach(card => {
-
-        const category =
-        card.dataset.category || "";
-
-        const searchableText =
-        (
-            card.innerText +
-            " " +
-            (card.dataset.search || "")
-        ).toLowerCase();
-
-
-        const matchesCategory =
-        activeFilter === "all" ||
-        category === activeFilter;
-
-
-        const matchesSearch =
-        searchableText.includes(search);
-
-
-        if(
-            matchesCategory &&
-            matchesSearch
-        ){
-
-            card.classList.remove("hidden");
-
-            visibleCount++;
-
-        }else{
-
-            card.classList.add("hidden");
-
-        }
-
-    });
-
-
-    /* CATEGORY VISIBILITY */
-
-    categories.forEach(category => {
-
-        const cards =
-        category.querySelectorAll(".product-card");
-
-        let visible = false;
-
-        cards.forEach(card => {
-
-            if(
-                !card.classList.contains("hidden")
-            ){
-
-                visible = true;
-
-            }
-
-        });
-
-
-        category.style.display =
-        visible ? "block" : "none";
-
-    });
-
-
-    /* FEATURED SECTION */
-
-    const featured =
-    document.querySelector(".featured-section");
-
-    const featuredCards =
-    featured.querySelectorAll(".product-card");
-
-    let featuredVisible = false;
-
-    featuredCards.forEach(card => {
-
-        if(
-            !card.classList.contains("hidden")
-        ){
-
-            featuredVisible = true;
-
-        }
-
-    });
-
-
-    featured.style.display =
-    featuredVisible ? "block" : "none";
-
-
-    /* RESULT TEXT */
-
-    if(search){
-
-        resultStatus.textContent =
-        visibleCount +
-        " product" +
-        (visibleCount === 1 ? "" : "s") +
-        " found";
-
-    }else if(activeFilter !== "all"){
-
-        const activeButton =
-        document.querySelector(
-            `.filter-btn[data-filter="${activeFilter}"]`
-        );
-
-        resultStatus.textContent =
-        "Showing " +
-        activeButton.textContent;
-
-    }else{
-
-        resultStatus.textContent =
-        "Showing all products";
-
-    }
-
-
-    /* EMPTY STATE */
-
-    if(visibleCount === 0){
-
-        emptyState.classList.add("show");
-
-    }else{
-
-        emptyState.classList.remove("show");
-
-    }
-
+ if(query){
+   resultStatus.textContent=`${count} product${count===1?"":"s"} found`;
+ }else if(activeFilter!=="all"){
+   const active=document.querySelector(`.filter[data-filter="${activeFilter}"]`);
+   resultStatus.textContent=`Showing ${active.textContent}`;
+ }else{
+   resultStatus.textContent="Showing all 27 listed products";
+ }
 }
 
-
-searchInput.addEventListener(
-    "input",
-    updateProducts
-);
-
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        filterButtons.forEach(btn => {
-
-            btn.classList.remove("active");
-
-        });
-
-
-        button.classList.add("active");
-
-
-        activeFilter =
-        button.dataset.filter;
-
-
-        updateProducts();
-
-    });
-
+searchInput.addEventListener("input",updateProducts);
+clearSearch.addEventListener("click",()=>{searchInput.value="";updateProducts();searchInput.focus()});
+filterButtons.forEach(button=>{
+ button.addEventListener("click",()=>{
+  filterButtons.forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  activeFilter=button.dataset.filter;
+  updateProducts();
+  document.getElementById(activeFilter==="all"?"portfolio":activeFilter)?.scrollIntoView({behavior:"smooth",block:"start"});
+ });
 });
 
+/* PRODUCT MODAL */
+const modal=document.getElementById("productModal");
+const modalClose=document.getElementById("modalClose");
+const modalName=document.getElementById("modalName");
+const modalType=document.getElementById("modalType");
+const modalComposition=document.getElementById("modalComposition");
+const modalImage=document.getElementById("modalImage");
 
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
+function openModal(card){
+ modalName.textContent=card.dataset.name||"Product";
+ modalType.textContent=card.dataset.type||"Product";
+ modalComposition.textContent=card.dataset.composition||"Product information";
+ modalImage.innerHTML=card.dataset.image
+  ? `<img src="${card.dataset.image}" alt="${card.dataset.name||"Product"}">`
+  : `<div class="no-image">+</div>`;
+ modal.classList.add("show");
+ modal.setAttribute("aria-hidden","false");
+ document.body.classList.add("modal-open");
+ modalClose.focus();
+}
+function closeModal(){
+ modal.classList.remove("show");
+ modal.setAttribute("aria-hidden","true");
+ document.body.classList.remove("modal-open");
+}
+cards.forEach(card=>card.addEventListener("click",()=>openModal(card)));
+modalClose.addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 
-const revealElements =
-document.querySelectorAll(".reveal");
-
-
-const revealObserver =
-new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("active");
-
-                revealObserver.unobserve(
-                    entry.target
-                );
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold:.10
-    }
-
-);
-
-
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================================================
-   INITIAL STATE
-   ========================================================= */
+/* REVEAL */
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("active");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.1});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+window.addEventListener("load",()=>document.querySelectorAll(".hero .reveal").forEach(el=>el.classList.add("active")));
 
 updateProducts();
-
 </script>
-
-
 </body>
 </html>
