@@ -1,34 +1,46 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Arovia Pharma Pvt. Ltd. - The Path To Health. Quality, Trust and Innovation in pharmaceutical healthcare.">
-<meta name="keywords" content="Arovia Pharma, pharmaceutical company, healthcare, medicines, tablets, capsules, syrups">
+<meta name="description"
+content="Arovia Pharma Pvt. Ltd. — Quality, Trust and Innovation in pharmaceutical healthcare.">
+
+<meta name="keywords"
+content="Arovia Pharma, pharmaceutical company, healthcare, medicines, tablets, capsules, syrups">
+
 <meta name="author" content="Arovia Pharma Pvt. Ltd.">
+
 <meta name="theme-color" content="#061827">
 
 <title>Arovia Pharma | The Path To Health</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 
 <style>
 
 /* =========================================================
-   AROVIA PHARMA 3.0
-   MASTER DESIGN SYSTEM
+   AROVIA PHARMA 4.0
+   CORPORATE DIGITAL EXPERIENCE
 ========================================================= */
 
 :root{
+
     --navy:#0A2540;
-    --deep:#04131F;
-    --deep2:#071C2E;
+    --deep:#031019;
+    --deep2:#061827;
+
     --teal:#005B60;
     --cyan:#00B4D8;
     --mint:#9BD8CE;
+
     --ice:#F3FAFB;
     --white:#FFFFFF;
 
@@ -36,17 +48,16 @@
     --muted:#667987;
 
     --line:rgba(10,37,64,.10);
-    --dark-line:rgba(255,255,255,.10);
 
-    --shadow-sm:0 10px 35px rgba(4,19,31,.08);
-    --shadow:0 25px 80px rgba(4,19,31,.13);
-    --shadow-lg:0 35px 100px rgba(4,19,31,.20);
+    --shadow:
+        0 30px 100px rgba(3,16,25,.13);
+
+    --container:min(1280px,90%);
 
     --radius:28px;
-    --radius-sm:18px;
 
-    --container:min(1250px,88%);
 }
+
 
 /* =========================================================
    RESET
@@ -63,10 +74,15 @@ html{
 }
 
 body{
+
     font-family:"DM Sans",Arial,sans-serif;
+
     color:var(--text);
+
     background:#fff;
+
     overflow-x:hidden;
+
 }
 
 body.menu-open{
@@ -92,76 +108,162 @@ img{
     color:#fff;
 }
 
-::-webkit-scrollbar{
-    width:8px;
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+.progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:3px;
+
+    z-index:9999;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--mint)
+        );
+
+    box-shadow:
+        0 0 15px rgba(0,180,216,.7);
+
 }
 
-::-webkit-scrollbar-track{
-    background:var(--ice);
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,180,216,.09),
+            transparent 70%
+        );
+
+    filter:blur(15px);
+
 }
 
-::-webkit-scrollbar-thumb{
-    background:var(--teal);
-    border-radius:20px;
-}
 
 /* =========================================================
    GLOBAL
 ========================================================= */
 
 .container{
+
     width:var(--container);
+
     margin:auto;
+
 }
 
 .section{
-    padding:125px 0;
+
+    padding:140px 0;
+
 }
 
 .label{
-    margin-bottom:18px;
+
+    margin-bottom:20px;
+
     color:var(--teal);
+
     font-size:11px;
+
     font-weight:800;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
+
 }
 
 .dark .label,
 .vision .label{
+
     color:var(--mint);
+
 }
 
 .section-title{
+
     font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            82px
+        );
+
+    line-height:.94;
+
+    letter-spacing:-5px;
+
     color:var(--navy);
-    font-size:clamp(43px,5.2vw,72px);
-    line-height:.98;
-    letter-spacing:-4px;
+
 }
 
 .dark .section-title,
 .vision .section-title{
+
     color:#fff;
+
 }
+
 
 /* =========================================================
    BUTTONS
 ========================================================= */
 
 .btn{
-    min-height:54px;
-    padding:0 25px;
+
+    min-height:56px;
+
+    padding:
+        0 27px;
 
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
-    gap:12px;
+
+    gap:13px;
 
     border-radius:999px;
 
-    font-size:13px;
+    font-size:12px;
+
     font-weight:800;
+
+    letter-spacing:.5px;
 
     cursor:pointer;
 
@@ -170,188 +272,232 @@ img{
         box-shadow .35s ease,
         background .35s ease,
         color .35s ease;
+
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-5px);
+
 }
 
 .btn-primary{
+
     color:#fff;
-    background:linear-gradient(
-        135deg,
-        var(--cyan),
-        var(--teal)
-    );
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--teal)
+        );
 
     box-shadow:
-        0 15px 40px rgba(0,180,216,.20);
+        0 18px 50px
+        rgba(0,180,216,.25);
+
 }
 
 .btn-primary:hover{
-    transform:translateY(-4px);
+
     box-shadow:
-        0 24px 55px rgba(0,180,216,.32);
+        0 25px 65px
+        rgba(0,180,216,.38);
+
 }
 
 .btn-glass{
+
     color:#fff;
 
-    border:1px solid rgba(255,255,255,.24);
+    border:
+        1px solid
+        rgba(255,255,255,.25);
 
-    background:rgba(255,255,255,.07);
+    background:
+        rgba(255,255,255,.07);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:
+        blur(20px);
+
 }
 
 .btn-glass:hover{
+
     background:#fff;
+
     color:var(--navy);
-    transform:translateY(-4px);
+
 }
 
 .btn-light{
+
     background:#fff;
+
     color:var(--navy);
+
 }
 
-.btn-light:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 45px rgba(0,0,0,.18);
-}
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-.reveal{
-    opacity:0;
-    transform:translateY(35px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:none;
-}
 
 /* =========================================================
    NAVBAR
 ========================================================= */
 
 .navbar{
+
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
-    z-index:1000;
 
-    padding:21px 0;
+    z-index:5000;
 
-    transition:.4s ease;
+    padding:24px 0;
+
+    transition:
+        padding .5s ease,
+        background .5s ease,
+        box-shadow .5s ease;
+
 }
 
 .navbar.scrolled{
-    padding:10px 0;
 
-    background:rgba(255,255,255,.90);
+    padding:12px 0;
 
-    backdrop-filter:blur(22px);
+    background:
+        rgba(3,16,25,.78);
+
+    backdrop-filter:
+        blur(25px);
 
     box-shadow:
-        0 12px 45px rgba(4,19,31,.08);
+        0 15px 50px
+        rgba(0,0,0,.15);
+
 }
 
 .nav-inner{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
 }
 
 .logo img{
+
     width:145px;
-    transition:.3s;
+
+    transition:.4s;
+
 }
 
 .navbar.scrolled .logo img{
+
     width:125px;
+
 }
 
 .nav-links{
+
     display:flex;
+
     align-items:center;
-    gap:34px;
+
+    gap:35px;
 
     list-style:none;
+
 }
 
 .nav-links a{
+
     position:relative;
 
     color:#fff;
 
     font-size:13px;
+
     font-weight:700;
 
     transition:.3s;
-}
 
-.navbar.scrolled .nav-links a{
-    color:var(--navy);
 }
 
 .nav-links a::after{
+
     content:"";
 
     position:absolute;
+
     left:0;
+
     bottom:-8px;
 
     width:0;
+
     height:2px;
 
-    border-radius:2px;
+    border-radius:5px;
 
     background:var(--cyan);
 
     transition:.3s;
+
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after{
+
     width:100%;
+
 }
 
 .nav-contact{
-    padding:11px 20px;
 
-    border:1px solid rgba(255,255,255,.35);
+    padding:
+        11px 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.30);
+
     border-radius:999px;
-}
 
-.navbar.scrolled .nav-contact{
-    border-color:var(--teal);
 }
 
 .nav-contact:hover{
+
     background:var(--teal);
-    color:#fff!important;
+
 }
 
 .menu-toggle{
+
     display:none;
 
-    width:45px;
-    height:45px;
+    width:46px;
+    height:46px;
 
     border:0;
+
     border-radius:50%;
 
-    background:rgba(255,255,255,.10);
+    background:
+        rgba(255,255,255,.10);
 
     cursor:pointer;
+
 }
 
 .menu-toggle span{
+
     display:block;
 
     width:19px;
@@ -362,38 +508,22 @@ img{
     background:#fff;
 
     transition:.3s;
+
 }
 
-.navbar.scrolled .menu-toggle{
-    background:var(--ice);
-}
-
-.navbar.scrolled .menu-toggle span{
-    background:var(--navy);
-}
-
-.menu-toggle.open span:nth-child(1){
-    transform:translateY(6px) rotate(45deg);
-}
-
-.menu-toggle.open span:nth-child(2){
-    opacity:0;
-}
-
-.menu-toggle.open span:nth-child(3){
-    transform:translateY(-6px) rotate(-45deg);
-}
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero{
-    min-height:100svh;
 
     position:relative;
 
+    min-height:100svh;
+
     display:flex;
+
     align-items:center;
 
     overflow:hidden;
@@ -401,75 +531,71 @@ img{
     color:#fff;
 
     background:
+
         linear-gradient(
-            105deg,
-            rgba(4,19,31,.99),
-            rgba(5,43,57,.93) 50%,
-            rgba(0,91,96,.78)
+            110deg,
+            rgba(3,16,25,.98),
+            rgba(4,35,48,.91),
+            rgba(0,91,96,.70)
         ),
+
         url("1000447689.jpg")
         center/cover;
+
 }
 
 .hero::before{
+
     content:"";
 
     position:absolute;
 
-    width:800px;
-    height:800px;
-
-    right:-300px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    border-radius:50%;
+    inset:0;
 
     background:
+
         radial-gradient(
-            circle,
-            rgba(0,180,216,.22),
-            transparent 68%
+            circle at 75% 45%,
+            rgba(0,180,216,.20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(155,216,206,.08),
+            transparent 30%
         );
 
-    filter:blur(25px);
 }
 
-.hero::after{
-    content:"";
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.hero-grid-bg{
 
     position:absolute;
+
     inset:0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(4,19,31,.35),
-            transparent 70%
-        );
-
-    pointer-events:none;
-}
-
-.grid-noise{
-    position:absolute;
-    inset:0;
-
-    opacity:.10;
+    opacity:.12;
 
     background-image:
+
         linear-gradient(
-            rgba(255,255,255,.05) 1px,
+            rgba(255,255,255,.06) 1px,
             transparent 1px
         ),
+
         linear-gradient(
             90deg,
-            rgba(255,255,255,.05) 1px,
+            rgba(255,255,255,.06) 1px,
             transparent 1px
         );
 
-    background-size:70px 70px;
+    background-size:
+        80px 80px;
 
     mask-image:
         linear-gradient(
@@ -477,56 +603,98 @@ img{
             black,
             transparent
         );
+
 }
 
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#particles{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    opacity:.75;
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
 .hero-inner{
+
     position:relative;
+
     z-index:3;
 
-    width:min(1320px,90%);
+    width:
+        min(
+            1320px,
+            90%
+        );
 
     margin:auto;
 
-    padding:150px 0 90px;
+    padding:
+        150px 0 90px;
+
 }
 
-.hero-grid{
-    display:grid;
+.hero-content{
 
-    grid-template-columns:1.08fr .92fr;
+    max-width:850px;
 
-    gap:65px;
-
-    align-items:center;
 }
 
 .eyebrow{
+
     display:inline-flex;
 
     align-items:center;
-    gap:10px;
 
-    padding:9px 15px;
+    gap:11px;
 
-    border:1px solid rgba(255,255,255,.20);
+    padding:
+        10px 17px;
+
+    margin-bottom:30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
 
     border-radius:999px;
 
-    background:rgba(255,255,255,.06);
+    background:
+        rgba(255,255,255,.06);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:
+        blur(15px);
 
-    color:#d9f7f5;
+    color:#dff9f7;
 
     font-size:10px;
+
     font-weight:800;
+
     letter-spacing:2.5px;
+
     text-transform:uppercase;
 
-    margin-bottom:28px;
 }
 
 .eyebrow-dot{
+
     width:7px;
     height:7px;
 
@@ -535,78 +703,107 @@ img{
     background:var(--mint);
 
     box-shadow:
-        0 0 18px var(--mint);
+        0 0 20px
+        var(--mint);
 
-    animation:pulse 2s infinite;
+    animation:
+        pulse 2s infinite;
+
 }
 
 @keyframes pulse{
+
     50%{
-        transform:scale(1.35);
-        opacity:.75;
+
+        transform:scale(1.5);
+
+        opacity:.6;
+
     }
+
 }
 
 .hero h1{
+
     font-family:"Manrope",sans-serif;
 
-    max-width:850px;
+    max-width:900px;
 
-    font-size:clamp(
-        57px,
-        7.4vw,
-        105px
-    );
+    font-size:
+        clamp(
+            62px,
+            9vw,
+            125px
+        );
 
-    line-height:.90;
+    line-height:.84;
 
-    letter-spacing:-6px;
+    letter-spacing:-8px;
 
     font-weight:800;
 
-    margin-bottom:30px;
+    margin-bottom:35px;
+
 }
 
 .hero h1 span{
+
     display:block;
+
     color:var(--mint);
+
 }
 
 .hero-copy{
+
     max-width:650px;
 
-    color:rgba(255,255,255,.72);
+    color:
+        rgba(255,255,255,.68);
 
     font-size:18px;
 
     line-height:1.85;
 
     margin-bottom:35px;
+
 }
 
 .hero-actions{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:13px;
+
 }
 
-.hero-proof{
+.hero-meta{
+
     display:flex;
+
     flex-wrap:wrap;
 
-    gap:24px;
+    gap:25px;
 
-    margin-top:34px;
+    margin-top:35px;
 
-    color:rgba(255,255,255,.55);
+    color:
+        rgba(255,255,255,.48);
 
     font-size:10px;
+
     font-weight:800;
-    letter-spacing:1.5px;
+
+    letter-spacing:1.7px;
+
     text-transform:uppercase;
+
 }
 
-.hero-proof span::before{
+.hero-meta span::before{
+
     content:"";
 
     display:inline-block;
@@ -615,175 +812,257 @@ img{
     height:5px;
 
     margin:
-        0 7px 2px 0;
+        0 8px 2px 0;
+
+    border-radius:50%;
 
     background:var(--mint);
 
-    border-radius:50%;
 }
 
+
 /* =========================================================
-   HERO VISUAL
+   HERO SCIENCE VISUAL
 ========================================================= */
 
-.hero-visual{
-    min-height:540px;
+.hero-science{
 
-    position:relative;
+    position:absolute;
+
+    right:-5%;
+
+    top:50%;
+
+    width:650px;
+    height:650px;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events:none;
+
+}
+
+.science-core{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:170px;
+    height:170px;
+
+    transform:
+        translate(-50%,-50%);
 
     display:grid;
+
     place-items:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.96);
+
+    box-shadow:
+
+        0 0 100px
+        rgba(0,180,216,.35),
+
+        0 35px 100px
+        rgba(0,0,0,.35);
+
+    animation:
+        coreFloat 5s ease-in-out infinite;
+
+}
+
+.science-core img{
+
+    width:110px;
+
+}
+
+@keyframes coreFloat{
+
+    50%{
+
+        transform:
+            translate(-50%,-56%);
+
+    }
+
 }
 
 .orbit{
+
     position:absolute;
 
-    border:1px solid rgba(155,216,206,.20);
+    left:50%;
+    top:50%;
+
+    border:
+        1px solid
+        rgba(155,216,206,.22);
 
     border-radius:50%;
 
+    transform:
+        translate(-50%,-50%);
+
     animation:
         orbit 20s linear infinite;
+
 }
 
 .orbit::before{
+
     content:"";
 
     position:absolute;
+
+    top:0;
+    left:50%;
 
     width:8px;
     height:8px;
 
-    top:9px;
-    left:50%;
-
     border-radius:50%;
 
     background:var(--mint);
 
     box-shadow:
-        0 0 25px var(--mint);
+        0 0 25px
+        var(--mint);
+
 }
 
-.o1{
-    width:470px;
-    height:470px;
+.orbit-1{
+
+    width:630px;
+    height:630px;
+
 }
 
-.o2{
-    width:360px;
-    height:360px;
+.orbit-2{
 
-    animation-duration:14s;
+    width:490px;
+    height:490px;
+
+    animation-duration:15s;
+
     animation-direction:reverse;
+
 }
 
-.o3{
-    width:260px;
-    height:260px;
+.orbit-3{
+
+    width:350px;
+    height:350px;
 
     animation-duration:10s;
+
 }
 
 @keyframes orbit{
+
     to{
-        transform:rotate(360deg);
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
     }
+
 }
 
-.hero-logo{
-    position:relative;
-    z-index:2;
-
-    width:245px;
-
-    padding:28px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.96);
-
-    box-shadow:
-        0 30px 100px rgba(0,0,0,.30);
-
-    animation:
-        float 5s ease-in-out infinite;
-}
-
-.hero-logo::after{
-    content:"";
+.science-chip{
 
     position:absolute;
-    inset:-12px;
 
-    border:1px solid rgba(155,216,206,.32);
+    padding:
+        13px 18px;
 
-    border-radius:50%;
-}
-
-@keyframes float{
-    50%{
-        transform:translateY(-12px);
-    }
-}
-
-.floating-chip{
-    position:absolute;
-    z-index:4;
-
-    padding:12px 16px;
-
-    border:1px solid rgba(255,255,255,.15);
+    border:
+        1px solid
+        rgba(255,255,255,.15);
 
     border-radius:16px;
 
-    background:rgba(255,255,255,.08);
+    background:
+        rgba(255,255,255,.07);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:
+        blur(18px);
 
     color:#fff;
 
     font-size:10px;
+
     font-weight:800;
+
     letter-spacing:1.3px;
+
     text-transform:uppercase;
+
 }
 
-.chip-one{
-    top:13%;
-    right:3%;
+.science-chip.one{
+
+    top:18%;
+
+    right:5%;
+
 }
 
-.chip-two{
-    bottom:14%;
-    left:2%;
+.science-chip.two{
+
+    bottom:17%;
+
+    left:5%;
+
 }
+
+
+/* =========================================================
+   SCROLL CUE
+========================================================= */
 
 .scroll-cue{
+
     position:absolute;
 
-    bottom:24px;
+    bottom:25px;
+
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
     z-index:4;
 
-    text-align:center;
-
-    color:rgba(255,255,255,.50);
+    color:
+        rgba(255,255,255,.42);
 
     font-size:9px;
+
     font-weight:800;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
+
+    text-align:center;
+
 }
 
-.scroll-line{
-    width:1px;
-    height:43px;
+.scroll-cue-line{
 
-    margin:9px auto 0;
+    width:1px;
+
+    height:45px;
+
+    margin:
+        10px auto 0;
 
     background:
         linear-gradient(
@@ -791,132 +1070,281 @@ img{
             transparent
         );
 
-    animation:scrollCue 2s infinite;
+    animation:
+        cue 2s infinite;
+
 }
 
-@keyframes scrollCue{
+@keyframes cue{
+
     50%{
-        transform:scaleY(.55);
-        opacity:.35;
+
+        transform:
+            scaleY(.4);
+
+        opacity:.3;
+
     }
+
 }
+
 
 /* =========================================================
-   INTRO
+   CORPORATE INTRO
 ========================================================= */
 
 .intro{
+
     background:#fff;
+
 }
 
 .intro-grid{
+
     display:grid;
 
-    grid-template-columns:.78fr 1.22fr;
+    grid-template-columns:
+        .85fr 1.15fr;
 
     gap:100px;
 
     align-items:center;
+
 }
 
-.intro h2{
+.intro-big{
+
     font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            82px
+        );
+
+    line-height:.95;
+
+    letter-spacing:-5px;
 
     color:var(--navy);
 
-    font-size:clamp(
-        44px,
-        5.2vw,
-        72px
-    );
-
-    line-height:.98;
-
-    letter-spacing:-4px;
 }
 
-.intro h2 span{
+.intro-big span{
+
     color:var(--teal);
+
 }
 
-.intro-text{
-    max-width:720px;
+.intro-copy{
+
+    max-width:700px;
 
     color:var(--muted);
 
     font-size:18px;
 
     line-height:1.9;
+
 }
 
-.heartbeat{
-    max-width:470px;
+.intro-line{
 
-    margin-top:34px;
-}
+    width:100%;
 
-.heartbeat path{
-    fill:none;
+    height:1px;
 
-    stroke:var(--cyan);
+    margin-top:45px;
 
-    stroke-width:3;
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            transparent
+        );
 
-    stroke-linecap:round;
-
-    stroke-dasharray:700;
-
-    stroke-dashoffset:700;
+    transform-origin:left;
 
     animation:
-        draw 3s ease-in-out infinite;
+        lineGrow 2s ease both;
+
 }
 
-@keyframes draw{
-    45%,75%{
-        stroke-dashoffset:0;
+@keyframes lineGrow{
+
+    from{
+        transform:scaleX(0);
     }
 
-    100%{
-        stroke-dashoffset:-700;
+    to{
+        transform:scaleX(1);
     }
+
 }
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    background:var(--ice);
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+.stat{
+
+    padding:
+        55px 30px;
+
+    border-right:
+        1px solid var(--line);
+
+}
+
+.stat:last-child{
+
+    border-right:0;
+
+}
+
+.stat-number{
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            70px
+        );
+
+    letter-spacing:-4px;
+
+    color:var(--navy);
+
+}
+
+.stat-label{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
 
 /* =========================================================
    STORY
 ========================================================= */
 
 .story{
-    background:var(--ice);
+
+    background:
+        #061827;
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.story::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    right:-250px;
+    top:-250px;
+
+    border-radius:50%;
+
+    background:
+        rgba(0,180,216,.10);
+
+    filter:blur(80px);
+
 }
 
 .story-head{
-    max-width:760px;
 
-    margin:
-        0 auto 52px;
+    position:relative;
 
-    text-align:center;
+    z-index:2;
+
+    max-width:800px;
+
+    margin-bottom:55px;
+
 }
 
-.story-head h2{
-    margin-bottom:18px;
+.story-head .section-title{
+
+    color:#fff;
+
 }
 
 .story-head p{
-    color:var(--muted);
+
+    max-width:650px;
+
+    margin-top:25px;
+
+    color:
+        rgba(255,255,255,.58);
+
+    font-size:17px;
 
     line-height:1.8;
 
-    font-size:17px;
+}
+
+.video-wrap{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:1180px;
+
+    margin:auto;
+
 }
 
 .video-frame{
+
     position:relative;
-
-    max-width:1120px;
-
-    margin:auto;
 
     aspect-ratio:16/9;
 
@@ -924,429 +1352,757 @@ img{
 
     border-radius:30px;
 
-    background:var(--deep);
+    background:#000;
 
-    box-shadow:var(--shadow);
-}
+    box-shadow:
+        0 40px 120px
+        rgba(0,0,0,.35);
 
-.video-frame::after{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    border:
-        1px solid rgba(255,255,255,.12);
-
-    border-radius:30px;
-
-    pointer-events:none;
 }
 
 .video-frame iframe{
+
     width:100%;
     height:100%;
 
     border:0;
+
 }
+
+.video-frame::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius:30px;
+
+    pointer-events:none;
+
+}
+
 
 /* =========================================================
    VALUES
 ========================================================= */
 
-.dark{
-    position:relative;
+.values{
 
-    overflow:hidden;
+    background:#fff;
 
-    background:var(--deep);
-
-    color:#fff;
-}
-
-.dark::before{
-    content:"";
-
-    position:absolute;
-
-    width:650px;
-    height:650px;
-
-    right:-260px;
-    top:-250px;
-
-    border-radius:50%;
-
-    background:
-        rgba(0,180,216,.09);
-
-    filter:blur(70px);
 }
 
 .values-head{
-    position:relative;
 
-    max-width:760px;
+    max-width:850px;
 
     margin-bottom:65px;
-}
 
-.values-head h2{
-    font-family:"Manrope",sans-serif;
-
-    font-size:clamp(
-        44px,
-        5.3vw,
-        72px
-    );
-
-    line-height:.98;
-
-    letter-spacing:-4px;
 }
 
 .values-grid{
-    position:relative;
 
     display:grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:1px;
+    border-top:
+        1px solid var(--line);
 
-    background:rgba(255,255,255,.12);
+    border-bottom:
+        1px solid var(--line);
+
 }
 
-.value-card{
-    min-height:290px;
+.value{
 
-    padding:58px 42px;
+    position:relative;
 
-    background:var(--deep);
+    min-height:390px;
 
-    transition:.4s;
+    padding:
+        45px;
+
+    overflow:hidden;
+
+    border-right:
+        1px solid var(--line);
+
+    transition:
+        color .5s ease;
+
 }
 
-.value-card:hover{
+.value:last-child{
+
+    border-right:0;
+
+}
+
+.value::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
     background:
         linear-gradient(
-            145deg,
-            rgba(0,91,96,.35),
-            rgba(10,37,64,.80)
+            135deg,
+            var(--deep),
+            var(--teal)
         );
 
-    transform:translateY(-8px);
+    transform:
+        translateY(100%);
+
+    transition:
+        transform .6s cubic-bezier(.7,0,.2,1);
+
+    z-index:0;
+
+}
+
+.value:hover{
+
+    color:#fff;
+
+}
+
+.value:hover::before{
+
+    transform:
+        translateY(0);
+
+}
+
+.value > *{
+
+    position:relative;
+
+    z-index:2;
+
 }
 
 .value-number{
-    color:var(--mint);
+
+    color:var(--teal);
 
     font-size:11px;
+
     font-weight:800;
 
     letter-spacing:2px;
 
-    margin-bottom:50px;
+    transition:.4s;
+
 }
 
-.value-card h3{
+.value:hover .value-number{
+
+    color:var(--mint);
+
+}
+
+.value h3{
+
+    margin-top:100px;
+
     font-family:"Manrope",sans-serif;
 
-    font-size:30px;
+    font-size:42px;
 
-    margin-bottom:15px;
+    letter-spacing:-2px;
+
 }
 
-.value-card p{
-    color:rgba(255,255,255,.60);
+.value p{
 
-    font-size:15px;
+    max-width:330px;
+
+    margin-top:18px;
+
+    color:var(--muted);
 
     line-height:1.8;
+
+    transition:.4s;
+
 }
 
+.value:hover p{
+
+    color:
+        rgba(255,255,255,.65);
+
+}
+
+
 /* =========================================================
-   PRODUCTS
+   PORTFOLIO
 ========================================================= */
 
-.products-head{
+.portfolio{
+
+    background:var(--ice);
+
+    overflow:hidden;
+
+}
+
+.portfolio-head{
+
     display:flex;
 
     justify-content:space-between;
 
     align-items:flex-end;
 
-    gap:30px;
+    gap:40px;
 
-    margin-bottom:52px;
+    margin-bottom:60px;
+
 }
 
-.products-head p{
-    max-width:440px;
+.portfolio-head p{
+
+    max-width:450px;
 
     color:var(--muted);
 
     line-height:1.8;
+
 }
 
-.products-grid{
-    display:grid;
+.portfolio-track{
 
-    grid-template-columns:
-        repeat(3,1fr);
+    display:flex;
 
-    gap:18px;
+    gap:20px;
+
+    width:max-content;
+
+    animation:
+        portfolioMove 28s linear infinite;
+
 }
 
-.product-card{
+.portfolio:hover .portfolio-track{
+
+    animation-play-state:paused;
+
+}
+
+@keyframes portfolioMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+.portfolio-card{
+
     position:relative;
 
-    min-height:320px;
+    width:310px;
 
-    padding:34px;
+    height:390px;
 
-    border-radius:var(--radius);
+    flex-shrink:0;
+
+    padding:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    color:#fff;
 
     background:
         linear-gradient(
             145deg,
-            #f7fcfc,
-            #e9f6f5
+            var(--deep2),
+            var(--teal)
         );
 
-    border:
-        1px solid rgba(0,91,96,.10);
+    transition:
+        transform .5s ease;
 
-    overflow:hidden;
-
-    transition:.4s;
 }
 
-.product-card::before{
+.portfolio-card:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.02);
+
+}
+
+.portfolio-card::before{
+
     content:"";
 
     position:absolute;
 
-    width:190px;
-    height:190px;
+    width:240px;
+    height:240px;
 
-    right:-70px;
+    right:-80px;
     top:-70px;
 
+    border:
+        1px solid
+        rgba(155,216,206,.25);
+
     border-radius:50%;
 
-    background:
-        rgba(0,180,216,.09);
 }
 
-.product-card:hover{
-    transform:translateY(-10px);
+.portfolio-card::after{
 
-    box-shadow:var(--shadow);
-}
+    content:"";
 
-.product-icon{
-    width:60px;
-    height:60px;
-
-    display:grid;
-    place-items:center;
-
-    border-radius:19px;
-
-    background:
-        rgba(0,91,96,.09);
-
-    color:var(--teal);
-
-    font-size:25px;
-
-    margin-bottom:70px;
-}
-
-.product-card h3{
-    font-family:"Manrope",sans-serif;
-
-    font-size:27px;
-
-    margin-bottom:10px;
-}
-
-.product-card p{
-    max-width:280px;
-
-    color:var(--muted);
-
-    font-size:14px;
-
-    line-height:1.7;
-}
-
-.product-arrow{
     position:absolute;
 
-    right:28px;
-    bottom:28px;
+    inset:0;
 
-    width:43px;
-    height:43px;
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(0,180,216,.25),
+            transparent 35%
+        );
 
-    display:grid;
-    place-items:center;
+}
 
-    border-radius:50%;
+.portfolio-number{
+
+    position:absolute;
+
+    top:30px;
+    left:35px;
+
+    color:var(--mint);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.portfolio-card h3{
+
+    position:relative;
+
+    z-index:2;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:36px;
+
+    letter-spacing:-2px;
+
+}
+
+.portfolio-card p{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:10px;
+
+    color:
+        rgba(255,255,255,.62);
+
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   QUALITY JOURNEY
+========================================================= */
+
+.quality{
 
     background:#fff;
 
+}
+
+.quality-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .8fr 1.2fr;
+
+    gap:100px;
+
+}
+
+.quality-intro{
+
+    position:sticky;
+
+    top:120px;
+
+    height:max-content;
+
+}
+
+.quality-intro p{
+
+    max-width:420px;
+
+    margin-top:25px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+.quality-steps{
+
+    border-left:
+        1px solid var(--line);
+
+}
+
+.quality-step{
+
+    position:relative;
+
+    min-height:210px;
+
+    padding:
+        0 0 65px 70px;
+
+}
+
+.quality-step::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-6px;
+    top:4px;
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 0 7px
+        rgba(0,180,216,.08);
+
+}
+
+.quality-step span{
+
     color:var(--teal);
 
-    transition:.3s;
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
 }
 
-.product-card:hover .product-arrow{
-    background:var(--teal);
+.quality-step h3{
 
-    color:#fff;
+    margin-top:18px;
 
-    transform:rotate(-45deg);
+    font-family:"Manrope",sans-serif;
+
+    font-size:38px;
+
+    letter-spacing:-2px;
+
+    color:var(--navy);
+
 }
+
+.quality-step p{
+
+    max-width:500px;
+
+    margin-top:12px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
 
 /* =========================================================
    VISION
 ========================================================= */
 
 .vision{
+
     position:relative;
+
+    min-height:750px;
+
+    display:flex;
+
+    align-items:center;
 
     overflow:hidden;
 
+    color:#fff;
+
     background:
+
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(0,180,216,.25),
+            transparent 30%
+        ),
+
         linear-gradient(
             110deg,
             var(--deep),
             var(--teal)
         );
 
-    color:#fff;
 }
 
-.vision::before,
-.vision::after{
+.vision-rings{
+
+    position:absolute;
+
+    right:-260px;
+
+    width:800px;
+    height:800px;
+
+    border:
+        1px solid
+        rgba(155,216,206,.16);
+
+    border-radius:50%;
+
+}
+
+.vision-rings::before,
+.vision-rings::after{
+
     content:"";
 
     position:absolute;
 
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
     border:
-        1px solid rgba(155,216,206,.17);
+        1px solid
+        rgba(155,216,206,.12);
 
     border-radius:50%;
 
-    right:-250px;
-    top:50%;
-
-    transform:translateY(-50%);
 }
 
-.vision::before{
-    width:760px;
-    height:760px;
+.vision-rings::before{
+
+    width:570px;
+    height:570px;
+
 }
 
-.vision::after{
-    width:500px;
-    height:500px;
+.vision-rings::after{
 
-    right:-120px;
+    width:340px;
+    height:340px;
+
 }
 
 .vision-content{
+
     position:relative;
+
     z-index:2;
 
     max-width:850px;
+
 }
 
 .vision h2{
+
     font-family:"Manrope",sans-serif;
 
-    font-size:clamp(
-        50px,
-        6.2vw,
-        86px
-    );
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            100px
+        );
 
-    line-height:.96;
+    line-height:.9;
 
-    letter-spacing:-5px;
+    letter-spacing:-7px;
 
-    margin-bottom:28px;
 }
 
 .vision p{
-    max-width:720px;
 
-    color:rgba(255,255,255,.72);
+    max-width:680px;
+
+    margin-top:30px;
+
+    color:
+        rgba(255,255,255,.65);
 
     font-size:18px;
 
     line-height:1.9;
+
 }
+
 
 /* =========================================================
    CTA
 ========================================================= */
 
 .cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:
+        170px 0;
+
     text-align:center;
 
     background:#fff;
+
+}
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,180,216,.10),
+            transparent 70%
+        );
+
+}
+
+.cta-content{
+
+    position:relative;
+
+    z-index:2;
+
 }
 
 .cta h2{
+
     font-family:"Manrope",sans-serif;
 
-    font-size:clamp(
-        46px,
-        6vw,
-        80px
-    );
+    font-size:
+        clamp(
+            50px,
+            7vw,
+            100px
+        );
 
-    line-height:.96;
+    line-height:.9;
 
-    letter-spacing:-5px;
+    letter-spacing:-7px;
 
-    margin-bottom:22px;
+    color:var(--navy);
+
 }
 
 .cta h2 span{
+
     color:var(--teal);
+
 }
 
 .cta p{
-    max-width:620px;
+
+    max-width:600px;
 
     margin:
-        0 auto 34px;
+        25px auto 35px;
 
     color:var(--muted);
 
     line-height:1.8;
+
 }
+
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer{
-    padding:80px 0 25px;
+
+    padding:
+        90px 0 25px;
 
     background:var(--deep);
 
     color:#fff;
+
 }
 
 .footer-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -1354,14 +2110,17 @@ footer{
 
     gap:60px;
 
-    padding-bottom:60px;
+    padding-bottom:65px;
 
     border-bottom:
-        1px solid rgba(255,255,255,.10);
+        1px solid
+        rgba(255,255,255,.10);
+
 }
 
 .footer-logo{
-    width:160px;
+
+    width:155px;
 
     padding:10px;
 
@@ -1370,19 +2129,26 @@ footer{
     border-radius:12px;
 
     background:#fff;
+
 }
 
 .footer-brand p{
+
     max-width:350px;
 
-    color:rgba(255,255,255,.55);
+    color:
+        rgba(255,255,255,.50);
 
     font-size:14px;
 
-    line-height:1.8;
+    line-height:1.9;
+
 }
 
 .footer-column h4{
+
+    margin-bottom:23px;
+
     color:var(--mint);
 
     font-size:11px;
@@ -1391,279 +2157,421 @@ footer{
 
     text-transform:uppercase;
 
-    margin-bottom:22px;
 }
 
 .footer-column a{
+
     display:block;
 
-    color:rgba(255,255,255,.62);
+    margin-bottom:15px;
+
+    color:
+        rgba(255,255,255,.58);
 
     font-size:14px;
 
-    margin-bottom:14px;
-
     transition:.3s;
+
 }
 
 .footer-column a:hover{
+
     color:#fff;
 
-    transform:translateX(4px);
+    transform:
+        translateX(6px);
+
 }
 
 .footer-bottom{
+
     display:flex;
 
     justify-content:space-between;
 
     gap:20px;
 
-    padding-top:24px;
+    padding-top:25px;
 
-    color:rgba(255,255,255,.36);
+    color:
+        rgba(255,255,255,.30);
 
     font-size:12px;
+
 }
 
+
 /* =========================================================
-   RESPONSIVE
+   REVEAL
 ========================================================= */
 
-@media(max-width:900px){
+.reveal{
 
-    .nav-links{
-        position:fixed;
+    opacity:0;
 
-        right:-100%;
-        top:0;
+    transform:
+        translateY(50px);
 
-        width:min(330px,86%);
-        height:100svh;
+    transition:
+        opacity 1s ease,
+        transform 1s
+        cubic-bezier(.16,1,.3,1);
 
-        padding:
-            100px 40px 40px;
+}
 
-        background:var(--deep);
+.reveal.active{
 
-        flex-direction:column;
+    opacity:1;
 
-        align-items:flex-start;
+    transform:none;
 
-        justify-content:flex-start;
+}
 
-        gap:28px;
 
-        transition:.4s;
+/* =========================================================
+   MOBILE
+========================================================= */
 
-        box-shadow:
-            -20px 0 60px rgba(0,0,0,.25);
+@media(max-width:1000px){
+
+    .hero-science{
+
+        right:-30%;
+
+        opacity:.45;
+
     }
 
-    .nav-links.active{
-        right:0;
-    }
+    .intro-grid,
+    .quality-grid{
 
-    .nav-links a,
-    .navbar.scrolled .nav-links a{
-        color:#fff;
-
-        font-size:17px;
-    }
-
-    .nav-contact{
-        border:0;
-
-        padding:0;
-    }
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .hero-grid{
         grid-template-columns:1fr;
 
-        text-align:center;
+        gap:50px;
+
     }
 
-    .hero-copy{
-        margin-left:auto;
-        margin-right:auto;
+    .quality-intro{
+
+        position:relative;
+
+        top:auto;
+
     }
 
-    .hero-actions,
-    .hero-proof{
-        justify-content:center;
+    .stats-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
-    .hero-visual{
-        min-height:380px;
-    }
+    .stat{
 
-    .o1{
-        width:350px;
-        height:350px;
-    }
+        border-bottom:
+            1px solid var(--line);
 
-    .o2{
-        width:275px;
-        height:275px;
-    }
-
-    .o3{
-        width:205px;
-        height:205px;
-    }
-
-    .hero-logo{
-        width:185px;
-    }
-
-    .intro-grid{
-        grid-template-columns:1fr;
-
-        gap:35px;
     }
 
     .values-grid{
+
         grid-template-columns:1fr;
+
     }
 
-    .products-head{
+    .value{
+
+        border-right:0;
+
+        border-bottom:
+            1px solid var(--line);
+
+    }
+
+    .portfolio-head{
+
         flex-direction:column;
 
         align-items:flex-start;
-    }
 
-    .products-grid{
-        grid-template-columns:
-            repeat(2,1fr);
     }
 
     .footer-grid{
+
         grid-template-columns:
             1fr 1fr;
+
     }
+
 }
 
-@media(max-width:600px){
 
-    .container{
-        width:88%;
-    }
+@media(max-width:760px){
 
     .navbar{
-        padding:14px 0;
+
+        padding:15px 0;
+
     }
 
-    .logo img{
-        width:120px;
+    .nav-links{
+
+        position:fixed;
+
+        top:0;
+        right:-100%;
+
+        width:
+            min(
+                340px,
+                88%
+            );
+
+        height:100svh;
+
+        padding:
+            110px 40px 40px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:30px;
+
+        background:var(--deep);
+
+        transition:
+            right .5s
+            cubic-bezier(.7,0,.2,1);
+
+        box-shadow:
+            -25px 0 70px
+            rgba(0,0,0,.25);
+
     }
 
-    .navbar.scrolled .logo img{
-        width:110px;
+    .nav-links.active{
+
+        right:0;
+
+    }
+
+    .nav-links a{
+
+        font-size:18px;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+        position:relative;
+
+        z-index:6000;
+
+    }
+
+    .hero{
+
+        min-height:900px;
+
     }
 
     .hero-inner{
+
         padding:
-            120px 0 75px;
+            140px 0 80px;
+
     }
 
     .hero h1{
-        font-size:51px;
 
-        letter-spacing:-3.5px;
+        font-size:55px;
+
+        letter-spacing:-4px;
+
     }
 
     .hero-copy{
+
         font-size:15px;
 
         line-height:1.7;
+
     }
 
     .hero-actions{
+
         flex-direction:column;
+
     }
 
     .hero-actions .btn{
+
         width:100%;
+
     }
 
-    .hero-proof{
+    .hero-meta{
+
         gap:10px;
 
-        font-size:9px;
     }
 
-    .hero-visual{
-        min-height:300px;
+    .hero-science{
+
+        position:absolute;
+
+        top:auto;
+        bottom:-150px;
+
+        right:50%;
+
+        transform:
+            translateX(50%);
+
+        width:450px;
+        height:450px;
+
+        opacity:.5;
+
     }
 
-    .o1{
-        width:270px;
-        height:270px;
+    .orbit-1{
+
+        width:440px;
+        height:440px;
+
     }
 
-    .o2{
-        width:210px;
-        height:210px;
+    .orbit-2{
+
+        width:340px;
+        height:340px;
+
     }
 
-    .o3{
-        width:155px;
-        height:155px;
+    .orbit-3{
+
+        width:240px;
+        height:240px;
+
     }
 
-    .hero-logo{
-        width:145px;
+    .science-core{
 
-        padding:20px;
+        width:120px;
+        height:120px;
+
     }
 
-    .floating-chip{
+    .science-core img{
+
+        width:80px;
+
+    }
+
+    .science-chip{
+
         font-size:8px;
 
-        padding:
-            9px 11px;
-    }
-
-    .chip-one{
-        top:7%;
-        right:0;
-    }
-
-    .chip-two{
-        bottom:8%;
-        left:0;
     }
 
     .section{
-        padding:88px 0;
+
+        padding:
+            95px 0;
+
     }
 
-    .video-frame{
-        border-radius:18px;
+    .section-title{
+
+        letter-spacing:-3px;
+
     }
 
-    .products-grid{
+    .stats-grid{
+
         grid-template-columns:1fr;
+
     }
 
-    .product-card{
-        min-height:280px;
+    .stat{
+
+        border-right:0;
+
+    }
+
+    .value{
+
+        min-height:330px;
+
+    }
+
+    .portfolio-card{
+
+        width:275px;
+
+        height:350px;
+
+    }
+
+    .quality-step{
+
+        padding-left:45px;
+
+    }
+
+    .quality-step h3{
+
+        font-size:32px;
+
+    }
+
+    .vision{
+
+        min-height:650px;
+
+    }
+
+    .vision h2{
+
+        letter-spacing:-4px;
+
+    }
+
+    .cta{
+
+        padding:
+            120px 0;
+
+    }
+
+    .cta h2{
+
+        letter-spacing:-4px;
+
     }
 
     .footer-grid{
+
         grid-template-columns:1fr;
 
-        gap:40px;
+        gap:45px;
+
     }
 
     .footer-bottom{
+
         flex-direction:column;
+
     }
+
 }
+
 
 /* =========================================================
    REDUCED MOTION
@@ -1672,24 +2580,37 @@ footer{
 @media(prefers-reduced-motion:reduce){
 
     html{
+
         scroll-behavior:auto;
+
     }
 
     *,
     *::before,
     *::after{
+
         animation-duration:.01ms!important;
 
         animation-iteration-count:1!important;
 
         transition-duration:.01ms!important;
+
     }
+
 }
 
 </style>
+
 </head>
 
+
 <body>
+
+
+<div class="progress" id="progress"></div>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
 
 <!-- ======================================================
      NAVIGATION
@@ -1697,64 +2618,65 @@ footer{
 
 <header class="navbar" id="navbar">
 
-    <div class="container nav-inner">
+<div class="container nav-inner">
 
-        <a href="index.html" class="logo">
-            <img
-                src="logo (1).jpeg"
-                alt="Arovia Pharma">
-        </a>
+<a href="index.html" class="logo">
 
-        <ul class="nav-links" id="navLinks">
+<img
+src="logo (1).jpeg"
+alt="Arovia Pharma">
 
-            <li>
-                <a
-                    href="index.html"
-                    class="active">
-                    Home
-                </a>
-            </li>
+</a>
 
-            <li>
-                <a href="about.html">
-                    About Us
-                </a>
-            </li>
 
-            <li>
-                <a href="products.html">
-                    Products
-                </a>
-            </li>
+<ul class="nav-links" id="navLinks">
 
-            <li>
-                <a
-                    href="contact.html"
-                    class="nav-contact">
-                    Contact
-                </a>
-            </li>
+<li>
+<a
+href="index.html"
+class="active">
+Home
+</a>
+</li>
 
-        </ul>
+<li>
+<a href="about.html">
+About Us
+</a>
+</li>
 
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
+<li>
+<a href="products.html">
+Products
+</a>
+</li>
 
-            <span></span>
-            <span></span>
-            <span></span>
+<li>
+<a
+href="contact.html"
+class="nav-contact">
+Contact
+</a>
+</li>
 
-        </button>
+</ul>
 
-    </div>
+
+<button
+class="menu-toggle"
+id="menuToggle"
+aria-label="Open navigation menu">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
 
 </header>
 
-
-<main>
 
 <!-- ======================================================
      HERO
@@ -1762,460 +2684,990 @@ footer{
 
 <section class="hero">
 
-    <div class="grid-noise"></div>
+<div class="hero-grid-bg"></div>
 
-    <div class="hero-inner">
-
-        <div class="hero-grid">
-
-            <div class="reveal">
-
-                <div class="eyebrow">
-
-                    <span class="eyebrow-dot"></span>
-
-                    Arovia Pharma Pvt. Ltd.
-
-                </div>
-
-                <h1>
-                    The Path To
-                    <span>Health.</span>
-                </h1>
-
-                <p class="hero-copy">
-
-                    Building dependable pharmaceutical
-                    solutions with a commitment to
-                    quality, trust and continuous
-                    innovation.
-
-                </p>
-
-                <div class="hero-actions">
-
-                    <a
-                        href="products.html"
-                        class="btn btn-primary">
-
-                        Explore Products
-                        <span>↗</span>
-
-                    </a>
-
-                    <a
-                        href="#story"
-                        class="btn btn-glass">
-
-                        Discover Arovia
-
-                    </a>
-
-                </div>
-
-                <div class="hero-proof">
-
-                    <span>Quality</span>
-                    <span>Trust</span>
-                    <span>Innovation</span>
-
-                </div>
-
-            </div>
+<canvas id="particles"></canvas>
 
 
-            <div class="hero-visual reveal">
+<div class="hero-inner">
 
-                <div class="orbit o1"></div>
-                <div class="orbit o2"></div>
-                <div class="orbit o3"></div>
+<div class="hero-content reveal">
 
-                <div class="floating-chip chip-one">
-                    Quality • Trust
-                </div>
+<div class="eyebrow">
 
-                <div class="floating-chip chip-two">
-                    Driven by Purpose
-                </div>
+<span class="eyebrow-dot"></span>
 
-                <div class="hero-logo">
+AROVIA PHARMA PVT. LTD.
 
-                    <img
-                        src="logo 2.jpeg"
-                        alt="Arovia Pharma Logo">
+</div>
 
-                </div>
 
-            </div>
+<h1>
 
-        </div>
+The Path To
 
-    </div>
+<span>Health.</span>
 
-    <div class="scroll-cue">
+</h1>
 
-        Scroll to explore
 
-        <div class="scroll-line"></div>
+<p class="hero-copy">
 
-    </div>
+Building dependable pharmaceutical solutions
+with a commitment to quality, trust and
+continuous innovation.
+
+</p>
+
+
+<div class="hero-actions">
+
+<a
+href="products.html"
+class="btn btn-primary">
+
+Explore Products
+
+<span>↗</span>
+
+</a>
+
+
+<a
+href="#story"
+class="btn btn-glass">
+
+Discover Arovia
+
+</a>
+
+</div>
+
+
+<div class="hero-meta">
+
+<span>Quality</span>
+
+<span>Trust</span>
+
+<span>Innovation</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-science">
+
+<div class="orbit orbit-1"></div>
+
+<div class="orbit orbit-2"></div>
+
+<div class="orbit orbit-3"></div>
+
+
+<div class="science-core">
+
+<img
+src="logo 2.jpeg"
+alt="Arovia Pharma">
+
+</div>
+
+
+<div class="science-chip one">
+
+Quality • Trust
+
+</div>
+
+
+<div class="science-chip two">
+
+Driven by Purpose
+
+</div>
+
+</div>
+
+
+<div class="scroll-cue">
+
+Scroll to explore
+
+<div class="scroll-cue-line"></div>
+
+</div>
 
 </section>
+
 
 
 <!-- ======================================================
      INTRO
 ====================================================== -->
 
-<section
-    class="section intro"
-    id="story">
+<section class="section intro">
 
-    <div class="container">
+<div class="container">
 
-        <div class="intro-grid">
+<div class="intro-grid">
 
-            <div class="reveal">
 
-                <div class="label">
-                    Who We Are
-                </div>
+<div class="reveal">
 
-                <h2>
-                    Healthcare
-                    <br>
-                    <span>with purpose.</span>
-                </h2>
+<div class="label">
 
-            </div>
+Who We Are
 
-            <div class="reveal">
+</div>
 
-                <p class="intro-text">
+<h2 class="intro-big">
 
-                    Arovia Pharma Pvt. Ltd. is committed
-                    to delivering high-quality pharmaceutical
-                    products and healthcare solutions.
+Healthcare
 
-                    <br><br>
+<br>
 
-                    Through innovation, integrity and
-                    excellence, we strive to contribute
-                    to a healthier future.
+<span>with purpose.</span>
 
-                </p>
+</h2>
 
-                <div class="heartbeat">
+</div>
 
-                    <svg
-                        viewBox="0 0 500 80"
-                        xmlns="http://www.w3.org/2000/svg">
 
-                        <path
-                            d="
-                            M0 40
-                            L110 40
-                            L130 40
-                            L145 20
-                            L160 62
-                            L178 5
-                            L195 72
-                            L215 40
-                            L330 40
-                            L345 40
-                            L360 20
-                            L375 62
-                            L392 5
-                            L410 72
-                            L430 40
-                            L500 40
-                            "
-                        />
+<div class="reveal">
 
-                    </svg>
+<p class="intro-copy">
 
-                </div>
+Arovia Pharma Pvt. Ltd. is committed to
+delivering high-quality pharmaceutical
+products and healthcare solutions.
 
-            </div>
+<br><br>
 
-        </div>
+Through innovation, integrity and excellence,
+we strive to contribute to a healthier future.
 
-    </div>
+</p>
+
+<div class="intro-line"></div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
+
 
 
 <!-- ======================================================
-     STORY / VIDEO
+     STATS
 ====================================================== -->
 
-<section class="section story">
+<section class="section stats">
 
-    <div class="container">
+<div class="container">
 
-        <div class="story-head reveal">
+<div class="stats-grid">
 
-            <div class="label">
-                Our Story
-            </div>
+<div class="stat reveal">
 
-            <h2 class="section-title">
-                Discover Arovia.
-            </h2>
+<div class="stat-number"
+data-target="8">
 
-            <p>
-                Explore our vision, our journey and
-                the values that guide Arovia Pharma
-                on the path to health.
-            </p>
+8+
 
-        </div>
+</div>
 
-        <div class="video-frame reveal">
+<div class="stat-label">
 
-            <iframe
-                src="https://www.youtube.com/embed/i9XkNuG-YdQ"
-                title="Arovia Pharma - The Path To Health"
-                loading="lazy"
-                allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share"
-                allowfullscreen>
-            </iframe>
+Product Categories
 
-        </div>
+</div>
 
-    </div>
+</div>
+
+
+<div class="stat reveal">
+
+<div class="stat-number">
+
+01
+
+</div>
+
+<div class="stat-label">
+
+Purpose
+
+</div>
+
+</div>
+
+
+<div class="stat reveal">
+
+<div class="stat-number">
+
+03
+
+</div>
+
+<div class="stat-label">
+
+Core Principles
+
+</div>
+
+</div>
+
+
+<div class="stat reveal">
+
+<div class="stat-number">
+
+2026
+
+</div>
+
+<div class="stat-label">
+
+Moving Forward
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
+
+
+
+<!-- ======================================================
+     STORY
+====================================================== -->
+
+<section
+class="section story"
+id="story">
+
+<div class="container">
+
+<div class="story-head reveal">
+
+<div class="label">
+
+Our Story
+
+</div>
+
+<h2 class="section-title">
+
+Discover Arovia.
+
+</h2>
+
+<p>
+
+Explore our vision, our journey and
+the principles that guide Arovia Pharma
+on the path to health.
+
+</p>
+
+</div>
+
+
+<div class="video-wrap reveal">
+
+<div class="video-frame">
+
+<iframe
+
+src="https://www.youtube.com/embed/i9XkNuG-YdQ"
+
+title="Arovia Pharma - The Path To Health"
+
+loading="lazy"
+
+allow="
+accelerometer;
+autoplay;
+clipboard-write;
+encrypted-media;
+gyroscope;
+picture-in-picture;
+web-share"
+
+allowfullscreen>
+
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <!-- ======================================================
      VALUES
 ====================================================== -->
 
-<section class="section dark">
+<section class="section values">
 
-    <div class="container">
+<div class="container">
 
-        <div class="values-head reveal">
+<div class="values-head reveal">
 
-            <div class="label">
-                What Drives Us
-            </div>
+<div class="label">
 
-            <h2>
-                Three principles.
-                <br>
-                One purpose.
-            </h2>
+What Drives Us
 
-        </div>
+</div>
 
+<h2 class="section-title">
 
-        <div class="values-grid">
+Three principles.
 
-            <article class="value-card reveal">
+<br>
 
-                <div class="value-number">
-                    01 / QUALITY
-                </div>
+One purpose.
 
-                <h3>
-                    Quality
-                </h3>
+</h2>
 
-                <p>
-                    A commitment to dependable
-                    pharmaceutical solutions and
-                    consistent standards.
-                </p>
-
-            </article>
+</div>
 
 
-            <article class="value-card reveal">
-
-                <div class="value-number">
-                    02 / TRUST
-                </div>
-
-                <h3>
-                    Trust
-                </h3>
-
-                <p>
-                    Building meaningful relationships
-                    through reliability, integrity
-                    and responsibility.
-                </p>
-
-            </article>
+<div class="values-grid">
 
 
-            <article class="value-card reveal">
+<article class="value reveal">
 
-                <div class="value-number">
-                    03 / INNOVATION
-                </div>
+<div class="value-number">
 
-                <h3>
-                    Innovation
-                </h3>
+01 / QUALITY
 
-                <p>
-                    Continuously looking forward and
-                    embracing better ways to serve
-                    evolving healthcare needs.
-                </p>
+</div>
 
-            </article>
+<h3>
 
-        </div>
+Quality
 
-    </div>
+</h3>
+
+<p>
+
+A commitment to dependable
+pharmaceutical solutions and
+consistent standards.
+
+</p>
+
+</article>
+
+
+<article class="value reveal">
+
+<div class="value-number">
+
+02 / TRUST
+
+</div>
+
+<h3>
+
+Trust
+
+</h3>
+
+<p>
+
+Building meaningful relationships
+through reliability, integrity
+and responsibility.
+
+</p>
+
+</article>
+
+
+<article class="value reveal">
+
+<div class="value-number">
+
+03 / INNOVATION
+
+</div>
+
+<h3>
+
+Innovation
+
+</h3>
+
+<p>
+
+Continuously looking forward
+and embracing better ways to
+serve evolving healthcare needs.
+
+</p>
+
+</article>
+
+
+</div>
+
+</div>
 
 </section>
+
 
 
 <!-- ======================================================
-     PRODUCTS
+     PORTFOLIO
 ====================================================== -->
 
-<section class="section">
+<section class="section portfolio">
 
-    <div class="container">
+<div class="container">
 
-        <div class="products-head reveal">
+<div class="portfolio-head reveal">
 
-            <div>
+<div>
 
-                <div class="label">
-                    Our Portfolio
-                </div>
+<div class="label">
 
-                <h2 class="section-title">
+Our Portfolio
 
-                    Pharmaceutical
-                    <br>
-                    solutions.
+</div>
 
-                </h2>
+<h2 class="section-title">
 
-            </div>
+Pharmaceutical
 
-            <p>
+<br>
 
-                Explore our pharmaceutical product
-                categories developed with a focus
-                on quality and reliability.
+solutions.
 
-            </p>
+</h2>
 
-        </div>
+</div>
 
 
-        <div class="products-grid">
+<p>
 
-            <a
-                href="products.html"
-                class="product-card reveal">
+Explore our pharmaceutical
+product categories developed
+with a focus on quality and
+reliability.
 
-                <div class="product-icon">
-                    ＋
-                </div>
+</p>
 
-                <h3>
-                    Tablets
-                </h3>
+</div>
 
-                <p>
-                    Reliable pharmaceutical
-                    tablet formulations.
-                </p>
-
-                <div class="product-arrow">
-                    →
-                </div>
-
-            </a>
+</div>
 
 
-            <a
-                href="products.html"
-                class="product-card reveal">
-
-                <div class="product-icon">
-                    ◇
-                </div>
-
-                <h3>
-                    Capsules
-                </h3>
-
-                <p>
-                    Quality-driven capsule-based
-                    pharmaceutical solutions.
-                </p>
-
-                <div class="product-arrow">
-                    →
-                </div>
-
-            </a>
+<div class="portfolio-track">
 
 
-            <a
-                href="products.html"
-                class="product-card reveal">
+<a
+href="products.html"
+class="portfolio-card">
 
-                <div class="product-icon">
-                    ○
-                </div>
+<span class="portfolio-number">
 
-                <h3>
-                    Syrups
-                </h3>
+01
 
-                <p>
-                    Patient-focused liquid
-                    pharmaceutical formulations.
-                </p>
+</span>
 
-                <div class="product-arrow">
-                    →
-                </div>
+<h3>
 
-            </a>
+Tablets
 
-        </div>
+</h3>
+
+<p>
+
+Reliable pharmaceutical
+tablet formulations.
+
+</p>
+
+</a>
 
 
-        <div
-            style="
-                text-align:center;
-                margin-top:45px;
-            "
-            class="reveal">
+<a
+href="products.html"
+class="portfolio-card">
 
-            <a
-                href="products.html"
-                class="btn btn-primary">
+<span class="portfolio-number">
 
-                View All Products →
+02
 
-            </a>
+</span>
 
-        </div>
+<h3>
 
-    </div>
+Capsules
+
+</h3>
+
+<p>
+
+Quality-driven capsule
+pharmaceutical solutions.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+03
+
+</span>
+
+<h3>
+
+Syrups
+
+</h3>
+
+<p>
+
+Patient-focused liquid
+formulations.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+04
+
+</span>
+
+<h3>
+
+Injections
+
+</h3>
+
+<p>
+
+Pharmaceutical injectable
+solutions.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+05
+
+</span>
+
+<h3>
+
+Drops
+
+</h3>
+
+<p>
+
+Specialized pharmaceutical
+drop formulations.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+06
+
+</span>
+
+<h3>
+
+Ointments
+
+</h3>
+
+<p>
+
+Topical pharmaceutical
+solutions.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+07
+
+</span>
+
+<h3>
+
+Lotions
+
+</h3>
+
+<p>
+
+Healthcare-focused topical
+formulations.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+08
+
+</span>
+
+<h3>
+
+Medicated Soaps
+
+</h3>
+
+<p>
+
+Specialized personal
+healthcare products.
+
+</p>
+
+</a>
+
+
+<!-- duplicate cards for seamless animation -->
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+01
+
+</span>
+
+<h3>
+
+Tablets
+
+</h3>
+
+<p>
+
+Reliable pharmaceutical
+tablet formulations.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+02
+
+</span>
+
+<h3>
+
+Capsules
+
+</h3>
+
+<p>
+
+Quality-driven capsule
+pharmaceutical solutions.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+03
+
+</span>
+
+<h3>
+
+Syrups
+
+</h3>
+
+<p>
+
+Patient-focused liquid
+formulations.
+
+</p>
+
+</a>
+
+
+<a
+href="products.html"
+class="portfolio-card">
+
+<span class="portfolio-number">
+
+04
+
+</span>
+
+<h3>
+
+Injections
+
+</h3>
+
+<p>
+
+Pharmaceutical injectable
+solutions.
+
+</p>
+
+</a>
+
+</div>
+
+
+<div style="
+text-align:center;
+margin-top:55px;
+">
+
+<a
+href="products.html"
+class="btn btn-primary">
+
+View Full Portfolio →
+
+</a>
+
+</div>
 
 </section>
+
+
+
+<!-- ======================================================
+     QUALITY JOURNEY
+====================================================== -->
+
+<section class="section quality">
+
+<div class="container">
+
+<div class="quality-grid">
+
+
+<div class="quality-intro reveal">
+
+<div class="label">
+
+Our Approach
+
+</div>
+
+<h2 class="section-title">
+
+Built around
+
+<br>
+
+responsibility.
+
+</h2>
+
+<p>
+
+Every step forward is guided by
+a commitment to quality,
+responsibility and continuous
+improvement.
+
+</p>
+
+</div>
+
+
+<div class="quality-steps">
+
+
+<div class="quality-step reveal">
+
+<span>
+
+01 / PURPOSE
+
+</span>
+
+<h3>
+
+Understand.
+
+</h3>
+
+<p>
+
+Understanding healthcare needs
+and the people behind them.
+
+</p>
+
+</div>
+
+
+<div class="quality-step reveal">
+
+<span>
+
+02 / DEVELOP
+
+</span>
+
+<h3>
+
+Create.
+
+</h3>
+
+<p>
+
+Building pharmaceutical solutions
+with attention to quality and
+reliability.
+
+</p>
+
+</div>
+
+
+<div class="quality-step reveal">
+
+<span>
+
+03 / QUALITY
+
+</span>
+
+<h3>
+
+Refine.
+
+</h3>
+
+<p>
+
+Maintaining a continuous focus
+on dependable standards.
+
+</p>
+
+</div>
+
+
+<div class="quality-step reveal">
+
+<span>
+
+04 / FUTURE
+
+</span>
+
+<h3>
+
+Advance.
+
+</h3>
+
+<p>
+
+Moving forward through
+innovation, trust and purpose.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <!-- ======================================================
@@ -2224,78 +3676,107 @@ footer{
 
 <section class="section vision">
 
-    <div class="container">
+<div class="vision-rings"></div>
 
-        <div class="vision-content reveal">
+<div class="container">
 
-            <div class="label">
-                Our Vision
-            </div>
+<div class="vision-content reveal">
 
-            <h2>
-                Building a
-                healthier future.
-            </h2>
+<div class="label">
 
-            <p>
+Our Vision
 
-                We believe progress in healthcare
-                begins with responsibility, quality
-                and a willingness to continuously
-                improve.
+</div>
 
-                <br><br>
+<h2>
 
-                Arovia Pharma is committed to moving
-                forward on a path defined by trust,
-                innovation and purpose.
+Building a
 
-            </p>
+<br>
 
-        </div>
+healthier future.
 
-    </div>
+</h2>
+
+<p>
+
+We believe progress in healthcare
+begins with responsibility, quality
+and a willingness to continuously
+improve.
+
+<br><br>
+
+Arovia Pharma is committed to
+moving forward on a path defined
+by trust, innovation and purpose.
+
+</p>
+
+<br>
+
+<a
+href="about.html"
+class="btn btn-glass">
+
+Discover Our Story →
+
+</a>
+
+</div>
+
+</div>
 
 </section>
+
 
 
 <!-- ======================================================
      CTA
 ====================================================== -->
 
-<section class="section cta">
+<section class="cta">
 
-    <div class="container reveal">
+<div class="container">
 
-        <div class="label">
-            Let's Connect
-        </div>
+<div class="cta-content reveal">
 
-        <h2>
-            The Path To
-            <span>Health.</span>
-        </h2>
+<div class="label">
 
-        <p>
+Let's Connect
 
-            Discover Arovia Pharma and explore
-            opportunities to connect with us.
+</div>
 
-        </p>
+<h2>
 
-        <a
-            href="contact.html"
-            class="btn btn-primary">
+The Path To
 
-            Contact Arovia →
+<span>Health.</span>
 
-        </a>
+</h2>
 
-    </div>
+<p>
+
+Discover Arovia Pharma and
+explore opportunities to connect
+with us.
+
+</p>
+
+<a
+href="contact.html"
+class="btn btn-primary">
+
+Contact Arovia →
+
+</a>
+
+</div>
+
+</div>
 
 </section>
 
-</main>
 
 
 <!-- ======================================================
@@ -2304,255 +3785,735 @@ footer{
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        <div class="footer-grid">
-
-            <div class="footer-brand">
-
-                <img
-                    src="logo 2.jpeg"
-                    alt="Arovia Pharma"
-                    class="footer-logo">
-
-                <p>
-
-                    Arovia Pharma Pvt. Ltd.
-
-                    <br><br>
-
-                    The Path To Health.
-
-                    <br><br>
-
-                    Quality • Trust • Innovation
-
-                </p>
-
-            </div>
+<div class="footer-grid">
 
 
-            <div class="footer-column">
+<div class="footer-brand">
 
-                <h4>
-                    Explore
-                </h4>
+<img
+src="logo 2.jpeg"
+alt="Arovia Pharma"
+class="footer-logo">
 
-                <a href="index.html">
-                    Home
-                </a>
+<p>
 
-                <a href="about.html">
-                    About Us
-                </a>
+Arovia Pharma Pvt. Ltd.
 
-                <a href="products.html">
-                    Products
-                </a>
+<br><br>
 
-                <a href="contact.html">
-                    Contact
-                </a>
+The Path To Health.
 
-            </div>
+<br><br>
 
+Quality • Trust • Innovation
 
-            <div class="footer-column">
+</p>
 
-                <h4>
-                    Arovia
-                </h4>
-
-                <a href="#story">
-                    Our Story
-                </a>
-
-                <a href="products.html">
-                    Pharmaceutical Portfolio
-                </a>
-
-                <a href="contact.html">
-                    Business Enquiries
-                </a>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="footer-bottom">
+<div class="footer-column">
 
-            <span>
-                © 2026 Arovia Pharma Pvt. Ltd.
-            </span>
+<h4>
 
-            <span>
-                The Path To Health
-            </span>
+Explore
 
-        </div>
+</h4>
 
-    </div>
+<a href="index.html">
+Home
+</a>
+
+<a href="about.html">
+About Us
+</a>
+
+<a href="products.html">
+Products
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>
+
+Arovia
+
+</h4>
+
+<a href="#story">
+Our Story
+</a>
+
+<a href="products.html">
+Pharmaceutical Portfolio
+</a>
+
+<a href="contact.html">
+Business Enquiries
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+
+© 2026 Arovia Pharma Pvt. Ltd.
+
+</span>
+
+<span>
+
+The Path To Health
+
+</span>
+
+</div>
+
+</div>
 
 </footer>
 
 
-<!-- ======================================================
-     JAVASCRIPT
-====================================================== -->
 
 <script>
 
-/* NAVBAR */
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 const navbar =
-    document.getElementById("navbar");
+document.getElementById("navbar");
 
 const menuToggle =
-    document.getElementById("menuToggle");
+document.getElementById("menuToggle");
 
 const navLinks =
-    document.getElementById("navLinks");
+document.getElementById("navLinks");
 
 
 function updateNavbar(){
 
-    navbar.classList.toggle(
-        "scrolled",
-        window.scrollY > 45
-    );
+navbar.classList.toggle(
+"scrolled",
+window.scrollY > 50
+);
 
 }
 
 
 window.addEventListener(
-    "scroll",
-    updateNavbar,
-    {passive:true}
+"scroll",
+updateNavbar,
+{passive:true}
 );
 
 updateNavbar();
 
 
-/* MOBILE MENU */
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 menuToggle.addEventListener(
-    "click",
-    () => {
+"click",
+()=>{
 
-        const open =
-            navLinks.classList.toggle("active");
+const open =
+navLinks.classList.toggle(
+"active"
+);
 
-        menuToggle.classList.toggle(
-            "open",
-            open
-        );
+menuToggle.classList.toggle(
+"open",
+open
+);
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            String(open)
-        );
+document.body.classList.toggle(
+"menu-open",
+open
+);
 
-        document.body.classList.toggle(
-            "menu-open",
-            open
-        );
-
-    }
+}
 );
 
 
-/* CLOSE MOBILE MENU */
-
 document
-    .querySelectorAll(".nav-links a")
-    .forEach(link => {
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
 
-        link.addEventListener(
-            "click",
-            () => {
+link.addEventListener(
+"click",
+()=>{
 
-                navLinks.classList.remove(
-                    "active"
-                );
+navLinks.classList.remove(
+"active"
+);
 
-                menuToggle.classList.remove(
-                    "open"
-                );
+menuToggle.classList.remove(
+"open"
+);
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+document.body.classList.remove(
+"menu-open"
+);
 
-                document.body.classList.remove(
-                    "menu-open"
-                );
+}
+);
 
-            }
-        );
-
-    });
+});
 
 
-/* SCROLL REVEAL */
 
-const observer =
-    new IntersectionObserver(
-        entries => {
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
 
-            entries.forEach(entry => {
-
-                if(entry.isIntersecting){
-
-                    entry.target
-                        .classList
-                        .add("active");
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold:.12
-        }
-    );
+const progress =
+document.getElementById("progress");
 
 
-document
-    .querySelectorAll(".reveal")
-    .forEach(element => {
+function updateProgress(){
 
-        observer.observe(element);
+const scrollTop =
+window.scrollY;
 
-    });
+const height =
+document.documentElement
+.scrollHeight -
+window.innerHeight;
 
+const percent =
+(scrollTop / height) * 100;
 
-/* HERO INITIAL ANIMATION */
+progress.style.width =
+percent + "%";
+
+}
+
 
 window.addEventListener(
-    "load",
-    () => {
+"scroll",
+updateProgress,
+{passive:true}
+);
 
-        document
-            .querySelectorAll(".hero .reveal")
-            .forEach(element => {
 
-                element
-                    .classList
-                    .add("active");
 
-            });
+/* =========================================================
+   REVEAL
+========================================================= */
 
-    }
+const observer =
+new IntersectionObserver(
+entries=>{
+
+entries.forEach(
+entry=>{
+
+if(
+entry.isIntersecting
+){
+
+entry.target
+.classList
+.add("active");
+
+observer.unobserve(
+entry.target
+);
+
+}
+
+});
+
+},
+{
+threshold:.12
+}
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(
+element=>
+observer.observe(element)
+);
+
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+const glow =
+document.getElementById(
+"cursorGlow"
+);
+
+
+window.addEventListener(
+"pointermove",
+event=>{
+
+glow.style.left =
+event.clientX + "px";
+
+glow.style.top =
+event.clientY + "px";
+
+}
+);
+
+
+
+/* =========================================================
+   PARTICLE NETWORK
+========================================================= */
+
+const canvas =
+document.getElementById(
+"particles"
+);
+
+const ctx =
+canvas.getContext("2d");
+
+let particles=[];
+
+let mouse={
+x:null,
+y:null
+};
+
+
+function resizeCanvas(){
+
+canvas.width =
+window.innerWidth *
+devicePixelRatio;
+
+canvas.height =
+window.innerHeight *
+devicePixelRatio;
+
+canvas.style.width =
+window.innerWidth + "px";
+
+canvas.style.height =
+window.innerHeight + "px";
+
+ctx.setTransform(
+devicePixelRatio,
+0,
+0,
+devicePixelRatio,
+0,
+0
+);
+
+}
+
+
+function createParticles(){
+
+particles=[];
+
+const count =
+window.innerWidth < 700
+? 45
+: 85;
+
+for(
+let i=0;
+i<count;
+i++
+){
+
+particles.push({
+
+x:
+Math.random() *
+window.innerWidth,
+
+y:
+Math.random() *
+window.innerHeight,
+
+vx:
+(Math.random()-.5)
+*.25,
+
+vy:
+(Math.random()-.5)
+*.25,
+
+size:
+Math.random()*1.8+.5
+
+});
+
+}
+
+}
+
+
+function drawParticles(){
+
+ctx.clearRect(
+0,
+0,
+window.innerWidth,
+window.innerHeight
+);
+
+
+particles.forEach(p=>{
+
+p.x += p.vx;
+p.y += p.vy;
+
+
+if(
+p.x<0 ||
+p.x>window.innerWidth
+)
+p.vx*=-1;
+
+
+if(
+p.y<0 ||
+p.y>window.innerHeight
+)
+p.vy*=-1;
+
+
+ctx.beginPath();
+
+ctx.arc(
+p.x,
+p.y,
+p.size,
+0,
+Math.PI*2
+);
+
+ctx.fillStyle =
+"rgba(155,216,206,.65)";
+
+ctx.fill();
+
+});
+
+
+for(
+let i=0;
+i<particles.length;
+i++
+){
+
+for(
+let j=i+1;
+j<particles.length;
+j++
+){
+
+const a=particles[i];
+
+const b=particles[j];
+
+const dx=
+a.x-b.x;
+
+const dy=
+a.y-b.y;
+
+const distance =
+Math.sqrt(
+dx*dx+
+dy*dy
+);
+
+
+if(
+distance < 125
+){
+
+const opacity =
+1 -
+distance/125;
+
+
+ctx.beginPath();
+
+ctx.moveTo(
+a.x,
+a.y
+);
+
+ctx.lineTo(
+b.x,
+b.y
+);
+
+ctx.strokeStyle =
+`rgba(0,180,216,${opacity*.15})`;
+
+ctx.lineWidth=.7;
+
+ctx.stroke();
+
+}
+
+}
+
+}
+
+
+requestAnimationFrame(
+drawParticles
+);
+
+}
+
+
+window.addEventListener(
+"resize",
+()=>{
+
+resizeCanvas();
+
+createParticles();
+
+}
+);
+
+
+window.addEventListener(
+"pointermove",
+event=>{
+
+mouse.x =
+event.clientX;
+
+mouse.y =
+event.clientY;
+
+}
+);
+
+
+resizeCanvas();
+
+createParticles();
+
+drawParticles();
+
+
+
+/* =========================================================
+   MAGNETIC BUTTON FEEL
+========================================================= */
+
+document
+.querySelectorAll(".btn")
+.forEach(button=>{
+
+button.addEventListener(
+"pointermove",
+event=>{
+
+const rect =
+button.getBoundingClientRect();
+
+const x =
+event.clientX -
+rect.left -
+rect.width/2;
+
+const y =
+event.clientY -
+rect.top -
+rect.height/2;
+
+button.style.transform =
+`translate(${x*.08}px,${y*.08}px)`;
+
+}
+);
+
+button.addEventListener(
+"pointerleave",
+()=>{
+
+button.style.transform="";
+
+}
+);
+
+});
+
+
+
+/* =========================================================
+   PARALLAX HERO
+========================================================= */
+
+const heroScience =
+document.querySelector(
+".hero-science"
+);
+
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(
+window.scrollY <
+window.innerHeight
+){
+
+const movement =
+window.scrollY*.12;
+
+heroScience.style.marginTop =
+movement+"px";
+
+}
+
+},
+{passive:true}
+);
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+const counters =
+document.querySelectorAll(
+"[data-target]"
+);
+
+
+const counterObserver =
+new IntersectionObserver(
+entries=>{
+
+entries.forEach(
+entry=>{
+
+if(
+entry.isIntersecting
+){
+
+const element =
+entry.target;
+
+const target =
+Number(
+element.dataset.target
+);
+
+let current=0;
+
+const duration=1200;
+
+const start=
+performance.now();
+
+
+function animate(time){
+
+const progress=
+Math.min(
+(time-start)/duration,
+1
+);
+
+current=
+Math.floor(
+progress*target
+);
+
+element.textContent =
+current+"+";
+
+if(progress<1){
+
+requestAnimationFrame(
+animate
+);
+
+}
+
+}
+
+
+requestAnimationFrame(
+animate
+);
+
+counterObserver
+.unobserve(element);
+
+}
+
+});
+
+},
+{
+threshold:.8
+}
+);
+
+
+counters.forEach(
+counter=>
+counterObserver.observe(counter)
+);
+
+
+/* =========================================================
+   PAGE LOAD
+========================================================= */
+
+window.addEventListener(
+"load",
+()=>{
+
+document
+.querySelectorAll(
+".hero .reveal"
+)
+.forEach(
+element=>
+element.classList.add(
+"active"
+)
+);
+
+}
 );
 
 </script>
 
 </body>
 </html>
+```
