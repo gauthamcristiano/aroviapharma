@@ -4,67 +4,50 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="Learn about Arovia Pharma Pvt. Ltd., our mission, vision, values and commitment to quality, trust and innovation.">
+content="Discover Arovia Pharma Pvt. Ltd., our purpose, values, mission and vision for a healthier future.">
 
-<meta name="theme-color"
-      content="#0A2540">
+<meta name="theme-color" content="#02090f">
 
-<meta name="color-scheme"
-      content="light">
+<title>About Arovia | The Path To Health</title>
 
-<title>About Us | Arovia Pharma Pvt. Ltd.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 
 <style>
 
 /* =========================================================
    AROVIA PHARMA
-   ABOUT US 3.0
+   ABOUT PAGE
 ========================================================= */
 
 :root{
 
-    --navy:#0A2540;
-    --deep:#04131F;
-    --teal:#005B60;
-    --cyan:#00B4D8;
-    --mint:#9BD8CE;
+    --black:#02090f;
+    --deep:#04131f;
+    --deep2:#071d2b;
 
-    --ice:#F3FAFB;
-    --white:#FFFFFF;
+    --navy:#0a2540;
+    --teal:#005b60;
+    --cyan:#00b4d8;
+    --mint:#9bd8ce;
 
-    --text:#12344D;
-    --muted:#667987;
+    --white:#fff;
+    --ice:#f3fafb;
 
-    --line:rgba(10,37,64,.10);
+    --text:#12344d;
+    --muted:#687d89;
 
-    --shadow:
-        0 25px 80px rgba(4,19,31,.12);
+    --line:rgba(255,255,255,.12);
 
-    --radius:28px;
+    --container:min(1320px,90%);
 
-    --max:1200px;
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
     margin:0;
@@ -74,30 +57,22 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:90px;
 }
 
 body{
 
-    font-family:
-        "DM Sans",
-        Arial,
-        sans-serif;
+    font-family:"DM Sans",sans-serif;
 
-    color:var(--text);
+    background:var(--black);
 
-    background:#fff;
+    color:#fff;
 
     overflow-x:hidden;
+
 }
 
-body.menu-open{
+body.loading{
     overflow:hidden;
-}
-
-img{
-    max-width:100%;
-    display:block;
 }
 
 a{
@@ -109,27 +84,178 @@ button{
     font:inherit;
 }
 
-::selection{
-    background:var(--cyan);
-    color:#fff;
-}
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:var(--ice);
-}
-
-::-webkit-scrollbar-thumb{
-    background:var(--teal);
-    border-radius:20px;
+img{
+    max-width:100%;
+    display:block;
 }
 
 
 /* =========================================================
-   SCROLL PROGRESS
+   LOADER
+========================================================= */
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--black);
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+
+}
+
+.loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-mark{
+
+    width:100px;
+
+    padding:15px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    animation:
+        loaderPulse 2s infinite;
+
+}
+
+.loader-line{
+
+    width:120px;
+
+    height:1px;
+
+    margin-top:25px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    animation:
+        loaderLine 1.5s infinite;
+
+}
+
+.loader span{
+
+    margin-top:15px;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    color:rgba(255,255,255,.45);
+
+}
+
+@keyframes loaderPulse{
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+@keyframes loaderLine{
+
+    50%{
+        transform:scaleX(1.8);
+    }
+
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.cursor{
+
+    position:fixed;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    z-index:99998;
+
+    pointer-events:none;
+
+    transform:
+        translate(-50%,-50%);
+
+}
+
+.cursor-ring{
+
+    position:fixed;
+
+    width:35px;
+    height:35px;
+
+    border:
+        1px solid
+        rgba(0,180,216,.6);
+
+    border-radius:50%;
+
+    z-index:99997;
+
+    pointer-events:none;
+
+    transform:
+        translate(-50%,-50%);
+
+    transition:
+        width .25s,
+        height .25s,
+        background .25s;
+
+}
+
+.cursor-ring.big{
+
+    width:70px;
+    height:70px;
+
+    background:
+        rgba(0,180,216,.06);
+
+}
+
+
+/* =========================================================
+   PROGRESS
 ========================================================= */
 
 .scroll-progress{
@@ -139,202 +265,41 @@ button{
     top:0;
     left:0;
 
-    width:0;
-    height:3px;
+    width:100%;
 
-    z-index:2000;
+    height:2px;
+
+    z-index:9999;
+
+}
+
+.scroll-progress span{
+
+    display:block;
+
+    width:0;
+
+    height:100%;
 
     background:
+
         linear-gradient(
             90deg,
             var(--cyan),
             var(--mint)
         );
-}
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-.container{
-
-    width:
-        min(
-            var(--max),
-            88%
-        );
-
-    margin:auto;
-}
-
-.section{
-    padding:120px 0;
-}
-
-.label{
-
-    margin-bottom:18px;
-
-    color:var(--teal);
-
-    font-size:11px;
-
-    font-weight:800;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-}
-
-.dark .label,
-.commitment .label,
-.hero .label{
-    color:var(--mint);
-}
-
-h1,
-h2,
-h3,
-h4{
-
-    font-family:
-        "Manrope",
-        sans-serif;
-}
-
-.section-heading{
-
-    max-width:760px;
-
-    margin-bottom:55px;
-}
-
-.section-heading h2{
-
-    color:var(--navy);
-
-    font-size:
-        clamp(
-            42px,
-            5vw,
-            68px
-        );
-
-    line-height:.98;
-
-    letter-spacing:-4px;
-}
-
-.reveal{
-
-    opacity:0;
-
-    transform:
-        translateY(30px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.active{
-
-    opacity:1;
-
-    transform:none;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.btn{
-
-    min-height:52px;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    padding:
-        0 25px;
-
-    border-radius:999px;
-
-    font-size:13px;
-
-    font-weight:800;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        background .3s ease,
-        color .3s ease;
-}
-
-.btn-primary{
-
-    color:#fff;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--cyan),
-            var(--teal)
-        );
 
     box-shadow:
-        0 15px 40px
-        rgba(0,180,216,.20);
-}
+        0 0 15px var(--cyan);
 
-.btn-primary:hover{
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 22px 50px
-        rgba(0,180,216,.32);
-}
-
-.btn-glass{
-
-    color:#fff;
-
-    border:
-        1px solid
-        rgba(255,255,255,.24);
-
-    background:
-        rgba(255,255,255,.07);
-
-    backdrop-filter:
-        blur(15px);
-}
-
-.btn-glass:hover{
-
-    background:#fff;
-
-    color:var(--navy);
-
-    transform:
-        translateY(-4px);
 }
 
 
 /* =========================================================
-   NAVBAR
+   NAVIGATION
 ========================================================= */
 
-.navbar{
+.nav{
 
     position:fixed;
 
@@ -343,182 +308,129 @@ h4{
 
     width:100%;
 
-    z-index:1000;
+    z-index:5000;
 
-    padding:20px 0;
-
-    transition:
-        padding .35s ease,
-        background .35s ease,
-        box-shadow .35s ease;
-}
-
-.navbar.scrolled{
-
-    padding:11px 0;
-
-    background:
-        rgba(255,255,255,.94);
-
-    backdrop-filter:
-        blur(20px);
-
-    box-shadow:
-        0 10px 40px
-        rgba(4,19,31,.08);
-}
-
-.nav-inner{
+    padding:25px 5%;
 
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
-}
-
-.logo img{
-
-    width:145px;
 
     transition:
-        width .3s ease;
+        background .4s,
+        padding .4s;
+
 }
 
-.navbar.scrolled .logo img{
-    width:125px;
+.nav.scrolled{
+
+    padding:14px 5%;
+
+    background:
+        rgba(2,9,15,.78);
+
+    backdrop-filter:
+        blur(25px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
 }
 
-.nav-links{
+.brand img{
+
+    width:140px;
+
+}
+
+.nav nav{
 
     display:flex;
 
     align-items:center;
 
-    gap:32px;
+    gap:35px;
 
-    list-style:none;
 }
 
-.nav-links a{
+.nav nav a{
 
     position:relative;
 
-    color:#fff;
+    color:
+        rgba(255,255,255,.7);
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:700;
 
-    transition:.3s ease;
+    transition:.3s;
+
 }
 
-.navbar.scrolled .nav-links a{
-    color:var(--navy);
+.nav nav a:hover,
+.nav nav a.active{
+
+    color:#fff;
+
 }
 
-.nav-links a::after{
+.nav nav a::after{
 
     content:"";
 
     position:absolute;
 
     left:0;
+
     bottom:-8px;
 
     width:0;
-    height:2px;
+
+    height:1px;
 
     background:var(--cyan);
 
-    transition:.3s ease;
+    transition:.3s;
+
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after{
+.nav nav a:hover::after,
+.nav nav a.active::after{
 
     width:100%;
+
 }
 
-.nav-contact{
-
-    padding:
-        11px 20px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.35);
-
-    border-radius:999px;
-}
-
-.navbar.scrolled .nav-contact{
-    border-color:var(--teal);
-}
-
-.nav-contact:hover{
-
-    background:var(--teal);
-
-    color:#fff!important;
-}
-
-.menu-toggle{
+.menu{
 
     display:none;
 
-    width:45px;
-    height:45px;
-
     border:0;
 
-    border-radius:50%;
+    background:none;
 
-    background:
-        rgba(255,255,255,.10);
+    width:45px;
 
-    cursor:pointer;
+    height:45px;
+
 }
 
-.menu-toggle span{
+.menu span{
 
     display:block;
 
-    width:19px;
-    height:2px;
+    width:22px;
 
-    margin:4px auto;
+    height:1px;
+
+    margin:6px auto;
 
     background:#fff;
 
-    transition:.3s ease;
-}
-
-.navbar.scrolled .menu-toggle{
-
-    background:var(--ice);
-}
-
-.navbar.scrolled .menu-toggle span{
-    background:var(--navy);
-}
-
-.menu-toggle.open span:nth-child(1){
-
-    transform:
-        translateY(6px)
-        rotate(45deg);
-}
-
-.menu-toggle.open span:nth-child(2){
-    opacity:0;
-}
-
-.menu-toggle.open span:nth-child(3){
-
-    transform:
-        translateY(-6px)
-        rotate(-45deg);
 }
 
 
@@ -526,154 +438,111 @@ h4{
    HERO
 ========================================================= */
 
-.hero{
+.about-hero{
 
-    min-height:92svh;
+    position:relative;
+
+    min-height:100svh;
+
+    overflow:hidden;
 
     display:flex;
 
     align-items:center;
 
-    position:relative;
-
-    overflow:hidden;
-
-    color:#fff;
-
     background:
 
-        linear-gradient(
-            110deg,
-            rgba(4,19,31,.98),
-            rgba(5,43,57,.94) 55%,
-            rgba(0,91,96,.82)
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(0,180,216,.18),
+            transparent 28%
         ),
 
-        url("1000447689.jpg")
-        center/cover no-repeat;
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:700px;
-    height:700px;
-
-    right:-300px;
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
-    border-radius:50%;
-
-    background:
         radial-gradient(
-            circle,
-            rgba(0,180,216,.22),
-            transparent 68%
-        );
+            circle at 10% 90%,
+            rgba(0,91,96,.18),
+            transparent 30%
+        ),
 
-    filter:blur(20px);
+        var(--black);
+
 }
 
-.hero::after{
-
-    content:"";
+#aboutCanvas{
 
     position:absolute;
 
     inset:0;
 
+    width:100%;
+    height:100%;
+
+    opacity:.6;
+
+}
+
+.hero-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.06;
+
     background-image:
 
         linear-gradient(
-            rgba(255,255,255,.04) 1px,
+            rgba(255,255,255,.1) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(255,255,255,.04) 1px,
+            rgba(255,255,255,.1) 1px,
             transparent 1px
         );
 
     background-size:
-        70px 70px;
+        100px 100px;
 
-    opacity:.15;
 }
 
-.hero-inner{
+.hero-content{
 
     position:relative;
 
-    z-index:2;
+    z-index:3;
 
-    width:
-        min(
-            1250px,
-            90%
-        );
+    width:var(--container);
 
     margin:auto;
 
-    padding:
-        150px 50px 90px;
+    padding-top:80px;
+
 }
 
-.hero-grid{
+.hero-kicker{
 
-    display:grid;
-
-    grid-template-columns:
-        1fr .9fr;
-
-    gap:60px;
-
-    align-items:center;
-}
-
-.eyebrow{
-
-    display:inline-flex;
+    display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:12px;
 
-    padding:
-        9px 15px;
-
-    margin-bottom:28px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.20);
-
-    border-radius:999px;
-
-    background:
-        rgba(255,255,255,.06);
-
-    backdrop-filter:
-        blur(14px);
-
-    color:#d9f7f5;
+    margin-bottom:30px;
 
     font-size:10px;
 
     font-weight:800;
 
-    letter-spacing:2.5px;
+    letter-spacing:3px;
 
-    text-transform:uppercase;
+    color:
+        rgba(255,255,255,.5);
+
 }
 
-.dot{
+.hero-kicker span{
 
     width:7px;
     height:7px;
@@ -683,841 +552,1066 @@ h4{
     background:var(--mint);
 
     box-shadow:
-        0 0 18px var(--mint);
+        0 0 20px var(--mint);
 
-    animation:
-        pulse 2s infinite;
 }
 
-@keyframes pulse{
+.hero-title{
 
-    50%{
-        transform:scale(1.35);
-    }
-}
-
-.hero h1{
+    font-family:"Manrope";
 
     font-size:
-        clamp(
-            52px,
-            6.5vw,
-            90px
-        );
+        clamp(70px,11vw,160px);
 
-    line-height:.94;
+    line-height:.8;
 
-    letter-spacing:-5px;
+    letter-spacing:-11px;
 
-    margin-bottom:28px;
+    font-weight:800;
+
 }
 
-.hero h1 span{
+.hero-title span{
 
     display:block;
 
     color:var(--mint);
+
 }
 
 .hero-copy{
 
     max-width:650px;
 
-    margin-bottom:34px;
+    margin-top:45px;
 
     color:
-        rgba(255,255,255,.72);
+        rgba(255,255,255,.55);
 
     font-size:18px;
 
-    line-height:1.8;
+    line-height:1.9;
+
 }
 
-.hero-actions{
+.hero-meta{
+
+    margin-top:45px;
 
     display:flex;
 
-    gap:13px;
+    gap:50px;
 
-    flex-wrap:wrap;
+}
+
+.hero-meta div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+}
+
+.hero-meta small{
+
+    color:
+        rgba(255,255,255,.3);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.hero-meta strong{
+
+    color:#fff;
+
+    font-size:12px;
+
 }
 
 
 /* =========================================================
-   HERO VISUAL
+   HERO ORBIT
 ========================================================= */
 
-.hero-visual{
+.orbit-system{
 
-    min-height:480px;
+    position:absolute;
 
-    display:grid;
+    width:650px;
+    height:650px;
 
-    place-items:center;
+    right:-100px;
 
-    position:relative;
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
 }
 
 .orbit{
 
     position:absolute;
 
-    border:
-        1px solid
-        rgba(155,216,206,.20);
-
-    border-radius:50%;
-
-    animation:
-        spin 18s linear infinite;
-}
-
-.orbit::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:8px;
-    height:8px;
-
-    top:10px;
     left:50%;
-
-    border-radius:50%;
-
-    background:var(--mint);
-
-    box-shadow:
-        0 0 22px var(--mint);
-}
-
-.o1{
-
-    width:430px;
-    height:430px;
-}
-
-.o2{
-
-    width:325px;
-    height:325px;
-
-    animation-duration:13s;
-
-    animation-direction:reverse;
-}
-
-.o3{
-
-    width:225px;
-    height:225px;
-
-    animation-duration:9s;
-}
-
-@keyframes spin{
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.hero-logo{
-
-    position:relative;
-
-    z-index:2;
-
-    width:215px;
-
-    padding:27px;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    box-shadow:
-        0 30px 100px
-        rgba(0,0,0,.30);
-
-    animation:
-        float 5s ease-in-out infinite;
-}
-
-.hero-logo img{
-    width:100%;
-}
-
-.hero-logo::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-12px;
-
-    border:
-        1px solid
-        rgba(155,216,206,.30);
-
-    border-radius:50%;
-}
-
-@keyframes float{
-
-    50%{
-        transform:
-            translateY(-12px);
-    }
-}
-
-.hero-badge{
-
-    position:absolute;
-
-    z-index:4;
-
-    padding:
-        12px 16px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    border-radius:16px;
-
-    background:
-        rgba(255,255,255,.08);
-
-    backdrop-filter:
-        blur(15px);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:1.2px;
-
-    text-transform:uppercase;
-}
-
-.badge1{
-
-    top:10%;
-    right:0;
-}
-
-.badge2{
-
-    bottom:10%;
-    left:0;
-}
-
-
-/* =========================================================
-   WHO WE ARE
-========================================================= */
-
-.intro{
-    background:#fff;
-}
-
-.intro-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        .75fr 1.25fr;
-
-    gap:90px;
-
-    align-items:start;
-}
-
-.intro h2{
-
-    color:var(--navy);
-
-    font-size:
-        clamp(
-            44px,
-            5vw,
-            70px
-        );
-
-    line-height:.98;
-
-    letter-spacing:-4px;
-}
-
-.intro h2 span{
-    color:var(--teal);
-}
-
-.intro-content p{
-
-    margin-bottom:20px;
-
-    color:var(--muted);
-
-    font-size:17px;
-
-    line-height:1.9;
-}
-
-.statement{
-
-    margin-top:32px;
-
-    padding:
-        25px 28px;
-
-    border-left:
-        3px solid
-        var(--cyan);
-
-    border-radius:
-        0 18px 18px 0;
-
-    background:var(--ice);
-
-    color:var(--navy);
-
-    font-weight:700;
-
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   AT A GLANCE
-========================================================= */
-
-.glance{
-
-    background:var(--ice);
-}
-
-.glance-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:15px;
-}
-
-.glance-card{
-
-    padding:
-        34px 25px;
-
-    min-height:190px;
-
-    background:#fff;
-
-    border:
-        1px solid
-        var(--line);
-
-    border-radius:24px;
-
-    transition:.35s ease;
-}
-
-.glance-card:hover{
-
-    transform:
-        translateY(-7px);
-
-    box-shadow:var(--shadow);
-}
-
-.glance-number{
-
-    margin-bottom:45px;
-
-    color:var(--cyan);
-
-    font-size:28px;
-
-    font-weight:800;
-}
-
-.glance-card h3{
-
-    margin-bottom:8px;
-
-    color:var(--navy);
-
-    font-size:19px;
-}
-
-.glance-card p{
-
-    color:var(--muted);
-
-    font-size:13px;
-
-    line-height:1.6;
-}
-
-
-/* =========================================================
-   APPROACH
-========================================================= */
-
-.approach{
-    background:#fff;
-}
-
-.approach-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:18px;
-}
-
-.approach-card{
-
-    min-height:300px;
-
-    padding:38px;
-
-    background:#fff;
-
-    border:
-        1px solid
-        var(--line);
-
-    border-radius:var(--radius);
-
-    transition:.35s ease;
-
-    box-shadow:
-        0 10px 40px
-        rgba(4,19,31,.04);
-}
-
-.approach-card:hover{
-
-    transform:
-        translateY(-8px);
-
-    box-shadow:var(--shadow);
-}
-
-.approach-icon{
-
-    width:52px;
-    height:52px;
-
-    display:grid;
-
-    place-items:center;
-
-    margin-bottom:55px;
-
-    border-radius:16px;
-
-    color:var(--teal);
-
-    background:
-        rgba(0,180,216,.10);
-
-    font-size:22px;
-
-    font-weight:800;
-}
-
-.approach-card h3{
-
-    margin-bottom:12px;
-
-    color:var(--navy);
-
-    font-size:25px;
-}
-
-.approach-card p{
-
-    color:var(--muted);
-
-    font-size:14px;
-
-    line-height:1.8;
-}
-
-
-/* =========================================================
-   MISSION / VISION
-========================================================= */
-
-.mission{
-    background:var(--ice);
-}
-
-.mv-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:20px;
-}
-
-.mv-card{
-
-    min-height:360px;
-
-    padding:42px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:#fff;
-
-    border:
-        1px solid
-        var(--line);
-
-    border-radius:30px;
-
-    box-shadow:
-        0 10px 40px
-        rgba(4,19,31,.05);
-
-    transition:.35s ease;
-}
-
-.mv-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:260px;
-    height:260px;
-
-    right:-120px;
-    bottom:-120px;
-
-    border-radius:50%;
-
-    background:
-        rgba(0,180,216,.08);
-}
-
-.mv-card:hover{
-
-    transform:
-        translateY(-8px);
-
-    box-shadow:var(--shadow);
-}
-
-.mv-number{
-
-    margin-bottom:90px;
-
-    color:var(--teal);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:2px;
-}
-
-.mv-card h3{
-
-    margin-bottom:18px;
-
-    color:var(--navy);
-
-    font-size:34px;
-}
-
-.mv-card p{
-
-    max-width:560px;
-
-    color:var(--muted);
-
-    font-size:15px;
-
-    line-height:1.85;
-}
-
-
-/* =========================================================
-   CORE VALUES
-========================================================= */
-
-.dark{
-
-    position:relative;
-
-    overflow:hidden;
-
-    color:#fff;
-
-    background:var(--deep);
-}
-
-.dark::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:650px;
-    height:650px;
-
-    right:-270px;
-    top:-260px;
-
-    border-radius:50%;
-
-    background:
-        rgba(0,180,216,.08);
-
-    filter:blur(70px);
-}
-
-.values-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:1px;
-
-    position:relative;
-
-    background:
-        rgba(255,255,255,.11);
-}
-
-.value-card{
-
-    min-height:280px;
-
-    padding:
-        48px 38px;
-
-    background:var(--deep);
-
-    transition:.35s ease;
-}
-
-.value-card:hover{
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,91,96,.35),
-            rgba(10,37,64,.80)
-        );
-
-    transform:
-        translateY(-7px);
-}
-
-.value-number{
-
-    margin-bottom:45px;
-
-    color:var(--mint);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:2px;
-}
-
-.value-card h3{
-
-    margin-bottom:14px;
-
-    font-size:29px;
-}
-
-.value-card p{
-
-    color:
-        rgba(255,255,255,.60);
-
-    font-size:14px;
-
-    line-height:1.8;
-}
-
-
-/* =========================================================
-   PRODUCT EXPERTISE
-========================================================= */
-
-.products{
-    background:#fff;
-}
-
-.product-tags{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-
-    margin-top:40px;
-}
-
-.product-tag{
-
-    padding:
-        14px 20px;
-
-    border:
-        1px solid
-        rgba(10,37,64,.10);
-
-    border-radius:999px;
-
-    color:var(--navy);
-
-    background:var(--ice);
-
-    font-size:13px;
-
-    font-weight:700;
-
-    transition:.3s ease;
-}
-
-.product-tag:hover{
-
-    color:#fff;
-
-    background:var(--teal);
-
-    border-color:var(--teal);
-
-    transform:
-        translateY(-3px);
-}
-
-
-/* =========================================================
-   COMMITMENT
-========================================================= */
-
-.commitment{
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding:140px 0;
-
-    color:#fff;
-
-    background:
-        linear-gradient(
-            110deg,
-            var(--deep),
-            var(--teal)
-        );
-}
-
-.commitment::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:650px;
-    height:650px;
-
-    right:-250px;
     top:50%;
-
-    transform:
-        translateY(-50%);
 
     border:
         1px solid
         rgba(155,216,206,.16);
 
     border-radius:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    animation:
+        orbitSpin 25s linear infinite;
+
 }
 
-.commitment::after{
+.orbit.one{
+
+    width:620px;
+    height:620px;
+
+}
+
+.orbit.two{
+
+    width:450px;
+    height:450px;
+
+    animation-duration:17s;
+
+    animation-direction:reverse;
+
+}
+
+.orbit.three{
+
+    width:280px;
+    height:280px;
+
+    animation-duration:10s;
+
+}
+
+@keyframes orbitSpin{
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+.orbit-core{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:170px;
+    height:170px;
+
+    transform:
+        translate(-50%,-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+
+        0 0 100px
+        rgba(0,180,216,.22);
+
+}
+
+.orbit-core img{
+
+    width:90px;
+
+    height:auto;
+
+}
+
+.orbit-dot{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--mint);
+
+    box-shadow:
+        0 0 20px var(--mint);
+
+}
+
+.dot1{
+
+    top:2%;
+    left:48%;
+
+}
+
+.dot2{
+
+    right:4%;
+    top:48%;
+
+}
+
+.dot3{
+
+    bottom:8%;
+    left:30%;
+
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    padding:150px 5%;
+
+}
+
+.section-inner{
+
+    width:var(--container);
+
+    margin:auto;
+
+}
+
+.number{
+
+    margin-bottom:18px;
+
+    color:var(--cyan);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+.eyebrow{
+
+    color:var(--teal);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.introduction{
+
+    background:var(--ice);
+
+    color:var(--navy);
+
+}
+
+.introduction-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap:120px;
+
+    align-items:center;
+
+}
+
+.introduction h2{
+
+    margin-top:20px;
+
+    font-family:"Manrope";
+
+    font-size:
+        clamp(55px,7vw,100px);
+
+    line-height:.88;
+
+    letter-spacing:-7px;
+
+}
+
+.introduction h2 span{
+
+    display:block;
+
+    color:var(--teal);
+
+}
+
+.introduction-copy{
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+.introduction-copy p+p{
+
+    margin-top:25px;
+
+}
+
+.quote{
+
+    margin-top:45px;
+
+    padding-left:25px;
+
+    border-left:
+        1px solid
+        var(--cyan);
+
+    color:var(--navy);
+
+    font-family:"Manrope";
+
+    font-size:24px;
+
+    line-height:1.4;
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    padding:0 5%;
+
+    background:var(--ice);
+
+}
+
+.stats-grid{
+
+    width:var(--container);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border-top:
+        1px solid
+        rgba(10,37,64,.12);
+
+}
+
+.stat{
+
+    padding:55px 35px;
+
+    border-right:
+        1px solid
+        rgba(10,37,64,.12);
+
+}
+
+.stat:last-child{
+
+    border-right:0;
+
+}
+
+.stat-number{
+
+    font-family:"Manrope";
+
+    font-size:60px;
+
+    letter-spacing:-4px;
+
+    color:var(--teal);
+
+}
+
+.stat-label{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.mission{
+
+    background:var(--black);
+
+    overflow:hidden;
+
+}
+
+.mission h2{
+
+    max-width:1000px;
+
+    margin-top:20px;
+
+    font-family:"Manrope";
+
+    font-size:
+        clamp(60px,8vw,115px);
+
+    line-height:.85;
+
+    letter-spacing:-8px;
+
+}
+
+.mission h2 span{
+
+    display:block;
+
+    color:var(--mint);
+
+}
+
+.mission-description{
+
+    max-width:650px;
+
+    margin-top:50px;
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size:17px;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================================================
+   MISSION CARDS
+========================================================= */
+
+.mission-cards{
+
+    margin-top:90px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:1px;
+
+    background:
+        rgba(255,255,255,.1);
+
+}
+
+.mission-card{
+
+    position:relative;
+
+    min-height:360px;
+
+    padding:40px;
+
+    overflow:hidden;
+
+    background:var(--black);
+
+}
+
+.mission-card::before{
 
     content:"";
 
     position:absolute;
 
-    width:400px;
-    height:400px;
+    inset:0;
 
-    right:-110px;
-    top:50%;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,180,216,.16),
+            transparent 60%
+        );
 
-    transform:
-        translateY(-50%);
+    opacity:0;
 
-    border:
-        1px solid
-        rgba(155,216,206,.12);
+    transition:.5s;
 
-    border-radius:50%;
 }
 
-.commitment-content{
+.mission-card:hover::before{
+
+    opacity:1;
+
+}
+
+.mission-card > *{
 
     position:relative;
 
     z-index:2;
 
-    max-width:850px;
 }
 
-.commitment h2{
+.card-number{
 
-    margin-bottom:25px;
+    color:var(--cyan);
 
-    font-size:
-        clamp(
-            50px,
-            6vw,
-            82px
-        );
+    font-size:10px;
 
-    line-height:.95;
+    font-weight:800;
 
-    letter-spacing:-5px;
+    letter-spacing:2px;
+
 }
 
-.commitment p{
+.mission-card h3{
 
-    max-width:760px;
+    margin-top:100px;
+
+    font-family:"Manrope";
+
+    font-size:40px;
+
+    letter-spacing:-2px;
+
+}
+
+.mission-card p{
+
+    max-width:430px;
+
+    margin-top:15px;
 
     color:
-        rgba(255,255,255,.70);
+        rgba(255,255,255,.45);
 
-    font-size:18px;
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.values{
+
+    background:#fff;
+
+    color:var(--navy);
+
+}
+
+.values-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:50px;
+
+}
+
+.values-header h2{
+
+    margin-top:20px;
+
+    font-family:"Manrope";
+
+    font-size:
+        clamp(55px,7vw,95px);
+
+    line-height:.88;
+
+    letter-spacing:-7px;
+
+}
+
+.values-header h2 span{
+
+    display:block;
+
+    color:var(--teal);
+
+}
+
+.values-header p{
+
+    max-width:360px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+.value-list{
+
+    margin-top:90px;
+
+    border-top:
+        1px solid
+        rgba(10,37,64,.12);
+
+}
+
+.value-row{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        80px 1fr 1fr;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:45px 0;
+
+    border-bottom:
+        1px solid
+        rgba(10,37,64,.12);
+
+    overflow:hidden;
+
+}
+
+.value-row::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:0;
+
+    background:var(--navy);
+
+    transition:.5s;
+
+    z-index:0;
+
+}
+
+.value-row:hover::before{
+
+    height:100%;
+
+}
+
+.value-row > *{
+
+    position:relative;
+
+    z-index:2;
+
+    transition:.4s;
+
+}
+
+.value-index{
+
+    color:var(--cyan);
+
+    font-size:10px;
+
+    font-weight:800;
+
+}
+
+.value-row h3{
+
+    font-family:"Manrope";
+
+    font-size:38px;
+
+    letter-spacing:-2px;
+
+}
+
+.value-row p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+.value-row:hover h3{
+
+    color:#fff;
+
+}
+
+.value-row:hover p{
+
+    color:
+        rgba(255,255,255,.5);
+
+}
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.journey{
+
+    background:var(--deep);
+
+    overflow:hidden;
+
+}
+
+.journey-title h2{
+
+    max-width:900px;
+
+    margin-top:20px;
+
+    font-family:"Manrope";
+
+    font-size:
+        clamp(60px,8vw,110px);
+
+    line-height:.85;
+
+    letter-spacing:-8px;
+
+}
+
+.journey-title h2 span{
+
+    display:block;
+
+    color:var(--mint);
+
+}
+
+.timeline{
+
+    position:relative;
+
+    margin-top:120px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+    bottom:0;
+
+    width:1px;
+
+    background:
+        rgba(255,255,255,.12);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    width:50%;
+
+    padding:0 70px 100px;
+
+}
+
+.timeline-item:nth-child(even){
+
+    margin-left:50%;
+
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    top:5px;
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 25px var(--cyan);
+
+}
+
+.timeline-item:nth-child(odd)
+.timeline-dot{
+
+    right:-5px;
+
+}
+
+.timeline-item:nth-child(even)
+.timeline-dot{
+
+    left:-5px;
+
+}
+
+.timeline-year{
+
+    color:var(--mint);
+
+    font-family:"Manrope";
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.timeline-item h3{
+
+    margin-top:15px;
+
+    font-family:"Manrope";
+
+    font-size:35px;
+
+    letter-spacing:-2px;
+
+}
+
+.timeline-item p{
+
+    max-width:420px;
+
+    margin-top:15px;
+
+    color:
+        rgba(255,255,255,.45);
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   FUTURE
+========================================================= */
+
+.future{
+
+    position:relative;
+
+    min-height:750px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            var(--teal),
+            var(--deep)
+        );
+
+}
+
+.future-content{
+
+    position:relative;
+
+    z-index:3;
+
+    width:var(--container);
+
+    margin:auto;
+
+}
+
+.future h2{
+
+    max-width:1000px;
+
+    margin-top:20px;
+
+    font-family:"Manrope";
+
+    font-size:
+        clamp(60px,8vw,120px);
+
+    line-height:.83;
+
+    letter-spacing:-8px;
+
+}
+
+.future h2 span{
+
+    display:block;
+
+    color:var(--mint);
+
+}
+
+.future p{
+
+    max-width:600px;
+
+    margin-top:40px;
+
+    color:
+        rgba(255,255,255,.55);
+
+    font-size:17px;
 
     line-height:1.9;
+
+}
+
+.future-orbit{
+
+    position:absolute;
+
+    width:800px;
+    height:800px;
+
+    right:-300px;
+
+    border:
+        1px solid
+        rgba(155,216,206,.15);
+
+    border-radius:50%;
+
+}
+
+.future-orbit::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:520px;
+    height:520px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border:
+        1px solid
+        rgba(155,216,206,.1);
+
+    border-radius:50%;
+
+}
+
+.future-orbit::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:250px;
+    height:250px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border:
+        1px solid
+        rgba(155,216,206,.1);
+
+    border-radius:50%;
+
 }
 
 
@@ -1527,43 +1621,92 @@ h4{
 
 .cta{
 
+    min-height:650px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     text-align:center;
 
-    background:#fff;
+    background:var(--ice);
+
+    color:var(--navy);
+
 }
 
 .cta h2{
 
-    margin-bottom:22px;
+    margin-top:20px;
 
-    color:var(--navy);
+    font-family:"Manrope";
 
     font-size:
-        clamp(
-            46px,
-            6vw,
-            76px
-        );
+        clamp(65px,9vw,130px);
 
-    line-height:.96;
+    line-height:.82;
 
-    letter-spacing:-5px;
+    letter-spacing:-9px;
+
 }
 
 .cta h2 span{
+
+    display:block;
+
     color:var(--teal);
+
 }
 
 .cta p{
 
-    max-width:620px;
-
-    margin:
-        0 auto 32px;
+    margin:35px auto;
 
     color:var(--muted);
 
-    line-height:1.8;
+}
+
+.cta-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:18px 25px;
+
+    border-radius:999px;
+
+    background:var(--navy);
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    transition:.3s;
+
+}
+
+.cta-button:hover{
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(10,37,64,.2);
+
+}
+
+.cta-button b{
+
+    color:var(--mint);
+
 }
 
 
@@ -1573,224 +1716,124 @@ h4{
 
 footer{
 
-    padding:
-        80px 0 25px;
+    padding:90px 5% 25px;
 
-    color:#fff;
+    background:var(--black);
 
-    background:var(--deep);
 }
 
-.footer-grid{
+.footer-main{
 
-    display:grid;
+    width:var(--container);
 
-    grid-template-columns:
-        1.5fr 1fr 1fr;
-
-    gap:60px;
-
-    padding-bottom:60px;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.10);
-}
-
-.footer-logo{
-
-    width:160px;
-
-    padding:10px;
-
-    margin-bottom:20px;
-
-    border-radius:12px;
-
-    background:#fff;
-}
-
-.footer-brand p{
-
-    max-width:350px;
-
-    color:
-        rgba(255,255,255,.55);
-
-    font-size:14px;
-
-    line-height:1.8;
-}
-
-.footer-column h4{
-
-    margin-bottom:22px;
-
-    color:var(--mint);
-
-    font-size:11px;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-}
-
-.footer-column a{
-
-    display:block;
-
-    margin-bottom:14px;
-
-    color:
-        rgba(255,255,255,.62);
-
-    font-size:14px;
-
-    transition:.3s ease;
-}
-
-.footer-column a:hover{
-
-    color:#fff;
-
-    transform:
-        translateX(4px);
-}
-
-.footer-bottom{
+    margin:auto;
 
     display:flex;
 
     justify-content:space-between;
 
-    gap:20px;
+    gap:80px;
 
-    padding-top:24px;
+    padding-bottom:70px;
 
-    color:
-        rgba(255,255,255,.36);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.1);
 
-    font-size:12px;
 }
 
+.footer-brand img{
 
-/* =========================================================
-   TABLET
-========================================================= */
+    width:150px;
 
-@media(max-width:950px){
+    padding:10px;
 
-    .nav-links{
+    background:#fff;
 
-        position:fixed;
+    border-radius:10px;
 
-        top:0;
-        right:-100%;
+}
 
-        width:
-            min(
-                330px,
-                86%
-            );
+.footer-brand p{
 
-        height:100svh;
+    margin-top:20px;
 
-        padding:
-            100px 40px;
+    color:
+        rgba(255,255,255,.4);
 
-        flex-direction:column;
+    font-size:13px;
 
-        align-items:flex-start;
+}
 
-        gap:28px;
+.footer-links{
 
-        background:var(--deep);
+    display:flex;
 
-        box-shadow:
-            -20px 0 60px
-            rgba(0,0,0,.25);
+    gap:100px;
 
-        transition:.4s ease;
-    }
+}
 
-    .nav-links.active{
-        right:0;
-    }
+.footer-links div{
 
-    .nav-links a,
-    .navbar.scrolled .nav-links a{
+    display:flex;
 
-        color:#fff;
+    flex-direction:column;
 
-        font-size:17px;
-    }
+    gap:15px;
 
-    .nav-contact{
+}
 
-        border:0;
+.footer-links span{
 
-        padding:0;
-    }
+    margin-bottom:10px;
 
-    .menu-toggle{
-        display:block;
-    }
+    color:var(--mint);
 
-    .hero-grid{
+    font-size:9px;
 
-        grid-template-columns:1fr;
+    font-weight:800;
 
-        text-align:center;
-    }
+    letter-spacing:2px;
 
-    .hero-copy{
+}
 
-        margin:
-            0 auto 34px;
-    }
+.footer-links a{
 
-    .hero-actions{
+    color:
+        rgba(255,255,255,.5);
 
-        justify-content:center;
-    }
+    font-size:13px;
 
-    .hero-visual{
-        min-height:390px;
-    }
+    transition:.3s;
 
-    .intro-grid{
+}
 
-        grid-template-columns:1fr;
+.footer-links a:hover{
 
-        gap:40px;
-    }
+    color:#fff;
 
-    .glance-grid{
+    transform:
+        translateX(5px);
 
-        grid-template-columns:
-            1fr 1fr;
-    }
+}
 
-    .approach-grid{
+.footer-bottom{
 
-        grid-template-columns:1fr;
-    }
+    width:var(--container);
 
-    .mv-grid{
+    margin:25px auto 0;
 
-        grid-template-columns:1fr;
-    }
+    display:flex;
 
-    .values-grid{
+    justify-content:space-between;
 
-        grid-template-columns:1fr;
-    }
+    color:
+        rgba(255,255,255,.25);
 
-    .footer-grid{
+    font-size:10px;
 
-        grid-template-columns:
-            1fr 1fr;
-    }
+    letter-spacing:1px;
+
 }
 
 
@@ -1798,148 +1841,326 @@ footer{
    MOBILE
 ========================================================= */
 
-@media(max-width:600px){
+@media(max-width:900px){
 
-    .container{
-        width:88%;
-    }
+    .nav nav{
 
-    .navbar{
-        padding:14px 0;
-    }
+        position:fixed;
 
-    .logo img{
-        width:120px;
-    }
+        inset:0;
 
-    .navbar.scrolled .logo img{
-        width:110px;
-    }
-
-    .hero-inner{
-
-        padding:
-            120px 0 70px;
-    }
-
-    .hero h1{
-
-        font-size:50px;
-
-        letter-spacing:-3.5px;
-    }
-
-    .hero-copy{
-        font-size:15px;
-    }
-
-    .hero-actions{
+        padding:120px 10%;
 
         flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:30px;
+
+        background:var(--black);
+
+        transform:
+            translateX(100%);
+
+        transition:
+            transform .5s;
+
     }
 
-    .hero-actions .btn{
+    .nav nav.open{
+
+        transform:
+            translateX(0);
+
+    }
+
+    .nav nav a{
+
+        font-size:25px;
+
+    }
+
+    .menu{
+
+        display:block;
+
+        position:relative;
+
+        z-index:2;
+
+    }
+
+    .orbit-system{
+
+        width:430px;
+        height:430px;
+
+        right:50%;
+
+        top:auto;
+
+        bottom:-120px;
+
+        transform:
+            translateX(50%);
+
+        opacity:.4;
+
+    }
+
+    .orbit.one{
+
+        width:420px;
+        height:420px;
+
+    }
+
+    .orbit.two{
+
+        width:300px;
+        height:300px;
+
+    }
+
+    .orbit.three{
+
+        width:200px;
+        height:200px;
+
+    }
+
+    .orbit-core{
+
+        width:120px;
+        height:120px;
+
+    }
+
+    .introduction-grid{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stat{
+
+        border-right:0;
+
+        border-bottom:
+            1px solid
+            rgba(10,37,64,.12);
+
+    }
+
+    .mission-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .values-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .value-row{
+
+        grid-template-columns:50px 1fr;
+
+    }
+
+    .value-row p{
+
+        grid-column:2;
+
+    }
+
+    .timeline::before{
+
+        left:5px;
+
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even){
+
         width:100%;
-    }
 
-    .hero-visual{
-        min-height:300px;
-    }
-
-    .o1{
-
-        width:270px;
-        height:270px;
-    }
-
-    .o2{
-
-        width:210px;
-        height:210px;
-    }
-
-    .o3{
-
-        width:155px;
-        height:155px;
-    }
-
-    .hero-logo{
-
-        width:145px;
-
-        padding:20px;
-    }
-
-    .hero-badge{
-
-        font-size:8px;
+        margin-left:0;
 
         padding:
-            9px 11px;
+            0 0 80px 40px;
+
     }
 
-    .badge1{
+    .timeline-item:nth-child(odd)
+    .timeline-dot,
+    .timeline-item:nth-child(even)
+    .timeline-dot{
 
-        top:4%;
-        right:0;
-    }
-
-    .badge2{
-
-        bottom:4%;
         left:0;
+
+    }
+
+    .future-orbit{
+
+        width:500px;
+        height:500px;
+
+        right:-300px;
+
+    }
+
+    .footer-main{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .nav{
+
+        padding:18px 6%;
+
+    }
+
+    .brand img{
+
+        width:120px;
+
     }
 
     .section{
-        padding:88px 0;
+
+        padding:100px 6%;
+
     }
 
-    .intro h2,
-    .section-heading h2{
+    .hero-content{
 
-        letter-spacing:-3px;
+        width:88%;
+
     }
 
-    .glance-grid{
+    .hero-title{
 
-        grid-template-columns:1fr;
+        font-size:60px;
+
+        letter-spacing:-5px;
+
     }
 
-    .glance-card{
-        min-height:160px;
+    .hero-copy{
+
+        font-size:15px;
+
     }
 
-    .mv-card{
+    .hero-meta{
+
+        gap:25px;
+
+        flex-wrap:wrap;
+
+    }
+
+    .introduction h2,
+    .mission h2,
+    .values-header h2,
+    .journey-title h2,
+    .future h2,
+    .cta h2{
+
+        letter-spacing:-4px;
+
+    }
+
+    .introduction-copy{
+
+        font-size:15px;
+
+    }
+
+    .quote{
+
+        font-size:20px;
+
+    }
+
+    .mission-card{
 
         min-height:320px;
 
-        padding:32px;
     }
 
-    .mv-number{
-        margin-bottom:65px;
+    .mission-card h3{
+
+        margin-top:80px;
+
+        font-size:32px;
+
     }
 
-    .commitment{
-        padding:100px 0;
+    .value-row{
+
+        grid-template-columns:40px 1fr;
+
     }
 
-    .commitment h2{
-        letter-spacing:-4px;
+    .value-row h3{
+
+        font-size:30px;
+
     }
 
-    .footer-grid{
+    .value-row p{
 
-        grid-template-columns:1fr;
+        font-size:14px;
 
-        gap:40px;
+    }
+
+    .timeline-item h3{
+
+        font-size:30px;
+
+    }
+
+    .cta{
+
+        min-height:580px;
+
+        padding:80px 6%;
+
+    }
+
+    .footer-links{
+
+        gap:45px;
+
     }
 
     .footer-bottom{
 
         flex-direction:column;
+
+        gap:10px;
+
     }
+
 }
 
 
@@ -1949,25 +2170,20 @@ footer{
 
 @media(prefers-reduced-motion:reduce){
 
-    html{
-        scroll-behavior:auto;
-    }
-
     *,
     *::before,
     *::after{
 
         animation-duration:.01ms!important;
 
+        animation-iteration-count:1!important;
+
         transition-duration:.01ms!important;
+
+        scroll-behavior:auto!important;
+
     }
 
-    .reveal{
-
-        opacity:1;
-
-        transform:none;
-    }
 }
 
 </style>
@@ -1975,197 +2191,169 @@ footer{
 </head>
 
 
-<body>
+<body class="loading">
 
 
-<div class="scroll-progress"
-     id="scrollProgress"></div>
+<!-- =====================================================
+     LOADER
+===================================================== -->
+
+<div class="loader">
+
+    <div class="loader-mark">
+
+        <img
+        src="logo 2.jpeg"
+        alt="Arovia Pharma">
+
+    </div>
+
+    <div class="loader-line"></div>
+
+    <span>AROVIA PHARMA</span>
+
+</div>
 
 
-<!-- ======================================================
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="scroll-progress">
+
+    <span></span>
+
+</div>
+
+
+<!-- =====================================================
+     CURSOR
+===================================================== -->
+
+<div class="cursor"></div>
+
+<div class="cursor-ring"></div>
+
+
+<!-- =====================================================
      NAVIGATION
-====================================================== -->
+===================================================== -->
 
-<header class="navbar"
-        id="navbar">
+<header class="nav">
 
-    <div class="container nav-inner">
+    <a
+    href="index.html"
+    class="brand">
 
-        <a href="index.html"
-           class="logo"
-           aria-label="Arovia Pharma Home">
+        <img
+        src="logo (1).jpeg"
+        alt="Arovia Pharma">
 
-            <img
-                src="logo (1).jpeg"
-                alt="Arovia Pharma Pvt. Ltd."
-            >
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a
+        href="about.html"
+        class="active">
+
+            About
 
         </a>
 
+        <a href="products.html">
+            Products
+        </a>
 
-        <ul class="nav-links"
-            id="navLinks">
+        <a href="contact.html">
+            Contact
+        </a>
 
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="about.html"
-                   class="active"
-                   aria-current="page">
-
-                    About Us
-
-                </a>
-            </li>
-
-            <li>
-                <a href="products.html">
-                    Products
-                </a>
-            </li>
-
-            <li>
-                <a href="contact.html"
-                   class="nav-contact">
-
-                    Contact
-
-                </a>
-            </li>
-
-        </ul>
+    </nav>
 
 
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="navLinks">
+    <button
+    class="menu"
+    aria-label="Open menu">
 
-            <span></span>
-            <span></span>
-            <span></span>
+        <span></span>
+        <span></span>
 
-        </button>
-
-    </div>
+    </button>
 
 </header>
 
 
-<main>
-
-
-<!-- ======================================================
+<!-- =====================================================
      HERO
-====================================================== -->
+===================================================== -->
 
-<section class="hero">
+<section class="about-hero">
 
-    <div class="hero-inner">
+    <canvas id="aboutCanvas"></canvas>
 
-        <div class="hero-grid">
-
-
-            <div class="reveal">
-
-                <div class="eyebrow">
-
-                    <span class="dot"></span>
-
-                    About Arovia
-
-                </div>
+    <div class="hero-grid"></div>
 
 
-                <h1>
+    <div class="hero-content">
 
-                    The purpose
-                    <br>
+        <div class="hero-kicker">
 
-                    behind the
+            <span></span>
 
-                    <span>
-                        path.
-                    </span>
+            THE AROVIA STORY
 
-                </h1>
+        </div>
 
 
-                <p class="hero-copy">
+        <h1 class="hero-title">
 
-                    Discover the purpose, values and
-                    commitment that shape Arovia Pharma
-                    and guide our approach to healthcare.
+            BEYOND
 
-                </p>
+            <span>MEDICINE.</span>
 
-
-                <div class="hero-actions">
-
-                    <a
-                        href="#who-we-are"
-                        class="btn btn-primary">
-
-                        Discover Arovia
-
-                        <span>↓</span>
-
-                    </a>
+        </h1>
 
 
-                    <a
-                        href="products.html"
-                        class="btn btn-glass">
+        <p class="hero-copy">
 
-                        Explore Products
+            Arovia Pharma exists with a simple
+            purpose: to contribute to better
+            healthcare through quality,
+            responsibility and continuous progress.
 
-                        <span>↗</span>
+        </p>
 
-                    </a>
 
-                </div>
+        <div class="hero-meta">
+
+            <div>
+
+                <small>
+                    PURPOSE
+                </small>
+
+                <strong>
+                    Healthcare with meaning
+                </strong>
 
             </div>
 
 
-            <div class="hero-visual reveal">
+            <div>
 
-                <div class="orbit o1"></div>
+                <small>
+                    VALUES
+                </small>
 
-                <div class="orbit o2"></div>
-
-                <div class="orbit o3"></div>
-
-
-                <div class="hero-badge badge1">
-
-                    Quality • Trust
-
-                </div>
-
-
-                <div class="hero-badge badge2">
-
-                    Driven by Purpose
-
-                </div>
-
-
-                <div class="hero-logo">
-
-                    <img
-                        src="logo 2.jpeg"
-                        alt="Arovia Pharma logo"
-                    >
-
-                </div>
+                <strong>
+                    Quality · Trust · Innovation
+                </strong>
 
             </div>
 
@@ -2173,82 +2361,95 @@ footer{
 
     </div>
 
+
+    <div class="orbit-system">
+
+        <div class="orbit one"></div>
+
+        <div class="orbit two"></div>
+
+        <div class="orbit three"></div>
+
+
+        <div class="orbit-core">
+
+            <img
+            src="logo 2.jpeg"
+            alt="Arovia Pharma">
+
+        </div>
+
+
+        <div class="orbit-dot dot1"></div>
+
+        <div class="orbit-dot dot2"></div>
+
+        <div class="orbit-dot dot3"></div>
+
+    </div>
+
 </section>
 
 
-<!-- ======================================================
-     WHO WE ARE
-====================================================== -->
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
 
-<section
-    class="section intro"
-    id="who-we-are">
+<section class="section introduction">
 
-    <div class="container">
+    <div class="section-inner">
 
-        <div class="intro-grid">
+        <div class="introduction-grid">
 
 
-            <div class="reveal">
+            <div>
 
-                <div class="label">
-                    Who We Are
+                <div class="number">
+                    01
                 </div>
+
+                <span class="eyebrow">
+                    WHO WE ARE
+                </span>
 
 
                 <h2>
 
-                    Healthcare
-
-                    <br>
-
-                    <span>
-                        with purpose.
-                    </span>
+                    A company
+                    <span>with purpose.</span>
 
                 </h2>
 
             </div>
 
 
-            <div class="intro-content reveal">
+            <div class="introduction-copy">
 
                 <p>
 
-                    Arovia Pharma Pvt. Ltd. is dedicated
-                    to delivering quality pharmaceutical
-                    products and healthcare solutions
-                    that contribute to better health.
+                    Arovia Pharma Pvt. Ltd. is a
+                    pharmaceutical company focused
+                    on creating dependable healthcare
+                    solutions.
 
                 </p>
 
 
                 <p>
 
-                    We believe meaningful progress in
-                    healthcare comes from combining
-                    quality, responsibility, innovation
-                    and long-term trust.
+                    Our approach is built around
+                    quality, trust and innovation,
+                    with the understanding that
+                    every pharmaceutical product
+                    ultimately exists to serve people.
 
                 </p>
 
 
-                <p>
+                <div class="quote">
 
-                    Our approach is centered around
-                    dependable pharmaceutical solutions,
-                    responsible business practices and
-                    a continuous commitment to improvement.
-
-                </p>
-
-
-                <div class="statement">
-
-                    At Arovia, the path forward is defined
-                    by what we stand for: quality in our work,
-                    trust in our relationships and purpose
-                    in every step.
+                    “The path to better healthcare
+                    begins with doing things right.”
 
                 </div>
 
@@ -2261,39 +2462,254 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     AROVIA AT A GLANCE
-====================================================== -->
+<!-- =====================================================
+     STATS
+===================================================== -->
 
-<section
-    class="section glance"
-    id="arovia-at-a-glance">
+<section class="stats">
 
-    <div class="container">
+    <div class="stats-grid">
 
-        <div class="section-heading reveal">
+        <div class="stat">
 
-            <div class="label">
-                Arovia At A Glance
+            <div
+            class="stat-number"
+            data-count="01">
+
+                01
+
             </div>
 
-            <h2>
+            <div class="stat-label">
 
-                What defines
-                <br>
-                our journey.
+                PURPOSE
 
-            </h2>
+            </div>
 
         </div>
 
 
-        <div class="glance-grid">
+        <div class="stat">
+
+            <div
+            class="stat-number"
+            data-count="03">
+
+                03
+
+            </div>
+
+            <div class="stat-label">
+
+                CORE VALUES
+
+            </div>
+
+        </div>
 
 
-            <article class="glance-card reveal">
+        <div class="stat">
 
-                <div class="glance-number">
+            <div
+            class="stat-number">
+
+                ∞
+
+            </div>
+
+            <div class="stat-label">
+
+                ROOM TO GROW
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MISSION
+===================================================== -->
+
+<section class="section mission">
+
+    <div class="section-inner">
+
+        <div class="number">
+            02
+        </div>
+
+        <span class="eyebrow">
+            OUR MISSION
+        </span>
+
+
+        <h2>
+
+            Make healthcare
+            <span>more meaningful.</span>
+
+        </h2>
+
+
+        <p class="mission-description">
+
+            Our mission is to develop and
+            provide pharmaceutical solutions
+            that reflect our commitment to
+            quality, reliability and responsible
+            growth.
+
+        </p>
+
+
+        <div class="mission-cards">
+
+
+            <article class="mission-card">
+
+                <div class="card-number">
+                    01 / QUALITY
+                </div>
+
+                <h3>
+                    Do it right.
+                </h3>
+
+                <p>
+
+                    We believe quality is not
+                    simply a standard to meet.
+                    It is a responsibility to
+                    maintain.
+
+                </p>
+
+            </article>
+
+
+            <article class="mission-card">
+
+                <div class="card-number">
+                    02 / PEOPLE
+                </div>
+
+                <h3>
+                    Keep people first.
+                </h3>
+
+                <p>
+
+                    Behind every product is a
+                    person. That perspective
+                    shapes how we think,
+                    build and move forward.
+
+                </p>
+
+            </article>
+
+
+            <article class="mission-card">
+
+                <div class="card-number">
+                    03 / PROGRESS
+                </div>
+
+                <h3>
+                    Never stand still.
+                </h3>
+
+                <p>
+
+                    Healthcare keeps evolving.
+                    We believe companies must
+                    evolve with it.
+
+                </p>
+
+            </article>
+
+
+            <article class="mission-card">
+
+                <div class="card-number">
+                    04 / TRUST
+                </div>
+
+                <h3>
+                    Earn it.
+                </h3>
+
+                <p>
+
+                    Trust is built through
+                    consistency, transparency
+                    and responsibility.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VALUES
+===================================================== -->
+
+<section class="section values">
+
+    <div class="section-inner">
+
+
+        <div class="values-header">
+
+            <div>
+
+                <div class="number">
+                    03
+                </div>
+
+                <span class="eyebrow">
+                    OUR VALUES
+                </span>
+
+
+                <h2>
+
+                    Three principles.
+                    <span>One direction.</span>
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                The principles behind every
+                decision we make.
+
+            </p>
+
+        </div>
+
+
+        <div class="value-list">
+
+
+            <div class="value-row">
+
+                <div class="value-index">
                     01
                 </div>
 
@@ -2302,16 +2718,20 @@ footer{
                 </h3>
 
                 <p>
-                    Focused on dependable pharmaceutical
-                    solutions and consistent standards.
+
+                    Delivering dependable
+                    pharmaceutical solutions
+                    with consistency and
+                    responsibility.
+
                 </p>
 
-            </article>
+            </div>
 
 
-            <article class="glance-card reveal">
+            <div class="value-row">
 
-                <div class="glance-number">
+                <div class="value-index">
                     02
                 </div>
 
@@ -2320,16 +2740,20 @@ footer{
                 </h3>
 
                 <p>
-                    Building lasting relationships through
-                    reliability and responsibility.
+
+                    Creating relationships
+                    through integrity,
+                    reliability and
+                    accountability.
+
                 </p>
 
-            </article>
+            </div>
 
 
-            <article class="glance-card reveal">
+            <div class="value-row">
 
-                <div class="glance-number">
+                <div class="value-index">
                     03
                 </div>
 
@@ -2338,29 +2762,14 @@ footer{
                 </h3>
 
                 <p>
-                    Looking forward and continuously seeking
-                    better approaches to healthcare.
+
+                    Looking for better ways
+                    to respond to an evolving
+                    healthcare landscape.
+
                 </p>
 
-            </article>
-
-
-            <article class="glance-card reveal">
-
-                <div class="glance-number">
-                    04
-                </div>
-
-                <h3>
-                    Purpose
-                </h3>
-
-                <p>
-                    Keeping healthcare and meaningful progress
-                    at the center of our direction.
-                </p>
-
-            </article>
+            </div>
 
 
         </div>
@@ -2370,392 +2779,134 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     OUR APPROACH
-====================================================== -->
+<!-- =====================================================
+     JOURNEY
+===================================================== -->
 
-<section
-    class="section approach"
-    id="our-approach">
+<section class="section journey">
 
-    <div class="container">
+    <div class="section-inner">
 
 
-        <div class="section-heading reveal">
+        <div class="journey-title">
 
-            <div class="label">
-                Our Approach
+            <div class="number">
+                04
             </div>
+
+            <span class="eyebrow">
+                OUR JOURNEY
+            </span>
+
 
             <h2>
 
-                Built around
-                <br>
-                what matters.
+                Starting small.
+                <span>Thinking ahead.</span>
 
             </h2>
 
         </div>
 
 
-        <div class="approach-grid">
+        <div class="timeline">
 
 
-            <article class="approach-card reveal">
+            <div class="timeline-item">
 
-                <div class="approach-icon">
-                    ✓
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">
+                    BEGIN
                 </div>
 
                 <h3>
-                    Quality First
+                    A clear purpose.
                 </h3>
 
                 <p>
 
-                    We place quality at the center
-                    of our approach, focusing on
-                    dependable pharmaceutical
-                    solutions and consistent standards.
+                    Arovia begins with the ambition
+                    to build a pharmaceutical
+                    company grounded in quality,
+                    trust and meaningful
+                    healthcare.
 
                 </p>
 
-            </article>
-
-
-            <article class="approach-card reveal">
-
-                <div class="approach-icon">
-                    +
-                </div>
-
-                <h3>
-                    Responsible Growth
-                </h3>
-
-                <p>
-
-                    We believe sustainable progress
-                    comes from responsible decisions,
-                    strong relationships and continuous
-                    learning.
-
-                </p>
-
-            </article>
-
-
-            <article class="approach-card reveal">
-
-                <div class="approach-icon">
-                    ↗
-                </div>
-
-                <h3>
-                    Looking Forward
-                </h3>
-
-                <p>
-
-                    We remain focused on improving
-                    our capabilities and exploring
-                    better ways to respond to evolving
-                    healthcare needs.
-
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
-     MISSION & VISION
-====================================================== -->
-
-<section
-    class="section mission"
-    id="our-direction">
-
-    <div class="container">
-
-
-        <div class="section-heading reveal">
-
-            <div class="label">
-                Our Direction
             </div>
 
-            <h2>
 
-                Purpose that
-                <br>
-                moves us forward.
+            <div class="timeline-item">
 
-            </h2>
+                <div class="timeline-dot"></div>
 
-        </div>
-
-
-        <div class="mv-grid">
-
-
-            <article class="mv-card reveal">
-
-                <div class="mv-number">
-                    01 / OUR MISSION
+                <div class="timeline-year">
+                    BUILD
                 </div>
 
                 <h3>
-                    Purpose in every step.
+                    Creating the foundation.
                 </h3>
 
                 <p>
 
-                    To provide safe, effective and
-                    dependable pharmaceutical solutions
-                    while maintaining strong standards
-                    of quality, reliability and customer
-                    satisfaction.
+                    Developing our portfolio,
+                    identity and relationships
+                    with a long-term perspective.
 
                 </p>
 
-            </article>
-
-
-            <article class="mv-card reveal">
-
-                <div class="mv-number">
-                    02 / OUR VISION
-                </div>
-
-                <h3>
-                    A healthier future.
-                </h3>
-
-                <p>
-
-                    To build a trusted pharmaceutical
-                    organization that contributes
-                    meaningfully to healthcare through
-                    quality, innovation, responsibility
-                    and continuous improvement.
-
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
-     CORE VALUES
-====================================================== -->
-
-<section
-    class="section dark"
-    id="our-values">
-
-    <div class="container">
-
-
-        <div class="section-heading reveal">
-
-            <div class="label">
-                Our Core Values
             </div>
 
-            <h2 style="color:#fff">
 
-                Three principles.
-                <br>
-                One purpose.
+            <div class="timeline-item">
 
-            </h2>
+                <div class="timeline-dot"></div>
 
-        </div>
-
-
-        <div class="values-grid">
-
-
-            <article class="value-card reveal">
-
-                <div class="value-number">
-                    01 / QUALITY
+                <div class="timeline-year">
+                    GROW
                 </div>
 
                 <h3>
-                    Quality
+                    Expanding the path.
                 </h3>
 
                 <p>
 
-                    A commitment to dependable
-                    pharmaceutical solutions and
-                    consistent standards.
+                    Continuing to strengthen our
+                    capabilities and reach while
+                    staying close to our core
+                    principles.
 
                 </p>
 
-            </article>
-
-
-            <article class="value-card reveal">
-
-                <div class="value-number">
-                    02 / TRUST
-                </div>
-
-                <h3>
-                    Trust
-                </h3>
-
-                <p>
-
-                    Building meaningful relationships
-                    through reliability, integrity
-                    and responsibility.
-
-                </p>
-
-            </article>
-
-
-            <article class="value-card reveal">
-
-                <div class="value-number">
-                    03 / INNOVATION
-                </div>
-
-                <h3>
-                    Innovation
-                </h3>
-
-                <p>
-
-                    Continuously looking forward and
-                    embracing better ways to serve
-                    evolving healthcare needs.
-
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
-     PRODUCT EXPERTISE
-====================================================== -->
-
-<section
-    class="section products"
-    id="product-expertise">
-
-    <div class="container">
-
-
-        <div class="section-heading reveal">
-
-            <div class="label">
-                Product Expertise
             </div>
 
-            <h2>
 
-                Solutions across
-                <br>
-                healthcare.
+            <div class="timeline-item">
 
-            </h2>
+                <div class="timeline-dot"></div>
 
-        </div>
+                <div class="timeline-year">
+                    FUTURE
+                </div>
 
+                <h3>
+                    Bigger possibilities.
+                </h3>
 
-        <div class="product-tags reveal">
+                <p>
 
+                    Building toward a future where
+                    innovation and responsible
+                    pharmaceutical growth can
+                    create lasting impact.
 
-            <span class="product-tag">
-                Tablets
-            </span>
+                </p>
 
-            <span class="product-tag">
-                Capsules
-            </span>
-
-            <span class="product-tag">
-                Syrups
-            </span>
-
-            <span class="product-tag">
-                Injectables
-            </span>
-
-            <span class="product-tag">
-                Ointments
-            </span>
-
-            <span class="product-tag">
-                Lotions
-            </span>
-
-            <span class="product-tag">
-                Medicated Soaps
-            </span>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
-     COMMITMENT
-====================================================== -->
-
-<section
-    class="commitment"
-    id="our-commitment">
-
-    <div class="container">
-
-        <div class="commitment-content reveal">
-
-            <div class="label">
-                Our Commitment
             </div>
 
-            <h2>
-                A responsibility.
-            </h2>
-
-            <p>
-
-                At Arovia Pharma, healthcare is more
-                than medicine. We are committed to
-                supporting healthcare professionals
-                and communities through dependable
-                pharmaceutical products, responsible
-                practices and continuous improvement.
-
-            </p>
 
         </div>
 
@@ -2764,43 +2915,96 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     CTA
-====================================================== -->
+<!-- =====================================================
+     FUTURE
+===================================================== -->
 
-<section class="section cta">
+<section class="future">
 
-    <div class="container reveal">
+    <div class="future-orbit"></div>
 
-        <div class="label">
-            Continue The Journey
+
+    <div class="future-content">
+
+        <div class="number">
+            05
         </div>
+
+        <span
+        class="eyebrow"
+        style="color:var(--mint)">
+
+            LOOKING AHEAD
+
+        </span>
+
 
         <h2>
 
-            Explore the
-            <br>
-
-            <span>
-                Arovia portfolio.
-            </span>
+            The future is
+            <span>still unfolding.</span>
 
         </h2>
 
+
         <p>
 
-            Discover our pharmaceutical product
-            categories and learn more about the
-            solutions we are building for healthcare.
+            Arovia's journey is not defined
+            by where we are today.
+
+            <br><br>
+
+            It is defined by how much better
+            we can become tomorrow.
+
+            <br><br>
+
+            We intend to keep learning,
+            improving and moving forward.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div>
+
+        <span class="eyebrow">
+            THE NEXT CHAPTER
+        </span>
+
+
+        <h2>
+
+            Discover
+            <span>Arovia.</span>
+
+        </h2>
+
+
+        <p>
+
+            Explore our pharmaceutical
+            portfolio.
 
         </p>
 
 
         <a
-            href="products.html"
-            class="btn btn-primary">
+        href="products.html"
+        class="cta-button">
 
-            Explore Products →
+            Explore Products
+
+            <b>↗</b>
 
         </a>
 
@@ -2809,60 +3013,43 @@ footer{
 </section>
 
 
-</main>
-
-
-<!-- ======================================================
+<!-- =====================================================
      FOOTER
-====================================================== -->
+===================================================== -->
 
 <footer>
 
-    <div class="container">
+    <div class="footer-main">
 
 
-        <div class="footer-grid">
+        <div class="footer-brand">
+
+            <img
+            src="logo 2.jpeg"
+            alt="Arovia Pharma">
+
+            <p>
+                The Path To Health.
+            </p>
+
+        </div>
 
 
-            <div class="footer-brand">
-
-                <img
-                    src="logo 2.jpeg"
-                    alt="Arovia Pharma"
-                    class="footer-logo"
-                >
+        <div class="footer-links">
 
 
-                <p>
+            <div>
 
-                    Arovia Pharma Pvt. Ltd.
-
-                    <br><br>
-
-                    The Path To Health.
-
-                    <br><br>
-
-                    Quality • Trust • Innovation
-
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    Explore
-                </h4>
-
+                <span>
+                    EXPLORE
+                </span>
 
                 <a href="index.html">
                     Home
                 </a>
 
                 <a href="about.html">
-                    About Us
+                    About
                 </a>
 
                 <a href="products.html">
@@ -2876,27 +3063,22 @@ footer{
             </div>
 
 
-            <div class="footer-column">
+            <div>
 
-                <h4>
-                    Discover
-                </h4>
+                <span>
+                    PRINCIPLES
+                </span>
 
-
-                <a href="#who-we-are">
-                    Who We Are
+                <a href="#mission">
+                    Mission
                 </a>
 
-                <a href="#our-direction">
-                    Our Direction
+                <a href="#values">
+                    Values
                 </a>
 
-                <a href="#our-values">
-                    Our Values
-                </a>
-
-                <a href="#product-expertise">
-                    Product Expertise
+                <a href="#journey">
+                    Journey
                 </a>
 
             </div>
@@ -2904,284 +3086,789 @@ footer{
 
         </div>
 
+    </div>
 
-        <div class="footer-bottom">
 
-            <span>
-                © 2026 Arovia Pharma Pvt. Ltd.
-            </span>
+    <div class="footer-bottom">
 
-            <span>
-                The Path To Health
-            </span>
+        <span>
+            © 2026 Arovia Pharma Pvt. Ltd.
+        </span>
 
-        </div>
+        <span>
+            THE PATH TO HEALTH
+        </span>
 
     </div>
 
 </footer>
 
 
-<!-- ======================================================
-     JAVASCRIPT
-====================================================== -->
+<!-- =====================================================
+     GSAP
+===================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
+
 
 <script>
 
-const navbar =
-    document.getElementById("navbar");
-
-const menuToggle =
-    document.getElementById("menuToggle");
-
-const navLinks =
-    document.getElementById("navLinks");
-
-const scrollProgress =
-    document.getElementById("scrollProgress");
+gsap.registerPlugin(ScrollTrigger);
 
 
 /* =========================================================
-   NAVBAR
+   LOADER
 ========================================================= */
 
-function updateNavbar(){
+window.addEventListener("load",()=>{
 
-    navbar.classList.toggle(
+    document.body.classList.remove("loading");
+
+    setTimeout(()=>{
+
+        document
+        .querySelector(".loader")
+        .classList.add("hide");
+
+    },900);
+
+});
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+const nav=
+    document.querySelector(".nav");
+
+window.addEventListener("scroll",()=>{
+
+    nav.classList.toggle(
         "scrolled",
-        window.scrollY > 45
+        window.scrollY>60
     );
 
-}
-
-window.addEventListener(
-    "scroll",
-    updateNavbar,
-    {
-        passive:true
-    }
-);
-
-updateNavbar();
-
-
-/* =========================================================
-   SCROLL PROGRESS
-========================================================= */
-
-function updateProgress(){
-
-    const scrollTop =
-        window.scrollY;
-
-    const pageHeight =
-        document.documentElement.scrollHeight
-        - window.innerHeight;
-
-    const progress =
-        pageHeight > 0
-            ? (scrollTop / pageHeight) * 100
-            : 0;
-
-    scrollProgress.style.width =
-        progress + "%";
-}
-
-window.addEventListener(
-    "scroll",
-    updateProgress,
-    {
-        passive:true
-    }
-);
-
-updateProgress();
+},{passive:true});
 
 
 /* =========================================================
    MOBILE MENU
 ========================================================= */
 
-menuToggle.addEventListener(
-    "click",
-    () => {
+const menu=
+    document.querySelector(".menu");
 
-        const open =
-            navLinks.classList.toggle(
-                "active"
-            );
-
-        menuToggle.classList.toggle(
-            "open",
-            open
-        );
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            String(open)
-        );
-
-        menuToggle.setAttribute(
-            "aria-label",
-            open
-                ? "Close navigation menu"
-                : "Open navigation menu"
-        );
-
-        document.body.classList.toggle(
-            "menu-open",
-            open
-        );
-
-    }
-);
+const navigation=
+    document.querySelector(".nav nav");
 
 
-/* =========================================================
-   CLOSE MOBILE MENU
-========================================================= */
+menu.addEventListener("click",()=>{
+
+    navigation.classList.toggle("open");
+
+});
+
 
 document
-    .querySelectorAll(".nav-links a")
-    .forEach(link => {
+.querySelectorAll(".nav nav a")
+.forEach(link=>{
 
-        link.addEventListener(
-            "click",
-            () => {
+    link.addEventListener("click",()=>{
 
-                navLinks.classList.remove(
-                    "active"
-                );
-
-                menuToggle.classList.remove(
-                    "open"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                document.body.classList.remove(
-                    "menu-open"
-                );
-
-            }
-        );
+        navigation.classList.remove("open");
 
     });
 
+});
+
 
 /* =========================================================
-   SCROLL REVEAL
+   CURSOR
 ========================================================= */
 
-const observer =
-    new IntersectionObserver(
-        entries => {
+const cursor=
+    document.querySelector(".cursor");
 
-            entries.forEach(entry => {
+const ring=
+    document.querySelector(".cursor-ring");
 
-                if(
-                    entry.isIntersecting
-                ){
+let mouseX=0;
+let mouseY=0;
 
-                    entry.target.classList.add(
-                        "active"
-                    );
+let ringX=0;
+let ringY=0;
 
-                    observer.unobserve(
-                        entry.target
-                    );
 
-                }
+window.addEventListener("pointermove",e=>{
 
-            });
+    mouseX=e.clientX;
+    mouseY=e.clientY;
 
-        },
-        {
-            threshold:.12
-        }
+    cursor.style.left=
+        mouseX+"px";
+
+    cursor.style.top=
+        mouseY+"px";
+
+});
+
+
+function cursorAnimation(){
+
+    ringX+=
+        (mouseX-ringX)*.12;
+
+    ringY+=
+        (mouseY-ringY)*.12;
+
+    ring.style.left=
+        ringX+"px";
+
+    ring.style.top=
+        ringY+"px";
+
+    requestAnimationFrame(
+        cursorAnimation
+    );
+
+}
+
+cursorAnimation();
+
+
+document
+.querySelectorAll("a,button,.value-row,.mission-card")
+.forEach(element=>{
+
+    element.addEventListener(
+        "mouseenter",
+        ()=>ring.classList.add("big")
+    );
+
+    element.addEventListener(
+        "mouseleave",
+        ()=>ring.classList.remove("big")
+    );
+
+});
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+gsap.timeline({
+    delay:1
+})
+
+.from(".hero-kicker",{
+
+    y:30,
+    opacity:0,
+    duration:.8
+
+})
+
+.from(".hero-title",{
+
+    y:100,
+    opacity:0,
+    duration:1.2,
+    ease:"power4.out"
+
+},"-=.4")
+
+.from(".hero-copy",{
+
+    y:30,
+    opacity:0,
+    duration:.8
+
+},"-=.6")
+
+.from(".hero-meta div",{
+
+    y:25,
+    opacity:0,
+    stagger:.15,
+    duration:.7
+
+},"-=.4")
+
+.from(".orbit-system",{
+
+    scale:.7,
+    opacity:0,
+    duration:1.5,
+    ease:"power3.out"
+
+},"-=1");
+
+
+/* =========================================================
+   HERO PARALLAX
+========================================================= */
+
+window.addEventListener("pointermove",e=>{
+
+    const x=
+        e.clientX/
+        window.innerWidth-.5;
+
+    const y=
+        e.clientY/
+        window.innerHeight-.5;
+
+
+    gsap.to(".orbit-system",{
+
+        x:x*25,
+        y:y*25,
+
+        duration:1.2,
+
+        ease:"power3.out"
+
+    });
+
+});
+
+
+/* =========================================================
+   HERO SCROLL
+========================================================= */
+
+gsap.to(".hero-content",{
+
+    y:-160,
+    opacity:0,
+
+    scrollTrigger:{
+
+        trigger:".about-hero",
+
+        start:"top top",
+
+        end:"+=650",
+
+        scrub:1
+
+    }
+
+});
+
+
+gsap.to(".orbit-system",{
+
+    y:200,
+    scale:.7,
+    opacity:.2,
+
+    scrollTrigger:{
+
+        trigger:".about-hero",
+
+        start:"top top",
+
+        end:"+=650",
+
+        scrub:1
+
+    }
+
+});
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+gsap.from(".introduction-grid > div",{
+
+    y:90,
+    opacity:0,
+
+    stagger:.2,
+
+    duration:1.1,
+
+    ease:"power4.out",
+
+    scrollTrigger:{
+
+        trigger:".introduction",
+
+        start:"top 70%"
+
+    }
+
+});
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+gsap.from(".stat",{
+
+    y:50,
+    opacity:0,
+
+    stagger:.15,
+
+    duration:.8,
+
+    ease:"power3.out",
+
+    scrollTrigger:{
+
+        trigger:".stats",
+
+        start:"top 85%"
+
+    }
+
+});
+
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+gsap.from(".mission h2",{
+
+    y:100,
+    opacity:0,
+
+    duration:1.2,
+
+    ease:"power4.out",
+
+    scrollTrigger:{
+
+        trigger:".mission",
+
+        start:"top 70%"
+
+    }
+
+});
+
+
+gsap.from(".mission-card",{
+
+    y:80,
+    opacity:0,
+
+    stagger:.15,
+
+    duration:1,
+
+    ease:"power3.out",
+
+    scrollTrigger:{
+
+        trigger:".mission-cards",
+
+        start:"top 75%"
+
+    }
+
+});
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+gsap.from(".values-header",{
+
+    y:80,
+    opacity:0,
+
+    duration:1,
+
+    ease:"power4.out",
+
+    scrollTrigger:{
+
+        trigger:".values",
+
+        start:"top 75%"
+
+    }
+
+});
+
+
+gsap.from(".value-row",{
+
+    x:-70,
+    opacity:0,
+
+    stagger:.15,
+
+    duration:.9,
+
+    ease:"power3.out",
+
+    scrollTrigger:{
+
+        trigger:".value-list",
+
+        start:"top 80%"
+
+    }
+
+});
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+gsap.from(".timeline-item",{
+
+    y:90,
+    opacity:0,
+
+    stagger:.2,
+
+    duration:1,
+
+    ease:"power3.out",
+
+    scrollTrigger:{
+
+        trigger:".timeline",
+
+        start:"top 75%"
+
+    }
+
+});
+
+
+/* =========================================================
+   FUTURE
+========================================================= */
+
+gsap.from(".future-content",{
+
+    y:100,
+    opacity:0,
+
+    duration:1.2,
+
+    ease:"power4.out",
+
+    scrollTrigger:{
+
+        trigger:".future",
+
+        start:"top 70%"
+
+    }
+
+});
+
+
+gsap.to(".future-orbit",{
+
+    rotation:180,
+
+    scrollTrigger:{
+
+        trigger:".future",
+
+        start:"top bottom",
+
+        end:"bottom top",
+
+        scrub:1
+
+    }
+
+});
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+gsap.from(".cta > div",{
+
+    scale:.8,
+    opacity:0,
+
+    duration:1.2,
+
+    ease:"power4.out",
+
+    scrollTrigger:{
+
+        trigger:".cta",
+
+        start:"top 75%"
+
+    }
+
+});
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+window.addEventListener("scroll",()=>{
+
+    const top=
+        window.scrollY;
+
+    const height=
+        document.documentElement.scrollHeight-
+        window.innerHeight;
+
+    const progress=
+        top/height;
+
+    document
+    .querySelector(".scroll-progress span")
+    .style.width=
+        (progress*100)+"%";
+
+},{passive:true});
+
+
+/* =========================================================
+   MOLECULAR PARTICLES
+========================================================= */
+
+const canvas=
+    document.getElementById(
+        "aboutCanvas"
+    );
+
+const ctx=
+    canvas.getContext("2d");
+
+
+let particles=[];
+
+let count=
+    window.innerWidth<700
+    ?45
+    :100;
+
+
+function resize(){
+
+    canvas.width=
+        window.innerWidth*
+        devicePixelRatio;
+
+    canvas.height=
+        window.innerHeight*
+        devicePixelRatio;
+
+    canvas.style.width=
+        window.innerWidth+"px";
+
+    canvas.style.height=
+        window.innerHeight+"px";
+
+    ctx.setTransform(
+
+        devicePixelRatio,
+        0,
+        0,
+        devicePixelRatio,
+        0,
+        0
+
+    );
+
+}
+
+
+function create(){
+
+    particles=[];
+
+    for(let i=0;i<count;i++){
+
+        particles.push({
+
+            x:
+                Math.random()*
+                window.innerWidth,
+
+            y:
+                Math.random()*
+                window.innerHeight,
+
+            vx:
+                (Math.random()-.5)*.25,
+
+            vy:
+                (Math.random()-.5)*.25,
+
+            size:
+                Math.random()*1.7+.4
+
+        });
+
+    }
+
+}
+
+
+function draw(){
+
+    ctx.clearRect(
+
+        0,
+        0,
+        window.innerWidth,
+        window.innerHeight
+
     );
 
 
-document
-    .querySelectorAll(".reveal")
-    .forEach(element => {
+    particles.forEach(p=>{
 
-        observer.observe(
-            element
+        p.x+=p.vx;
+        p.y+=p.vy;
+
+
+        if(
+            p.x<0 ||
+            p.x>window.innerWidth
+        )
+            p.vx*=-1;
+
+
+        if(
+            p.y<0 ||
+            p.y>window.innerHeight
+        )
+            p.vy*=-1;
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI*2
         );
+
+        ctx.fillStyle=
+            "rgba(155,216,206,.7)";
+
+        ctx.fill();
 
     });
 
 
-/* =========================================================
-   HERO VISIBILITY
-========================================================= */
+    for(
+        let i=0;
+        i<particles.length;
+        i++
+    ){
 
-window.addEventListener(
-    "load",
-    () => {
-
-        document
-            .querySelectorAll(
-                ".hero .reveal"
-            )
-            .forEach(element => {
-
-                element.classList.add(
-                    "active"
-                );
-
-            });
-
-    }
-);
-
-
-/* =========================================================
-   ESCAPE KEY
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if(
-            event.key === "Escape" &&
-            navLinks.classList.contains("active")
+        for(
+            let j=i+1;
+            j<particles.length;
+            j++
         ){
 
-            navLinks.classList.remove(
-                "active"
-            );
+            const a=
+                particles[i];
 
-            menuToggle.classList.remove(
-                "open"
-            );
+            const b=
+                particles[j];
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
 
-            document.body.classList.remove(
-                "menu-open"
-            );
+            const dx=
+                a.x-b.x;
+
+            const dy=
+                a.y-b.y;
+
+            const distance=
+                Math.sqrt(
+                    dx*dx+dy*dy
+                );
+
+
+            if(distance<130){
+
+                const opacity=
+                    (1-distance/130)*.15;
+
+
+                ctx.beginPath();
+
+                ctx.moveTo(
+                    a.x,
+                    a.y
+                );
+
+                ctx.lineTo(
+                    b.x,
+                    b.y
+                );
+
+                ctx.strokeStyle=
+                    `rgba(0,180,216,${opacity})`;
+
+                ctx.lineWidth=.7;
+
+                ctx.stroke();
+
+            }
 
         }
+
+    }
+
+
+    requestAnimationFrame(draw);
+
+}
+
+
+resize();
+
+create();
+
+draw();
+
+
+window.addEventListener(
+    "resize",
+    ()=>{
+
+        resize();
+
+        count=
+            window.innerWidth<700
+            ?45
+            :100;
+
+        create();
 
     }
 );
 
 </script>
 
-
 </body>
+
 </html>
