@@ -1892,6 +1892,77 @@ footer{
     }
 }
 
+
+/* =========================================================
+   AROVIA // SIGNATURE EXPERIENCE OVERRIDE
+   Premium corporate + cinematic portfolio layer
+========================================================= */
+:root{
+  --sig-black:#02080d;
+  --sig-deep:#04131e;
+  --sig-teal:#00686d;
+  --sig-cyan:#00d2ef;
+  --sig-mint:#a7eee0;
+  --sig-glow:rgba(0,210,239,.24);
+}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden;background:#f6fbfb}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+.navbar{transition:background .45s,box-shadow .45s,backdrop-filter .45s,transform .45s}
+.navbar.scrolled{background:rgba(2,12,19,.84)!important;backdrop-filter:blur(22px);box-shadow:0 12px 45px rgba(0,0,0,.18)}
+.hero{position:relative;isolation:isolate;background:radial-gradient(circle at 72% 42%,rgba(0,210,239,.15),transparent 28%),radial-gradient(circle at 15% 85%,rgba(0,104,109,.24),transparent 32%),linear-gradient(135deg,#01070c,#061c29 58%,#00474d)!important}
+.hero::before{content:"";position:absolute;inset:-20%;z-index:-1;background:conic-gradient(from 0deg at 50% 50%,transparent,rgba(0,210,239,.11),transparent 35%,rgba(167,238,224,.08),transparent 70%);filter:blur(50px);animation:sigSpin 18s linear infinite}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,#000,transparent 92%);animation:sigGrid 20s linear infinite}
+@keyframes sigSpin{to{transform:rotate(360deg)}}
+@keyframes sigGrid{to{background-position:70px 70px}}
+.hero-inner{position:relative}
+.hero h1{letter-spacing:-.075em!important;text-wrap:balance}
+.hero h1 span{background:linear-gradient(100deg,var(--sig-mint),var(--sig-cyan));-webkit-background-clip:text;background-clip:text;color:transparent!important}
+.hero-visual{filter:drop-shadow(0 40px 80px rgba(0,0,0,.35))}
+.hero-circle{mix-blend-mode:screen;box-shadow:0 0 80px rgba(0,210,239,.08)}
+.hero-card{background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.035))!important;border:1px solid rgba(255,255,255,.2)!important;box-shadow:inset 0 1px rgba(255,255,255,.18),0 45px 100px rgba(0,0,0,.38)!important;backdrop-filter:blur(30px)}
+.hero-card img{filter:drop-shadow(0 20px 35px rgba(0,210,239,.2))}
+.hero-pill{border:1px solid rgba(255,255,255,.15)!important;box-shadow:0 15px 45px rgba(0,0,0,.25)!important;backdrop-filter:blur(16px)}
+.intro{position:relative;background:#fff}
+.intro::before{content:"";position:absolute;left:8%;right:8%;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,104,109,.18),transparent)}
+.stats{position:relative;overflow:hidden;background:linear-gradient(120deg,#03111b,#062631 60%,#004d51)!important}
+.stats::before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;right:-180px;top:-300px;background:rgba(0,210,239,.12);filter:blur(80px)}
+.stat{position:relative;transition:transform .5s,background .5s;overflow:hidden}
+.stat:hover{transform:translateY(-8px)}
+.stat-number{font-variant-numeric:tabular-nums}
+.portfolio{position:relative;background:linear-gradient(180deg,#f8fcfc,#edf6f6)!important}
+.portfolio::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 15%,rgba(0,180,216,.06),transparent 22%),radial-gradient(circle at 90% 70%,rgba(0,104,109,.06),transparent 24%)}
+.filters{position:sticky!important;top:90px;z-index:50;padding:10px!important;border:1px solid rgba(10,37,64,.08);border-radius:24px;background:rgba(255,255,255,.72)!important;box-shadow:0 18px 55px rgba(4,25,35,.08)!important;backdrop-filter:blur(22px)}
+.filter{transition:transform .3s,box-shadow .3s,background .3s!important}
+.filter:hover{transform:translateY(-3px)}
+.product-card{position:relative;overflow:hidden;border:1px solid rgba(8,42,56,.08)!important;background:rgba(255,255,255,.88)!important;box-shadow:0 15px 45px rgba(5,32,45,.055)!important;transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .55s,border-color .4s!important;will-change:transform}
+.product-card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 0,rgba(0,210,239,.13),transparent 52%);transition:opacity .45s}
+.product-card::after{content:"↗";position:absolute;right:22px;top:22px;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.8);color:#00686d;font-weight:800;opacity:0;transform:translateY(8px);transition:.4s;z-index:8;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.product-card:hover{transform:translateY(-12px) rotateX(1deg);box-shadow:0 35px 90px rgba(4,29,42,.14)!important;border-color:rgba(0,180,216,.25)!important}
+.product-card:hover::before,.product-card:hover::after{opacity:1}
+.product-card:hover::after{transform:translateY(0)}
+.product-image{position:relative;overflow:hidden;background:radial-gradient(circle at center,#ffffff,#edf8f8)!important}
+.product-image::before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(0,210,239,.08);filter:blur(28px);opacity:0;transition:.5s}
+.product-card:hover .product-image::before{opacity:1}
+.product-image img{transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .5s!important;filter:drop-shadow(0 18px 24px rgba(0,0,0,.11))}
+.product-card:hover .product-image img{transform:scale(1.08) translateY(-6px);filter:drop-shadow(0 28px 30px rgba(0,0,0,.18))}
+.product-info h3{letter-spacing:-.04em!important}
+.modal{backdrop-filter:blur(22px)!important;background:rgba(0,8,13,.72)!important}
+.modal-box{border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 60px 150px rgba(0,0,0,.5)!important;animation:sigModal .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes sigModal{from{opacity:0;transform:translateY(30px) scale(.94)}to{opacity:1;transform:none}}
+.cta{position:relative;overflow:hidden;background:linear-gradient(135deg,#02090f,#06303a 58%,#005f63)!important}
+.cta::before{content:"";position:absolute;width:550px;height:550px;border-radius:50%;right:-200px;top:-250px;background:rgba(0,210,239,.12);filter:blur(80px);animation:sigFloat 9s ease-in-out infinite}
+@keyframes sigFloat{50%{transform:translate(-40px,30px) scale(1.08)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+body.sig-cursor-enabled *{cursor:none!important}
+.sig-cursor,.sig-cursor-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:10000;border-radius:50%;transform:translate(-50%,-50%);opacity:0}
+.sig-cursor{width:7px;height:7px;background:#00d2ef;box-shadow:0 0 18px #00d2ef}
+.sig-cursor-ring{width:34px;height:34px;border:1px solid rgba(0,210,239,.65);transition:width .2s,height .2s,border-color .2s,background .2s}
+.sig-cursor-ring.hover{width:55px;height:55px;background:rgba(0,210,239,.06);border-color:#a7eee0}
+@media(max-width:800px){.filters{position:relative!important;top:auto}.product-card:hover{transform:translateY(-7px)}body.sig-cursor-enabled *{cursor:auto!important}.sig-cursor,.sig-cursor-ring{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
 </style>
 </head>
 
@@ -4041,6 +4112,62 @@ document.querySelectorAll(
 
 updateProducts();
 
+</script>
+
+
+<script>
+/* =========================================================
+   AROVIA SIGNATURE INTERACTIONS
+========================================================= */
+(function(){
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // premium cursor on desktop
+  if(!reduce && window.matchMedia('(pointer:fine)').matches){
+    document.body.classList.add('sig-cursor-enabled');
+    const dot=document.createElement('div'); dot.className='sig-cursor';
+    const ring=document.createElement('div'); ring.className='sig-cursor-ring';
+    document.body.append(dot,ring);
+    let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';dot.style.opacity='1';ring.style.opacity='1';},{passive:true});
+    const loop=()=>{rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)}; loop();
+    document.querySelectorAll('a,button,.product-card,.filter,input').forEach(el=>{
+      el.addEventListener('mouseenter',()=>ring.classList.add('hover'));
+      el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));
+    });
+  }
+
+  // smarter reveal observer, including cards created/updated later
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  // subtle product tilt, disabled on touch
+  if(!reduce && matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.product-card').forEach(card=>{
+      card.addEventListener('pointermove',e=>{
+        const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+        card.style.transform=`translateY(-12px) perspective(900px) rotateX(${(-y*3).toFixed(2)}deg) rotateY(${(x*3).toFixed(2)}deg)`;
+      });
+      card.addEventListener('pointerleave',()=>card.style.transform='');
+    });
+  }
+
+  // hero parallax
+  const visual=document.querySelector('.hero-visual');
+  if(visual && !reduce && matchMedia('(pointer:fine)').matches){
+    addEventListener('pointermove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;visual.style.transform=`translate(${x*12}px,${y*12}px)`},{passive:true});
+  }
+
+  // animated stat counters based on actual DOM
+  const count=document.getElementById('productCount');
+  const cats=document.getElementById('categoryCount');
+  const cards=document.querySelectorAll('.product-card');
+  if(count){
+    const target=cards.length; let done=false;
+    const ob=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=true;let n=0;const step=Math.max(1,Math.ceil(target/35));const t=setInterval(()=>{n=Math.min(target,n+step);count.textContent=String(n).padStart(2,'0');if(n===target)clearInterval(t)},25)}},{threshold:.6}); ob.observe(count);
+  }
+  if(cats){cats.textContent=String(document.querySelectorAll('.category').length).padStart(2,'0')}
+})();
 </script>
 
 </body>
