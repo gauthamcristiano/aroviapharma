@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
       content="Contact Arovia Pharma Pvt. Ltd. for pharmaceutical product enquiries, distributorship, availability and business opportunities.">
 
-<meta name="theme-color" content="#061827">
+<meta name="theme-color"
+      content="#061827">
 
 <title>Contact | Arovia Pharma Pvt. Ltd.</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet">
 
 
@@ -28,26 +33,24 @@
    ========================================================= */
 
 :root{
-    --navy:#0A2540;
-    --navy-dark:#061827;
-    --navy-deep:#03111D;
-
+    --navy:#061827;
+    --navy-2:#0A2540;
     --teal:#005B60;
-    --teal-dark:#00474B;
     --cyan:#00B4D8;
-    --mint:#9BD8CE;
 
-    --ice:#F3FAFB;
     --white:#FFFFFF;
+    --ice:#F3FAFB;
 
-    --text:#12344D;
+    --text:#0A2540;
     --muted:#667987;
 
-    --line:rgba(10,37,64,.11);
+    --line:rgba(10,37,64,.13);
 
-    --shadow:0 25px 80px rgba(4,19,31,.12);
+    --dark-line:rgba(255,255,255,.14);
 
-    --radius:28px;
+    --radius:0;
+
+    --container:1320px;
 }
 
 
@@ -66,9 +69,9 @@ html{
 }
 
 body{
-    font-family:"DM Sans",Arial,sans-serif;
+    font-family:"DM Sans", Arial, sans-serif;
     color:var(--text);
-    background:#fff;
+    background:var(--white);
     overflow-x:hidden;
 }
 
@@ -88,11 +91,11 @@ textarea{
 }
 
 button{
-    -webkit-tap-highlight-color:transparent;
+    border:0;
 }
 
 ::selection{
-    background:var(--cyan);
+    background:var(--navy);
     color:white;
 }
 
@@ -102,20 +105,15 @@ button{
    ========================================================= */
 
 ::-webkit-scrollbar{
-    width:8px;
+    width:7px;
 }
 
 ::-webkit-scrollbar-track{
-    background:#edf6f7;
+    background:#eef4f5;
 }
 
 ::-webkit-scrollbar-thumb{
-    background:var(--teal);
-    border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:var(--cyan);
+    background:var(--navy);
 }
 
 
@@ -124,68 +122,94 @@ button{
    ========================================================= */
 
 .container{
-    width:100%;
-    max-width:1280px;
-    margin:auto;
-    padding:0 5%;
-}
-
-img{
-    max-width:100%;
-}
-
-
-/* =========================================================
-   SCROLL PROGRESS
-   ========================================================= */
-
-.scroll-progress{
-    position:fixed;
-    top:0;
-    left:0;
-    width:0;
-    height:3px;
-    background:linear-gradient(
-        90deg,
-        var(--cyan),
-        var(--mint)
+    width:min(
+        calc(100% - 10vw),
+        var(--container)
     );
-    z-index:3000;
+
+    margin:auto;
+}
+
+.section{
+    padding:130px 0;
+}
+
+.section-number{
+    display:block;
+
+    margin-bottom:55px;
+
+    color:var(--muted);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.section-label{
+    color:var(--teal);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
+}
+
+h1,
+h2,
+h3{
+    font-family:"Manrope", sans-serif;
 }
 
 
 /* =========================================================
-   NAVBAR
+   NAVIGATION
    ========================================================= */
 
 .navbar{
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
-    z-index:2000;
-    padding:20px 5%;
+
+    z-index:1000;
+
     transition:
         background .35s ease,
-        padding .35s ease,
-        box-shadow .35s ease;
+        border-color .35s ease,
+        padding .35s ease;
+
+    border-bottom:1px solid transparent;
 }
 
 .navbar.scrolled{
-    padding:11px 5%;
     background:rgba(255,255,255,.94);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    box-shadow:0 12px 45px rgba(4,19,31,.10);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-color:var(--line);
 }
 
 .nav-container{
-    width:100%;
-    max-width:1280px;
+    width:min(
+        calc(100% - 10vw),
+        var(--container)
+    );
+
+    height:88px;
+
     margin:auto;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
@@ -193,39 +217,49 @@ img{
 /* LOGO */
 
 .logo{
-    position:relative;
-    z-index:2002;
     display:flex;
     align-items:center;
+
+    position:relative;
+    z-index:1002;
 }
 
 .logo img{
     width:145px;
     height:auto;
     display:block;
-    transition:.3s ease;
+
+    transition:.3s;
 }
 
 .navbar.scrolled .logo img{
-    width:125px;
+    width:132px;
 }
 
 
-/* NAVIGATION */
+/* NAV LINKS */
 
 .nav-links{
     display:flex;
+
     align-items:center;
-    gap:34px;
+
+    gap:38px;
+
     list-style:none;
 }
 
 .nav-links a{
     position:relative;
+
     color:white;
-    font-size:13px;
-    font-weight:800;
-    transition:.3s ease;
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:.2px;
+
+    transition:.3s;
 }
 
 .navbar.scrolled .nav-links a{
@@ -234,14 +268,18 @@ img{
 
 .nav-links a::after{
     content:"";
+
     position:absolute;
+
     left:0;
     bottom:-8px;
+
     width:0;
-    height:2px;
-    border-radius:10px;
-    background:var(--cyan);
-    transition:.3s ease;
+    height:1px;
+
+    background:currentColor;
+
+    transition:.3s;
 }
 
 .nav-links a:hover::after,
@@ -249,68 +287,43 @@ img{
     width:100%;
 }
 
-.nav-links a:hover,
 .nav-links a.active{
     color:var(--cyan);
 }
 
-.nav-contact{
-    padding:11px 20px;
-    border:1px solid rgba(255,255,255,.38);
-    border-radius:50px;
-}
-
-.navbar.scrolled .nav-contact{
-    border-color:rgba(0,91,96,.25);
-}
-
-.nav-contact::after{
-    display:none !important;
-}
-
-.nav-contact:hover{
-    background:var(--teal);
-    color:white !important;
-    border-color:var(--teal);
+.navbar.scrolled .nav-links a.active{
+    color:var(--teal);
 }
 
 
-/* =========================================================
-   MOBILE NAV BUTTON
-   ========================================================= */
+/* MENU */
 
 .menu-toggle{
     display:none;
+
     width:44px;
     height:44px;
 
-    border:0;
-    border-radius:50%;
-
-    background:rgba(255,255,255,.10);
+    background:transparent;
 
     cursor:pointer;
 
     position:relative;
-    z-index:2002;
 
-    padding:0;
+    z-index:1002;
 }
 
 .menu-toggle span{
     display:block;
-    width:19px;
-    height:2px;
-    margin:4px auto;
 
-    border-radius:10px;
+    width:21px;
+    height:1px;
+
+    margin:5px auto;
+
     background:white;
 
-    transition:.3s ease;
-}
-
-.navbar.scrolled .menu-toggle{
-    background:var(--ice);
+    transition:.3s;
 }
 
 .navbar.scrolled .menu-toggle span{
@@ -323,7 +336,6 @@ img{
 
 .menu-toggle.active span:nth-child(2){
     opacity:0;
-    transform:scaleX(0);
 }
 
 .menu-toggle.active span:nth-child(3){
@@ -336,73 +348,67 @@ img{
    ========================================================= */
 
 .contact-hero{
-    min-height:88vh;
-    position:relative;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
+    min-height:92vh;
+
+    background:var(--navy);
 
     color:white;
 
-    background:
-        radial-gradient(
-            circle at 80% 45%,
-            rgba(0,180,216,.18),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 25% 20%,
-            rgba(155,216,206,.08),
-            transparent 25%
-        ),
-        linear-gradient(
-            125deg,
-            #03111D 0%,
-            #061827 48%,
-            #005B60 130%
-        );
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:flex-end;
 }
+
+
+/* subtle grid */
 
 .contact-hero::before{
     content:"";
+
     position:absolute;
+
     inset:0;
 
-    background:
+    background-image:
         linear-gradient(
-            rgba(255,255,255,.025) 1px,
+            rgba(255,255,255,.035) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,.025) 1px,
+            rgba(255,255,255,.035) 1px,
             transparent 1px
         );
 
-    background-size:70px 70px;
+    background-size:80px 80px;
 
     mask-image:
         linear-gradient(
-            to right,
-            black 0%,
-            rgba(0,0,0,.8) 50%,
-            transparent 100%
+            to bottom,
+            black,
+            transparent
         );
 
     pointer-events:none;
 }
 
+
+/* glow */
+
 .contact-hero::after{
     content:"";
+
     position:absolute;
 
     width:650px;
     height:650px;
 
-    right:-280px;
-    top:50%;
-
-    transform:translateY(-50%);
+    right:-250px;
+    bottom:-280px;
 
     border-radius:50%;
 
@@ -410,286 +416,101 @@ img{
         radial-gradient(
             circle,
             rgba(0,180,216,.18),
-            transparent 65%
+            transparent 68%
         );
 
-    filter:blur(15px);
+    pointer-events:none;
 }
 
 
-/* =========================================================
-   HERO CONTENT
-   ========================================================= */
+.hero-inner{
+    width:min(
+        calc(100% - 10vw),
+        var(--container)
+    );
 
-.contact-hero-content{
-    width:100%;
-    max-width:1280px;
     margin:auto;
 
     padding:
-        155px 5%
-        90px;
+        170px 0
+        95px;
 
     position:relative;
-    z-index:3;
 
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    align-items:center;
-
-    gap:70px;
+    z-index:2;
 }
 
 
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
-
-.hero-text{
-    max-width:720px;
-}
-
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-
-    padding:9px 16px;
-
-    border:1px solid rgba(255,255,255,.18);
-    background:rgba(255,255,255,.055);
-
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-
-    border-radius:50px;
-
-    color:#DDF8F5;
-
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:2.4px;
-    text-transform:uppercase;
-
-    margin-bottom:27px;
-}
-
-.eyebrow-dot{
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:var(--mint);
-
-    box-shadow:
-        0 0 18px var(--mint);
-
-    animation:pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse{
-    0%,100%{
-        transform:scale(.8);
-        opacity:.55;
-    }
-
-    50%{
-        transform:scale(1.15);
-        opacity:1;
-    }
-}
-
-.hero-text h1{
-    font-family:"Manrope",sans-serif;
-
-    font-size:clamp(56px,7vw,92px);
-
-    line-height:.93;
-
-    letter-spacing:-5px;
-
-    font-weight:800;
-
-    margin-bottom:30px;
-}
-
-.hero-text h1 span{
-    color:var(--mint);
-}
-
-.hero-text p{
-    max-width:620px;
-
-    color:rgba(255,255,255,.70);
-
-    font-size:17px;
-
-    line-height:1.85;
-}
-
-
-/* =========================================================
-   HERO VISUAL
-   ========================================================= */
-
-.hero-visual{
-    min-height:470px;
-
+.hero-meta{
     display:flex;
-    align-items:center;
-    justify-content:center;
 
-    position:relative;
-}
+    justify-content:space-between;
 
-.orbit{
-    position:absolute;
+    align-items:flex-start;
 
-    border:1px solid rgba(155,216,206,.20);
+    margin-bottom:80px;
 
-    border-radius:50%;
+    color:rgba(255,255,255,.55);
 
-    animation:
-        rotate 18s linear infinite;
-}
+    font-size:11px;
 
-.orbit.one{
-    width:455px;
-    height:455px;
-}
-
-.orbit.two{
-    width:345px;
-    height:345px;
-
-    animation-duration:13s;
-    animation-direction:reverse;
-}
-
-.orbit.three{
-    width:235px;
-    height:235px;
-
-    animation-duration:9s;
-}
-
-.orbit::before{
-    content:"";
-
-    position:absolute;
-
-    width:8px;
-    height:8px;
-
-    top:8px;
-    left:50%;
-
-    border-radius:50%;
-
-    background:var(--mint);
-
-    box-shadow:
-        0 0 20px var(--mint);
-}
-
-@keyframes rotate{
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.hero-logo{
-    position:relative;
-    z-index:5;
-
-    width:205px;
-    height:205px;
-
-    padding:27px;
-
-    border-radius:50%;
-
-    background:white;
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,.35);
-
-    animation:
-        float-logo 5s ease-in-out infinite;
-}
-
-.hero-logo img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
-
-@keyframes float-logo{
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-}
-
-
-/* =========================================================
-   MAIN CONTACT SECTION
-   ========================================================= */
-
-.contact-section{
-    padding:125px 0;
-    background:white;
-}
-
-.section-intro{
-    display:grid;
-    grid-template-columns:.85fr 1.15fr;
-
-    gap:80px;
-
-    align-items:end;
-
-    margin-bottom:60px;
-}
-
-.section-label{
-    color:var(--teal);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:2.8px;
+    letter-spacing:2px;
 
     text-transform:uppercase;
-
-    margin-bottom:17px;
 }
 
-.section-intro h2{
-    font-family:"Manrope",sans-serif;
 
-    font-size:clamp(44px,5vw,68px);
+.hero-meta span:last-child{
+    text-align:right;
+}
 
-    line-height:.96;
 
-    letter-spacing:-3.5px;
+.hero-title{
+    max-width:1100px;
+}
+
+.hero-title small{
+    display:block;
+
+    margin-bottom:22px;
+
+    color:var(--cyan);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.hero-title h1{
+    font-size:
+        clamp(58px,9vw,138px);
+
+    line-height:.88;
+
+    letter-spacing:-7px;
 
     font-weight:800;
+
+    text-transform:uppercase;
 }
 
-.section-intro p{
-    max-width:650px;
+.hero-title h1 span{
+    color:#9BD8CE;
+}
 
-    color:var(--muted);
+
+.hero-description{
+    max-width:550px;
+
+    margin-top:55px;
+
+    margin-left:auto;
+
+    color:rgba(255,255,255,.62);
 
     font-size:15px;
 
@@ -698,223 +519,213 @@ img{
 
 
 /* =========================================================
-   CONTACT GRID
+   INTRO
    ========================================================= */
 
-.contact-grid{
+.contact-intro{
+    padding:135px 0 120px;
+}
+
+.intro-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:24px;
+
+    grid-template-columns:
+        .75fr 1.25fr;
+
+    gap:100px;
+
+    align-items:start;
 }
 
+.intro-title h2{
+    margin-top:18px;
 
-/* =========================================================
-   CARDS
-   ========================================================= */
+    font-size:
+        clamp(46px,6vw,78px);
 
-.contact-card{
-    padding:45px;
+    line-height:.94;
 
-    background:white;
+    letter-spacing:-4px;
 
-    border:1px solid var(--line);
-
-    border-radius:var(--radius);
-
-    box-shadow:var(--shadow);
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+    font-weight:800;
 }
 
-.contact-card:hover{
-    transform:translateY(-7px);
-
-    box-shadow:
-        0 32px 85px rgba(4,19,31,.14);
+.intro-copy{
+    padding-top:8px;
 }
 
-.contact-card h3{
-    font-family:"Manrope",sans-serif;
+.intro-copy p{
+    max-width:670px;
 
-    font-size:28px;
-
-    letter-spacing:-1px;
-
-    margin-bottom:10px;
-}
-
-.card-description{
     color:var(--muted);
 
-    font-size:14px;
+    font-size:16px;
 
-    line-height:1.75;
-
-    margin-bottom:30px;
+    line-height:1.95;
 }
 
 
 /* =========================================================
-   INFORMATION LIST
+   CONTACT INFORMATION
    ========================================================= */
 
-.info-list{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+.info-section{
+    padding:0 0 140px;
 }
 
-.info-box{
-    display:flex;
-    align-items:flex-start;
+.info-layout{
+    display:grid;
 
-    gap:16px;
+    grid-template-columns:
+        1fr 1fr;
 
-    padding:17px;
-
-    border-radius:17px;
-
-    background:#F6FBFA;
-
-    border:1px solid rgba(0,91,96,.07);
-
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        border-color .3s ease;
+    border-top:1px solid var(--line);
 }
 
-.info-box:hover{
-    transform:translateX(6px);
-
-    background:#EFF9F7;
-
-    border-color:rgba(0,91,96,.15);
+.info-column{
+    padding:55px 0;
 }
 
-.info-icon{
-    width:45px;
-    height:45px;
+.info-column:first-child{
+    padding-right:70px;
 
-    flex-shrink:0;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:13px;
-
-    background:
-        linear-gradient(
-            145deg,
-            var(--navy-dark),
-            var(--navy)
-        );
-
-    color:white;
-
-    font-size:18px;
-
-    box-shadow:
-        0 8px 20px rgba(7,28,46,.12);
+    border-right:1px solid var(--line);
 }
 
-.info-content{
-    min-width:0;
+.info-column:last-child{
+    padding-left:70px;
 }
 
-.info-content strong{
+.info-heading{
+    margin-bottom:48px;
+}
+
+.info-heading span{
     display:block;
 
-    color:var(--navy);
+    margin-bottom:14px;
 
-    font-size:12px;
+    color:var(--teal);
 
-    margin-bottom:5px;
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
 }
 
-.info-content span,
-.info-content a{
+.info-heading h3{
+    font-size:36px;
+
+    letter-spacing:-1.8px;
+
+    line-height:1;
+}
+
+
+/* INFO ITEMS */
+
+.info-item{
+    padding:25px 0;
+
+    border-top:1px solid var(--line);
+
+    display:grid;
+
+    grid-template-columns:150px 1fr;
+
+    gap:30px;
+}
+
+.info-item:last-child{
+    border-bottom:1px solid var(--line);
+}
+
+.info-item-label{
     color:var(--muted);
 
-    font-size:14px;
+    font-size:10px;
+    font-weight:700;
 
-    line-height:1.65;
+    letter-spacing:2px;
 
-    word-break:break-word;
+    text-transform:uppercase;
 }
 
-.info-content a{
+.info-item-content{
+    color:var(--text);
+
+    font-size:15px;
+
+    line-height:1.8;
+}
+
+.info-item-content a{
     transition:.25s;
 }
 
-.info-content a:hover{
+.info-item-content a:hover{
     color:var(--teal);
 }
 
 
-/* =========================================================
-   ACTION BUTTONS
-   ========================================================= */
+/* ACTIONS */
 
-.actions{
+.contact-actions{
     display:flex;
+
     flex-wrap:wrap;
 
-    gap:10px;
+    gap:12px;
 
-    margin-top:25px;
+    margin-top:35px;
 }
 
-.btn{
+.action-link{
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
-    gap:9px;
+    gap:15px;
 
-    padding:14px 23px;
+    min-height:50px;
 
-    border-radius:50px;
+    padding:0 22px;
 
-    border:1px solid transparent;
+    border:1px solid var(--navy);
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--cyan),
-            var(--teal)
-        );
+    color:var(--navy);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.action-link:hover{
+    background:var(--navy);
 
     color:white;
-
-    font-size:13px;
-
-    font-weight:800;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        background .3s ease;
 }
 
-.btn:hover{
-    transform:translateY(-4px);
+.action-link.dark{
+    background:var(--navy);
 
-    box-shadow:
-        0 20px 40px rgba(0,91,96,.25);
+    color:white;
 }
 
-.btn-dark{
-    background:var(--navy-dark);
-    box-shadow:none;
-}
-
-.btn-dark:hover{
+.action-link.dark:hover{
     background:var(--teal);
+
+    border-color:var(--teal);
 }
 
 
@@ -922,130 +733,142 @@ img{
    FORM
    ========================================================= */
 
-form{
+.form{
     display:flex;
-    flex-direction:column;
-    gap:17px;
-}
 
-.form-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
+    flex-direction:column;
+
+    gap:0;
 }
 
 .form-group{
-    display:flex;
-    flex-direction:column;
-    gap:7px;
+    border-top:1px solid var(--line);
+
+    padding:21px 0;
+}
+
+.form-group:last-of-type{
+    border-bottom:1px solid var(--line);
 }
 
 .form-group label{
-    color:var(--navy);
+    display:block;
 
-    font-size:12px;
+    margin-bottom:9px;
 
-    font-weight:800;
+    color:var(--muted);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
 }
 
-input,
-textarea{
+.form-group input,
+.form-group textarea{
     width:100%;
 
-    border:1px solid #DCE6E8;
-
-    background:#FAFCFC;
-
-    border-radius:13px;
-
-    padding:14px 16px;
-
-    color:var(--navy);
-
-    font-size:14px;
+    border:0;
 
     outline:none;
 
-    transition:
-        border-color .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
+    background:transparent;
+
+    color:var(--navy);
+
+    font-size:15px;
+
+    padding:4px 0;
 }
 
-input::placeholder,
-textarea::placeholder{
-    color:#9AAAB1;
-}
+.form-group textarea{
+    min-height:125px;
 
-input:focus,
-textarea:focus{
-    background:white;
-
-    border-color:var(--teal);
-
-    box-shadow:
-        0 0 0 4px rgba(0,91,96,.08);
-}
-
-input:invalid:not(:placeholder-shown){
-    border-color:#D9A3A3;
-}
-
-textarea{
-    min-height:145px;
     resize:vertical;
 }
 
-.submit-btn{
-    border:0;
-
-    cursor:pointer;
-
-    padding:15px 25px;
-
-    border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--cyan),
-            var(--teal)
-        );
-
-    color:white;
-
-    font-size:14px;
-
-    font-weight:800;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+    color:#9AA7AE;
 }
 
-.submit-btn:hover{
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 15px 35px rgba(0,91,96,.25);
+.form-group input:focus,
+.form-group textarea:focus{
+    color:var(--teal);
 }
 
-.submit-btn:focus-visible,
-.btn:focus-visible,
-.nav-links a:focus-visible,
-.menu-toggle:focus-visible{
-    outline:3px solid rgba(0,180,216,.45);
-    outline-offset:4px;
+
+/* FORM FOOTER */
+
+.form-footer{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    margin-top:30px;
 }
 
 .form-note{
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+.submit{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:20px;
+
+    min-width:170px;
+
+    height:52px;
+
+    padding:0 22px;
+
+    background:var(--navy);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.submit:hover{
+    background:var(--teal);
+
+    transform:translateY(-2px);
+}
+
+.form-message{
     display:none;
 
-    padding:12px 15px;
+    margin-top:20px;
 
-    border-radius:11px;
+    padding:15px;
 
-    background:#EFF9F7;
+    background:var(--ice);
 
     color:var(--teal);
 
@@ -1054,132 +877,139 @@ textarea{
     line-height:1.6;
 }
 
-.form-note.show{
-    display:block;
-}
-
 
 /* =========================================================
    BUSINESS CTA
    ========================================================= */
 
-.business-section{
-    margin-top:24px;
+.business{
+    background:var(--navy);
 
-    padding:60px;
+    color:white;
 
-    border-radius:30px;
+    padding:120px 0;
 
     position:relative;
 
     overflow:hidden;
-
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(0,180,216,.18),
-            transparent 28%
-        ),
-        linear-gradient(
-            120deg,
-            var(--navy-dark),
-            #075F63
-        );
-
-    color:white;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:40px;
 }
 
-.business-section::before{
+.business::before{
     content:"";
 
     position:absolute;
 
-    width:500px;
-    height:500px;
+    width:600px;
+    height:600px;
 
-    right:-220px;
-    bottom:-320px;
+    right:-300px;
+    top:-250px;
 
-    border:
-        1px solid rgba(155,216,206,.17);
+    border:1px solid rgba(155,216,206,.12);
 
     border-radius:50%;
 }
 
-.business-section::after{
+.business::after{
     content:"";
 
     position:absolute;
 
-    width:250px;
-    height:250px;
+    width:360px;
+    height:360px;
 
-    right:80px;
-    top:-170px;
+    right:-120px;
+    top:-120px;
 
-    border:
-        1px solid rgba(155,216,206,.15);
+    border:1px solid rgba(155,216,206,.08);
 
     border-radius:50%;
 }
 
-.business-section-content{
+.business-inner{
     position:relative;
+
     z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap:70px;
+
+    align-items:end;
 }
 
-.business-section .section-label{
-    color:var(--mint);
+.business-number{
+    margin-bottom:50px;
+
+    color:rgba(255,255,255,.4);
+
+    font-size:11px;
+
+    letter-spacing:2px;
 }
 
-.business-section h2{
-    font-family:"Manrope",sans-serif;
+.business h2{
+    max-width:800px;
 
-    font-size:clamp(30px,4vw,47px);
+    font-size:
+        clamp(45px,6vw,82px);
 
-    line-height:1;
+    line-height:.92;
 
-    letter-spacing:-2.5px;
-
-    margin-bottom:15px;
+    letter-spacing:-4px;
 }
 
-.business-section p{
-    max-width:650px;
+.business h2 span{
+    color:#9BD8CE;
+}
 
-    color:rgba(255,255,255,.68);
+.business p{
+    max-width:610px;
 
-    line-height:1.8;
+    margin-top:35px;
+
+    color:rgba(255,255,255,.58);
 
     font-size:14px;
+
+    line-height:1.9;
 }
 
-.business-section .btn{
-    position:relative;
+.business-button{
+    display:inline-flex;
 
-    z-index:3;
+    align-items:center;
 
-    flex-shrink:0;
+    gap:18px;
+
+    height:55px;
+
+    padding:0 25px;
 
     background:white;
 
-    color:var(--teal);
+    color:var(--navy);
 
-    box-shadow:none;
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    white-space:nowrap;
+
+    transition:.3s;
 }
 
-.business-section .btn:hover{
-    background:var(--mint);
+.business-button:hover{
+    background:#9BD8CE;
 
-    color:var(--navy-dark);
-
-    box-shadow:none;
+    transform:translateY(-3px);
 }
 
 
@@ -1188,73 +1018,79 @@ textarea{
    ========================================================= */
 
 footer{
-    padding:75px 5% 25px;
-
-    background:var(--navy-deep);
+    background:var(--navy);
 
     color:white;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    padding:80px 0 28px;
 }
 
-.footer-grid{
-    max-width:1280px;
+.footer-top{
+    width:min(
+        calc(100% - 10vw),
+        var(--container)
+    );
+
     margin:auto;
 
     display:grid;
 
-    grid-template-columns:1.5fr 1fr 1fr;
+    grid-template-columns:
+        1.5fr 1fr 1fr;
 
-    gap:60px;
+    gap:80px;
 
-    padding-bottom:55px;
-
-    border-bottom:
-        1px solid rgba(255,255,255,.10);
+    padding-bottom:70px;
 }
 
-.footer-logo{
-    width:160px;
+.footer-brand img{
+    width:150px;
 
     height:auto;
 
-    padding:10px;
-
     background:white;
 
-    border-radius:12px;
+    padding:8px;
 
-    margin-bottom:20px;
+    display:block;
+
+    margin-bottom:28px;
 }
 
 .footer-brand p{
-    max-width:350px;
+    max-width:330px;
 
-    color:rgba(255,255,255,.55);
+    color:rgba(255,255,255,.52);
 
-    font-size:14px;
+    font-size:13px;
 
-    line-height:1.8;
+    line-height:1.9;
 }
 
 .footer-column h4{
-    color:var(--mint);
+    margin-bottom:24px;
+
+    color:#9BD8CE;
 
     font-size:10px;
 
-    letter-spacing:2px;
+    letter-spacing:2.5px;
 
     text-transform:uppercase;
-
-    margin-bottom:22px;
 }
 
 .footer-column a{
     display:block;
 
-    color:rgba(255,255,255,.62);
-
-    font-size:14px;
+    width:max-content;
 
     margin-bottom:14px;
+
+    color:rgba(255,255,255,.58);
+
+    font-size:13px;
 
     transition:.25s;
 }
@@ -1262,24 +1098,34 @@ footer{
 .footer-column a:hover{
     color:white;
 
-    transform:translateX(4px);
+    transform:translateX(5px);
 }
 
 .footer-bottom{
-    max-width:1280px;
+    width:min(
+        calc(100% - 10vw),
+        var(--container)
+    );
+
     margin:auto;
 
     padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.10);
 
     display:flex;
 
     justify-content:space-between;
 
-    gap:20px;
+    gap:25px;
 
-    color:rgba(255,255,255,.36);
+    color:rgba(255,255,255,.32);
 
-    font-size:12px;
+    font-size:10px;
+
+    letter-spacing:.7px;
+
+    text-transform:uppercase;
 }
 
 
@@ -1290,7 +1136,7 @@ footer{
 .reveal{
     opacity:0;
 
-    transform:translateY(30px);
+    transform:translateY(28px);
 
     transition:
         opacity .8s ease,
@@ -1299,6 +1145,7 @@ footer{
 
 .reveal.active{
     opacity:1;
+
     transform:translateY(0);
 }
 
@@ -1307,57 +1154,52 @@ footer{
    RESPONSIVE
    ========================================================= */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
     .nav-links{
         position:fixed;
 
-        top:0;
-        right:-100%;
+        inset:0;
 
-        width:min(320px,85vw);
-
+        width:100%;
         height:100vh;
 
-        padding:120px 40px 40px;
+        background:var(--navy);
 
-        background:
-            linear-gradient(
-                160deg,
-                #061827,
-                #075F63
-            );
+        padding:
+            130px 10vw
+            50px;
+
+        display:flex;
 
         flex-direction:column;
+
         align-items:flex-start;
+
+        justify-content:flex-start;
 
         gap:28px;
 
-        transition:right .4s ease;
+        transform:translateX(100%);
 
-        box-shadow:
-            -20px 0 60px rgba(0,0,0,.25);
+        transition:.4s;
+
+        z-index:1001;
     }
 
     .nav-links.active{
-        right:0;
+        transform:translateX(0);
     }
 
     .nav-links a,
     .navbar.scrolled .nav-links a{
         color:white;
 
-        font-size:16px;
-    }
+        font-size:30px;
 
-    .nav-links a:hover,
-    .nav-links a.active{
-        color:var(--mint);
-    }
+        font-family:"Manrope",sans-serif;
 
-    .nav-contact{
-        border:0;
-        padding:0;
+        letter-spacing:-1px;
     }
 
     .menu-toggle{
@@ -1365,180 +1207,215 @@ footer{
     }
 
 
-    /* HERO */
+    .hero-inner{
+        padding-top:150px;
+    }
 
-    .contact-hero-content{
+    .hero-meta{
+        margin-bottom:60px;
+    }
+
+
+    .intro-grid{
         grid-template-columns:1fr;
 
-        text-align:center;
-
-        gap:20px;
-    }
-
-    .hero-text{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .hero-text p{
-        margin:auto;
-    }
-
-    .hero-visual{
-        min-height:370px;
+        gap:40px;
     }
 
 
-    /* INTRO */
-
-    .section-intro{
-        grid-template-columns:1fr;
-        gap:25px;
-    }
-
-
-    /* CONTACT */
-
-    .contact-grid{
+    .info-layout{
         grid-template-columns:1fr;
     }
 
+    .info-column:first-child{
+        padding-right:0;
 
-    /* CTA */
+        border-right:0;
 
-    .business-section{
-        flex-direction:column;
-        align-items:flex-start;
+        border-bottom:1px solid var(--line);
     }
+
+    .info-column:last-child{
+        padding-left:0;
+    }
+
+
+    .business-inner{
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+
+    .footer-top{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:55px;
+    }
+
+    .footer-brand{
+        grid-column:1/-1;
+    }
+
 }
 
 
 @media(max-width:600px){
 
-    .container{
-        padding:0 6%;
+    .container,
+    .nav-container,
+    .hero-inner,
+    .footer-top,
+    .footer-bottom{
+        width:88%;
     }
 
-    .navbar{
-        padding:14px 6%;
-    }
 
-    .navbar.scrolled{
-        padding:10px 6%;
+    .nav-container{
+        height:75px;
     }
 
     .logo img{
-        width:120px;
+        width:125px;
     }
 
     .navbar.scrolled .logo img{
-        width:110px;
+        width:115px;
     }
 
-
-    /* HERO */
 
     .contact-hero{
-        min-height:92vh;
+        min-height:88vh;
     }
 
-    .contact-hero-content{
-        padding:125px 6% 70px;
+    .hero-inner{
+        padding:
+            135px 0
+            70px;
     }
 
-    .hero-text h1{
-        font-size:49px;
-        letter-spacing:-3px;
+    .hero-meta{
+        margin-bottom:45px;
+
+        flex-direction:column;
+
+        gap:10px;
     }
 
-    .hero-text p{
-        font-size:15px;
+    .hero-meta span:last-child{
+        text-align:left;
     }
 
+    .hero-title h1{
+        font-size:58px;
 
-    /* VISUAL */
-
-    .hero-visual{
-        min-height:300px;
+        letter-spacing:-3.5px;
     }
 
-    .orbit.one{
-        width:285px;
-        height:285px;
-    }
+    .hero-description{
+        margin-top:40px;
 
-    .orbit.two{
-        width:220px;
-        height:220px;
-    }
-
-    .orbit.three{
-        width:165px;
-        height:165px;
-    }
-
-    .hero-logo{
-        width:145px;
-        height:145px;
-        padding:20px;
+        font-size:14px;
     }
 
 
-    /* CONTENT */
-
-    .contact-section{
-        padding:85px 0;
+    .section{
+        padding:90px 0;
     }
 
-    .section-intro h2{
-        font-size:46px;
+    .contact-intro{
+        padding:90px 0;
     }
 
-    .contact-card{
-        padding:30px 23px;
+    .section-number{
+        margin-bottom:40px;
+    }
+
+    .intro-title h2{
+        font-size:50px;
+
+        letter-spacing:-2.8px;
     }
 
 
-    /* FORM */
+    .info-section{
+        padding-bottom:90px;
+    }
 
-    .form-row{
+    .info-column{
+        padding:40px 0;
+    }
+
+    .info-heading{
+        margin-bottom:35px;
+    }
+
+    .info-heading h3{
+        font-size:30px;
+    }
+
+    .info-item{
         grid-template-columns:1fr;
+
+        gap:9px;
+
+        padding:21px 0;
     }
 
-
-    /* BUTTONS */
-
-    .actions{
+    .contact-actions{
         flex-direction:column;
     }
 
-    .actions .btn{
+    .action-link{
         width:100%;
     }
 
 
-    /* CTA */
+    .form-footer{
+        flex-direction:column;
 
-    .business-section{
-        padding:38px 25px;
+        align-items:stretch;
     }
 
-    .business-section .btn{
+    .submit{
         width:100%;
     }
 
 
-    /* FOOTER */
+    .business{
+        padding:90px 0;
+    }
 
-    .footer-grid{
+    .business h2{
+        font-size:50px;
+
+        letter-spacing:-2.8px;
+    }
+
+    .business-button{
+        width:100%;
+    }
+
+
+    .footer-top{
         grid-template-columns:1fr;
-        gap:40px;
+
+        gap:45px;
+
+        padding-bottom:50px;
+    }
+
+    .footer-brand{
+        grid-column:auto;
     }
 
     .footer-bottom{
         flex-direction:column;
+
+        gap:12px;
     }
+
 }
 
 
@@ -1555,13 +1432,14 @@ footer{
     *,
     *::before,
     *::after{
-        animation-duration:.01ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:.01ms !important;
+        animation:none !important;
+
+        transition:none !important;
     }
 
     .reveal{
         opacity:1;
+
         transform:none;
     }
 }
@@ -1572,11 +1450,9 @@ footer{
 
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
-
 
 <!-- =======================================================
-     NAVIGATION
+     NAVBAR
      ======================================================= -->
 
 <header class="navbar" id="navbar">
@@ -1584,16 +1460,17 @@ footer{
     <div class="nav-container">
 
         <a href="index.html"
-           class="logo"
-           aria-label="Arovia Pharma Home">
+           class="logo">
 
-            <img src="logo (1).jpeg"
-                 alt="Arovia Pharma">
+            <img
+                src="logo (1).jpeg"
+                alt="Arovia Pharma">
 
         </a>
 
 
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav-links"
+            id="navLinks">
 
             <li>
                 <a href="index.html">
@@ -1603,7 +1480,7 @@ footer{
 
             <li>
                 <a href="about.html">
-                    About Us
+                    About
                 </a>
             </li>
 
@@ -1615,23 +1492,19 @@ footer{
 
             <li>
                 <a href="contact.html"
-                   class="nav-contact active"
-                   aria-current="page">
-
+                   class="active">
                     Contact
-
                 </a>
             </li>
 
         </ul>
 
 
-        <button class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="navLinks">
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu"
+            aria-expanded="false">
 
             <span></span>
             <span></span>
@@ -1651,46 +1524,96 @@ footer{
 
 <section class="contact-hero">
 
-    <div class="contact-hero-content">
+    <div class="hero-inner">
 
-        <div class="hero-text reveal">
+        <div class="hero-meta">
 
-            <div class="eyebrow">
+            <span>
+                AROVIA PHARMA PVT. LTD.
+            </span>
 
-                <span class="eyebrow-dot"></span>
-
-                Connect With Arovia Pharma
-
-            </div>
-
-
-            <h1>
-                Let's talk about
-                <span>health.</span>
-            </h1>
-
-
-            <p>
-                Whether you have a product enquiry,
-                business opportunity, distributorship
-                request or simply want to connect with
-                our team, we're here to help.
-            </p>
+            <span>
+                04 / CONTACT
+            </span>
 
         </div>
 
 
-        <div class="hero-visual"
-             aria-hidden="true">
+        <div class="hero-title reveal">
 
-            <div class="orbit one"></div>
-            <div class="orbit two"></div>
-            <div class="orbit three"></div>
+            <small>
+                Connect With Arovia
+            </small>
 
-            <div class="hero-logo">
+            <h1>
+                LET'S TALK<br>
+                ABOUT <span>HEALTH.</span>
+            </h1>
 
-                <img src="logo 2.jpeg"
-                     alt="">
+        </div>
+
+
+        <p class="hero-description reveal">
+
+            Whether you have a product enquiry,
+            distributorship request, business
+            opportunity or simply want to connect,
+            we're here to help.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     INTRO
+     ======================================================= -->
+
+<section class="contact-intro">
+
+    <div class="container">
+
+        <span class="section-number">
+            05
+        </span>
+
+
+        <div class="intro-grid">
+
+            <div class="intro-title reveal">
+
+                <div class="section-label">
+                    Get In Touch
+                </div>
+
+                <h2>
+                    We're here<br>
+                    to help.
+                </h2>
+
+            </div>
+
+
+            <div class="intro-copy reveal">
+
+                <p>
+                    Have questions about our
+                    pharmaceutical portfolio,
+                    product availability,
+                    distributorship or business
+                    opportunities?
+                </p>
+
+                <br>
+
+                <p>
+                    Reach out to the Arovia Pharma
+                    team and we'll be happy to
+                    assist you with your enquiry.
+                </p>
 
             </div>
 
@@ -1703,286 +1626,192 @@ footer{
 
 
 <!-- =======================================================
-     CONTACT CONTENT
+     CONTACT + FORM
      ======================================================= -->
 
-<main>
-
-<section class="contact-section">
+<section class="info-section">
 
     <div class="container">
 
+        <div class="info-layout">
 
-        <!-- INTRO -->
 
-        <div class="section-intro reveal">
+            <!-- CONTACT DETAILS -->
 
-            <div>
+            <div class="info-column reveal">
 
-                <div class="section-label">
-                    Get In Touch
+                <div class="info-heading">
+
+                    <span>
+                        Contact Information
+                    </span>
+
+                    <h3>
+                        Connect<br>
+                        with Arovia.
+                    </h3>
+
                 </div>
 
-                <h2>
-                    We're here to
-                    help.
-                </h2>
+
+                <div class="info-item">
+
+                    <div class="info-item-label">
+                        Address
+                    </div>
+
+                    <div class="info-item-content">
+
+                        Arovia Pharma Pvt. Ltd.<br>
+
+                        #2, Purushothaman Nagar,<br>
+
+                        Tamil Nadu, India
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-label">
+                        Phone
+                    </div>
+
+                    <div class="info-item-content">
+
+                        <a href="tel:+917358365884">
+                            +91 73583 65884
+                        </a>
+
+                        <br>
+
+                        <a href="tel:+918525964772">
+                            +91 85259 64772
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-label">
+                        Email
+                    </div>
+
+                    <div class="info-item-content">
+
+                        <a href="mailto:aroviapharma@gmail.com">
+                            aroviapharma@gmail.com
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-label">
+                        Hours
+                    </div>
+
+                    <div class="info-item-content">
+
+                        Monday - Saturday<br>
+
+                        11:00 AM - 10:00 PM
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-actions">
+
+                    <a
+                        href="https://maps.app.goo.gl/uinTijMmVubUWYaq7?g_st=ac"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="action-link">
+
+                        View Location ↗
+
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/917358365884"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="action-link dark">
+
+                        WhatsApp ↗
+
+                    </a>
+
+                </div>
 
             </div>
-
-
-            <p>
-
-                Have questions about our
-                pharmaceutical portfolio,
-                product availability,
-                distributorship or business
-                opportunities?
-
-                <br><br>
-
-                Reach out to the Arovia Pharma team
-                and we'll be happy to assist you.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- CONTACT GRID -->
-
-        <div class="contact-grid">
-
-
-            <!-- CONTACT INFORMATION -->
-
-            <article class="contact-card reveal">
-
-                <h3>
-                    Contact Information
-                </h3>
-
-                <p class="card-description">
-
-                    Connect with us through any of
-                    the channels below. Our team will
-                    be happy to assist you with your
-                    enquiry.
-
-                </p>
-
-
-                <div class="info-list">
-
-
-                    <!-- ADDRESS -->
-
-                    <div class="info-box">
-
-                        <div class="info-icon"
-                             aria-hidden="true">
-                            ⌖
-                        </div>
-
-                        <div class="info-content">
-
-                            <strong>
-                                Address
-                            </strong>
-
-                            <span>
-
-                                Arovia Pharma Pvt. Ltd.
-                                <br>
-
-                                #2, Purushothaman Nagar,
-                                <br>
-
-                                Tamil Nadu, India
-
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- PHONE -->
-
-                    <div class="info-box">
-
-                        <div class="info-icon"
-                             aria-hidden="true">
-                            ☎
-                        </div>
-
-                        <div class="info-content">
-
-                            <strong>
-                                Phone
-                            </strong>
-
-                            <span>
-
-                                <a href="tel:+917358365884">
-                                    +91 73583 65884
-                                </a>
-
-                                <br>
-
-                                <a href="tel:+918525964772">
-                                    +91 85259 64772
-                                </a>
-
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- EMAIL -->
-
-                    <div class="info-box">
-
-                        <div class="info-icon"
-                             aria-hidden="true">
-                            ✉
-                        </div>
-
-                        <div class="info-content">
-
-                            <strong>
-                                Email
-                            </strong>
-
-                            <span>
-
-                                <a href="mailto:aroviapharma@gmail.com">
-                                    aroviapharma@gmail.com
-                                </a>
-
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- HOURS -->
-
-                    <div class="info-box">
-
-                        <div class="info-icon"
-                             aria-hidden="true">
-                            ◷
-                        </div>
-
-                        <div class="info-content">
-
-                            <strong>
-                                Business Hours
-                            </strong>
-
-                            <span>
-                                Monday - Saturday
-                                <br>
-                                11:00 AM - 10:00 PM
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="actions">
-
-                    <a href="https://maps.app.goo.gl/uinTijMmVubUWYaq7?g_st=ac"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="btn">
-
-                        View Location →
-
-                    </a>
-
-
-                    <a href="https://wa.me/917358365884"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="btn btn-dark">
-
-                        WhatsApp Us →
-
-                    </a>
-
-                </div>
-
-            </article>
 
 
 
             <!-- MESSAGE FORM -->
 
-            <article class="contact-card reveal">
+            <div class="info-column reveal">
 
-                <h3>
-                    Send Us A Message
-                </h3>
+                <div class="info-heading">
 
-                <p class="card-description">
+                    <span>
+                        Business Enquiries
+                    </span>
 
-                    Have a question or business enquiry?
-                    Fill out the form and your email
-                    application will open with the
-                    enquiry prepared.
+                    <h3>
+                        Send us<br>
+                        a message.
+                    </h3>
 
-                </p>
-
-
-                <form id="contactForm"
-                      novalidate>
+                </div>
 
 
-                    <div class="form-row">
+                <form
+                    class="form"
+                    id="contactForm">
 
 
-                        <div class="form-group">
+                    <div class="form-group">
 
-                            <label for="name">
-                                Your Name
-                            </label>
+                        <label for="name">
+                            Your Name
+                        </label>
 
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Enter your name"
-                                autocomplete="name"
-                                minlength="2"
-                                required>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            required>
 
-                        </div>
+                    </div>
 
 
-                        <div class="form-group">
+                    <div class="form-group">
 
-                            <label for="email">
-                                Your Email
-                            </label>
+                        <label for="email">
+                            Your Email
+                        </label>
 
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                autocomplete="email"
-                                required>
-
-                        </div>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required>
 
                     </div>
 
@@ -1997,8 +1826,7 @@ footer{
                             type="text"
                             id="subject"
                             name="subject"
-                            placeholder="What is your enquiry about?"
-                            minlength="3"
+                            placeholder="Product enquiry / Business / Distributorship"
                             required>
 
                     </div>
@@ -2013,56 +1841,77 @@ footer{
                         <textarea
                             id="message"
                             name="message"
-                            placeholder="Write your message here..."
-                            minlength="10"
+                            placeholder="Tell us how we can help..."
                             required></textarea>
 
                     </div>
 
 
-                    <button type="submit"
-                            class="submit-btn">
+                    <div class="form-footer">
 
-                        Send Message →
+                        <div class="form-note">
 
-                    </button>
+                            Your message will open in
+                            your email application for
+                            review before sending.
+
+                        </div>
 
 
-                    <div class="form-note"
-                         id="formNote"
-                         role="status"
-                         aria-live="polite">
+                        <button
+                            type="submit"
+                            class="submit">
 
-                        Your email application should open
-                        shortly. Please review the message
-                        and send it.
+                            Send Message ↗
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="form-message"
+                        id="formMessage">
+
+                        Your email application is opening.
+                        Please review the enquiry and send it.
 
                     </div>
 
                 </form>
 
-            </article>
+            </div>
 
         </div>
 
+    </div>
+
+</section>
 
 
-        <!-- =================================================
-             BUSINESS CTA
-             ================================================= -->
 
-        <div class="business-section reveal">
+<!-- =======================================================
+     BUSINESS CTA
+     ======================================================= -->
 
-            <div class="business-section-content">
+<section class="business">
 
-                <div class="section-label">
-                    Business Enquiries
+    <div class="container">
+
+        <div class="business-inner">
+
+            <div>
+
+                <div class="business-number">
+                    06 / BUSINESS ENQUIRIES
                 </div>
 
+
                 <h2>
-                    Looking to work
-                    with Arovia?
+                    Looking to work<br>
+                    with <span>Arovia?</span>
                 </h2>
+
 
                 <p>
                     For product details, availability,
@@ -2074,10 +1923,11 @@ footer{
             </div>
 
 
-            <a href="mailto:aroviapharma@gmail.com?subject=Arovia%20Pharma%20Business%20Enquiry"
-               class="btn">
+            <a
+                href="mailto:aroviapharma@gmail.com?subject=Arovia%20Pharma%20Business%20Enquiry"
+                class="business-button">
 
-                Email Arovia →
+                Email Arovia ↗
 
             </a>
 
@@ -2087,8 +1937,6 @@ footer{
 
 </section>
 
-</main>
-
 
 
 <!-- =======================================================
@@ -2097,35 +1945,25 @@ footer{
 
 <footer>
 
-    <div class="footer-grid">
+    <div class="footer-top">
 
-
-        <!-- BRAND -->
 
         <div class="footer-brand">
 
-            <img src="logo 2.jpeg"
-                 alt="Arovia Pharma"
-                 class="footer-logo">
+            <img
+                src="logo 2.jpeg"
+                alt="Arovia Pharma">
 
             <p>
+                Arovia Pharma Pvt. Ltd.<br><br>
 
-                Arovia Pharma Pvt. Ltd.
-
-                <br><br>
-
-                The Path To Health.
-
-                <br><br>
+                The Path To Health.<br><br>
 
                 Quality • Trust • Innovation
-
             </p>
 
         </div>
 
-
-        <!-- EXPLORE -->
 
         <div class="footer-column">
 
@@ -2138,7 +1976,7 @@ footer{
             </a>
 
             <a href="about.html">
-                About Us
+                About
             </a>
 
             <a href="products.html">
@@ -2151,8 +1989,6 @@ footer{
 
         </div>
 
-
-        <!-- AROVIA -->
 
         <div class="footer-column">
 
@@ -2193,6 +2029,10 @@ footer{
 
 
 
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
+
 <script>
 
 /* =========================================================
@@ -2208,113 +2048,57 @@ const menuToggle =
 const navLinks =
     document.getElementById("navLinks");
 
-const scrollProgress =
-    document.getElementById("scrollProgress");
-
 
 function updateNavbar(){
 
-    if(window.scrollY > 40){
+    if(window.scrollY > 30){
+
         navbar.classList.add("scrolled");
+
     }else{
+
         navbar.classList.remove("scrolled");
+
     }
-
-}
-
-
-function updateScrollProgress(){
-
-    const scrollTop =
-        window.scrollY;
-
-    const scrollHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    const percentage =
-        scrollHeight > 0
-            ? (scrollTop / scrollHeight) * 100
-            : 0;
-
-    scrollProgress.style.width =
-        percentage + "%";
-
-}
-
-
-function handleScroll(){
-
-    updateNavbar();
-    updateScrollProgress();
 
 }
 
 
 window.addEventListener(
     "scroll",
-    handleScroll,
-    {passive:true}
+    updateNavbar,
+    { passive:true }
 );
 
-handleScroll();
+updateNavbar();
+
 
 
 /* =========================================================
    MOBILE MENU
    ========================================================= */
 
-function closeMenu(){
-
-    navLinks.classList.remove("active");
-
-    menuToggle.classList.remove("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    menuToggle.setAttribute(
-        "aria-label",
-        "Open navigation menu"
-    );
-
-    document.body.classList.remove("menu-open");
-
-}
-
-
 menuToggle.addEventListener(
     "click",
-    function(){
+    () => {
 
         const open =
-            !navLinks.classList.contains("active");
+            navLinks.classList.toggle("active");
 
-        if(open){
+        menuToggle.classList.toggle(
+            "active",
+            open
+        );
 
-            navLinks.classList.add("active");
+        document.body.classList.toggle(
+            "menu-open",
+            open
+        );
 
-            menuToggle.classList.add("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "true"
-            );
-
-            menuToggle.setAttribute(
-                "aria-label",
-                "Close navigation menu"
-            );
-
-            document.body.classList.add("menu-open");
-
-        }else{
-
-            closeMenu();
-
-        }
+        menuToggle.setAttribute(
+            "aria-expanded",
+            String(open)
+        );
 
     }
 );
@@ -2326,22 +2110,24 @@ document
 
         link.addEventListener(
             "click",
-            closeMenu
+            () => {
+
+                navLinks.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                document.body.classList.remove("menu-open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
         );
 
     });
 
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if(event.key === "Escape"){
-            closeMenu();
-        }
-
-    }
-);
 
 
 /* =========================================================
@@ -2353,10 +2139,11 @@ const revealElements =
 
 
 if(
-    "IntersectionObserver" in window
+    "IntersectionObserver"
+    in window
 ){
 
-    const revealObserver =
+    const observer =
         new IntersectionObserver(
             entries => {
 
@@ -2371,7 +2158,7 @@ if(
                                 "active"
                             );
 
-                            revealObserver.unobserve(
+                            observer.unobserve(
                                 entry.target
                             );
 
@@ -2390,9 +2177,7 @@ if(
     revealElements.forEach(
         element => {
 
-            revealObserver.observe(
-                element
-            );
+            observer.observe(element);
 
         }
     );
@@ -2402,9 +2187,7 @@ if(
     revealElements.forEach(
         element => {
 
-            element.classList.add(
-                "active"
-            );
+            element.classList.add("active");
 
         }
     );
@@ -2412,19 +2195,16 @@ if(
 }
 
 
+
 /* =========================================================
    CONTACT FORM
    ========================================================= */
 
 const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
+    document.getElementById("contactForm");
 
-const formNote =
-    document.getElementById(
-        "formNote"
-    );
+const formMessage =
+    document.getElementById("formMessage");
 
 
 contactForm.addEventListener(
@@ -2432,15 +2212,6 @@ contactForm.addEventListener(
     function(event){
 
         event.preventDefault();
-
-
-        if(!contactForm.checkValidity()){
-
-            contactForm.reportValidity();
-
-            return;
-
-        }
 
 
         const name =
@@ -2477,7 +2248,9 @@ contactForm.addEventListener(
             !subject ||
             !message
         ){
+
             return;
+
         }
 
 
@@ -2490,40 +2263,31 @@ contactForm.addEventListener(
 
         const emailBody =
             encodeURIComponent(
+
                 "Name: " +
                 name +
+
                 "\nEmail: " +
                 email +
+
                 "\n\nMessage:\n" +
-                message
+                message +
+
+                "\n\nSent through Arovia Pharma website."
+
             );
 
 
-        formNote.classList.add("show");
+        formMessage.style.display =
+            "block";
 
 
-        const mailto =
+        window.location.href =
             "mailto:aroviapharma@gmail.com" +
             "?subject=" +
             emailSubject +
             "&body=" +
             emailBody;
-
-
-        /*
-         * Small delay allows the user to see
-         * the confirmation before the mail app opens.
-         */
-
-        setTimeout(
-            function(){
-
-                window.location.href =
-                    mailto;
-
-            },
-            250
-        );
 
     }
 );
