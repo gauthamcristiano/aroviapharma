@@ -1,53 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
-    content="Arovia Pharma Pvt. Ltd. — dependable pharmaceutical solutions built around quality, trust and progress."
+    content="Arovia Pharma Pvt. Ltd. — The Path To Health. Quality pharmaceutical solutions built on trust, responsibility and continuous improvement."
   >
 
-  <meta
-    name="theme-color"
-    content="#03090e"
-  >
-
-  <meta
-    name="color-scheme"
-    content="dark light"
-  >
+  <meta name="theme-color" content="#071b2b">
 
   <title>Arovia Pharma | The Path To Health</title>
 
-
-  <!-- =====================================================
-       GOOGLE FONTS
-  ====================================================== -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
-
 
   <style>
 
@@ -55,31 +27,37 @@
        ROOT
     ========================================================= */
 
-    :root{
+    :root {
+      --navy: #071b2b;
+      --navy-2: #0b263b;
+      --navy-3: #103650;
 
-      --black:#03090e;
-      --dark:#06141d;
-      --dark-2:#0a202d;
-      --navy:#0b2940;
+      --teal: #006d70;
+      --teal-dark: #005356;
 
-      --teal:#006b70;
-      --cyan:#00b8d9;
-      --mint:#9edbd1;
+      --cyan: #16b8d1;
+      --mint: #9bded3;
 
-      --white:#ffffff;
-      --ice:#f4fafb;
-      --soft:#e8f2f4;
+      --white: #ffffff;
+      --off-white: #f6fafb;
+      --soft: #eef6f7;
 
-      --text:#12384f;
-      --muted:#69808b;
+      --text: #102f45;
+      --muted: #6c808d;
+      --muted-light: rgba(255,255,255,.64);
 
-      --line:rgba(9,42,61,.12);
-      --dark-line:rgba(255,255,255,.10);
+      --border: rgba(16,47,69,.11);
+      --dark-border: rgba(255,255,255,.11);
 
-      --container:min(1240px,88vw);
+      --container: min(1180px, 88vw);
 
-      --ease:cubic-bezier(.2,.75,.2,1);
+      --radius: 22px;
 
+      --shadow:
+        0 30px 80px rgba(5, 25, 40, .12);
+
+      --ease:
+        cubic-bezier(.2,.75,.2,1);
     }
 
 
@@ -87,93 +65,55 @@
        RESET
     ========================================================= */
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html{
-      scroll-behavior:smooth;
-      scroll-padding-top:100px;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
-    body{
+    body {
+      min-width: 320px;
+      overflow-x: hidden;
 
-      min-width:320px;
+      background: var(--white);
+      color: var(--text);
 
-      overflow-x:hidden;
-
-      background:var(--black);
-
-      color:#fff;
-
-      font-family:"DM Sans",sans-serif;
-
-      line-height:1.5;
-
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.5;
     }
 
-    body.loading,
-    body.menu-open{
-      overflow:hidden;
+    body.menu-open {
+      overflow: hidden;
     }
 
-    ::selection{
-      background:var(--cyan);
-      color:#fff;
+    ::selection {
+      background: var(--cyan);
+      color: var(--white);
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    button{
-      border:0;
-      font:inherit;
+    button {
+      border: 0;
+      font: inherit;
     }
 
-    img{
-      display:block;
-      max-width:100%;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
-    .container{
-      width:var(--container);
-      margin-inline:auto;
-    }
-
-
-    /* =========================================================
-       ACCESSIBILITY
-    ========================================================= */
-
-    .skip-link{
-
-      position:fixed;
-
-      left:20px;
-      top:20px;
-
-      z-index:99999;
-
-      padding:12px 18px;
-
-      border-radius:8px;
-
-      background:#fff;
-
-      color:var(--navy);
-
-      transform:translateY(-150%);
-
-      transition:transform .25s ease;
-
-    }
-
-    .skip-link:focus{
-      transform:translateY(0);
+    .container {
+      width: var(--container);
+      margin-inline: auto;
     }
 
 
@@ -181,256 +121,100 @@
        LOADER
     ========================================================= */
 
-    .loader{
+    .loader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
 
-      position:fixed;
+      display: grid;
+      place-items: center;
 
-      inset:0;
-
-      z-index:100000;
-
-      display:grid;
-
-      place-items:center;
-
-      background:var(--black);
+      background: var(--navy);
 
       transition:
-        opacity .7s ease,
-        visibility .7s ease;
-
+        opacity .6s ease,
+        visibility .6s ease;
     }
 
-    .loader.hidden{
-
-      opacity:0;
-
-      visibility:hidden;
-
-      pointer-events:none;
-
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
 
-    .loader-content{
-
-      display:flex;
-
-      flex-direction:column;
-
-      align-items:center;
-
-      text-align:center;
-
+    .loader-content {
+      text-align: center;
     }
 
-    .loader-logo{
+    .loader-logo {
+      width: 90px;
+      height: 90px;
 
-      position:relative;
+      object-fit: contain;
 
-      width:105px;
-      height:105px;
+      padding: 12px;
 
-      display:grid;
+      background: white;
 
-      place-items:center;
+      border-radius: 50%;
 
-      padding:15px;
-
-      border-radius:50%;
-
-      background:#fff;
-
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.08),
-        0 0 80px rgba(0,184,217,.18);
-
-      animation:
-        loaderFloat 2s ease-in-out infinite;
-
+      animation: loaderFloat 2s ease-in-out infinite;
     }
 
-    .loader-logo::before{
+    .loader-line {
+      width: 130px;
+      height: 2px;
 
-      content:"";
+      margin: 25px auto 15px;
 
-      position:absolute;
+      overflow: hidden;
 
-      inset:-12px;
-
-      border-radius:50%;
-
-      border:1px solid rgba(158,219,209,.15);
-
-      animation:
-        loaderRing 2.5s linear infinite;
-
+      background: rgba(255,255,255,.1);
     }
 
-    .loader-logo img{
+    .loader-line::after {
+      content: "";
 
-      width:100%;
-      height:100%;
+      display: block;
 
-      object-fit:contain;
+      width: 50%;
+      height: 100%;
 
-      border-radius:50%;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--cyan),
+          var(--mint),
+          transparent
+        );
 
+      animation: loaderLine 1.2s infinite;
     }
 
-    .loader-line{
+    .loader-text {
+      color: rgba(255,255,255,.45);
 
-      width:150px;
-      height:2px;
+      font-size: 9px;
+      font-weight: 700;
 
-      margin-top:28px;
-
-      overflow:hidden;
-
-      background:rgba(255,255,255,.08);
-
+      letter-spacing: 4px;
     }
 
-    .loader-line::after{
-
-      content:"";
-
-      display:block;
-
-      width:45%;
-      height:100%;
-
-      background:linear-gradient(
-        90deg,
-        transparent,
-        var(--cyan),
-        var(--mint),
-        transparent
-      );
-
-      animation:
-        loaderProgress 1.4s ease-in-out infinite;
-
+    @keyframes loaderFloat {
+      50% {
+        transform: translateY(-6px);
+      }
     }
 
-    .loader-text{
-
-      margin-top:15px;
-
-      color:rgba(255,255,255,.38);
-
-      font-size:9px;
-
-      font-weight:800;
-
-      letter-spacing:4px;
-
-    }
-
-    @keyframes loaderFloat{
-
-      50%{
-        transform:translateY(-6px) scale(1.025);
+    @keyframes loaderLine {
+      from {
+        transform: translateX(-120%);
       }
 
-    }
-
-    @keyframes loaderRing{
-
-      to{
-        transform:rotate(360deg);
+      to {
+        transform: translateX(220%);
       }
-
-    }
-
-    @keyframes loaderProgress{
-
-      from{
-        transform:translateX(-150%);
-      }
-
-      to{
-        transform:translateX(280%);
-      }
-
-    }
-
-
-    /* =========================================================
-       CUSTOM CURSOR
-    ========================================================= */
-
-    .cursor{
-
-      position:fixed;
-
-      z-index:9000;
-
-      width:7px;
-      height:7px;
-
-      border-radius:50%;
-
-      background:var(--cyan);
-
-      pointer-events:none;
-
-      transform:translate(-50%,-50%);
-
-    }
-
-    .cursor-ring{
-
-      position:fixed;
-
-      z-index:8999;
-
-      width:34px;
-      height:34px;
-
-      border:1px solid rgba(0,184,217,.65);
-
-      border-radius:50%;
-
-      pointer-events:none;
-
-      transform:translate(-50%,-50%);
-
-      transition:
-        width .25s ease,
-        height .25s ease,
-        background .25s ease;
-
-    }
-
-    .cursor-ring.large{
-
-      width:62px;
-      height:62px;
-
-      background:rgba(0,184,217,.06);
-
-    }
-
-    @media (hover:hover) and (pointer:fine){
-
-      body{
-        cursor:none;
-      }
-
-      .cursor,
-      .cursor-ring{
-        display:block;
-      }
-
-    }
-
-    @media (hover:none){
-
-      .cursor,
-      .cursor-ring{
-        display:none;
-      }
-
     }
 
 
@@ -438,38 +222,31 @@
        SCROLL PROGRESS
     ========================================================= */
 
-    .scroll-progress{
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
 
-      position:fixed;
+      z-index: 9000;
 
-      left:0;
-      top:0;
+      width: 100%;
+      height: 3px;
 
-      width:100%;
-      height:3px;
-
-      z-index:8000;
-
-      pointer-events:none;
-
+      pointer-events: none;
     }
 
-    .scroll-progress span{
+    .progress span {
+      display: block;
 
-      display:block;
+      width: 0;
+      height: 100%;
 
-      width:0;
-      height:100%;
-
-      background:linear-gradient(
-        90deg,
-        var(--cyan),
-        var(--mint)
-      );
-
-      box-shadow:
-        0 0 18px rgba(0,184,217,.65);
-
+      background:
+        linear-gradient(
+          90deg,
+          var(--cyan),
+          var(--mint)
+        );
     }
 
 
@@ -477,243 +254,274 @@
        NAVIGATION
     ========================================================= */
 
-    .nav{
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
 
-      position:fixed;
+      z-index: 5000;
 
-      left:0;
-      top:0;
+      width: 100%;
 
-      width:100%;
+      padding: 23px 5vw;
 
-      z-index:5000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-      padding:25px 5vw;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      border-bottom:1px solid transparent;
+      color: white;
 
       transition:
         padding .35s ease,
         background .35s ease,
-        border-color .35s ease;
-
+        border .35s ease;
     }
 
-    .nav.scrolled{
+    .navbar.scrolled {
+      padding-block: 13px;
 
-      padding-top:13px;
-      padding-bottom:13px;
+      background: rgba(7,27,43,.90);
 
-      background:rgba(3,9,14,.78);
+      border-bottom: 1px solid var(--dark-border);
 
-      border-color:rgba(255,255,255,.08);
-
-      backdrop-filter:blur(20px);
-
-      -webkit-backdrop-filter:blur(20px);
-
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
-    .brand{
-
-      position:relative;
-
-      z-index:6001;
-
-      display:inline-flex;
-
-      align-items:center;
-
+    .brand img {
+      width: 142px;
+      height: auto;
     }
 
-    .brand img{
-
-      width:140px;
-      height:auto;
-
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
     }
 
-    .nav-links{
+    .nav-links a {
+      position: relative;
 
-      display:flex;
+      padding: 8px 0;
 
-      align-items:center;
+      color: rgba(255,255,255,.70);
 
-      gap:34px;
+      font-size: 12px;
+      font-weight: 700;
 
-    }
-
-    .nav-links a{
-
-      position:relative;
-
-      padding:8px 0;
-
-      color:rgba(255,255,255,.58);
-
-      font-size:11px;
-
-      font-weight:700;
-
-      letter-spacing:.4px;
-
-      transition:color .25s ease;
-
+      transition: color .25s ease;
     }
 
     .nav-links a:hover,
-    .nav-links a.active{
-
-      color:#fff;
-
+    .nav-links a.active {
+      color: white;
     }
 
-    .nav-links a::after{
+    .nav-links a::after {
+      content: "";
 
-      content:"";
+      position: absolute;
 
-      position:absolute;
+      left: 0;
+      bottom: 2px;
 
-      left:0;
-      right:100%;
-      bottom:1px;
+      width: 0;
+      height: 1px;
 
-      height:1px;
+      background: var(--cyan);
 
-      background:var(--cyan);
-
-      transition:right .3s ease;
-
+      transition: width .3s ease;
     }
 
     .nav-links a:hover::after,
-    .nav-links a.active::after{
-
-      right:0;
-
+    .nav-links a.active::after {
+      width: 100%;
     }
 
-    .menu{
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-      position:relative;
+      min-height: 42px;
+      padding: 0 18px;
 
-      z-index:6001;
+      border: 1px solid rgba(255,255,255,.20);
+      border-radius: 999px;
 
-      display:none;
+      color: white !important;
 
-      width:44px;
-      height:44px;
-
-      border:1px solid rgba(255,255,255,.14);
-
-      border-radius:50%;
-
-      background:rgba(255,255,255,.04);
-
-      color:#fff;
-
+      transition:
+        background .25s ease,
+        border .25s ease,
+        transform .25s ease;
     }
 
-    .menu span{
+    .nav-cta:hover {
+      background: var(--cyan);
+      border-color: var(--cyan);
 
-      display:block;
-
-      width:18px;
-      height:1px;
-
-      margin:5px auto;
-
-      background:currentColor;
-
-      transition:transform .3s ease;
-
+      transform: translateY(-2px);
     }
 
-    .menu.open span:first-child{
+    .menu-button {
+      display: none;
 
-      transform:
-        translateY(3px)
-        rotate(45deg);
+      width: 44px;
+      height: 44px;
 
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.05);
+
+      color: white;
     }
 
-    .menu.open span:last-child{
+    .menu-button span {
+      display: block;
 
-      transform:
-        translateY(-3px)
-        rotate(-45deg);
+      width: 19px;
+      height: 1px;
 
+      margin: 5px auto;
+
+      background: currentColor;
+
+      transition: transform .25s ease;
+    }
+
+    .menu-button.open span:first-child {
+      transform: translateY(3px) rotate(45deg);
+    }
+
+    .menu-button.open span:last-child {
+      transform: translateY(-3px) rotate(-45deg);
     }
 
 
     /* =========================================================
-       GLOBAL
+       COMMON
     ========================================================= */
 
-    .section{
-
-      position:relative;
-
-      overflow:hidden;
-
-      padding:145px 0;
-
+    .section {
+      position: relative;
+      overflow: hidden;
     }
 
-    .section-number{
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
 
-      margin-bottom:12px;
+      color: var(--teal);
 
-      color:var(--cyan);
+      font-size: 10px;
+      font-weight: 800;
 
-      font-size:9px;
-
-      font-weight:800;
-
-      letter-spacing:3px;
-
+      letter-spacing: 3px;
     }
 
-    .eyebrow{
+    .section-label::before {
+      content: "";
 
-      color:var(--teal);
+      width: 24px;
+      height: 1px;
 
-      font-size:10px;
-
-      font-weight:800;
-
-      letter-spacing:3px;
-
+      background: var(--cyan);
     }
 
-    .dark .eyebrow{
-      color:var(--mint);
+    .dark .section-label {
+      color: var(--mint);
     }
 
-    .reveal{
+    .dark .section-label::before {
+      background: var(--cyan);
+    }
 
-      opacity:0;
+    .section-number {
+      margin-bottom: 12px;
 
-      transform:translateY(35px);
+      color: var(--cyan);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 3px;
+    }
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(30px);
 
       transition:
         opacity .8s var(--ease),
         transform .8s var(--ease);
-
     }
 
-    .reveal.visible{
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
 
-      opacity:1;
+    .button {
+      min-height: 54px;
 
-      transform:none;
+      padding: 0 22px;
 
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 18px;
+
+      border-radius: 999px;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      transition:
+        transform .3s var(--ease),
+        box-shadow .3s ease,
+        background .3s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: var(--cyan);
+      color: white;
+
+      box-shadow:
+        0 16px 45px rgba(22,184,209,.24);
+    }
+
+    .button-primary:hover {
+      box-shadow:
+        0 20px 55px rgba(22,184,209,.35);
+    }
+
+    .button-light {
+      background: white;
+      color: var(--navy);
+    }
+
+    .button-outline {
+      border: 1px solid var(--border);
+      color: var(--navy);
+    }
+
+    .button-outline:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: white;
+    }
+
+    .arrow {
+      font-size: 17px;
     }
 
 
@@ -721,527 +529,382 @@
        HERO
     ========================================================= */
 
-    .hero{
+    .hero {
+      min-height: 100svh;
 
-      position:relative;
-
-      min-height:100svh;
-
-      display:flex;
-
-      align-items:center;
-
-      overflow:hidden;
-
-      isolation:isolate;
+      display: flex;
+      align-items: center;
 
       background:
         radial-gradient(
-          circle at 70% 40%,
-          rgba(0,184,217,.14),
-          transparent 32%
+          circle at 75% 35%,
+          rgba(22,184,209,.15),
+          transparent 28%
         ),
-        radial-gradient(
-          circle at 5% 100%,
-          rgba(0,107,112,.20),
-          transparent 34%
-        ),
-        var(--black);
+        linear-gradient(
+          115deg,
+          #061521,
+          #071b2b 55%,
+          #09283e
+        );
 
+      color: white;
+
+      isolation: isolate;
     }
 
-    #particleCanvas{
+    .hero::before {
+      content: "";
 
-      position:absolute;
-
-      inset:0;
-
-      z-index:-3;
-
-      width:100%;
-      height:100%;
-
-      opacity:.7;
-
-    }
-
-    .hero-grid{
-
-      position:absolute;
-
-      inset:0;
-
-      z-index:-2;
-
-      opacity:.055;
+      position: absolute;
+      inset: 0;
 
       background-image:
-
         linear-gradient(
-          rgba(255,255,255,.08) 1px,
+          rgba(255,255,255,.04) 1px,
           transparent 1px
         ),
-
         linear-gradient(
           90deg,
-          rgba(255,255,255,.08) 1px,
+          rgba(255,255,255,.04) 1px,
           transparent 1px
         );
 
-      background-size:90px 90px;
+      background-size: 90px 90px;
+
+      opacity: .28;
 
       mask-image:
         linear-gradient(
           to bottom,
-          #000,
-          transparent 90%
+          black,
+          transparent
         );
 
+      pointer-events: none;
     }
 
-    .hero-light{
+    .hero-content {
+      position: relative;
+      z-index: 3;
 
-      position:absolute;
-
-      width:700px;
-      height:700px;
-
-      right:-330px;
-      top:50%;
-
-      transform:translateY(-50%);
-
-      border-radius:50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(0,184,217,.18),
-          transparent 68%
-        );
-
-      filter:blur(30px);
-
-      pointer-events:none;
-
+      padding-top: 80px;
     }
 
-    .hero-content{
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
 
-      position:relative;
+      margin-bottom: 27px;
 
-      z-index:4;
+      color: rgba(255,255,255,.55);
 
-      width:var(--container);
+      font-size: 10px;
+      font-weight: 800;
 
-      margin-inline:auto;
-
-      padding-top:75px;
-
+      letter-spacing: 3px;
     }
 
-    .hero-kicker{
+    .hero-tag::before {
+      content: "";
 
-      display:flex;
+      width: 8px;
+      height: 8px;
 
-      align-items:center;
+      border-radius: 50%;
 
-      gap:12px;
-
-      margin-bottom:28px;
-
-      color:rgba(255,255,255,.40);
-
-      font-size:9px;
-
-      font-weight:800;
-
-      letter-spacing:3px;
-
-    }
-
-    .hero-kicker::before{
-
-      content:"";
-
-      width:7px;
-      height:7px;
-
-      border-radius:50%;
-
-      background:var(--mint);
+      background: var(--mint);
 
       box-shadow:
-        0 0 18px var(--mint);
-
+        0 0 20px var(--mint);
     }
 
-    .hero-title{
+    .hero-title {
+      max-width: 880px;
 
-      max-width:1050px;
+      font-family: "Manrope", sans-serif;
 
-      font-family:"Manrope",sans-serif;
+      font-size: clamp(
+        55px,
+        9vw,
+        128px
+      );
 
-      font-size:clamp(65px,10vw,150px);
+      line-height: .87;
 
-      line-height:.82;
+      letter-spacing: -.08em;
 
-      letter-spacing:-.085em;
-
-      font-weight:800;
-
+      font-weight: 800;
     }
 
-    .hero-title .outline{
+    .hero-title span {
+      display: block;
 
-      color:transparent;
-
-      -webkit-text-stroke:
-        1px rgba(255,255,255,.65);
-
+      color: var(--mint);
     }
 
-    .hero-title .accent{
+    .hero-description {
+      max-width: 570px;
 
-      display:block;
+      margin-top: 35px;
 
-      color:var(--mint);
+      color: rgba(255,255,255,.62);
 
+      font-size: 16px;
+
+      line-height: 1.85;
     }
 
-    .hero-description{
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
 
-      max-width:560px;
-
-      margin-top:38px;
-
-      color:rgba(255,255,255,.52);
-
-      font-size:15px;
-
-      line-height:1.9;
-
+      margin-top: 32px;
     }
 
-    .hero-actions{
+    .hero-secondary {
+      color: rgba(255,255,255,.55);
 
-      display:flex;
-
-      align-items:center;
-
-      gap:16px;
-
-      margin-top:38px;
-
+      font-size: 11px;
+      font-weight: 700;
     }
 
-    .primary-button{
+    .hero-secondary span {
+      margin-left: 8px;
 
-      display:inline-flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      gap:20px;
-
-      min-height:54px;
-
-      padding:0 24px;
-
-      border-radius:999px;
-
-      background:var(--mint);
-
-      color:var(--navy);
-
-      font-size:10px;
-
-      font-weight:800;
-
-      transition:
-        transform .3s var(--ease),
-        box-shadow .3s ease;
-
-    }
-
-    .primary-button:hover{
-
-      transform:translateY(-4px);
-
-      box-shadow:
-        0 18px 50px rgba(158,219,209,.18);
-
-    }
-
-    .primary-button b{
-
-      font-size:15px;
-
-    }
-
-    .secondary-button{
-
-      display:inline-flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      min-height:54px;
-
-      padding:0 22px;
-
-      border:1px solid rgba(255,255,255,.14);
-
-      border-radius:999px;
-
-      color:rgba(255,255,255,.72);
-
-      font-size:10px;
-
-      font-weight:800;
-
-      transition:
-        border-color .3s ease,
-        background .3s ease,
-        color .3s ease;
-
-    }
-
-    .secondary-button:hover{
-
-      border-color:rgba(158,219,209,.45);
-
-      background:rgba(158,219,209,.06);
-
-      color:#fff;
-
-    }
-
-    .hero-bottom{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:55px;
-
-      margin-top:48px;
-
-    }
-
-    .hero-info{
-
-      display:flex;
-
-      flex-direction:column;
-
-      gap:5px;
-
-    }
-
-    .hero-info small{
-
-      color:rgba(255,255,255,.28);
-
-      font-size:8px;
-
-      font-weight:800;
-
-      letter-spacing:2px;
-
-    }
-
-    .hero-info strong{
-
-      color:#fff;
-
-      font-size:12px;
-
-      font-weight:600;
-
-    }
-
-    .hero-scroll{
-
-      position:absolute;
-
-      left:5vw;
-      bottom:32px;
-
-      display:flex;
-
-      align-items:center;
-
-      gap:12px;
-
-      color:rgba(255,255,255,.30);
-
-      font-size:8px;
-
-      font-weight:800;
-
-      letter-spacing:2px;
-
-    }
-
-    .hero-scroll-line{
-
-      width:45px;
-      height:1px;
-
-      background:rgba(255,255,255,.20);
-
+      color: var(--mint);
     }
 
 
     /* =========================================================
-       HERO MEDICAL SYMBOL
+       HERO VISUAL
     ========================================================= */
 
-    .hero-orbit{
+    .hero-visual {
+      position: absolute;
 
-      position:absolute;
+      right: -40px;
+      top: 50%;
 
-      width:600px;
-      height:600px;
+      width: 570px;
+      height: 570px;
 
-      right:-120px;
-      top:50%;
+      transform: translateY(-50%);
 
-      transform:translateY(-50%);
+      z-index: 1;
 
-      z-index:2;
-
-      pointer-events:none;
-
+      pointer-events: none;
     }
 
-    .hero-orbit-ring{
+    .orbit {
+      position: absolute;
 
-      position:absolute;
+      left: 50%;
+      top: 50%;
 
-      left:50%;
-      top:50%;
+      border: 1px solid rgba(155,222,211,.17);
 
-      border:1px solid rgba(158,219,209,.15);
+      border-radius: 50%;
 
-      border-radius:50%;
-
-      transform:translate(-50%,-50%);
+      transform:
+        translate(-50%, -50%)
+        rotate(0deg);
 
       animation:
-        orbitSpin linear infinite;
-
+        orbitSpin 25s linear infinite;
     }
 
-    .hero-orbit-ring:nth-child(1){
-
-      width:590px;
-      height:590px;
-
-      animation-duration:28s;
-
+    .orbit.one {
+      width: 100%;
+      height: 100%;
     }
 
-    .hero-orbit-ring:nth-child(2){
+    .orbit.two {
+      width: 73%;
+      height: 73%;
 
-      width:430px;
-      height:430px;
-
-      animation-duration:20s;
-
-      animation-direction:reverse;
-
+      animation-duration: 18s;
+      animation-direction: reverse;
     }
 
-    .hero-orbit-ring:nth-child(3){
+    .orbit.three {
+      width: 45%;
+      height: 45%;
 
-      width:270px;
-      height:270px;
-
-      animation-duration:13s;
-
+      animation-duration: 12s;
     }
 
-    .hero-orbit-ring::after{
+    .orbit::after {
+      content: "";
 
-      content:"";
+      position: absolute;
 
-      position:absolute;
+      top: -4px;
+      left: 50%;
 
-      left:50%;
-      top:-4px;
+      width: 8px;
+      height: 8px;
 
-      width:8px;
-      height:8px;
+      border-radius: 50%;
 
-      border-radius:50%;
-
-      background:var(--mint);
+      background: var(--mint);
 
       box-shadow:
-        0 0 20px var(--mint);
-
+        0 0 22px var(--mint);
     }
 
-    @keyframes orbitSpin{
-
-      to{
+    @keyframes orbitSpin {
+      to {
         transform:
-          translate(-50%,-50%)
+          translate(-50%, -50%)
           rotate(360deg);
       }
-
     }
 
-    .hero-core{
+    .hero-logo {
+      position: absolute;
 
-      position:absolute;
+      left: 50%;
+      top: 50%;
 
-      left:50%;
-      top:50%;
+      width: 170px;
+      height: 170px;
 
-      width:175px;
-      height:175px;
+      padding: 25px;
 
-      display:grid;
+      transform: translate(-50%, -50%);
 
-      place-items:center;
+      border-radius: 50%;
 
-      border-radius:50%;
-
-      background:#fff;
+      background: white;
 
       box-shadow:
-        0 0 80px rgba(0,184,217,.22);
-
-      transform:translate(-50%,-50%);
+        0 0 100px rgba(22,184,209,.22);
 
       animation:
-        coreFloat 5s ease-in-out infinite;
-
+        logoFloat 5s ease-in-out infinite;
     }
 
-    .hero-core img{
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
 
-      width:115px;
-      height:115px;
+      object-fit: contain;
 
-      object-fit:contain;
-
-      border-radius:50%;
-
+      border-radius: 50%;
     }
 
-    @keyframes coreFloat{
-
-      50%{
+    @keyframes logoFloat {
+      50% {
         transform:
-          translate(-50%,-54%);
+          translate(-50%, -56%);
       }
+    }
 
+    .hero-node {
+      position: absolute;
+
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: var(--cyan);
+
+      box-shadow:
+        0 0 22px var(--cyan);
+    }
+
+    .hero-node.a {
+      top: 6%;
+      left: 50%;
+    }
+
+    .hero-node.b {
+      right: 8%;
+      bottom: 17%;
+    }
+
+    .hero-node.c {
+      left: 5%;
+      top: 54%;
+    }
+
+
+    /* =========================================================
+       TRUST BAR
+    ========================================================= */
+
+    .trust-bar {
+      position: relative;
+      z-index: 5;
+
+      background: white;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-inner {
+      min-height: 105px;
+
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      align-items: center;
+    }
+
+    .trust-item {
+      min-height: 55px;
+
+      padding: 0 35px;
+
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      border-right: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-icon {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--soft);
+
+      color: var(--teal);
+
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .trust-item strong {
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 12px;
+    }
+
+    .trust-item span {
+      display: block;
+
+      margin-top: 2px;
+
+      color: var(--muted);
+
+      font-size: 11px;
     }
 
 
@@ -1249,817 +912,847 @@
        INTRO
     ========================================================= */
 
-    .intro{
+    .intro {
+      padding: 145px 0;
 
-      background:var(--ice);
-
-      color:var(--navy);
-
+      background: var(--off-white);
     }
 
-    .intro-layout{
-
-      display:grid;
+    .intro-layout {
+      display: grid;
 
       grid-template-columns:
-        .8fr 1.2fr;
+        .85fr 1.5fr;
 
-      gap:100px;
+      gap: 100px;
 
-      align-items:center;
-
+      align-items: start;
     }
 
-    .intro-heading{
-
-      margin-top:18px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(55px,7vw,95px);
-
-      line-height:.87;
-
-      letter-spacing:-.075em;
-
-      font-weight:800;
-
+    .intro-side {
+      padding-top: 15px;
     }
 
-    .intro-heading span{
+    .intro-side p {
+      max-width: 270px;
 
-      display:block;
+      margin-top: 25px;
 
-      color:var(--teal);
+      color: var(--muted);
 
+      font-size: 14px;
+
+      line-height: 1.85;
     }
 
-    .intro-copy{
+    .intro-main h2 {
+      max-width: 820px;
 
-      max-width:650px;
+      font-family: "Manrope", sans-serif;
 
-      color:var(--muted);
+      font-size: clamp(
+        45px,
+        6.5vw,
+        88px
+      );
 
-      font-size:16px;
+      line-height: .92;
 
-      line-height:1.95;
-
+      letter-spacing: -.07em;
     }
 
-    .intro-copy p+p{
+    .intro-main h2 span {
+      display: block;
 
-      margin-top:22px;
-
+      color: var(--teal);
     }
 
-    .intro-stat-grid{
+    .intro-main > p {
+      max-width: 650px;
 
-      display:grid;
+      margin-top: 42px;
 
-      grid-template-columns:
-        repeat(2,1fr);
+      color: var(--muted);
 
-      gap:1px;
+      font-size: 16px;
 
-      margin-top:40px;
-
-      background:var(--line);
-
+      line-height: 1.9;
     }
 
-    .intro-stat{
+    .intro-line {
+      width: 100%;
 
-      padding:28px;
+      height: 1px;
 
-      background:var(--ice);
+      margin-top: 55px;
 
+      background: var(--border);
     }
 
-    .intro-stat strong{
+    .intro-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      display:block;
+      gap: 30px;
 
-      color:var(--navy);
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:30px;
-
-      letter-spacing:-.05em;
-
+      margin-top: 28px;
     }
 
-    .intro-stat span{
+    .intro-bottom span {
+      color: var(--teal);
 
-      display:block;
+      font-size: 10px;
+      font-weight: 800;
 
-      margin-top:5px;
+      letter-spacing: 2px;
+    }
 
-      color:var(--muted);
+    .intro-bottom strong {
+      color: var(--navy);
 
-      font-size:10px;
-
-      font-weight:700;
-
-      letter-spacing:1px;
-
+      font-size: 12px;
     }
 
 
     /* =========================================================
-       FOCUS SECTION
+       MARQUEE
     ========================================================= */
 
-    .focus{
+    .marquee {
+      overflow: hidden;
 
-      background:#fff;
+      background: var(--teal);
 
-      color:var(--navy);
-
+      color: white;
     }
 
-    .focus-header{
+    .marquee-track {
+      width: max-content;
 
-      display:flex;
+      display: flex;
+      align-items: center;
 
-      justify-content:space-between;
+      gap: 35px;
 
-      align-items:flex-end;
+      padding: 27px 0;
 
-      gap:50px;
-
+      animation:
+        marquee 24s linear infinite;
     }
 
-    .focus-heading{
+    .marquee-track span {
+      font-family: "Manrope", sans-serif;
 
-      max-width:850px;
+      font-size: clamp(
+        42px,
+        6vw,
+        82px
+      );
 
-      margin-top:18px;
+      font-weight: 800;
 
-      font-family:"Manrope",sans-serif;
+      line-height: 1;
 
-      font-size:clamp(55px,7vw,96px);
+      letter-spacing: -.06em;
 
-      line-height:.86;
-
-      letter-spacing:-.075em;
-
-      font-weight:800;
-
+      white-space: nowrap;
     }
 
-    .focus-heading span{
+    .marquee-track i {
+      color: var(--mint);
 
-      display:block;
+      font-size: 24px;
 
-      color:var(--teal);
-
+      font-style: normal;
     }
 
-    .focus-intro{
-
-      max-width:330px;
-
-      color:var(--muted);
-
-      font-size:13px;
-
-      line-height:1.8;
-
+    @keyframes marquee {
+      to {
+        transform: translateX(-50%);
+      }
     }
 
-    .focus-grid{
 
-      display:grid;
+    /* =========================================================
+       STORY
+    ========================================================= */
+
+    .story {
+      padding: 145px 0;
+
+      background: white;
+    }
+
+    .story-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 50px;
+    }
+
+    .story h2 {
+      margin-top: 18px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: clamp(
+        48px,
+        7vw,
+        92px
+      );
+
+      line-height: .9;
+
+      letter-spacing: -.07em;
+    }
+
+    .story h2 span {
+      display: block;
+
+      color: var(--teal);
+    }
+
+    .story-intro {
+      max-width: 330px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+    .story-video {
+      position: relative;
+
+      margin-top: 70px;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 7.8;
+
+      overflow: hidden;
+
+      border-radius: var(--radius);
+
+      background: var(--navy);
+
+      box-shadow: var(--shadow);
+    }
+
+    .story-video iframe {
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+
+      opacity: .92;
+    }
+
+    .video-label {
+      position: absolute;
+
+      top: 22px;
+      left: 22px;
+
+      z-index: 3;
+
+      padding: 8px 12px;
+
+      border: 1px solid rgba(255,255,255,.14);
+
+      border-radius: 999px;
+
+      background: rgba(0,0,0,.22);
+
+      color: rgba(255,255,255,.65);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* =========================================================
+       VALUES
+    ========================================================= */
+
+    .values {
+      padding: 145px 0;
+
+      background: var(--navy);
+
+      color: white;
+    }
+
+    .values-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+    .values h2 {
+      margin-top: 18px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: clamp(
+        48px,
+        7vw,
+        92px
+      );
+
+      line-height: .9;
+
+      letter-spacing: -.07em;
+    }
+
+    .values h2 span {
+      display: block;
+
+      color: var(--mint);
+    }
+
+    .values-head p {
+      max-width: 320px;
+
+      color: var(--muted-light);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+    .value-grid {
+      display: grid;
 
       grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
-      gap:1px;
+      gap: 1px;
 
-      margin-top:75px;
+      margin-top: 80px;
 
-      background:var(--line);
-
+      background: rgba(255,255,255,.10);
     }
 
-    .focus-card{
+    .value-card {
+      position: relative;
 
-      position:relative;
+      min-height: 410px;
 
-      min-height:390px;
+      padding: 32px;
 
-      padding:34px;
+      overflow: hidden;
 
-      overflow:hidden;
-
-      background:#fff;
+      background: var(--navy);
 
       transition:
-        color .4s ease;
-
-    }
-
-    .focus-card::before{
-
-      content:"";
-
-      position:absolute;
-
-      inset:0;
-
-      background:var(--navy);
-
-      transform:translateY(101%);
-
-      transition:
-        transform .55s var(--ease);
-
-    }
-
-    .focus-card:hover::before{
-
-      transform:none;
-
-    }
-
-    .focus-card > *{
-
-      position:relative;
-
-      z-index:2;
-
-    }
-
-    .focus-number{
-
-      color:var(--cyan);
-
-      font-size:9px;
-
-      font-weight:800;
-
-      letter-spacing:2px;
-
-    }
-
-    .focus-icon{
-
-      width:65px;
-      height:65px;
-
-      margin-top:70px;
-
-      display:grid;
-
-      place-items:center;
-
-      border:1px solid var(--line);
-
-      border-radius:50%;
-
-      color:var(--teal);
-
-      font-size:25px;
-
-      transition:
-        border-color .4s ease,
-        color .4s ease,
         background .4s ease;
-
     }
 
-    .focus-card:hover .focus-icon{
-
-      border-color:rgba(158,219,209,.2);
-
-      color:var(--mint);
-
-      background:rgba(158,219,209,.05);
-
+    .value-card:hover {
+      background: var(--navy-3);
     }
 
-    .focus-card h3{
+    .value-card-number {
+      color: var(--cyan);
 
-      margin-top:30px;
+      font-size: 10px;
+      font-weight: 800;
 
-      font-family:"Manrope",sans-serif;
-
-      font-size:30px;
-
-      line-height:1;
-
-      letter-spacing:-.05em;
-
+      letter-spacing: 2px;
     }
 
-    .focus-card p{
+    .value-circle {
+      position: absolute;
 
-      max-width:310px;
+      right: -60px;
+      top: 55px;
 
-      margin-top:14px;
+      width: 210px;
+      height: 210px;
 
-      color:var(--muted);
+      border: 1px solid rgba(155,222,211,.14);
 
-      font-size:12px;
+      border-radius: 50%;
 
-      line-height:1.8;
-
-      transition:color .4s ease;
-
+      transition:
+        transform .7s var(--ease);
     }
 
-    .focus-card:hover h3{
+    .value-circle::after {
+      content: "";
 
-      color:#fff;
+      position: absolute;
 
+      top: -4px;
+      left: 50%;
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--mint);
     }
 
-    .focus-card:hover p{
+    .value-card:hover .value-circle {
+      transform:
+        scale(1.25)
+        rotate(45deg);
+    }
 
-      color:rgba(255,255,255,.48);
+    .value-content {
+      position: absolute;
 
+      left: 32px;
+      right: 32px;
+      bottom: 34px;
+    }
+
+    .value-content h3 {
+      font-family: "Manrope", sans-serif;
+
+      font-size: 40px;
+
+      letter-spacing: -.05em;
+
+      line-height: 1;
+    }
+
+    .value-content p {
+      max-width: 300px;
+
+      margin-top: 14px;
+
+      color: rgba(255,255,255,.52);
+
+      font-size: 13px;
+
+      line-height: 1.8;
     }
 
 
     /* =========================================================
-       PRODUCT PREVIEW
+       PRODUCTS
     ========================================================= */
 
-    .product-preview{
+    .products {
+      padding: 145px 0;
 
-      position:relative;
-
-      overflow:hidden;
-
-      background:var(--black);
-
-      color:#fff;
-
+      background: var(--off-white);
     }
 
-    .product-preview::before{
+    .products-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
 
-      content:"";
+      gap: 40px;
+    }
 
-      position:absolute;
+    .products h2 {
+      margin-top: 18px;
 
-      width:600px;
-      height:600px;
+      font-family: "Manrope", sans-serif;
 
-      right:-250px;
-      top:50%;
+      font-size: clamp(
+        48px,
+        7vw,
+        92px
+      );
 
-      transform:translateY(-50%);
+      line-height: .9;
 
-      border-radius:50%;
+      letter-spacing: -.07em;
+    }
+
+    .products h2 span {
+      display: block;
+
+      color: var(--teal);
+    }
+
+    .products-description {
+      max-width: 330px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+    .product-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 14px;
+
+      margin-top: 75px;
+    }
+
+    .product-card {
+      position: relative;
+
+      min-height: 330px;
+
+      padding: 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+
+      background: white;
+
+      transition:
+        transform .45s var(--ease),
+        background .4s ease,
+        color .4s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+
+      background: var(--navy);
+
+      color: white;
+    }
+
+    .product-number {
+      position: absolute;
+
+      top: 23px;
+      left: 24px;
+
+      color: var(--cyan);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+    }
+
+    .product-symbol {
+      position: absolute;
+
+      top: 65px;
+      right: 22px;
+
+      color: rgba(0,109,112,.12);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 62px;
+
+      transition:
+        transform .45s ease,
+        color .45s ease;
+    }
+
+    .product-card:hover .product-symbol {
+      color: rgba(155,222,211,.25);
+
+      transform:
+        scale(1.3)
+        rotate(15deg);
+    }
+
+    .product-card h3 {
+      font-family: "Manrope", sans-serif;
+
+      font-size: 28px;
+
+      line-height: 1;
+
+      letter-spacing: -.05em;
+    }
+
+    .product-card p {
+      margin-top: 11px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.7;
+    }
+
+    .product-card:hover p {
+      color: rgba(255,255,255,.55);
+    }
+
+
+    /* =========================================================
+       PHILOSOPHY
+    ========================================================= */
+
+    .philosophy {
+      min-height: 700px;
+
+      display: flex;
+      align-items: center;
 
       background:
         radial-gradient(
-          circle,
-          rgba(0,184,217,.12),
-          transparent 68%
-        );
+          circle at 75% 45%,
+          rgba(22,184,209,.17),
+          transparent 30%
+        ),
+        var(--navy);
 
-      pointer-events:none;
-
+      color: white;
     }
 
-    .product-layout{
-
-      display:grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap:100px;
-
-      align-items:center;
-
+    .philosophy-content {
+      position: relative;
+      z-index: 2;
     }
 
-    .product-heading{
+    .philosophy h2 {
+      max-width: 850px;
 
-      max-width:700px;
+      margin-top: 18px;
 
-      margin-top:18px;
+      font-family: "Manrope", sans-serif;
 
-      font-family:"Manrope",sans-serif;
+      font-size: clamp(
+        55px,
+        8vw,
+        108px
+      );
 
-      font-size:clamp(55px,7vw,92px);
+      line-height: .86;
 
-      line-height:.86;
-
-      letter-spacing:-.075em;
-
-      font-weight:800;
-
+      letter-spacing: -.08em;
     }
 
-    .product-heading span{
+    .philosophy h2 span {
+      display: block;
 
-      display:block;
-
-      color:var(--mint);
-
+      color: var(--mint);
     }
 
-    .product-description{
+    .philosophy-points {
+      display: flex;
+      flex-wrap: wrap;
 
-      max-width:560px;
+      gap: 20px 55px;
 
-      margin-top:32px;
-
-      color:rgba(255,255,255,.46);
-
-      font-size:14px;
-
-      line-height:1.9;
-
+      margin-top: 60px;
     }
 
-    .product-button{
+    .philosophy-point {
+      display: flex;
+      align-items: center;
 
-      display:inline-flex;
-
-      align-items:center;
-
-      gap:20px;
-
-      margin-top:32px;
-
-      min-height:52px;
-
-      padding:0 23px;
-
-      border:1px solid rgba(255,255,255,.14);
-
-      border-radius:999px;
-
-      color:#fff;
-
-      font-size:10px;
-
-      font-weight:800;
-
-      transition:
-        transform .3s var(--ease),
-        background .3s ease,
-        border-color .3s ease;
-
+      gap: 13px;
     }
 
-    .product-button:hover{
+    .philosophy-point strong {
+      color: var(--cyan);
 
-      transform:translateY(-4px);
-
-      background:rgba(158,219,209,.07);
-
-      border-color:rgba(158,219,209,.35);
-
+      font-size: 10px;
     }
 
-    .product-button b{
+    .philosophy-point span {
+      color: rgba(255,255,255,.55);
 
-      color:var(--mint);
-
-      font-size:15px;
-
+      font-size: 13px;
     }
 
-    .product-visual{
+    .giant-word {
+      position: absolute;
 
-      position:relative;
+      right: -6%;
+      bottom: -50px;
 
-      min-height:500px;
+      color: rgba(255,255,255,.025);
 
-      display:grid;
+      font-family: "Manrope", sans-serif;
 
-      place-items:center;
+      font-size: clamp(
+        150px,
+        23vw,
+        370px
+      );
 
-    }
+      font-weight: 800;
 
-    .product-circle{
+      line-height: .8;
 
-      position:relative;
-
-      width:360px;
-      height:360px;
-
-      border:1px solid rgba(158,219,209,.15);
-
-      border-radius:50%;
-
-    }
-
-    .product-circle::before,
-    .product-circle::after{
-
-      content:"";
-
-      position:absolute;
-
-      left:50%;
-      top:50%;
-
-      border:1px solid rgba(158,219,209,.10);
-
-      border-radius:50%;
-
-      transform:translate(-50%,-50%);
-
-    }
-
-    .product-circle::before{
-
-      width:270px;
-      height:270px;
-
-    }
-
-    .product-circle::after{
-
-      width:150px;
-      height:150px;
-
-    }
-
-    .product-core{
-
-      position:absolute;
-
-      left:50%;
-      top:50%;
-
-      width:125px;
-      height:125px;
-
-      display:grid;
-
-      place-items:center;
-
-      border-radius:50%;
-
-      background:#fff;
-
-      transform:translate(-50%,-50%);
-
-      box-shadow:
-        0 0 70px rgba(0,184,217,.18);
-
-    }
-
-    .product-core img{
-
-      width:85px;
-      height:85px;
-
-      object-fit:contain;
-
-      border-radius:50%;
-
-    }
-
-    .product-dot{
-
-      position:absolute;
-
-      width:9px;
-      height:9px;
-
-      border-radius:50%;
-
-      background:var(--mint);
-
-      box-shadow:
-        0 0 20px var(--mint);
-
-    }
-
-    .product-dot.one{
-
-      top:20px;
-      left:50%;
-
-    }
-
-    .product-dot.two{
-
-      right:45px;
-      top:50%;
-
-    }
-
-    .product-dot.three{
-
-      bottom:40px;
-      left:30%;
-
+      letter-spacing: -.09em;
     }
 
 
     /* =========================================================
-       QUALITY STATEMENT
+       VISION
     ========================================================= */
 
-    .statement{
+    .vision {
+      min-height: 700px;
 
-      background:var(--ice);
-
-      color:var(--navy);
-
-      text-align:center;
-
-    }
-
-    .statement-content{
-
-      max-width:1050px;
-
-      margin-inline:auto;
-
-    }
-
-    .statement-heading{
-
-      margin-top:20px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(55px,8vw,105px);
-
-      line-height:.85;
-
-      letter-spacing:-.08em;
-
-      font-weight:800;
-
-    }
-
-    .statement-heading span{
-
-      display:block;
-
-      color:var(--teal);
-
-    }
-
-    .statement-description{
-
-      max-width:600px;
-
-      margin:32px auto 0;
-
-      color:var(--muted);
-
-      font-size:14px;
-
-      line-height:1.9;
-
-    }
-
-
-    /* =========================================================
-       CTA
-    ========================================================= */
-
-    .cta{
-
-      position:relative;
-
-      min-height:600px;
-
-      display:grid;
-
-      place-items:center;
-
-      padding:100px 0;
-
-      overflow:hidden;
-
-      text-align:center;
+      display: flex;
+      align-items: center;
 
       background:
         linear-gradient(
-          120deg,
-          #00686d,
-          #061b28
+          125deg,
+          var(--teal-dark),
+          var(--navy)
         );
 
-      color:#fff;
-
+      color: white;
     }
 
-    .cta::before{
-
-      content:"";
-
-      position:absolute;
-
-      width:650px;
-      height:650px;
-
-      border-radius:50%;
-
-      border:1px solid rgba(158,219,209,.10);
-
-      box-shadow:
-        0 0 0 90px rgba(158,219,209,.025),
-        0 0 0 180px rgba(158,219,209,.015);
-
+    .vision-content {
+      position: relative;
+      z-index: 3;
     }
 
-    .cta-content{
+    .vision h2 {
+      max-width: 950px;
 
-      position:relative;
+      margin-top: 18px;
 
-      z-index:2;
+      font-family: "Manrope", sans-serif;
 
+      font-size: clamp(
+        55px,
+        8vw,
+        108px
+      );
+
+      line-height: .86;
+
+      letter-spacing: -.08em;
     }
 
-    .cta-heading{
+    .vision h2 span {
+      display: block;
 
-      margin-top:18px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(65px,9vw,130px);
-
-      line-height:.82;
-
-      letter-spacing:-.085em;
-
-      font-weight:800;
-
+      color: var(--mint);
     }
 
-    .cta-heading span{
+    .vision p {
+      max-width: 610px;
 
-      display:block;
+      margin-top: 35px;
 
-      color:var(--mint);
+      color: rgba(255,255,255,.62);
 
+      font-size: 15px;
+
+      line-height: 1.9;
     }
 
-    .cta-description{
+    .vision-orbit {
+      position: absolute;
 
-      max-width:500px;
+      width: 650px;
+      height: 650px;
 
-      margin:28px auto 0;
+      right: -260px;
+      top: 50%;
 
-      color:rgba(255,255,255,.52);
+      transform: translateY(-50%);
 
-      font-size:14px;
+      border: 1px solid rgba(155,222,211,.13);
 
+      border-radius: 50%;
     }
 
-    .cta-button{
+    .vision-orbit::before,
+    .vision-orbit::after {
+      content: "";
 
-      display:inline-flex;
+      position: absolute;
 
-      align-items:center;
+      left: 50%;
+      top: 50%;
 
-      justify-content:center;
+      border: 1px solid rgba(155,222,211,.10);
 
-      gap:25px;
+      border-radius: 50%;
 
-      min-height:55px;
-
-      margin-top:30px;
-
-      padding:0 25px;
-
-      border-radius:999px;
-
-      background:#fff;
-
-      color:var(--navy);
-
-      font-size:10px;
-
-      font-weight:800;
-
-      transition:
-        transform .3s var(--ease),
-        box-shadow .3s ease;
-
+      transform: translate(-50%, -50%);
     }
 
-    .cta-button:hover{
-
-      transform:translateY(-4px);
-
-      box-shadow:
-        0 20px 55px rgba(0,0,0,.25);
-
+    .vision-orbit::before {
+      width: 440px;
+      height: 440px;
     }
 
-    .cta-button b{
+    .vision-orbit::after {
+      width: 250px;
+      height: 250px;
+    }
 
-      color:var(--teal);
 
-      font-size:15px;
+    /* =========================================================
+       FINAL CTA
+    ========================================================= */
 
+    .final {
+      padding: 140px 0;
+
+      text-align: center;
+
+      background: var(--off-white);
+    }
+
+    .final-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .final h2 {
+      margin-top: 18px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: clamp(
+        60px,
+        9vw,
+        125px
+      );
+
+      line-height: .84;
+
+      letter-spacing: -.08em;
+    }
+
+    .final h2 span {
+      display: block;
+
+      color: var(--teal);
+    }
+
+    .final p {
+      margin: 28px 0 30px;
+
+      color: var(--muted);
+    }
+
+    .final-actions {
+      display: flex;
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
     }
 
 
@@ -2067,629 +1760,427 @@
        FOOTER
     ========================================================= */
 
-    footer{
+    footer {
+      padding: 80px 0 25px;
 
-      padding:80px 0 25px;
+      background: #04121e;
 
-      background:var(--black);
-
-      color:#fff;
-
+      color: white;
     }
 
-    .footer-main{
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
 
-      display:flex;
+      gap: 70px;
 
-      justify-content:space-between;
+      padding-bottom: 60px;
 
-      align-items:flex-start;
-
-      gap:70px;
-
-      padding-bottom:60px;
-
-      border-bottom:1px solid var(--dark-line);
-
+      border-bottom: 1px solid var(--dark-border);
     }
 
-    .footer-logo{
+    .footer-brand img {
+      width: 145px;
 
-      width:145px;
+      padding: 9px;
 
-      padding:9px;
+      border-radius: 9px;
 
-      border-radius:10px;
-
-      background:#fff;
-
+      background: white;
     }
 
-    .footer-brand p{
+    .footer-brand p {
+      margin-top: 17px;
 
-      margin-top:16px;
+      color: rgba(255,255,255,.40);
 
-      color:rgba(255,255,255,.35);
-
-      font-size:11px;
-
+      font-size: 12px;
     }
 
-    .footer-links{
+    .footer-links {
+      display: flex;
 
-      display:flex;
-
-      gap:90px;
-
+      gap: 90px;
     }
 
-    .footer-column{
+    .footer-column {
+      display: flex;
+      flex-direction: column;
 
-      display:flex;
+      gap: 12px;
 
-      flex-direction:column;
-
-      gap:13px;
-
-      min-width:110px;
-
+      min-width: 120px;
     }
 
-    .footer-column span{
+    .footer-column strong {
+      margin-bottom: 7px;
 
-      margin-bottom:5px;
+      color: var(--mint);
 
-      color:var(--mint);
+      font-size: 9px;
 
-      font-size:8px;
-
-      font-weight:800;
-
-      letter-spacing:2px;
-
+      letter-spacing: 2px;
     }
 
-    .footer-column a{
+    .footer-column a {
+      width: fit-content;
 
-      width:max-content;
+      color: rgba(255,255,255,.50);
 
-      color:rgba(255,255,255,.47);
-
-      font-size:11px;
+      font-size: 12px;
 
       transition:
         color .25s ease,
         transform .25s ease;
-
     }
 
-    .footer-column a:hover{
+    .footer-column a:hover {
+      color: white;
 
-      color:#fff;
-
-      transform:translateX(4px);
-
+      transform: translateX(4px);
     }
 
-    .footer-bottom{
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
 
-      display:flex;
+      gap: 20px;
 
-      justify-content:space-between;
+      padding-top: 22px;
 
-      gap:20px;
+      color: rgba(255,255,255,.25);
 
-      padding-top:22px;
+      font-size: 9px;
 
-      color:rgba(255,255,255,.23);
-
-      font-size:8px;
-
-      letter-spacing:1.5px;
-
+      letter-spacing: 1px;
     }
 
 
     /* =========================================================
-       RESPONSIVE — TABLET
+       RESPONSIVE
     ========================================================= */
 
-    @media(max-width:1050px){
+    @media (max-width: 1100px) {
 
-      .hero-orbit{
+      .hero-visual {
+        right: -180px;
 
-        right:-200px;
-
-        opacity:.55;
-
+        opacity: .55;
       }
 
-      .intro-layout,
-      .product-layout{
+      .product-grid {
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
 
-        gap:60px;
+      .value-grid {
+        grid-template-columns:
+          1fr;
+      }
 
+      .value-card {
+        min-height: 350px;
       }
 
     }
 
 
-    /* =========================================================
-       RESPONSIVE — MOBILE NAV
-    ========================================================= */
+    @media (max-width: 820px) {
 
-    @media(max-width:900px){
-
-      .nav{
-
-        padding:17px 6vw;
-
+      .navbar {
+        padding: 17px 6vw;
       }
 
-      .brand img{
-
-        width:122px;
-
+      .brand img {
+        width: 125px;
       }
 
-      .menu{
-
-        display:block;
-
+      .menu-button {
+        display: block;
       }
 
-      .nav-links{
+      .nav-links {
+        position: fixed;
 
-        position:fixed;
+        inset: 0;
 
-        inset:0;
+        z-index: -1;
 
-        z-index:6000;
+        padding: 110px 10vw 60px;
 
-        padding:115px 10vw 50px;
+        flex-direction: column;
+        align-items: flex-start;
 
-        flex-direction:column;
+        gap: 22px;
 
-        align-items:flex-start;
+        background: rgba(7,27,43,.98);
 
-        gap:22px;
-
-        background:rgba(3,9,14,.98);
-
-        transform:translateX(100%);
+        transform:
+          translateX(100%);
 
         transition:
           transform .45s var(--ease);
-
-        overflow-y:auto;
-
       }
 
-      .nav-links.open{
-
-        transform:none;
-
+      .nav-links.open {
+        transform: translateX(0);
       }
 
-      .nav-links a{
+      .nav-links a {
+        font-size: 28px;
+      }
 
-        font-size:30px;
-
+      .nav-cta {
+        margin-top: 10px;
       }
 
 
-      /* HERO */
+      .hero {
+        min-height: 900px;
 
-      .hero{
+        align-items: flex-start;
 
-        min-height:900px;
-
-        align-items:flex-start;
-
-        padding-top:145px;
-
+        padding-top: 145px;
       }
 
-      .hero-content{
-
-        text-align:center;
-
+      .hero-content {
+        text-align: center;
       }
 
-      .hero-kicker{
-
-        justify-content:center;
-
+      .hero-tag {
+        justify-content: center;
       }
 
-      .hero-description{
-
-        margin-inline:auto;
-
+      .hero-description {
+        margin-inline: auto;
       }
 
-      .hero-actions{
-
-        justify-content:center;
-
+      .hero-actions {
+        justify-content: center;
       }
 
-      .hero-bottom{
+      .hero-visual {
+        width: 430px;
+        height: 430px;
 
-        justify-content:center;
+        right: 50%;
+        top: auto;
+        bottom: -110px;
 
+        transform: translateX(50%);
+
+        opacity: .45;
       }
 
-      .hero-scroll{
+      .hero-logo {
+        width: 125px;
+        height: 125px;
 
-        display:none;
-
-      }
-
-      .hero-orbit{
-
-        width:430px;
-        height:430px;
-
-        right:50%;
-
-        top:auto;
-
-        bottom:-100px;
-
-        transform:translateX(50%);
-
-        opacity:.40;
-
-      }
-
-      .hero-orbit-ring:nth-child(1){
-
-        width:420px;
-        height:420px;
-
-      }
-
-      .hero-orbit-ring:nth-child(2){
-
-        width:300px;
-        height:300px;
-
-      }
-
-      .hero-orbit-ring:nth-child(3){
-
-        width:195px;
-        height:195px;
-
-      }
-
-      .hero-core{
-
-        width:120px;
-        height:120px;
-
-      }
-
-      .hero-core img{
-
-        width:78px;
-        height:78px;
-
+        padding: 18px;
       }
 
 
-      /* SECTIONS */
+      .trust-inner {
+        grid-template-columns:
+          1fr;
 
-      .section{
-
-        padding:110px 0;
-
+        padding: 20px 0;
       }
 
-      .intro-layout{
+      .trust-item {
+        min-height: 70px;
 
-        grid-template-columns:1fr;
+        padding: 0;
 
-        gap:55px;
+        border-right: 0;
 
+        border-bottom: 1px solid var(--border);
       }
 
-      .focus-header{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
+      .trust-item:last-child {
+        border-bottom: 0;
       }
 
-      .focus-grid{
 
-        grid-template-columns:1fr;
+      .intro-layout {
+        grid-template-columns:
+          1fr;
 
+        gap: 40px;
       }
 
-      .product-layout{
-
-        grid-template-columns:1fr;
-
-        gap:50px;
-
+      .intro-side p {
+        max-width: 500px;
       }
 
-      .product-visual{
 
-        min-height:400px;
-
+      .story-head,
+      .values-head,
+      .products-head {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .statement{
 
-        text-align:left;
-
+      .product-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .statement-description{
 
-        margin-left:0;
-
+      .vision-orbit {
+        right: -400px;
       }
 
-      .cta{
 
-        min-height:550px;
-
-      }
-
-      .footer-main{
-
-        flex-direction:column;
-
+      .footer-main {
+        flex-direction: column;
       }
 
     }
 
 
-    /* =========================================================
-       RESPONSIVE — MOBILE
-    ========================================================= */
+    @media (max-width: 560px) {
 
-    @media(max-width:600px){
-
-      :root{
-
-        --container:88vw;
-
+      :root {
+        --container: 88vw;
       }
 
-      .hero-title{
+      .hero {
+        min-height: 820px;
 
+        padding-top: 130px;
+      }
+
+      .hero-title {
         font-size:
-          clamp(52px,15vw,76px);
-
-        letter-spacing:-.07em;
-
+          clamp(
+            50px,
+            15vw,
+            72px
+          );
       }
 
-      .hero-description{
-
-        font-size:14px;
-
+      .hero-description {
+        font-size: 14px;
       }
 
-      .hero-actions{
+      .hero-actions {
+        flex-direction: column;
 
-        flex-direction:column;
-
-        align-items:stretch;
-
+        gap: 15px;
       }
 
-      .primary-button,
-      .secondary-button{
 
-        width:100%;
-
+      .intro,
+      .story,
+      .values,
+      .products {
+        padding-block: 100px;
       }
 
-      .hero-bottom{
 
-        flex-wrap:wrap;
+      .story-video {
+        aspect-ratio: 16 / 10;
 
-        justify-content:flex-start;
+        margin-top: 45px;
 
-        text-align:left;
-
-        gap:22px 30px;
-
+        border-radius: 15px;
       }
 
-      .section{
 
-        padding:95px 0;
-
+      .product-grid {
+        grid-template-columns:
+          1fr;
       }
 
-      .intro-heading,
-      .focus-heading,
-      .product-heading,
-      .statement-heading,
-      .cta-heading{
-
-        letter-spacing:-.06em;
-
+      .product-card {
+        min-height: 290px;
       }
 
-      .intro-heading{
 
+      .philosophy,
+      .vision {
+        min-height: 650px;
+      }
+
+
+      .giant-word {
+        font-size: 120px;
+      }
+
+
+      .vision-orbit {
+        right: -430px;
+      }
+
+
+      .final {
+        padding-block: 100px;
+      }
+
+      .final h2 {
         font-size:
-          clamp(51px,14vw,75px);
-
+          clamp(
+            58px,
+            16vw,
+            78px
+          );
       }
 
-      .intro-copy{
 
-        font-size:14px;
+      .footer-links {
+        width: 100%;
 
+        justify-content:
+          space-between;
+
+        gap: 30px;
       }
 
-      .intro-stat-grid{
-
-        grid-template-columns:1fr;
-
-      }
-
-      .focus-heading{
-
-        font-size:
-          clamp(51px,14vw,75px);
-
-      }
-
-      .focus-card{
-
-        min-height:330px;
-
-        padding:28px;
-
-      }
-
-      .focus-icon{
-
-        margin-top:50px;
-
-      }
-
-      .product-heading{
-
-        font-size:
-          clamp(51px,14vw,75px);
-
-      }
-
-      .product-circle{
-
-        width:290px;
-        height:290px;
-
-      }
-
-      .product-circle::before{
-
-        width:220px;
-        height:220px;
-
-      }
-
-      .product-circle::after{
-
-        width:130px;
-        height:130px;
-
-      }
-
-      .product-core{
-
-        width:100px;
-        height:100px;
-
-      }
-
-      .product-core img{
-
-        width:68px;
-        height:68px;
-
-      }
-
-      .statement-heading{
-
-        font-size:
-          clamp(52px,14vw,78px);
-
-      }
-
-      .cta-heading{
-
-        font-size:
-          clamp(59px,16vw,78px);
-
-      }
-
-      .footer-links{
-
-        width:100%;
-
-        justify-content:space-between;
-
-        gap:30px;
-
-      }
-
-      .footer-bottom{
-
-        flex-direction:column;
-
-        gap:10px;
-
+      .footer-bottom {
+        flex-direction: column;
       }
 
     }
 
 
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
 
-    @media(prefers-reduced-motion:reduce){
-
-      html{
-
-        scroll-behavior:auto;
-
+      html {
+        scroll-behavior: auto;
       }
 
       *,
       *::before,
-      *::after{
-
-        animation-duration:.01ms!important;
-
-        animation-iteration-count:1!important;
-
-        transition-duration:.01ms!important;
-
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
       }
 
     }
 
   </style>
-
 </head>
 
 
-<body class="loading">
-
+<body>
 
   <!-- =======================================================
        LOADER
   ======================================================== -->
 
-  <div
-    class="loader"
-    id="loader"
-  >
+  <div class="loader" id="loader">
 
     <div class="loader-content">
 
-      <div class="loader-logo">
-
-        <img
-          src="logo 2.jpeg"
-          alt="Arovia Pharma"
-        >
-
-      </div>
+      <img
+        src="logo 2.jpeg"
+        class="loader-logo"
+        alt="Arovia Pharma"
+      >
 
       <div class="loader-line"></div>
 
@@ -2703,43 +2194,11 @@
 
 
   <!-- =======================================================
-       ACCESSIBILITY
+       PROGRESS
   ======================================================== -->
 
-  <a
-    href="#main-content"
-    class="skip-link"
-  >
-    Skip to content
-  </a>
-
-
-  <!-- =======================================================
-       CURSOR
-  ======================================================== -->
-
-  <div
-    class="cursor"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="cursor-ring"
-    aria-hidden="true"
-  ></div>
-
-
-  <!-- =======================================================
-       SCROLL PROGRESS
-  ======================================================== -->
-
-  <div
-    class="scroll-progress"
-    aria-hidden="true"
-  >
-
-    <span></span>
-
+  <div class="progress">
+    <span id="progressBar"></span>
   </div>
 
 
@@ -2747,10 +2206,7 @@
        NAVIGATION
   ======================================================== -->
 
-  <header
-    class="nav"
-    id="siteNav"
-  >
+  <header class="navbar" id="navbar">
 
     <a
       href="index.html"
@@ -2769,13 +2225,11 @@
     <nav
       class="nav-links"
       id="navLinks"
-      aria-label="Primary navigation"
     >
 
       <a
         href="index.html"
         class="active"
-        aria-current="page"
       >
         Home
       </a>
@@ -2792,15 +2246,21 @@
         Contact
       </a>
 
+      <a
+        href="contact.html"
+        class="nav-cta"
+      >
+        Get in touch
+      </a>
+
     </nav>
 
 
     <button
-      class="menu"
-      id="menu"
+      class="menu-button"
+      id="menuButton"
       type="button"
       aria-label="Open navigation"
-      aria-controls="navLinks"
       aria-expanded="false"
     >
 
@@ -2812,11 +2272,7 @@
   </header>
 
 
-  <!-- =======================================================
-       MAIN
-  ======================================================== -->
-
-  <main id="main-content">
+  <main>
 
 
     <!-- =====================================================
@@ -2824,43 +2280,23 @@
     ====================================================== -->
 
     <section
-      class="hero"
-      id="top"
+      class="hero section"
+      id="home"
     >
 
-      <canvas
-        id="particleCanvas"
-        aria-hidden="true"
-      ></canvas>
+      <div class="container hero-content">
 
-
-      <div
-        class="hero-grid"
-        aria-hidden="true"
-      ></div>
-
-
-      <div
-        class="hero-light"
-        aria-hidden="true"
-      ></div>
-
-
-      <div class="hero-content">
-
-        <div class="hero-kicker">
-          THE PATH TO HEALTH
+        <div class="hero-tag">
+          AROVIA PHARMA PVT. LTD.
         </div>
 
 
         <h1 class="hero-title">
 
-          <span class="outline">
-            HEALTHCARE
-          </span>
+          THE PATH
 
-          <span class="accent">
-            MOVES FORWARD.
+          <span>
+            TO HEALTH.
           </span>
 
         </h1>
@@ -2868,10 +2304,9 @@
 
         <p class="hero-description">
 
-          Arovia Pharma is focused on building
-          dependable pharmaceutical solutions
-          with a commitment to quality, trust
-          and meaningful progress.
+          Pharmaceutical solutions shaped by
+          quality, trust and the belief that
+          better healthcare begins with purpose.
 
         </p>
 
@@ -2880,75 +2315,51 @@
 
           <a
             href="products.html"
-            class="primary-button"
+            class="button button-primary"
           >
 
-            Explore Products
+            <span>
+              Explore Products
+            </span>
 
-            <b>↗</b>
+            <span class="arrow">
+              ↗
+            </span>
 
           </a>
 
 
           <a
-            href="about.html"
-            class="secondary-button"
+            href="#about-preview"
+            class="hero-secondary"
           >
 
             Discover Arovia
 
+            <span>
+              ↓
+            </span>
+
           </a>
-
-        </div>
-
-
-        <div class="hero-bottom">
-
-          <div class="hero-info">
-
-            <small>
-              FOCUS
-            </small>
-
-            <strong>
-              Dependable healthcare
-            </strong>
-
-          </div>
-
-
-          <div class="hero-info">
-
-            <small>
-              PRINCIPLE
-            </small>
-
-            <strong>
-              Quality · Trust · Progress
-            </strong>
-
-          </div>
 
         </div>
 
       </div>
 
 
-      <!-- HERO ORBIT -->
+      <!-- Hero visual -->
 
       <div
-        class="hero-orbit"
+        class="hero-visual"
         aria-hidden="true"
       >
 
-        <div class="hero-orbit-ring"></div>
-
-        <div class="hero-orbit-ring"></div>
-
-        <div class="hero-orbit-ring"></div>
+        <div class="orbit one"></div>
+        <div class="orbit two"></div>
+        <div class="orbit three"></div>
 
 
-        <div class="hero-core">
+        <div class="hero-logo">
 
           <img
             src="logo 2.jpeg"
@@ -2958,20 +2369,9 @@
         </div>
 
 
-        <span class="product-dot one"></span>
-
-        <span class="product-dot two"></span>
-
-        <span class="product-dot three"></span>
-
-      </div>
-
-
-      <div class="hero-scroll">
-
-        <span class="hero-scroll-line"></span>
-
-        SCROLL TO EXPLORE
+        <span class="hero-node a"></span>
+        <span class="hero-node b"></span>
+        <span class="hero-node c"></span>
 
       </div>
 
@@ -2979,122 +2379,71 @@
 
 
     <!-- =====================================================
-         INTRODUCTION
+         TRUST BAR
     ====================================================== -->
 
-    <section
-      class="section intro"
-      id="intro"
-    >
+    <section class="trust-bar">
 
-      <div class="container">
-
-        <div class="intro-layout">
+      <div class="container trust-inner">
 
 
-          <div class="reveal">
+        <div class="trust-item">
 
-            <div class="section-number">
-              01
-            </div>
+          <div class="trust-icon">
+            +
+          </div>
 
-            <span class="eyebrow">
-              AROVIA PHARMA
+          <div>
+
+            <strong>
+              Quality
+            </strong>
+
+            <span>
+              Dependable pharmaceutical solutions
             </span>
-
-            <h2 class="intro-heading">
-
-              Built around
-
-              <span>
-                better care.
-              </span>
-
-            </h2>
 
           </div>
 
-
-          <div class="reveal">
-
-            <div class="intro-copy">
-
-              <p>
-
-                Healthcare is ultimately about
-                people. Every pharmaceutical
-                solution carries a responsibility
-                that goes beyond the product itself.
-
-              </p>
+        </div>
 
 
-              <p>
+        <div class="trust-item">
 
-                Arovia Pharma approaches that
-                responsibility with a focus on
-                dependable solutions, consistent
-                standards and a long-term mindset.
+          <div class="trust-icon">
+            ✓
+          </div>
 
-              </p>
+          <div>
 
-            </div>
+            <strong>
+              Trust
+            </strong>
 
+            <span>
+              Built on reliability and integrity
+            </span>
 
-            <div class="intro-stat-grid">
+          </div>
 
-              <div class="intro-stat">
-
-                <strong>
-                  01
-                </strong>
-
-                <span>
-                  QUALITY FIRST
-                </span>
-
-              </div>
+        </div>
 
 
-              <div class="intro-stat">
+        <div class="trust-item">
 
-                <strong>
-                  02
-                </strong>
+          <div class="trust-icon">
+            ↗
+          </div>
 
-                <span>
-                  PEOPLE MATTER
-                </span>
+          <div>
 
-              </div>
+            <strong>
+              Innovation
+            </strong>
 
-
-              <div class="intro-stat">
-
-                <strong>
-                  03
-                </strong>
-
-                <span>
-                  ALWAYS PROGRESS
-                </span>
-
-              </div>
-
-
-              <div class="intro-stat">
-
-                <strong>
-                  04
-                </strong>
-
-                <span>
-                  EARN TRUST
-                </span>
-
-              </div>
-
-            </div>
+            <span>
+              Moving healthcare forward
+            </span>
 
           </div>
 
@@ -3106,286 +2455,80 @@
 
 
     <!-- =====================================================
-         FOCUS
+         ABOUT PREVIEW
     ====================================================== -->
 
     <section
-      class="section focus"
-      id="focus"
+      class="intro section"
+      id="about-preview"
     >
 
-      <div class="container">
+      <div class="container intro-layout">
 
 
-        <div class="focus-header">
+        <div class="intro-side">
 
-          <div class="reveal">
-
-            <div class="section-number">
-              02
-            </div>
-
-            <span class="eyebrow">
-              WHAT WE FOCUS ON
-            </span>
-
-            <h2 class="focus-heading">
-
-              Purpose behind
-
-              <span>
-                every step.
-              </span>
-
-            </h2>
-
+          <div class="section-number">
+            01
           </div>
 
+          <div class="section-label">
+            WHO WE ARE
+          </div>
 
-          <p class="focus-intro reveal">
+          <p>
 
-            Arovia's approach is built around
-            the things that matter most in
-            responsible healthcare.
+            Arovia Pharma Pvt. Ltd.
+            is committed to delivering
+            high-quality pharmaceutical
+            products and healthcare solutions.
 
           </p>
 
         </div>
 
 
-        <div class="focus-grid">
+        <div class="intro-main">
 
+          <h2 class="reveal">
 
-          <article class="focus-card reveal">
-
-            <div class="focus-number">
-              01 / QUALITY
-            </div>
-
-
-            <div class="focus-icon">
-              +
-            </div>
-
-
-            <h3>
-              Dependable
-              standards.
-            </h3>
-
-
-            <p>
-
-              We believe pharmaceutical
-              solutions should be approached
-              with consistency, discipline
-              and responsibility.
-
-            </p>
-
-          </article>
-
-
-          <article class="focus-card reveal">
-
-            <div class="focus-number">
-              02 / PEOPLE
-            </div>
-
-
-            <div class="focus-icon">
-              ◇
-            </div>
-
-
-            <h3>
-              Healthcare
-              with purpose.
-            </h3>
-
-
-            <p>
-
-              Behind every product is a person.
-              That perspective keeps purpose
-              at the centre of our approach.
-
-            </p>
-
-          </article>
-
-
-          <article class="focus-card reveal">
-
-            <div class="focus-number">
-              03 / PROGRESS
-            </div>
-
-
-            <div class="focus-icon">
-              ↗
-            </div>
-
-
-            <h3>
-              Always
-              moving.
-            </h3>
-
-
-            <p>
-
-              Healthcare continues to evolve.
-              Our mindset must evolve with it,
-              creating room for better ideas.
-
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PRODUCT PREVIEW
-    ====================================================== -->
-
-    <section
-      class="section product-preview dark"
-      id="products-preview"
-    >
-
-      <div class="container">
-
-        <div class="product-layout">
-
-
-          <div class="reveal">
-
-            <div class="section-number">
-              03
-            </div>
-
-            <span class="eyebrow">
-              OUR PORTFOLIO
-            </span>
-
-
-            <h2 class="product-heading">
-
-              Solutions
-
-              <span>
-                that matter.
-              </span>
-
-            </h2>
-
-
-            <p class="product-description">
-
-              Explore the Arovia Pharma portfolio
-              and discover the products we are
-              building our healthcare journey around.
-
-            </p>
-
-
-            <a
-              href="products.html"
-              class="product-button"
-            >
-
-              View Product Portfolio
-
-              <b>↗</b>
-
-            </a>
-
-          </div>
-
-
-          <div
-            class="product-visual reveal"
-            aria-hidden="true"
-          >
-
-            <div class="product-circle">
-
-              <span class="product-dot one"></span>
-
-              <span class="product-dot two"></span>
-
-              <span class="product-dot three"></span>
-
-
-              <div class="product-core">
-
-                <img
-                  src="logo 2.jpeg"
-                  alt=""
-                >
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         STATEMENT
-    ====================================================== -->
-
-    <section
-      class="section statement"
-      id="statement"
-    >
-
-      <div class="container">
-
-        <div class="statement-content reveal">
-
-          <div class="section-number">
-            04
-          </div>
-
-          <span class="eyebrow">
-            THE AROVIA MINDSET
-          </span>
-
-
-          <h2 class="statement-heading">
-
-            Healthcare is not
+            Healthcare
 
             <span>
-              standing still.
+              with purpose.
             </span>
 
           </h2>
 
 
-          <p class="statement-description">
+          <p class="reveal">
 
-            Better outcomes begin with better
-            thinking. We believe progress comes
-            from staying curious, remaining
-            responsible and continuously
-            improving the way we work.
+            Through innovation, integrity
+            and excellence, we strive to
+            contribute to a healthier future.
+
+            Our approach is centred around
+            responsibility, consistency and
+            continuously improving the way
+            we serve evolving healthcare needs.
 
           </p>
+
+
+          <div class="intro-line"></div>
+
+
+          <div class="intro-bottom">
+
+            <span>
+              THE AROVIA APPROACH
+            </span>
+
+            <strong>
+              Quality. Trust. Innovation.
+            </strong>
+
+          </div>
 
         </div>
 
@@ -3395,54 +2538,671 @@
 
 
     <!-- =====================================================
-         CTA
+         MARQUEE
     ====================================================== -->
 
-    <section
-      class="cta"
-      id="discover"
-    >
+    <section class="marquee">
 
-      <div class="cta-content reveal">
+      <div class="marquee-track">
 
-        <span class="eyebrow">
-          YOUR NEXT STEP
+        <span>
+          QUALITY
         </span>
 
+        <i>✦</i>
 
-        <h2 class="cta-heading">
+        <span>
+          TRUST
+        </span>
 
-          Explore
+        <i>✦</i>
+
+        <span>
+          INNOVATION
+        </span>
+
+        <i>✦</i>
+
+        <span>
+          QUALITY
+        </span>
+
+        <i>✦</i>
+
+        <span>
+          TRUST
+        </span>
+
+        <i>✦</i>
+
+        <span>
+          INNOVATION
+        </span>
+
+        <i>✦</i>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STORY
+    ====================================================== -->
+
+    <section class="story section">
+
+      <div class="container">
+
+
+        <div class="story-head">
+
+          <div>
+
+            <div class="section-number">
+              02
+            </div>
+
+            <div class="section-label">
+              OUR STORY
+            </div>
+
+            <h2 class="reveal">
+
+              More than
+
+              <span>
+                a product.
+              </span>
+
+            </h2>
+
+          </div>
+
+
+          <p class="story-intro reveal">
+
+            Healthcare is not simply about
+            products. It is about responsibility,
+            people and the impact created by
+            every step along the path.
+
+          </p>
+
+        </div>
+
+
+        <div class="story-video reveal">
+
+          <div class="video-label">
+            AROVIA PHARMA
+          </div>
+
+          <iframe
+            src="https://www.youtube.com/embed/i9XkNuG-YdQ?rel=0"
+            title="Arovia Pharma introduction video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VALUES
+    ====================================================== -->
+
+    <section class="values section dark">
+
+      <div class="container">
+
+
+        <div class="values-head">
+
+          <div>
+
+            <div class="section-number">
+              03
+            </div>
+
+            <div class="section-label">
+              WHAT DRIVES US
+            </div>
+
+            <h2 class="reveal">
+
+              Three ideas.
+
+              <span>
+                One direction.
+              </span>
+
+            </h2>
+
+          </div>
+
+
+          <p class="reveal">
+
+            The principles that shape
+            the way we think, work and
+            move forward.
+
+          </p>
+
+        </div>
+
+
+        <div class="value-grid">
+
+
+          <article class="value-card reveal">
+
+            <span class="value-card-number">
+              01 / PRINCIPLE
+            </span>
+
+            <div
+              class="value-circle"
+              aria-hidden="true"
+            ></div>
+
+            <div class="value-content">
+
+              <h3>
+                Quality
+              </h3>
+
+              <p>
+
+                A commitment to dependable
+                pharmaceutical solutions and
+                consistent standards.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="value-card reveal">
+
+            <span class="value-card-number">
+              02 / PRINCIPLE
+            </span>
+
+            <div
+              class="value-circle"
+              aria-hidden="true"
+            ></div>
+
+            <div class="value-content">
+
+              <h3>
+                Trust
+              </h3>
+
+              <p>
+
+                Building meaningful relationships
+                through reliability, integrity
+                and responsibility.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="value-card reveal">
+
+            <span class="value-card-number">
+              03 / PRINCIPLE
+            </span>
+
+            <div
+              class="value-circle"
+              aria-hidden="true"
+            ></div>
+
+            <div class="value-content">
+
+              <h3>
+                Innovation
+              </h3>
+
+              <p>
+
+                Continuously looking forward
+                and embracing better ways to
+                serve evolving healthcare needs.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRODUCTS
+    ====================================================== -->
+
+    <section class="products section">
+
+      <div class="container">
+
+
+        <div class="products-head">
+
+          <div>
+
+            <div class="section-number">
+              04
+            </div>
+
+            <div class="section-label">
+              PHARMACEUTICAL PORTFOLIO
+            </div>
+
+            <h2 class="reveal">
+
+              Solutions
+
+              <span>
+                for the journey.
+              </span>
+
+            </h2>
+
+          </div>
+
+
+          <p class="products-description reveal">
+
+            Explore the pharmaceutical
+            product categories represented
+            across the Arovia portfolio.
+
+          </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+          <article class="product-card reveal">
+
+            <span class="product-number">
+              01
+            </span>
+
+            <span
+              class="product-symbol"
+              aria-hidden="true"
+            >
+              +
+            </span>
+
+            <h3>
+              Tablets
+            </h3>
+
+            <p>
+              Reliable pharmaceutical
+              tablet formulations.
+            </p>
+
+          </article>
+
+
+          <article class="product-card reveal">
+
+            <span class="product-number">
+              02
+            </span>
+
+            <span
+              class="product-symbol"
+              aria-hidden="true"
+            >
+              ◇
+            </span>
+
+            <h3>
+              Capsules
+            </h3>
+
+            <p>
+              Quality-driven capsule
+              pharmaceutical solutions.
+            </p>
+
+          </article>
+
+
+          <article class="product-card reveal">
+
+            <span class="product-number">
+              03
+            </span>
+
+            <span
+              class="product-symbol"
+              aria-hidden="true"
+            >
+              ○
+            </span>
+
+            <h3>
+              Syrups
+            </h3>
+
+            <p>
+              Patient-focused liquid
+              formulations.
+            </p>
+
+          </article>
+
+
+          <article class="product-card reveal">
+
+            <span class="product-number">
+              04
+            </span>
+
+            <span
+              class="product-symbol"
+              aria-hidden="true"
+            >
+              │
+            </span>
+
+            <h3>
+              Injections
+            </h3>
+
+            <p>
+              Pharmaceutical injectable
+              solutions.
+            </p>
+
+          </article>
+
+
+          <article class="product-card reveal">
+
+            <span class="product-number">
+              05
+            </span>
+
+            <span
+              class="product-symbol"
+              aria-hidden="true"
+            >
+              •
+            </span>
+
+            <h3>
+              Drops
+            </h3>
+
+            <p>
+              Specialized pharmaceutical
+              drop formulations.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+        <div style="
+          margin-top:45px;
+          text-align:center;
+        ">
+
+          <a
+            href="products.html"
+            class="button button-outline"
+          >
+
+            <span>
+              View Full Portfolio
+            </span>
+
+            <span class="arrow">
+              ↗
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PHILOSOPHY
+    ====================================================== -->
+
+    <section class="philosophy section dark">
+
+      <div class="container philosophy-content">
+
+        <div class="section-number">
+          05
+        </div>
+
+        <div class="section-label">
+          THE AROVIA APPROACH
+        </div>
+
+
+        <h2 class="reveal">
+
+          The path
 
           <span>
-            Arovia.
+            continues.
           </span>
 
         </h2>
 
 
-        <p class="cta-description">
+        <div class="philosophy-points reveal">
 
-          Discover our products and learn
-          more about the path we are building.
+
+          <div class="philosophy-point">
+
+            <strong>
+              01
+            </strong>
+
+            <span>
+              Understand the need.
+            </span>
+
+          </div>
+
+
+          <div class="philosophy-point">
+
+            <strong>
+              02
+            </strong>
+
+            <span>
+              Build with purpose.
+            </span>
+
+          </div>
+
+
+          <div class="philosophy-point">
+
+            <strong>
+              03
+            </strong>
+
+            <span>
+              Move forward together.
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="giant-word"
+        aria-hidden="true"
+      >
+        AROVIA
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VISION
+    ====================================================== -->
+
+    <section class="vision section dark">
+
+      <div
+        class="vision-orbit"
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="container vision-content">
+
+        <div class="section-number">
+          06
+        </div>
+
+        <div class="section-label">
+          OUR VISION
+        </div>
+
+
+        <h2 class="reveal">
+
+          Building a
+
+          <span>
+            healthier future.
+          </span>
+
+        </h2>
+
+
+        <p class="reveal">
+
+          We believe progress in healthcare
+          begins with responsibility, quality
+          and a willingness to continuously improve.
+
+          <br><br>
+
+          Arovia Pharma is committed to moving
+          forward on a path defined by trust,
+          innovation and purpose.
 
         </p>
 
+      </div>
 
-        <a
-          href="products.html"
-          class="cta-button"
-        >
+    </section>
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="final section">
+
+      <div class="container final-content reveal">
+
+        <div class="section-label">
+          THE NEXT STEP
+        </div>
+
+
+        <h2>
+
+          Follow
 
           <span>
-            Explore Products
+            the path.
           </span>
 
-          <b>
-            ↗
-          </b>
+        </h2>
 
-        </a>
+
+        <p>
+          Explore Arovia Pharma.
+        </p>
+
+
+        <div class="final-actions">
+
+          <a
+            href="products.html"
+            class="button button-primary"
+          >
+
+            <span>
+              Explore Products
+            </span>
+
+            <span class="arrow">
+              ↗
+            </span>
+
+          </a>
+
+
+          <a
+            href="contact.html"
+            class="button button-light"
+          >
+
+            <span>
+              Contact Arovia
+            </span>
+
+            <span class="arrow">
+              ↗
+            </span>
+
+          </a>
+
+        </div>
 
       </div>
 
@@ -3459,6 +3219,7 @@
 
     <div class="container">
 
+
       <div class="footer-main">
 
 
@@ -3467,9 +3228,7 @@
           <img
             src="logo 2.jpeg"
             alt="Arovia Pharma"
-            class="footer-logo"
           >
-
 
           <p>
             The Path To Health.
@@ -3483,9 +3242,9 @@
 
           <div class="footer-column">
 
-            <span>
+            <strong>
               EXPLORE
-            </span>
+            </strong>
 
             <a href="index.html">
               Home
@@ -3508,27 +3267,24 @@
 
           <div class="footer-column">
 
-            <span>
-              DISCOVER
-            </span>
+            <strong>
+              PRINCIPLES
+            </strong>
 
-            <a href="#intro">
-              Arovia
+            <a href="#about-preview">
+              Quality
             </a>
 
-            <a href="#focus">
-              Focus
+            <a href="#about-preview">
+              Trust
             </a>
 
-            <a href="#products-preview">
-              Portfolio
-            </a>
-
-            <a href="#statement">
-              Philosophy
+            <a href="#about-preview">
+              Innovation
             </a>
 
           </div>
+
 
         </div>
 
@@ -3558,898 +3314,551 @@
 
   <script>
 
-    (() => {
-
-      "use strict";
+    "use strict";
 
 
-      /* =====================================================
-         ELEMENTS
-      ====================================================== */
+    /* =====================================================
+       ELEMENTS
+    ====================================================== */
 
-      const body =
-        document.body;
+    const loader =
+      document.getElementById("loader");
 
-      const loader =
-        document.getElementById("loader");
+    const navbar =
+      document.getElementById("navbar");
 
-      const nav =
-        document.getElementById("siteNav");
+    const menuButton =
+      document.getElementById("menuButton");
 
-      const menu =
-        document.getElementById("menu");
+    const navLinks =
+      document.getElementById("navLinks");
 
-      const navLinks =
-        document.getElementById("navLinks");
+    const progressBar =
+      document.getElementById("progressBar");
 
-      const progress =
-        document.querySelector(
-          ".scroll-progress span"
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    /* =====================================================
+       LOADER
+    ====================================================== */
+
+    function hideLoader() {
+
+      if (!loader) return;
+
+      loader.classList.add("hidden");
+
+    }
+
+
+    window.addEventListener(
+      "load",
+      () => {
+
+        setTimeout(
+          hideLoader,
+          400
         );
 
-      const cursor =
-        document.querySelector(".cursor");
+      },
+      { once: true }
+    );
 
-      const cursorRing =
-        document.querySelector(".cursor-ring");
 
-      const canvas =
-        document.getElementById(
-          "particleCanvas"
+    setTimeout(
+      hideLoader,
+      1800
+    );
+
+
+    /* =====================================================
+       NAVIGATION
+    ====================================================== */
+
+    function updateNavbar() {
+
+      if (
+        window.scrollY > 40
+      ) {
+
+        navbar.classList.add(
+          "scrolled"
         );
 
-      const hero =
-        document.querySelector(".hero");
+      } else {
 
-      const heroContent =
-        document.querySelector(".hero-content");
+        navbar.classList.remove(
+          "scrolled"
+        );
 
-      const heroOrbit =
-        document.querySelector(".hero-orbit");
+      }
 
-      const heroLight =
-        document.querySelector(".hero-light");
+    }
 
 
-      /* =====================================================
-         MOTION SETTINGS
-      ====================================================== */
-
-      const reducedMotion =
-        window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-      const finePointer =
-        window.matchMedia(
-          "(hover:hover) and (pointer:fine)"
-        ).matches;
+    updateNavbar();
 
 
-      /* =====================================================
-         LOADER
-      ====================================================== */
-
-      const hideLoader = () => {
-
-        body.classList.remove("loading");
-
-        loader.classList.add("hidden");
-
-      };
+    window.addEventListener(
+      "scroll",
+      updateNavbar,
+      { passive: true }
+    );
 
 
-      window.addEventListener(
-        "load",
-        () => {
+    /* =====================================================
+       MOBILE MENU
+    ====================================================== */
 
-          setTimeout(
-            hideLoader,
-            450
+    function closeMenu() {
+
+      navLinks.classList.remove(
+        "open"
+      );
+
+      menuButton.classList.remove(
+        "open"
+      );
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        "Open navigation"
+      );
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+    }
+
+
+    menuButton.addEventListener(
+      "click",
+      () => {
+
+        const isOpen =
+          navLinks.classList.contains(
+            "open"
           );
 
-        },
-        {
-          once:true
-        }
-      );
 
+        if (isOpen) {
 
-      setTimeout(
-        hideLoader,
-        2200
-      );
+          closeMenu();
 
+        } else {
 
-      /* =====================================================
-         NAVIGATION
-      ====================================================== */
-
-      const updateNav = () => {
-
-        nav.classList.toggle(
-          "scrolled",
-          window.scrollY > 45
-        );
-
-      };
-
-
-      updateNav();
-
-
-      window.addEventListener(
-        "scroll",
-        updateNav,
-        {
-          passive:true
-        }
-      );
-
-
-      /* =====================================================
-         MOBILE MENU
-      ====================================================== */
-
-      const closeMenu = () => {
-
-        navLinks.classList.remove(
-          "open"
-        );
-
-        menu.classList.remove(
-          "open"
-        );
-
-        menu.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menu.setAttribute(
-          "aria-label",
-          "Open navigation"
-        );
-
-        body.classList.remove(
-          "menu-open"
-        );
-
-      };
-
-
-      menu.addEventListener(
-        "click",
-        () => {
-
-          const isOpen =
-            navLinks.classList.contains(
-              "open"
-            );
-
-
-          if(isOpen){
-
-            closeMenu();
-
-          }else{
-
-            navLinks.classList.add(
-              "open"
-            );
-
-            menu.classList.add(
-              "open"
-            );
-
-            menu.setAttribute(
-              "aria-expanded",
-              "true"
-            );
-
-            menu.setAttribute(
-              "aria-label",
-              "Close navigation"
-            );
-
-            body.classList.add(
-              "menu-open"
-            );
-
-          }
-
-        }
-      );
-
-
-      navLinks
-        .querySelectorAll("a")
-        .forEach(link => {
-
-          link.addEventListener(
-            "click",
-            closeMenu
+          navLinks.classList.add(
+            "open"
           );
 
-        });
+          menuButton.classList.add(
+            "open"
+          );
 
+          menuButton.setAttribute(
+            "aria-expanded",
+            "true"
+          );
 
-      document.addEventListener(
-        "keydown",
-        event => {
+          menuButton.setAttribute(
+            "aria-label",
+            "Close navigation"
+          );
 
-          if(event.key === "Escape"){
-
-            closeMenu();
-
-          }
-
-        }
-      );
-
-
-      window.addEventListener(
-        "resize",
-        () => {
-
-          if(window.innerWidth > 900){
-
-            closeMenu();
-
-          }
+          document.body.classList.add(
+            "menu-open"
+          );
 
         }
-      );
+
+      }
+    );
 
 
-      /* =====================================================
-         SCROLL PROGRESS
-      ====================================================== */
+    navLinks
+      .querySelectorAll("a")
+      .forEach(link => {
 
-      const updateProgress = () => {
-
-        const documentHeight =
-          document.documentElement.scrollHeight;
-
-        const viewportHeight =
-          window.innerHeight;
-
-        const maxScroll =
-          documentHeight -
-          viewportHeight;
-
-        const percentage =
-          maxScroll > 0
-            ? window.scrollY / maxScroll
-            : 0;
-
-
-        progress.style.width =
-          `${percentage * 100}%`;
-
-      };
-
-
-      updateProgress();
-
-
-      window.addEventListener(
-        "scroll",
-        updateProgress,
-        {
-          passive:true
-        }
-      );
-
-
-      window.addEventListener(
-        "resize",
-        updateProgress
-      );
-
-
-      /* =====================================================
-         REVEAL ANIMATIONS
-      ====================================================== */
-
-      const reveals =
-        document.querySelectorAll(
-          ".reveal"
+        link.addEventListener(
+          "click",
+          closeMenu
         );
 
+      });
 
-      if(
-        reducedMotion ||
-        !("IntersectionObserver" in window)
-      ){
 
-        reveals.forEach(
-          element =>
-            element.classList.add(
-              "visible"
-            )
-        );
+    window.addEventListener(
+      "resize",
+      () => {
 
-      }else{
+        if (
+          window.innerWidth > 820
+        ) {
 
-        const observer =
-          new IntersectionObserver(
-            entries => {
+          closeMenu();
 
-              entries.forEach(
-                entry => {
+        }
 
-                  if(
-                    !entry.isIntersecting
-                  )
-                    return;
+      }
+    );
 
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeMenu();
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       SCROLL PROGRESS
+    ====================================================== */
+
+    function updateProgress() {
+
+      const documentHeight =
+        document.documentElement.scrollHeight;
+
+      const viewportHeight =
+        window.innerHeight;
+
+      const maxScroll =
+        documentHeight -
+        viewportHeight;
+
+      const currentScroll =
+        window.scrollY;
+
+      const percentage =
+        maxScroll > 0
+          ? (currentScroll / maxScroll) * 100
+          : 0;
+
+
+      progressBar.style.width =
+        `${percentage}%`;
+
+    }
+
+
+    updateProgress();
+
+
+    window.addEventListener(
+      "scroll",
+      updateProgress,
+      { passive: true }
+    );
+
+
+    window.addEventListener(
+      "resize",
+      updateProgress
+    );
+
+
+    /* =====================================================
+       REVEAL ANIMATIONS
+    ====================================================== */
+
+    const reducedMotion =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+
+    if (
+      reducedMotion ||
+      !("IntersectionObserver" in window)
+    ) {
+
+      revealElements.forEach(
+        element => {
+
+          element.classList.add(
+            "visible"
+          );
+
+        }
+      );
+
+    } else {
+
+      const observer =
+        new IntersectionObserver(
+          entries => {
+
+            entries.forEach(
+              entry => {
+
+                if (
+                  entry.isIntersecting
+                ) {
 
                   entry.target.classList.add(
                     "visible"
                   );
-
 
                   observer.unobserve(
                     entry.target
                   );
 
                 }
-              );
-
-            },
-            {
-              threshold:.12,
-
-              rootMargin:
-                "0px 0px -40px"
-            }
-          );
-
-
-        reveals.forEach(
-          element =>
-            observer.observe(element)
-        );
-
-      }
-
-
-      /* =====================================================
-         CUSTOM CURSOR
-      ====================================================== */
-
-      if(
-        finePointer &&
-        !reducedMotion
-      ){
-
-        let mouseX =
-          window.innerWidth / 2;
-
-        let mouseY =
-          window.innerHeight / 2;
-
-        let ringX =
-          mouseX;
-
-        let ringY =
-          mouseY;
-
-
-        window.addEventListener(
-          "pointermove",
-          event => {
-
-            mouseX =
-              event.clientX;
-
-            mouseY =
-              event.clientY;
-
-
-            cursor.style.left =
-              `${mouseX}px`;
-
-            cursor.style.top =
-              `${mouseY}px`;
-
-          },
-          {
-            passive:true
-          }
-        );
-
-
-        const animateCursor = () => {
-
-          ringX +=
-            (mouseX - ringX) * .14;
-
-          ringY +=
-            (mouseY - ringY) * .14;
-
-
-          cursorRing.style.left =
-            `${ringX}px`;
-
-          cursorRing.style.top =
-            `${ringY}px`;
-
-
-          requestAnimationFrame(
-            animateCursor
-          );
-
-        };
-
-
-        animateCursor();
-
-
-        document
-          .querySelectorAll(
-            "a,button,.focus-card"
-          )
-          .forEach(element => {
-
-            element.addEventListener(
-              "mouseenter",
-              () => {
-
-                cursorRing.classList.add(
-                  "large"
-                );
 
               }
             );
 
-
-            element.addEventListener(
-              "mouseleave",
-              () => {
-
-                cursorRing.classList.remove(
-                  "large"
-                );
-
-              }
-            );
-
-          });
-
-      }
-
-
-      /* =====================================================
-         HERO PARALLAX
-      ====================================================== */
-
-      if(
-        finePointer &&
-        !reducedMotion
-      ){
-
-        let frame = 0;
-
-
-        window.addEventListener(
-          "pointermove",
-          event => {
-
-            if(frame)
-              return;
-
-
-            frame =
-              requestAnimationFrame(
-                () => {
-
-                  const x =
-                    event.clientX /
-                    window.innerWidth -
-                    .5;
-
-                  const y =
-                    event.clientY /
-                    window.innerHeight -
-                    .5;
-
-
-                  heroOrbit.style.marginLeft =
-                    `${x * 20}px`;
-
-                  heroOrbit.style.marginTop =
-                    `${y * 20}px`;
-
-
-                  heroLight.style.marginLeft =
-                    `${x * -30}px`;
-
-                  heroLight.style.marginTop =
-                    `${y * -30}px`;
-
-
-                  frame = 0;
-
-                }
-              );
-
           },
           {
-            passive:true
+            threshold: .12,
+            rootMargin:
+              "0px 0px -45px"
           }
         );
 
-      }
 
+      revealElements.forEach(
+        element => {
 
-      /* =====================================================
-         HERO SCROLL EFFECT
-      ====================================================== */
-
-      const updateHero = () => {
-
-        if(reducedMotion)
-          return;
-
-
-        const heroHeight =
-          Math.max(
-            1,
-            hero.offsetHeight * .72
+          observer.observe(
+            element
           );
 
-
-        const amount =
-          Math.min(
-            1,
-            window.scrollY / heroHeight
-          );
-
-
-        heroContent.style.opacity =
-          String(1 - amount);
-
-
-        heroContent.style.transform =
-          `translateY(${-amount * 90}px)`;
-
-
-        heroOrbit.style.opacity =
-          String(
-            Math.max(
-              .15,
-              1 - amount * .75
-            )
-          );
-
-      };
-
-
-      updateHero();
-
-
-      window.addEventListener(
-        "scroll",
-        updateHero,
-        {
-          passive:true
         }
       );
 
-
-      /* =====================================================
-         PARTICLE CANVAS
-      ====================================================== */
-
-      const context =
-        canvas
-          ? canvas.getContext(
-              "2d",
-              {
-                alpha:true
-              }
-            )
-          : null;
+    }
 
 
-      if(
-        !context ||
-        reducedMotion
-      ){
+    /* =====================================================
+       SMOOTH ANCHOR
+    ====================================================== */
 
-        if(canvas){
+    document
+      .querySelectorAll(
+        'a[href^="#"]'
+      )
+      .forEach(anchor => {
 
-          canvas.style.display =
-            "none";
+        anchor.addEventListener(
+          "click",
+          event => {
+
+            const targetId =
+              anchor
+                .getAttribute("href")
+                .substring(1);
+
+            const target =
+              document.getElementById(
+                targetId
+              );
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+              behavior:
+                reducedMotion
+                  ? "auto"
+                  : "smooth"
+            });
+
+          }
+        );
+
+      });
+
+
+    /* =====================================================
+       HERO PARALLAX
+    ====================================================== */
+
+    const heroVisual =
+      document.querySelector(
+        ".hero-visual"
+      );
+
+
+    if (
+      !reducedMotion &&
+      window.matchMedia(
+        "(hover:hover) and (pointer:fine)"
+      ).matches
+    ) {
+
+      let mouseX = 0;
+      let mouseY = 0;
+
+      let targetX = 0;
+      let targetY = 0;
+
+
+      window.addEventListener(
+        "pointermove",
+        event => {
+
+          mouseX =
+            event.clientX /
+            window.innerWidth -
+            .5;
+
+          mouseY =
+            event.clientY /
+            window.innerHeight -
+            .5;
+
+        },
+        { passive: true }
+      );
+
+
+      function animateHero() {
+
+        targetX +=
+          (mouseX * 18 - targetX) *
+          .06;
+
+        targetY +=
+          (mouseY * 18 - targetY) *
+          .06;
+
+
+        if (heroVisual) {
+
+          heroVisual.style.marginLeft =
+            `${targetX}px`;
+
+          heroVisual.style.marginTop =
+            `${targetY}px`;
 
         }
 
-      }else{
 
-        let particles = [];
-
-        let particleCount =
-          window.innerWidth < 700
-            ? 38
-            : 75;
-
-        let animationFrame;
-
-
-        const resizeCanvas = () => {
-
-          const ratio =
-            Math.min(
-              window.devicePixelRatio || 1,
-              2
-            );
-
-
-          canvas.width =
-            Math.floor(
-              window.innerWidth * ratio
-            );
-
-
-          canvas.height =
-            Math.floor(
-              window.innerHeight * ratio
-            );
-
-
-          canvas.style.width =
-            `${window.innerWidth}px`;
-
-          canvas.style.height =
-            `${window.innerHeight}px`;
-
-
-          context.setTransform(
-            ratio,
-            0,
-            0,
-            ratio,
-            0,
-            0
-          );
-
-        };
-
-
-        const createParticles = () => {
-
-          particles =
-            Array.from(
-              {
-                length:particleCount
-              },
-              () => ({
-
-                x:
-                  Math.random() *
-                  window.innerWidth,
-
-                y:
-                  Math.random() *
-                  window.innerHeight,
-
-                vx:
-                  (Math.random()-.5)
-                  * .22,
-
-                vy:
-                  (Math.random()-.5)
-                  * .22,
-
-                size:
-                  Math.random() * 1.3
-                  + .35
-
-              })
-            );
-
-        };
-
-
-        const drawParticles = () => {
-
-          context.clearRect(
-            0,
-            0,
-            window.innerWidth,
-            window.innerHeight
-          );
-
-
-          particles.forEach(
-            particle => {
-
-              particle.x +=
-                particle.vx;
-
-              particle.y +=
-                particle.vy;
-
-
-              if(
-                particle.x < -5 ||
-                particle.x >
-                window.innerWidth + 5
-              ){
-
-                particle.vx *= -1;
-
-              }
-
-
-              if(
-                particle.y < -5 ||
-                particle.y >
-                window.innerHeight + 5
-              ){
-
-                particle.vy *= -1;
-
-              }
-
-
-              context.beginPath();
-
-
-              context.arc(
-                particle.x,
-                particle.y,
-                particle.size,
-                0,
-                Math.PI * 2
-              );
-
-
-              context.fillStyle =
-                "rgba(158,219,209,.60)";
-
-
-              context.fill();
-
-            }
-          );
-
-
-          const maxDistance = 125;
-
-          const maxDistanceSquared =
-            maxDistance *
-            maxDistance;
-
-
-          for(
-            let i = 0;
-            i < particles.length;
-            i++
-          ){
-
-            for(
-              let j = i + 1;
-              j < particles.length;
-              j++
-            ){
-
-              const a =
-                particles[i];
-
-              const b =
-                particles[j];
-
-
-              const dx =
-                a.x - b.x;
-
-              const dy =
-                a.y - b.y;
-
-
-              const distanceSquared =
-                dx * dx +
-                dy * dy;
-
-
-              if(
-                distanceSquared <
-                maxDistanceSquared
-              ){
-
-                const distance =
-                  Math.sqrt(
-                    distanceSquared
-                  );
-
-
-                const opacity =
-                  (
-                    1 -
-                    distance / maxDistance
-                  ) * .13;
-
-
-                context.beginPath();
-
-
-                context.moveTo(
-                  a.x,
-                  a.y
-                );
-
-
-                context.lineTo(
-                  b.x,
-                  b.y
-                );
-
-
-                context.strokeStyle =
-                  `rgba(0,184,217,${opacity})`;
-
-
-                context.lineWidth =
-                  .65;
-
-
-                context.stroke();
-
-              }
-
-            }
-
-          }
-
-
-          animationFrame =
-            requestAnimationFrame(
-              drawParticles
-            );
-
-        };
-
-
-        const rebuildParticles = () => {
-
-          cancelAnimationFrame(
-            animationFrame
-          );
-
-
-          particleCount =
-            window.innerWidth < 700
-              ? 38
-              : 75;
-
-
-          resizeCanvas();
-
-          createParticles();
-
-          drawParticles();
-
-        };
-
-
-        rebuildParticles();
-
-
-        window.addEventListener(
-          "resize",
-          rebuildParticles
+        requestAnimationFrame(
+          animateHero
         );
 
       }
 
 
-    })();
+      animateHero();
+
+    }
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION
+    ====================================================== */
+
+    const sections = [
+      document.getElementById("home"),
+      document.getElementById("about-preview")
+    ];
+
+
+    const homeLink =
+      document.querySelector(
+        '.nav-links a[href="index.html"]'
+      );
+
+
+    if (
+      "IntersectionObserver" in window
+    ) {
+
+      const navObserver =
+        new IntersectionObserver(
+          entries => {
+
+            const visible =
+              entries
+                .filter(
+                  entry =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                )[0];
+
+
+            if (!visible) return;
+
+
+            if (
+              visible.target.id ===
+                "home" ||
+              visible.target.id ===
+                "about-preview"
+            ) {
+
+              document
+                .querySelectorAll(
+                  ".nav-links a"
+                )
+                .forEach(
+                  link =>
+                    link.classList.remove(
+                      "active"
+                    )
+                );
+
+
+              if (homeLink) {
+
+                homeLink.classList.add(
+                  "active"
+                );
+
+              }
+
+            }
+
+          },
+          {
+            threshold:
+              [.25, .5, .75]
+          }
+        );
+
+
+      sections.forEach(
+        section => {
+
+          if (section) {
+
+            navObserver.observe(
+              section
+            );
+
+          }
+
+        }
+      );
+
+    }
 
   </script>
 
 </body>
-
 </html>
