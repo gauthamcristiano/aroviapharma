@@ -11,9 +11,24 @@
       content="Contact Arovia Pharma Pvt. Ltd. for pharmaceutical product enquiries, distributorship, availability and business opportunities.">
 
 <meta name="theme-color"
-      content="#061827">
+      content="#03090e">
 
 <title>Contact | Arovia Pharma Pvt. Ltd.</title>
+
+<link rel="canonical" href="https://aroviapharma.in/contact.html">
+<link rel="icon" href="logo%202.jpeg" type="image/jpeg">
+<link rel="apple-touch-icon" href="logo%202.jpeg">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arovia Pharma">
+<meta property="og:title" content="Contact | Arovia Pharma Pvt. Ltd.">
+<meta property="og:description" content="Contact Arovia Pharma Pvt. Ltd. for pharmaceutical product enquiries, distributorship, availability and business opportunities.">
+<meta property="og:url" content="https://aroviapharma.in/contact.html">
+<meta property="og:image" content="https://aroviapharma.in/logo%202.jpeg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Contact | Arovia Pharma Pvt. Ltd.">
+<meta name="twitter:description" content="Contact Arovia Pharma Pvt. Ltd. for pharmaceutical product enquiries, distributorship, availability and business opportunities.">
+<meta name="twitter:image" content="https://aroviapharma.in/logo%202.jpeg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect"
@@ -27,24 +42,25 @@
 <style>
 
 :root{
-  --navy:#071b2b;
-  --navy-2:#0b263b;
-  --navy-3:#103650;
-  --teal:#006d70;
-  --teal-dark:#005356;
-  --cyan:#16b8d1;
-  --mint:#9bded3;
+  --black:#03090e;
+  --dark:#06141d;
+  --dark-2:#0a202d;
+  --navy:#0b2940;
+  --teal:#006b70;
+  --teal-dark:#00565b;
+  --cyan:#00b8d9;
+  --mint:#9edbd1;
   --white:#fff;
-  --off-white:#f6fafb;
-  --soft:#eef6f7;
-  --text:#102f45;
-  --muted:#6c808d;
-  --muted-light:rgba(255,255,255,.64);
-  --border:rgba(16,47,69,.11);
-  --dark-border:rgba(255,255,255,.11);
-  --container:min(1180px,88vw);
+  --off-white:#f4fafb;
+  --soft:#e8f2f4;
+  --text:#12384f;
+  --muted:#69808b;
+  --muted-light:rgba(255,255,255,.58);
+  --border:rgba(9,42,61,.12);
+  --dark-border:rgba(255,255,255,.10);
+  --container:min(1240px,88vw);
   --radius:22px;
-  --shadow:0 30px 80px rgba(5,25,40,.12);
+  --shadow:0 30px 80px rgba(3,9,14,.14);
   --ease:cubic-bezier(.2,.75,.2,1);
 }
 
@@ -62,7 +78,7 @@ img{display:block;max-width:100%}
 
 /* NAVBAR */
 .navbar{position:fixed;top:0;left:0;z-index:5000;width:100%;padding:23px 5vw;color:#fff;transition:padding .35s ease,background .35s ease,border .35s ease}
-.navbar.scrolled{padding-block:13px;background:rgba(7,27,43,.90);border-bottom:1px solid var(--dark-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.navbar.scrolled{padding-block:13px;background:rgba(11,41,64,.90);border-bottom:1px solid var(--dark-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .nav-container{max-width:1280px;margin:auto;display:flex;align-items:center;justify-content:space-between}
 .logo img{width:142px;transition:.3s}
 .navbar.scrolled .logo img{width:125px}
@@ -81,9 +97,9 @@ img{display:block;max-width:100%}
 .menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-9px) rotate(-45deg)}
 
 /* HERO */
-.contact-hero{min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden;color:#fff;background:radial-gradient(circle at 75% 35%,rgba(22,184,209,.15),transparent 28%),linear-gradient(115deg,#061521,#071b2b 55%,#09283e);isolation:isolate}
+.contact-hero{min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden;color:#fff;background:radial-gradient(circle at 75% 35%,rgba(0,184,217,.15),transparent 28%),radial-gradient(circle at 5% 100%,rgba(0,107,112,.20),transparent 34%),var(--black);isolation:isolate}
 .contact-hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:90px 90px;opacity:.28;mask-image:linear-gradient(to bottom,black,transparent);pointer-events:none}
-.contact-hero::before{content:"";position:absolute;width:620px;height:620px;right:-230px;top:50%;transform:translateY(-50%);border:1px solid rgba(155,222,211,.08);border-radius:50%;box-shadow:0 0 160px rgba(22,184,209,.12)}
+.contact-hero::before{content:"";position:absolute;width:620px;height:620px;right:-230px;top:50%;transform:translateY(-50%);border:1px solid rgba(158,219,209,.08);border-radius:50%;box-shadow:0 0 160px rgba(0,184,217,.12)}
 .hero-inner{position:relative;z-index:3;width:var(--container);margin-inline:auto;padding-top:80px;display:grid;grid-template-columns:1fr .85fr;gap:60px;align-items:center}
 .hero-copy{max-width:720px}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:27px;color:rgba(255,255,255,.55);font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
@@ -95,11 +111,11 @@ img{display:block;max-width:100%}
 
 /* HERO ORBIT */
 .hero-visual{position:relative;height:570px;display:flex;align-items:center;justify-content:center;pointer-events:none}
-.orbit{position:absolute;left:50%;top:50%;border:1px solid rgba(155,222,211,.17);border-radius:50%;transform:translate(-50%,-50%);animation:orbitSpin 25s linear infinite}
+.orbit{position:absolute;left:50%;top:50%;border:1px solid rgba(158,219,209,.17);border-radius:50%;transform:translate(-50%,-50%);animation:orbitSpin 25s linear infinite}
 .orbit.one{width:540px;height:540px}.orbit.two{width:395px;height:395px;animation-duration:18s;animation-direction:reverse}.orbit.three{width:245px;height:245px;animation-duration:12s}
 .orbit::before{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 22px var(--mint)}
 @keyframes orbitSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.hero-logo{position:relative;z-index:3;width:175px;height:175px;padding:25px;border-radius:50%;background:#fff;box-shadow:0 0 100px rgba(22,184,209,.22);animation:logoFloat 5s ease-in-out infinite}
+.hero-logo{position:relative;z-index:3;width:175px;height:175px;padding:25px;border-radius:50%;background:#fff;box-shadow:0 0 100px rgba(0,184,217,.22);animation:logoFloat 5s ease-in-out infinite}
 .hero-logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
 @keyframes logoFloat{50%{transform:translateY(-8px)}}
 
@@ -113,20 +129,20 @@ img{display:block;max-width:100%}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .contact-card{position:relative;padding:38px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s ease}
 .contact-card::before{content:"";position:absolute;width:190px;height:190px;right:-95px;top:-95px;border:1px solid rgba(0,109,112,.10);border-radius:50%;transition:transform .6s var(--ease)}
-.contact-card:hover{transform:translateY(-8px);box-shadow:0 38px 95px rgba(5,25,40,.15)}
+.contact-card:hover{transform:translateY(-8px);box-shadow:0 38px 95px rgba(3,9,14,.15)}
 .contact-card:hover::before{transform:scale(1.25) rotate(35deg)}
 .contact-card h3{position:relative;font-family:"Manrope",sans-serif;font-size:32px;line-height:1;letter-spacing:-.05em}
 .card-description{position:relative;margin-top:13px;margin-bottom:30px;color:var(--muted);font-size:13px;line-height:1.8}
 .info-list{display:flex;flex-direction:column;gap:10px;position:relative}
-.info-box{display:flex;gap:15px;padding:15px;border:1px solid rgba(16,47,69,.08);border-radius:15px;background:var(--soft);transition:transform .3s ease,background .3s ease,border .3s ease}
+.info-box{display:flex;gap:15px;padding:15px;border:1px solid rgba(9,42,61,.08);border-radius:15px;background:var(--soft);transition:transform .3s ease,background .3s ease,border .3s ease}
 .info-box:hover{transform:translateX(5px);background:#e8f4f4;border-color:rgba(0,109,112,.15)}
 .info-icon{width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;background:var(--navy);color:#fff;font-size:16px}
 .info-content strong{display:block;color:var(--navy);font-size:11px;letter-spacing:.5px;margin-bottom:4px}
 .info-content span,.info-content a{color:var(--muted);font-size:13px;line-height:1.7}
 .info-content a:hover{color:var(--teal)}
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px;position:relative}
-.btn{min-height:50px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:var(--cyan);color:#fff;font-size:11px;font-weight:800;transition:transform .3s var(--ease),box-shadow .3s ease,background .3s ease}
-.btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(22,184,209,.25)}
+.btn{min-height:54px;padding:0 22px;display:inline-flex;align-items:center;justify-content:center;gap:18px;border-radius:999px;background:var(--cyan);color:#fff;font-size:11px;font-weight:800;transition:transform .3s var(--ease),box-shadow .3s ease,background .3s ease}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,184,217,.25)}
 .btn-dark{background:var(--navy)}.btn-dark:hover{background:var(--teal)}
 
 /* FORM */
@@ -139,21 +155,21 @@ input::placeholder,textarea::placeholder{color:#9aaab1}
 input:focus,textarea:focus{background:#fff;border-color:var(--teal);box-shadow:0 0 0 4px rgba(0,109,112,.08)}
 textarea{min-height:145px;resize:vertical}
 .submit-btn{border:0;cursor:pointer;min-height:52px;padding:0 25px;border-radius:999px;background:var(--cyan);color:#fff;font-size:12px;font-weight:800;transition:transform .3s var(--ease),box-shadow .3s ease}
-.submit-btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(22,184,209,.25)}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,184,217,.25)}
 .form-note{display:none;padding:12px 15px;border-radius:11px;background:#eff8f7;color:var(--teal);font-size:12px;line-height:1.6}
 
 /* BUSINESS CTA */
-.business-section{margin-top:24px;padding:65px;position:relative;overflow:hidden;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:40px;background:radial-gradient(circle at 75% 40%,rgba(22,184,209,.17),transparent 28%),linear-gradient(125deg,var(--teal-dark),var(--navy));color:#fff}
-.business-section::before{content:"";position:absolute;width:520px;height:520px;right:-220px;bottom:-330px;border:1px solid rgba(155,222,211,.14);border-radius:50%}
-.business-section::after{content:"";position:absolute;width:300px;height:300px;right:80px;top:-200px;border:1px solid rgba(155,222,211,.10);border-radius:50%}
+.business-section{margin-top:24px;padding:65px;position:relative;overflow:hidden;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:40px;background:radial-gradient(circle at 75% 40%,rgba(0,184,217,.17),transparent 28%),linear-gradient(125deg,var(--teal-dark),var(--navy));color:#fff}
+.business-section::before{content:"";position:absolute;width:520px;height:520px;right:-220px;bottom:-330px;border:1px solid rgba(158,219,209,.14);border-radius:50%}
+.business-section::after{content:"";position:absolute;width:300px;height:300px;right:80px;top:-200px;border:1px solid rgba(158,219,209,.10);border-radius:50%}
 .business-content{position:relative;z-index:2}.business-section .section-label{color:var(--mint)}
 .business-section h2{margin-top:18px;font-family:"Manrope",sans-serif;font-size:clamp(38px,5vw,68px);line-height:.9;letter-spacing:-.07em}
 .business-section p{max-width:620px;margin-top:25px;color:rgba(255,255,255,.62);font-size:14px;line-height:1.85}
 .business-section .btn{position:relative;z-index:3;flex-shrink:0;background:#fff;color:var(--navy);box-shadow:none}.business-section .btn:hover{background:var(--mint);color:var(--navy)}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.reveal.active{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
 
 /* FOOTER */
 footer{padding:80px 0 25px;background:#04121e;color:#fff}
@@ -167,7 +183,7 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
 /* RESPONSIVE */
 @media(max-width:900px){
   .navbar{padding:17px 6vw}.brand img,.logo img{width:125px}.navbar.scrolled .logo img{width:115px}
-  .nav-links{position:fixed;inset:0;z-index:-1;padding:110px 10vw 60px;flex-direction:column;align-items:flex-start;gap:22px;background:rgba(7,27,43,.98);transform:translateX(100%);transition:transform .45s var(--ease);box-shadow:-20px 0 70px rgba(0,0,0,.25)}
+  .nav-links{position:fixed;inset:0;z-index:-1;padding:110px 10vw 60px;flex-direction:column;align-items:flex-start;gap:22px;background:rgba(11,41,64,.98);transform:translateX(100%);transition:transform .45s var(--ease);box-shadow:-20px 0 70px rgba(0,0,0,.25)}
   .nav-links.active{transform:translateX(0)}.nav-links a{font-size:28px;color:#fff!important}.nav-contact{margin-top:10px}.menu-toggle{display:block}
   .hero-inner{grid-template-columns:1fr;text-align:center;gap:0;padding-top:125px}.hero-copy{margin:auto}.hero-copy p{margin-inline:auto}.hero-visual{height:410px}.contact-hero::before{right:-300px}
   .section-header{grid-template-columns:1fr;gap:35px}.contact-grid{grid-template-columns:1fr}.business-section{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr}
@@ -180,11 +196,83 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
+.skip-link{position:fixed;left:20px;top:20px;z-index:99999;padding:12px 18px;border-radius:8px;background:#fff;color:var(--navy);transform:translateY(-150%);transition:transform .25s ease}
+
+/* LOADER */
+.loader{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;background:var(--black);transition:opacity .7s ease,visibility .7s ease}
+.loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-content{display:flex;flex-direction:column;align-items:center;text-align:center}
+.loader-logo{position:relative;width:105px;height:105px;display:grid;place-items:center;padding:15px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 80px rgba(0,184,217,.18);animation:loaderFloat 2s ease-in-out infinite}
+.loader-logo::before{content:"";position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(158,219,209,.15);animation:loaderRing 2.5s linear infinite}
+.loader-logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.loader-line{width:150px;height:2px;margin-top:28px;overflow:hidden;background:rgba(255,255,255,.08)}
+.loader-line::after{content:"";display:block;width:45%;height:100%;background:linear-gradient(90deg,transparent,var(--cyan),var(--mint),transparent);animation:loaderProgress 1.4s ease-in-out infinite}
+.loader-text{margin-top:15px;color:rgba(255,255,255,.38);font-size:9px;font-weight:800;letter-spacing:4px}
+@keyframes loaderFloat{50%{transform:translateY(-6px) scale(1.025)}}
+@keyframes loaderRing{to{transform:rotate(360deg)}}
+@keyframes loaderProgress{from{transform:translateX(-150%)}to{transform:translateX(280%)}}
+body.loading{overflow:hidden}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;left:0;top:0;width:100%;height:3px;z-index:8000;pointer-events:none}
+.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--cyan),var(--mint));box-shadow:0 0 18px rgba(0,184,217,.65)}
+
+/* CUSTOM CURSOR */
+.cursor{position:fixed;z-index:9000;width:7px;height:7px;border-radius:50%;background:var(--cyan);pointer-events:none;transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;z-index:8999;width:34px;height:34px;border:1px solid rgba(0,184,217,.65);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease}
+.cursor-ring.large{width:62px;height:62px;background:rgba(0,184,217,.06)}
+@media(hover:hover) and (pointer:fine){body{cursor:none}.cursor,.cursor-ring{display:block}}
+@media(hover:none){.cursor,.cursor-ring{display:none}}
+.skip-link:focus{transform:translateY(0)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Arovia Pharma Pvt. Ltd.",
+  "url": "https://aroviapharma.in/",
+  "logo": "https://aroviapharma.in/logo%202.jpeg",
+  "description": "Arovia Pharma Pvt. Ltd. is committed to delivering high-quality pharmaceutical products and healthcare solutions."
+}
+</script>
 </head>
 
 
-<body>
+<body class="loading">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- =======================================================
+     LOADER
+======================================================= -->
+
+<div class="loader" id="loader">
+  <div class="loader-content">
+    <div class="loader-logo"><img src="logo%202.jpeg" alt="Arovia Pharma"></div>
+    <div class="loader-line"></div>
+    <div class="loader-text">AROVIA PHARMA</div>
+  </div>
+</div>
+
+
+<!-- =======================================================
+     CUSTOM CURSOR
+======================================================= -->
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+
+<!-- =======================================================
+     SCROLL PROGRESS
+======================================================= -->
+
+<div class="scroll-progress" aria-hidden="true">
+  <span></span>
+</div>
 
 
 <!-- =======================================================
@@ -199,12 +287,13 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
            class="logo"
            aria-label="Arovia Pharma Home">
 
-            <img src="logo (1).jpeg"
+            <img src="logo%20(1).jpeg"
                  alt="Arovia Pharma">
 
         </a>
 
 
+        <nav aria-label="Primary">
         <ul class="nav-links" id="navLinks">
 
             <li>
@@ -233,6 +322,7 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
             </li>
 
         </ul>
+        </nav>
 
 
         <button class="menu-toggle"
@@ -253,6 +343,7 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
 </header>
 
 
+<main id="main-content">
 
 <!-- =======================================================
      HERO
@@ -308,7 +399,7 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
 
             <div class="hero-logo">
 
-                <img src="logo 2.jpeg"
+                <img src="logo%202.jpeg"
                      alt="Arovia Pharma Logo">
 
             </div>
@@ -693,6 +784,7 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
 
 </section>
 
+</main>
 
 
 <!-- =======================================================
@@ -706,7 +798,7 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
 
         <div class="footer-brand">
 
-            <img src="logo 2.jpeg"
+            <img src="logo%202.jpeg"
                  alt="Arovia Pharma"
                  class="footer-logo">
 
@@ -794,6 +886,90 @@ footer{padding:80px 0 25px;background:#04121e;color:#fff}
 
 
 <script>
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+const loader = document.getElementById("loader");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function hideLoader(){
+    if(!loader) return;
+    loader.classList.add("hidden");
+    document.body.classList.remove("loading");
+}
+
+window.addEventListener("load", () => setTimeout(hideLoader, 350), {once:true});
+setTimeout(hideLoader, 1800);
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+const scrollProgress = document.querySelector(".scroll-progress span");
+
+function updateScrollProgress(){
+    if(!scrollProgress) return;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const percentage = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+    scrollProgress.style.width = `${percentage * 100}%`;
+}
+
+window.addEventListener("scroll", updateScrollProgress, {passive:true});
+updateScrollProgress();
+
+
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
+
+const cursor = document.querySelector(".cursor");
+const cursorRing = document.querySelector(".cursor-ring");
+
+if(
+    cursor &&
+    cursorRing &&
+    !reducedMotion &&
+    window.matchMedia("(hover:hover) and (pointer:fine)").matches
+){
+
+    let cMouseX = window.innerWidth / 2;
+    let cMouseY = window.innerHeight / 2;
+    let ringX = cMouseX;
+    let ringY = cMouseY;
+
+    window.addEventListener(
+        "pointermove",
+        event => {
+            cMouseX = event.clientX;
+            cMouseY = event.clientY;
+            cursor.style.left = `${cMouseX}px`;
+            cursor.style.top = `${cMouseY}px`;
+        },
+        {passive:true}
+    );
+
+    const animateCursor = () => {
+        ringX += (cMouseX - ringX) * .14;
+        ringY += (cMouseY - ringY) * .14;
+        cursorRing.style.left = `${ringX}px`;
+        cursorRing.style.top = `${ringY}px`;
+        requestAnimationFrame(animateCursor);
+    };
+
+    animateCursor();
+
+    document
+        .querySelectorAll("a,button,.contact-card,.info-box")
+        .forEach(element => {
+            element.addEventListener("mouseenter", () => cursorRing.classList.add("large"));
+            element.addEventListener("mouseleave", () => cursorRing.classList.remove("large"));
+        });
+
+}
+
 
 /* =========================================================
    NAVBAR
@@ -907,7 +1083,7 @@ if("IntersectionObserver" in window){
 
                         entry.target
                             .classList
-                            .add("active");
+                            .add("visible");
 
                         observer.unobserve(
                             entry.target
@@ -933,7 +1109,7 @@ if("IntersectionObserver" in window){
 
     revealElements.forEach(
         element =>
-            element.classList.add("active")
+            element.classList.add("visible")
     );
 
 }
