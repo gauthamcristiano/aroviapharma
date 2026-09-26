@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Learn about Arovia Pharma Pvt. Ltd., our purpose, values, mission and vision for a healthier future.">
-
+  <meta name="description" content="Learn about Arovia Pharma Pvt. Ltd., our purpose, values, mission and vision for a healthier future.">
   <meta name="theme-color" content="#03090e">
   <meta name="color-scheme" content="dark light">
 
@@ -22,65 +20,33 @@
   <meta property="og:description" content="Learn about Arovia Pharma Pvt. Ltd., our purpose, values, mission and vision for a healthier future.">
   <meta property="og:url" content="https://aroviapharma.in/about.html">
   <meta property="og:image" content="https://aroviapharma.in/logo%202.jpeg">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About | Arovia Pharma">
-  <meta name="twitter:description" content="Learn about Arovia Pharma Pvt. Ltd., our purpose, values, mission and vision for a healthier future.">
-  <meta name="twitter:image" content="https://aroviapharma.in/logo%202.jpeg">
 
-  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-
-    /* =========================================================
-       ROOT
-    ========================================================= */
-
     :root{
       --black:#03090e;
       --dark:#06141d;
       --dark-2:#0a202d;
       --navy:#0b2940;
-
       --teal:#006b70;
       --cyan:#00b8d9;
       --mint:#9edbd1;
-
-      --white:#ffffff;
+      --white:#fff;
       --ice:#f4fafb;
       --soft:#e8f2f4;
-
       --text:#12384f;
       --muted:#69808b;
-
       --line:rgba(9,42,61,.12);
       --dark-line:rgba(255,255,255,.10);
-
       --container:min(1240px,88vw);
-
       --ease:cubic-bezier(.2,.75,.2,1);
     }
 
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-      scroll-padding-top:100px;
-    }
-
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
     body{
       min-width:320px;
       overflow-x:hidden;
@@ -89,4054 +55,978 @@
       font-family:"DM Sans",sans-serif;
       line-height:1.5;
     }
+    body.loading,body.menu-open{overflow:hidden}
+    ::selection{background:var(--cyan);color:#fff}
+    a{color:inherit;text-decoration:none}
+    button{border:0;font:inherit}
+    img{display:block;max-width:100%}
+    .container{width:var(--container);margin-inline:auto}
 
-    body.loading,
-    body.menu-open{
-      overflow:hidden;
-    }
-
-    ::selection{
-      background:var(--cyan);
-      color:#fff;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    button{
-      border:0;
-      font:inherit;
-    }
-
-    img{
-      display:block;
-      max-width:100%;
-    }
-
-    .container{
-      width:var(--container);
-      margin-inline:auto;
-    }
-
-
-    /* =========================================================
-       ACCESSIBILITY
-    ========================================================= */
-
-    .skip-link{
-      position:fixed;
-      left:20px;
-      top:20px;
-      z-index:99999;
-
-      padding:12px 18px;
-
-      border-radius:8px;
-
-      background:#fff;
-      color:var(--navy);
-
-      transform:translateY(-150%);
-      transition:transform .25s ease;
-    }
-
-    .skip-link:focus{
-      transform:translateY(0);
-    }
-
-    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+    a:focus-visible,button:focus-visible{
       outline:2px solid var(--cyan);
       outline-offset:3px;
       border-radius:4px;
     }
 
+    .skip-link{
+      position:fixed;left:20px;top:20px;z-index:99999;
+      padding:12px 18px;border-radius:8px;
+      background:#fff;color:var(--navy);
+      transform:translateY(-150%);
+      transition:transform .25s ease;
+    }
+    .skip-link:focus{transform:translateY(0)}
 
-    /* =========================================================
-       LOADER
-    ========================================================= */
-
+    /* Loader */
     .loader{
-      position:fixed;
-      inset:0;
-      z-index:100000;
-
-      display:grid;
-      place-items:center;
-
+      position:fixed;inset:0;z-index:100000;
+      display:grid;place-items:center;
       background:var(--black);
-
-      transition:
-        opacity .7s ease,
-        visibility .7s ease;
+      transition:opacity .7s ease,visibility .7s ease;
     }
-
-    .loader.hidden{
-      opacity:0;
-      visibility:hidden;
-      pointer-events:none;
-    }
-
-    .loader-content{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-    }
-
+    .loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .loader-content{display:flex;flex-direction:column;align-items:center;text-align:center}
     .loader-logo{
-      position:relative;
-
-      width:105px;
-      height:105px;
-
-      display:grid;
-      place-items:center;
-
-      padding:15px;
-
-      border-radius:50%;
-
-      background:#fff;
-
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.08),
-        0 0 80px rgba(0,184,217,.18);
-
-      animation:
-        loaderFloat 2s ease-in-out infinite;
+      position:relative;width:105px;height:105px;
+      display:grid;place-items:center;padding:15px;
+      border-radius:50%;background:#fff;
+      box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 80px rgba(0,184,217,.18);
+      animation:loaderFloat 2s ease-in-out infinite;
     }
-
-    .loader-logo::before{
-      content:"";
-
-      position:absolute;
-      inset:-12px;
-
-      border-radius:50%;
-
+    .loader-logo:before{
+      content:"";position:absolute;inset:-12px;border-radius:50%;
       border:1px solid rgba(158,219,209,.15);
-
       animation:loaderRing 2.5s linear infinite;
     }
-
-    .loader-logo img{
-      width:100%;
-      height:100%;
-
-      object-fit:contain;
-
-      border-radius:50%;
-    }
-
-    .loader-line{
-      width:150px;
-      height:2px;
-
-      margin-top:28px;
-
-      overflow:hidden;
-
-      background:rgba(255,255,255,.08);
-    }
-
-    .loader-line::after{
-      content:"";
-
-      display:block;
-
-      width:45%;
-      height:100%;
-
-      background:linear-gradient(
-        90deg,
-        transparent,
-        var(--cyan),
-        var(--mint),
-        transparent
-      );
-
+    .loader-logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+    .loader-line{width:150px;height:2px;margin-top:28px;overflow:hidden;background:rgba(255,255,255,.08)}
+    .loader-line:after{
+      content:"";display:block;width:45%;height:100%;
+      background:linear-gradient(90deg,transparent,var(--cyan),var(--mint),transparent);
       animation:loaderProgress 1.4s ease-in-out infinite;
     }
-
     .loader-text{
-      margin-top:15px;
-
-      color:rgba(255,255,255,.38);
-
-      font-size:9px;
-      font-weight:800;
-      letter-spacing:4px;
+      margin-top:15px;color:rgba(255,255,255,.38);
+      font-size:9px;font-weight:800;letter-spacing:4px;
     }
+    @keyframes loaderFloat{50%{transform:translateY(-6px) scale(1.025)}}
+    @keyframes loaderRing{to{transform:rotate(360deg)}}
+    @keyframes loaderProgress{from{transform:translateX(-150%)}to{transform:translateX(280%)}}
 
-    @keyframes loaderFloat{
-      50%{
-        transform:translateY(-6px) scale(1.025);
-      }
-    }
-
-    @keyframes loaderRing{
-      to{
-        transform:rotate(360deg);
-      }
-    }
-
-    @keyframes loaderProgress{
-      from{
-        transform:translateX(-150%);
-      }
-
-      to{
-        transform:translateX(280%);
-      }
-    }
-
-
-    /* =========================================================
-       CUSTOM CURSOR
-    ========================================================= */
-
+    /* Cursor */
     .cursor{
-      position:fixed;
-      z-index:9000;
-
-      width:7px;
-      height:7px;
-
-      border-radius:50%;
-
-      background:var(--cyan);
-
-      pointer-events:none;
-
-      transform:translate(-50%,-50%);
+      position:fixed;z-index:9000;width:7px;height:7px;border-radius:50%;
+      background:var(--cyan);pointer-events:none;transform:translate(-50%,-50%);
     }
-
     .cursor-ring{
-      position:fixed;
-      z-index:8999;
-
-      width:34px;
-      height:34px;
-
-      border:1px solid rgba(0,184,217,.65);
-      border-radius:50%;
-
-      pointer-events:none;
-
-      transform:translate(-50%,-50%);
-
-      transition:
-        width .25s ease,
-        height .25s ease,
-        background .25s ease;
+      position:fixed;z-index:8999;width:34px;height:34px;
+      border:1px solid rgba(0,184,217,.65);border-radius:50%;
+      pointer-events:none;transform:translate(-50%,-50%);
+      transition:width .25s ease,height .25s ease,background .25s ease;
     }
+    .cursor-ring.large{width:62px;height:62px;background:rgba(0,184,217,.06)}
+    @media (hover:hover) and (pointer:fine){body{cursor:none}}
+    @media (hover:none){.cursor,.cursor-ring{display:none}}
 
-    .cursor-ring.large{
-      width:62px;
-      height:62px;
-
-      background:rgba(0,184,217,.06);
-    }
-
-    @media (hover:hover) and (pointer:fine){
-
-      body{
-        cursor:none;
-      }
-
-      .cursor,
-      .cursor-ring{
-        display:block;
-      }
-
-    }
-
-    @media (hover:none){
-
-      .cursor,
-      .cursor-ring{
-        display:none;
-      }
-
-    }
-
-
-    /* =========================================================
-       SCROLL PROGRESS
-    ========================================================= */
-
-    .scroll-progress{
-      position:fixed;
-      left:0;
-      top:0;
-
-      width:100%;
-      height:3px;
-
-      z-index:8000;
-
-      pointer-events:none;
-    }
-
+    /* Scroll progress */
+    .scroll-progress{position:fixed;left:0;top:0;width:100%;height:3px;z-index:8000;pointer-events:none}
     .scroll-progress span{
-      display:block;
-
-      width:0;
-      height:100%;
-
-      background:linear-gradient(
-        90deg,
-        var(--cyan),
-        var(--mint)
-      );
-
+      display:block;width:0;height:100%;
+      background:linear-gradient(90deg,var(--cyan),var(--mint));
       box-shadow:0 0 18px rgba(0,184,217,.65);
     }
 
-
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
-
+    /* Navigation */
     .nav{
-      position:fixed;
-      left:0;
-      top:0;
-
-      width:100%;
-
-      z-index:5000;
-
-      padding:25px 5vw;
-
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-
+      position:fixed;left:0;top:0;width:100%;z-index:5000;
+      padding:25px 5vw;display:flex;align-items:center;justify-content:space-between;
       border-bottom:1px solid transparent;
-
-      transition:
-        padding .35s ease,
-        background .35s ease,
-        border-color .35s ease;
+      transition:padding .35s ease,background .35s ease,border-color .35s ease;
     }
-
     .nav.scrolled{
-      padding-top:13px;
-      padding-bottom:13px;
-
+      padding-top:13px;padding-bottom:13px;
       background:rgba(3,9,14,.78);
-
       border-color:rgba(255,255,255,.08);
-
       backdrop-filter:blur(20px);
       -webkit-backdrop-filter:blur(20px);
     }
-
-    .brand{
-      position:relative;
-      z-index:6001;
-
-      display:inline-flex;
-      align-items:center;
-    }
-
-    .brand img{
-      width:140px;
-      height:auto;
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:34px;
-    }
-
+    .brand{position:relative;z-index:6001;display:inline-flex;align-items:center}
+    .brand img{width:140px;height:auto}
+    .nav-links{display:flex;align-items:center;gap:34px}
     .nav-links a{
-      position:relative;
-
-      padding:8px 0;
-
-      color:rgba(255,255,255,.58);
-
-      font-size:11px;
-      font-weight:700;
-
-      letter-spacing:.4px;
-
+      position:relative;padding:8px 0;color:rgba(255,255,255,.58);
+      font-size:11px;font-weight:700;letter-spacing:.4px;
       transition:color .25s ease;
     }
-
-    .nav-links a:hover,
-    .nav-links a.active{
-      color:#fff;
+    .nav-links a:hover,.nav-links a.active{color:#fff}
+    .nav-links a:after{
+      content:"";position:absolute;left:0;right:100%;bottom:1px;height:1px;
+      background:var(--cyan);transition:right .3s ease;
     }
-
-    .nav-links a::after{
-      content:"";
-
-      position:absolute;
-
-      left:0;
-      right:100%;
-      bottom:1px;
-
-      height:1px;
-
-      background:var(--cyan);
-
-      transition:right .3s ease;
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after{
-      right:0;
-    }
-
+    .nav-links a:hover:after,.nav-links a.active:after{right:0}
     .menu{
-      position:relative;
-      z-index:6001;
-
-      display:none;
-
-      width:44px;
-      height:44px;
-
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:50%;
-
-      background:rgba(255,255,255,.04);
-
-      color:#fff;
+      position:relative;z-index:6001;display:none;width:44px;height:44px;
+      border:1px solid rgba(255,255,255,.14);border-radius:50%;
+      background:rgba(255,255,255,.04);color:#fff;
     }
+    .menu span{display:block;width:18px;height:1px;margin:5px auto;background:currentColor;transition:transform .3s ease}
+    .menu.open span:first-child{transform:translateY(3px) rotate(45deg)}
+    .menu.open span:last-child{transform:translateY(-3px) rotate(-45deg)}
 
-    .menu span{
-      display:block;
+    /* Global */
+    .section{position:relative;overflow:hidden;padding:145px 0}
+    .section-number{margin-bottom:12px;color:var(--cyan);font-size:9px;font-weight:800;letter-spacing:3px}
+    .eyebrow{color:var(--teal);font-size:10px;font-weight:800;letter-spacing:3px}
+    .dark .eyebrow{color:var(--mint)}
+    .reveal{opacity:0;transform:translateY(35px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
 
-      width:18px;
-      height:1px;
-
-      margin:5px auto;
-
-      background:currentColor;
-
-      transition:transform .3s ease;
-    }
-
-    .menu.open span:first-child{
-      transform:translateY(3px) rotate(45deg);
-    }
-
-    .menu.open span:last-child{
-      transform:translateY(-3px) rotate(-45deg);
-    }
-
-
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
-
-    .section{
-      position:relative;
-
-      overflow:hidden;
-
-      padding:145px 0;
-    }
-
-    .section-number{
-      margin-bottom:12px;
-
-      color:var(--cyan);
-
-      font-size:9px;
-      font-weight:800;
-
-      letter-spacing:3px;
-    }
-
-    .eyebrow{
-      color:var(--teal);
-
-      font-size:10px;
-      font-weight:800;
-
-      letter-spacing:3px;
-    }
-
-    .dark .eyebrow{
-      color:var(--mint);
-    }
-
-    .reveal{
-      opacity:0;
-      transform:translateY(35px);
-
-      transition:
-        opacity .8s var(--ease),
-        transform .8s var(--ease);
-    }
-
-    .reveal.visible{
-      opacity:1;
-      transform:none;
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
+    /* About hero, deliberately aligned with Home hero */
     .hero{
-      position:relative;
-
-      min-height:100svh;
-
-      display:flex;
-      align-items:center;
-
-      overflow:hidden;
-
-      isolation:isolate;
-
+      position:relative;min-height:88svh;display:flex;align-items:center;
+      overflow:hidden;isolation:isolate;
       background:
-        radial-gradient(
-          circle at 72% 42%,
-          rgba(0,184,217,.15),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 5% 100%,
-          rgba(0,107,112,.20),
-          transparent 34%
-        ),
+        radial-gradient(circle at 74% 42%,rgba(0,184,217,.15),transparent 30%),
+        radial-gradient(circle at 5% 100%,rgba(0,107,112,.20),transparent 34%),
         var(--black);
     }
-
-    #particleCanvas{
-      position:absolute;
-      inset:0;
-
-      z-index:-3;
-
-      width:100%;
-      height:100%;
-
-      opacity:.7;
-    }
-
+    #particleCanvas{position:absolute;inset:0;z-index:-3;width:100%;height:100%;opacity:.7}
     .hero-grid{
-      position:absolute;
-      inset:0;
-
-      z-index:-2;
-
-      opacity:.055;
-
+      position:absolute;inset:0;z-index:-2;opacity:.055;
       background-image:
-        linear-gradient(
-          rgba(255,255,255,.08) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.08) 1px,
-          transparent 1px
-        );
-
+        linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
       background-size:90px 90px;
-
-      mask-image:
-        linear-gradient(
-          to bottom,
-          #000,
-          transparent 90%
-        );
+      mask-image:linear-gradient(to bottom,#000,transparent 90%);
     }
-
     .hero-light{
-      position:absolute;
-
-      width:700px;
-      height:700px;
-
-      right:-330px;
-      top:50%;
-
-      transform:translateY(-50%);
-
-      border-radius:50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(0,184,217,.18),
-          transparent 68%
-        );
-
-      filter:blur(30px);
-
-      pointer-events:none;
+      position:absolute;width:700px;height:700px;right:-330px;top:50%;
+      transform:translateY(-50%);border-radius:50%;
+      background:radial-gradient(circle,rgba(0,184,217,.18),transparent 68%);
+      filter:blur(30px);pointer-events:none;
     }
-
-    .hero-content{
-      position:relative;
-      z-index:4;
-
-      width:var(--container);
-
-      margin-inline:auto;
-
-      padding-top:75px;
-    }
-
+    .hero-content{position:relative;z-index:4;width:var(--container);margin-inline:auto;padding-top:80px}
     .hero-kicker{
-      display:flex;
-      align-items:center;
-      gap:12px;
-
-      margin-bottom:28px;
-
-      color:rgba(255,255,255,.40);
-
-      font-size:9px;
-      font-weight:800;
-
-      letter-spacing:3px;
+      display:flex;align-items:center;gap:12px;margin-bottom:28px;
+      color:rgba(255,255,255,.40);font-size:9px;font-weight:800;letter-spacing:3px;
     }
-
-    .hero-kicker::before{
-      content:"";
-
-      width:7px;
-      height:7px;
-
-      border-radius:50%;
-
-      background:var(--mint);
-
+    .hero-kicker:before{
+      content:"";width:7px;height:7px;border-radius:50%;background:var(--mint);
       box-shadow:0 0 18px var(--mint);
     }
-
     .hero-title{
-      max-width:980px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(62px,10vw,150px);
-
-      line-height:.82;
-
-      letter-spacing:-.085em;
-
-      font-weight:800;
+      max-width:980px;font-family:"Manrope",sans-serif;
+      font-size:clamp(58px,9.5vw,142px);line-height:.82;
+      letter-spacing:-.085em;font-weight:800;
     }
-
-    .hero-title .outline{
-      color:transparent;
-
-      -webkit-text-stroke:1px rgba(255,255,255,.65);
-    }
-
-    .hero-title .accent{
-      display:block;
-
-      color:var(--mint);
-    }
-
-    .hero-description{
-      max-width:570px;
-
-      margin-top:38px;
-
-      color:rgba(255,255,255,.52);
-
-      font-size:15px;
-
-      line-height:1.9;
-    }
-
-    .hero-bottom{
-      display:flex;
-      align-items:center;
-      gap:55px;
-
-      margin-top:38px;
-    }
-
-    .hero-info{
-      display:flex;
-      flex-direction:column;
-      gap:5px;
-    }
-
-    .hero-info small{
-      color:rgba(255,255,255,.28);
-
-      font-size:8px;
-      font-weight:800;
-
-      letter-spacing:2px;
-    }
-
-    .hero-info strong{
-      color:#fff;
-
-      font-size:12px;
-      font-weight:600;
-    }
-
+    .hero-title .outline{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.65)}
+    .hero-title .accent{display:block;color:var(--mint)}
+    .hero-description{max-width:570px;margin-top:38px;color:rgba(255,255,255,.52);font-size:15px;line-height:1.9}
+    .hero-bottom{display:flex;align-items:center;gap:55px;margin-top:38px}
+    .hero-info{display:flex;flex-direction:column;gap:5px}
+    .hero-info small{color:rgba(255,255,255,.28);font-size:8px;font-weight:800;letter-spacing:2px}
+    .hero-info strong{color:#fff;font-size:12px;font-weight:600}
     .hero-scroll{
-      position:absolute;
-
-      left:5vw;
-      bottom:32px;
-
-      display:flex;
-      align-items:center;
-      gap:12px;
-
-      color:rgba(255,255,255,.30);
-
-      font-size:8px;
-      font-weight:800;
-
-      letter-spacing:2px;
+      position:absolute;left:5vw;bottom:32px;display:flex;align-items:center;gap:12px;
+      color:rgba(255,255,255,.30);font-size:8px;font-weight:800;letter-spacing:2px;
     }
+    .hero-scroll-line{width:45px;height:1px;background:rgba(255,255,255,.20)}
 
-    .hero-scroll-line{
-      width:45px;
-      height:1px;
-
-      background:rgba(255,255,255,.20);
-    }
-
-
-    /* =========================================================
-       ORBIT SYSTEM
-    ========================================================= */
-
+    /* Hero orbit */
     .orbit-system{
-      position:absolute;
+      position:absolute;width:610px;height:610px;right:-80px;top:50%;transform:translateY(-50%);
+      z-index:2;pointer-events:none;
+    }
+    .orbit{
+      position:absolute;left:50%;top:50%;border:1px solid rgba(158,219,209,.15);
+      border-radius:50%;transform:translate(-50%,-50%);animation:orbitSpin linear infinite;
+    }
+    .orbit.one{width:600px;height:600px;animation-duration:28s}
+    .orbit.two{width:425px;height:425px;animation-duration:20s;animation-direction:reverse}
+    .orbit.three{width:270px;height:270px;animation-duration:13s}
+    .orbit:after{
+      content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;border-radius:50%;
+      background:var(--mint);box-shadow:0 0 20px var(--mint);
+    }
+    @keyframes orbitSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+    .orbit-core{
+      position:absolute;left:50%;top:50%;width:165px;height:165px;
+      display:grid;place-items:center;padding:26px;border-radius:50%;background:#fff;
+      box-shadow:0 0 80px rgba(0,184,217,.20);
+      transform:translate(-50%,-50%);animation:coreFloat 5s ease-in-out infinite;
+    }
+    .orbit-core img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+    @keyframes coreFloat{50%{transform:translate(-50%,-54%)}}
 
-      width:610px;
-      height:610px;
+    /* Intro */
+    .intro{background:var(--ice);color:var(--navy)}
+    .intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:100px;align-items:start}
+    .intro-heading{
+      margin-top:18px;font-family:"Manrope",sans-serif;
+      font-size:clamp(55px,7vw,95px);line-height:.87;
+      letter-spacing:-.075em;font-weight:800;
+    }
+    .intro-heading span{display:block;color:var(--teal)}
+    .intro-copy{max-width:620px;padding-top:10px;color:var(--muted);font-size:16px;line-height:1.95}
+    .intro-copy p+p{margin-top:22px}
+    .intro-highlight{
+      margin-top:40px;padding:28px 30px;border-left:2px solid var(--cyan);
+      background:rgba(0,107,112,.055);color:var(--navy);
+      font-family:"Manrope",sans-serif;font-size:19px;font-weight:700;line-height:1.55;
+    }
 
-      right:-80px;
-      top:50%;
+    /* Principles */
+    .principles{padding:0;background:var(--ice);color:var(--navy)}
+    .principle-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .principle{position:relative;padding:52px 42px 58px;border-right:1px solid var(--line);overflow:hidden}
+    .principle:last-child{border-right:0}
+    .principle:before{
+      content:"";position:absolute;inset:auto 0 0 0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--mint));
+      transform:scaleX(0);transform-origin:left;transition:transform .5s ease;
+    }
+    .principle:hover:before{transform:scaleX(1)}
+    .principle-number{color:var(--cyan);font-size:9px;font-weight:800;letter-spacing:3px}
+    .principle h3{margin-top:40px;font-family:"Manrope",sans-serif;font-size:42px;line-height:1;letter-spacing:-.06em}
+    .principle p{max-width:280px;margin-top:20px;color:var(--muted);font-size:14px;line-height:1.8}
 
-      transform:translateY(-50%);
+    /* Mission */
+    .mission{background:var(--dark)}
+    .mission-heading{
+      max-width:850px;margin-top:20px;font-family:"Manrope",sans-serif;
+      font-size:clamp(54px,7vw,100px);line-height:.88;letter-spacing:-.08em;font-weight:800;
+    }
+    .mission-heading span{display:block;color:var(--mint)}
+    .mission-description{max-width:620px;margin-top:30px;color:rgba(255,255,255,.48);font-size:15px;line-height:1.9}
+    .mission-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:75px;background:var(--dark-line)}
+    .mission-card{
+      position:relative;min-height:290px;padding:35px 38px;
+      background:rgba(255,255,255,.025);overflow:hidden;
+      transition:background .35s ease,transform .35s ease;
+    }
+    .mission-card:hover{background:rgba(0,184,217,.045);transform:translateY(-3px)}
+    .mission-card-number{color:rgba(158,219,209,.55);font-size:8px;font-weight:800;letter-spacing:2px}
+    .mission-card h3{margin-top:50px;font-family:"Manrope",sans-serif;font-size:37px;letter-spacing:-.06em}
+    .mission-card p{max-width:410px;margin-top:15px;color:rgba(255,255,255,.43);font-size:13px;line-height:1.8}
+    .mission-card-arrow{position:absolute;right:30px;bottom:25px;color:var(--cyan);font-size:22px}
 
-      z-index:2;
+    /* Values */
+    .values{background:#fff;color:var(--navy)}
+    .values-header{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:end}
+    .values-heading{
+      margin-top:18px;font-family:"Manrope",sans-serif;font-size:clamp(52px,6vw,84px);
+      line-height:.9;letter-spacing:-.075em;font-weight:800;
+    }
+    .values-heading span{display:block;color:var(--teal)}
+    .values-intro{max-width:330px;color:var(--muted);font-size:15px;line-height:1.9;padding-bottom:7px}
+    .value-list{margin-top:90px;border-top:1px solid var(--line)}
+    .value{
+      display:grid;grid-template-columns:100px 1fr 1fr;gap:40px;align-items:center;
+      padding:42px 0;border-bottom:1px solid var(--line);
+      transition:padding .35s ease;
+    }
+    .value:hover{padding-left:15px}
+    .value-number{color:var(--cyan);font-size:9px;font-weight:800;letter-spacing:2px}
+    .value h3{font-family:"Manrope",sans-serif;font-size:39px;letter-spacing:-.06em}
+    .value p{max-width:430px;color:var(--muted);font-size:14px;line-height:1.8}
 
+    /* Journey */
+    .journey{background:var(--black)}
+    .journey-heading{
+      max-width:900px;margin-top:20px;font-family:"Manrope",sans-serif;
+      font-size:clamp(54px,7vw,100px);line-height:.88;letter-spacing:-.08em;font-weight:800;
+    }
+    .journey-heading span{display:block;color:var(--mint)}
+    .timeline{position:relative;margin-top:100px;padding-left:35px}
+    .timeline:before{
+      content:"";position:absolute;left:5px;top:0;bottom:0;width:1px;
+      background:linear-gradient(var(--cyan),rgba(158,219,209,.08));
+    }
+    .timeline-item{position:relative;padding:0 0 85px 55px;max-width:720px}
+    .timeline-item:last-child{padding-bottom:0}
+    .timeline-dot{
+      position:absolute;left:-2px;top:2px;width:15px;height:15px;border-radius:50%;
+      background:var(--black);border:1px solid var(--cyan);
+      box-shadow:0 0 0 5px rgba(0,184,217,.07),0 0 20px rgba(0,184,217,.35);
+    }
+    .timeline-label{color:var(--mint);font-size:8px;font-weight:800;letter-spacing:3px}
+    .timeline-item h3{margin-top:12px;font-family:"Manrope",sans-serif;font-size:32px;letter-spacing:-.05em}
+    .timeline-item p{max-width:600px;margin-top:14px;color:rgba(255,255,255,.43);font-size:14px;line-height:1.85}
+
+    /* Future */
+    .future{
+      position:relative;min-height:680px;display:flex;align-items:center;
+      overflow:hidden;background:var(--ice);color:var(--navy);
+    }
+    .future-content{position:relative;z-index:2}
+    .future-heading{
+      max-width:900px;margin-top:18px;font-family:"Manrope",sans-serif;
+      font-size:clamp(58px,8vw,112px);line-height:.86;letter-spacing:-.08em;font-weight:800;
+    }
+    .future-heading span{display:block;color:var(--teal)}
+    .future-description{max-width:570px;margin-top:35px;color:var(--muted);font-size:15px;line-height:1.9}
+    .future-orbit{
+      position:absolute;right:-220px;top:50%;width:720px;height:720px;
+      transform:translateY(-50%);border:1px solid rgba(0,107,112,.12);border-radius:50%;
+    }
+    .future-orbit:before,.future-orbit:after{
+      content:"";position:absolute;border-radius:50%;
+    }
+    .future-orbit:before{
+      inset:80px;border:1px solid rgba(0,184,217,.12);
+    }
+    .future-orbit:after{
+      width:13px;height:13px;left:50%;top:-6px;background:var(--cyan);
+      box-shadow:0 0 25px rgba(0,184,217,.5);
+    }
+
+    /* CTA */
+    .cta{
+      position:relative;min-height:620px;display:grid;place-items:center;text-align:center;
+      padding:110px 5vw;overflow:hidden;background:var(--dark);
+    }
+    .cta:before{
+      content:"";position:absolute;width:650px;height:650px;border-radius:50%;
+      left:50%;top:50%;transform:translate(-50%,-50%);
+      background:radial-gradient(circle,rgba(0,184,217,.13),transparent 68%);
       pointer-events:none;
     }
-
-    .orbit{
-      position:absolute;
-
-      left:50%;
-      top:50%;
-
-      border:1px solid rgba(158,219,209,.15);
-
-      border-radius:50%;
-
-      transform:translate(-50%,-50%);
-
-      animation:orbitSpin linear infinite;
-    }
-
-    .orbit.one{
-      width:600px;
-      height:600px;
-
-      animation-duration:28s;
-    }
-
-    .orbit.two{
-      width:425px;
-      height:425px;
-
-      animation-duration:20s;
-
-      animation-direction:reverse;
-    }
-
-    .orbit.three{
-      width:270px;
-      height:270px;
-
-      animation-duration:13s;
-    }
-
-    .orbit::after{
-      content:"";
-
-      position:absolute;
-
-      left:50%;
-      top:-4px;
-
-      width:8px;
-      height:8px;
-
-      border-radius:50%;
-
-      background:var(--mint);
-
-      box-shadow:0 0 20px var(--mint);
-    }
-
-    @keyframes orbitSpin{
-      to{
-        transform:translate(-50%,-50%) rotate(360deg);
-      }
-    }
-
-    .orbit-core{
-      position:absolute;
-
-      left:50%;
-      top:50%;
-
-      width:165px;
-      height:165px;
-
-      display:grid;
-      place-items:center;
-
-      padding:26px;
-
-      border-radius:50%;
-
-      background:#fff;
-
-      box-shadow:
-        0 0 80px rgba(0,184,217,.20);
-
-      transform:translate(-50%,-50%);
-
-      animation:coreFloat 5s ease-in-out infinite;
-    }
-
-    .orbit-core img{
-      width:100%;
-      height:100%;
-
-      object-fit:contain;
-
-      border-radius:50%;
-    }
-
-    @keyframes coreFloat{
-      50%{
-        transform:translate(-50%,-54%);
-      }
-    }
-
-
-    /* =========================================================
-       INTRO
-    ========================================================= */
-
-    .intro{
-      background:var(--ice);
-
-      color:var(--navy);
-    }
-
-    .intro-grid{
-      display:grid;
-
-      grid-template-columns:.9fr 1.1fr;
-
-      gap:100px;
-
-      align-items:start;
-    }
-
-    .intro-heading{
-      margin-top:18px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(55px,7vw,95px);
-
-      line-height:.87;
-
-      letter-spacing:-.075em;
-
-      font-weight:800;
-    }
-
-    .intro-heading span{
-      display:block;
-
-      color:var(--teal);
-    }
-
-    .intro-copy{
-      max-width:620px;
-
-      padding-top:10px;
-
-      color:var(--muted);
-
-      font-size:16px;
-
-      line-height:1.95;
-    }
-
-    .intro-copy p+p{
-      margin-top:22px;
-    }
-
-    .intro-highlight{
-      margin-top:40px;
-
-      padding:28px 30px;
-
-      border-left:2px solid var(--cyan);
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,184,217,.06),
-          transparent
-        );
-
-      color:var(--navy);
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:21px;
-
-      line-height:1.5;
-    }
-
-
-    /* =========================================================
-       PRINCIPLE STRIP
-    ========================================================= */
-
-    .principles{
-      padding:0;
-
-      background:var(--ice);
-
-      color:var(--navy);
-    }
-
-    .principle-grid{
-      display:grid;
-
-      grid-template-columns:repeat(3,1fr);
-
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .principle{
-      position:relative;
-
-      min-height:210px;
-
-      padding:45px 30px;
-
-      border-right:1px solid var(--line);
-
-      overflow:hidden;
-    }
-
-    .principle:last-child{
-      border-right:0;
-    }
-
-    .principle::before{
-      content:"";
-
-      position:absolute;
-
-      left:0;
-      bottom:0;
-
-      width:100%;
-      height:2px;
-
-      background:var(--cyan);
-
-      transform:scaleX(0);
-
-      transform-origin:left;
-
-      transition:transform .5s var(--ease);
-    }
-
-    .principle:hover::before{
-      transform:scaleX(1);
-    }
-
-    .principle-number{
-      color:var(--teal);
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:38px;
-      font-weight:800;
-
-      letter-spacing:-.06em;
-    }
-
-    .principle h3{
-      margin-top:10px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:22px;
-
-      letter-spacing:-.04em;
-    }
-
-    .principle p{
-      margin-top:8px;
-
-      max-width:250px;
-
-      color:var(--muted);
-
-      font-size:12px;
-
-      line-height:1.7;
-    }
-
-
-    /* =========================================================
-       MISSION
-    ========================================================= */
-
-    .mission{
-      background:
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(0,184,217,.10),
-          transparent 28%
-        ),
-        var(--black);
-
-      color:#fff;
-    }
-
-    .mission-heading{
-      max-width:1050px;
-
-      margin-top:18px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(58px,8vw,110px);
-
-      line-height:.85;
-
-      letter-spacing:-.08em;
-
-      font-weight:800;
-    }
-
-    .mission-heading span{
-      display:block;
-
-      color:var(--mint);
-    }
-
-    .mission-description{
-      max-width:650px;
-
-      margin-top:35px;
-
-      color:rgba(255,255,255,.47);
-
-      font-size:15px;
-
-      line-height:1.9;
-    }
-
-    .mission-grid{
-      display:grid;
-
-      grid-template-columns:repeat(2,1fr);
-
-      gap:1px;
-
-      margin-top:75px;
-
-      background:var(--dark-line);
-    }
-
-    .mission-card{
-      position:relative;
-
-      min-height:330px;
-
-      padding:34px;
-
-      overflow:hidden;
-
-      background:var(--black);
-
-      isolation:isolate;
-    }
-
-    .mission-card::before{
-      content:"";
-
-      position:absolute;
-
-      inset:0;
-
-      z-index:-1;
-
-      background:
-        radial-gradient(
-          circle at 90% 0%,
-          rgba(0,184,217,.18),
-          transparent 42%
-        );
-
-      opacity:0;
-
-      transition:opacity .5s ease;
-    }
-
-    .mission-card:hover::before{
-      opacity:1;
-    }
-
-    .mission-card-number{
-      color:var(--cyan);
-
-      font-size:9px;
-      font-weight:800;
-
-      letter-spacing:2px;
-    }
-
-    .mission-card h3{
-      margin-top:90px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:38px;
-
-      line-height:1;
-
-      letter-spacing:-.06em;
-    }
-
-    .mission-card p{
-      max-width:410px;
-
-      margin-top:15px;
-
-      color:rgba(255,255,255,.43);
-
-      font-size:13px;
-
-      line-height:1.8;
-    }
-
-    .mission-card-arrow{
-      position:absolute;
-
-      right:30px;
-      bottom:28px;
-
-      width:38px;
-      height:38px;
-
-      display:grid;
-      place-items:center;
-
-      border:1px solid rgba(255,255,255,.10);
-
-      border-radius:50%;
-
-      color:var(--mint);
-
-      transition:
-        transform .35s ease,
-        background .35s ease;
-    }
-
-    .mission-card:hover .mission-card-arrow{
-      transform:rotate(45deg);
-
-      background:rgba(255,255,255,.06);
-    }
-
-
-    /* =========================================================
-       VALUES
-    ========================================================= */
-
-    .values{
-      background:#fff;
-
-      color:var(--navy);
-    }
-
-    .values-header{
-      display:flex;
-
-      justify-content:space-between;
-      align-items:flex-end;
-
-      gap:50px;
-    }
-
-    .values-heading{
-      max-width:850px;
-
-      margin-top:18px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(54px,7vw,96px);
-
-      line-height:.86;
-
-      letter-spacing:-.075em;
-
-      font-weight:800;
-    }
-
-    .values-heading span{
-      display:block;
-
-      color:var(--teal);
-    }
-
-    .values-intro{
-      max-width:310px;
-
-      color:var(--muted);
-
-      font-size:13px;
-
-      line-height:1.8;
-    }
-
-    .value-list{
-      margin-top:75px;
-
-      border-top:1px solid var(--line);
-    }
-
-    .value{
-      position:relative;
-
-      display:grid;
-
-      grid-template-columns:70px 1fr 1fr;
-
-      gap:30px;
-
-      align-items:center;
-
-      padding:43px 0;
-
-      border-bottom:1px solid var(--line);
-
-      overflow:hidden;
-    }
-
-    .value::before{
-      content:"";
-
-      position:absolute;
-
-      inset:0;
-
-      background:var(--navy);
-
-      transform:translateY(101%);
-
-      transition:transform .55s var(--ease);
-    }
-
-    .value:hover::before{
-      transform:none;
-    }
-
-    .value > *{
-      position:relative;
-      z-index:2;
-
-      transition:color .4s ease;
-    }
-
-    .value-number{
-      color:var(--cyan);
-
-      font-size:9px;
-      font-weight:800;
-
-      letter-spacing:2px;
-    }
-
-    .value h3{
-      font-family:"Manrope",sans-serif;
-
-      font-size:39px;
-
-      line-height:1;
-
-      letter-spacing:-.055em;
-    }
-
-    .value p{
-      color:var(--muted);
-
-      font-size:13px;
-
-      line-height:1.75;
-    }
-
-    .value:hover h3{
-      color:#fff;
-    }
-
-    .value:hover p{
-      color:rgba(255,255,255,.54);
-    }
-
-
-    /* =========================================================
-       JOURNEY
-    ========================================================= */
-
-    .journey{
-      background:var(--dark);
-
-      color:#fff;
-    }
-
-    .journey-heading{
-      max-width:900px;
-
-      margin-top:18px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(58px,8vw,108px);
-
-      line-height:.85;
-
-      letter-spacing:-.08em;
-
-      font-weight:800;
-    }
-
-    .journey-heading span{
-      display:block;
-
-      color:var(--mint);
-    }
-
-    .timeline{
-      position:relative;
-
-      margin-top:100px;
-    }
-
-    .timeline::before{
-      content:"";
-
-      position:absolute;
-
-      left:50%;
-      top:0;
-      bottom:0;
-
-      width:1px;
-
-      background:rgba(255,255,255,.12);
-    }
-
-    .timeline-item{
-      position:relative;
-
-      width:50%;
-
-      padding:0 65px 95px;
-    }
-
-    .timeline-item:nth-child(even){
-      margin-left:50%;
-    }
-
-    .timeline-dot{
-      position:absolute;
-
-      top:4px;
-
-      width:11px;
-      height:11px;
-
-      border-radius:50%;
-
-      background:var(--cyan);
-
-      box-shadow:0 0 25px rgba(0,184,217,.7);
-    }
-
-    .timeline-item:nth-child(odd) .timeline-dot{
-      right:-5px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-dot{
-      left:-5px;
-    }
-
-    .timeline-label{
-      color:var(--mint);
-
-      font-size:9px;
-      font-weight:800;
-
-      letter-spacing:3px;
-    }
-
-    .timeline-item h3{
-      margin-top:13px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:34px;
-
-      line-height:1;
-
-      letter-spacing:-.055em;
-    }
-
-    .timeline-item p{
-      max-width:430px;
-
-      margin-top:15px;
-
-      color:rgba(255,255,255,.43);
-
-      font-size:13px;
-
-      line-height:1.8;
-    }
-
-
-    /* =========================================================
-       FUTURE
-    ========================================================= */
-
-    .future{
-      position:relative;
-
-      min-height:720px;
-
-      display:flex;
-      align-items:center;
-
-      overflow:hidden;
-
-      isolation:isolate;
-
-      background:
-        linear-gradient(
-          120deg,
-          #00686d,
-          #061b28
-        );
-    }
-
-    .future-content{
-      position:relative;
-      z-index:3;
-    }
-
-    .future-heading{
-      max-width:1000px;
-
-      margin-top:18px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(60px,8.5vw,115px);
-
-      line-height:.83;
-
-      letter-spacing:-.08em;
-
-      font-weight:800;
-    }
-
-    .future-heading span{
-      display:block;
-
-      color:var(--mint);
-    }
-
-    .future-description{
-      max-width:600px;
-
-      margin-top:36px;
-
-      color:rgba(255,255,255,.53);
-
-      font-size:15px;
-
-      line-height:1.9;
-    }
-
-    .future-orbit{
-      position:absolute;
-
-      width:760px;
-      height:760px;
-
-      right:-270px;
-
-      border:1px solid rgba(158,219,209,.17);
-
-      border-radius:50%;
-    }
-
-    .future-orbit::before,
-    .future-orbit::after{
-      content:"";
-
-      position:absolute;
-
-      left:50%;
-      top:50%;
-
-      border:1px solid rgba(158,219,209,.11);
-
-      border-radius:50%;
-
-      transform:translate(-50%,-50%);
-    }
-
-    .future-orbit::before{
-      width:530px;
-      height:530px;
-    }
-
-    .future-orbit::after{
-      width:300px;
-      height:300px;
-    }
-
-
-    /* =========================================================
-       CTA
-    ========================================================= */
-
-    .cta{
-      position:relative;
-
-      min-height:610px;
-
-      display:grid;
-      place-items:center;
-
-      padding:100px 0;
-
-      overflow:hidden;
-
-      text-align:center;
-
-      background:var(--ice);
-
-      color:var(--navy);
-    }
-
-    .cta::before{
-      content:"";
-
-      position:absolute;
-
-      width:650px;
-      height:650px;
-
-      border-radius:50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(0,184,217,.13),
-          transparent 68%
-        );
-    }
-
-    .cta-content{
-      position:relative;
-      z-index:2;
-    }
-
+    .cta-content{position:relative;z-index:2}
     .cta-heading{
-      margin-top:18px;
-
-      font-family:"Manrope",sans-serif;
-
-      font-size:clamp(65px,9vw,130px);
-
-      line-height:.82;
-
-      letter-spacing:-.085em;
-
-      font-weight:800;
+      margin-top:20px;font-family:"Manrope",sans-serif;
+      font-size:clamp(62px,9vw,130px);line-height:.82;letter-spacing:-.09em;font-weight:800;
     }
-
-    .cta-heading span{
-      display:block;
-
-      color:var(--teal);
-    }
-
-    .cta-description{
-      margin-top:27px;
-
-      color:var(--muted);
-
-      font-size:14px;
-    }
-
+    .cta-heading span{display:block;color:var(--mint)}
+    .cta-description{margin-top:25px;color:rgba(255,255,255,.42);font-size:14px}
     .cta-button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:25px;
-
-      min-height:55px;
-
-      margin-top:28px;
-
-      padding:0 25px;
-
-      border-radius:999px;
-
-      background:var(--navy);
-
-      color:#fff;
-
-      font-size:10px;
-      font-weight:800;
-
-      transition:
-        transform .3s var(--ease),
-        box-shadow .3s ease;
+      display:inline-flex;align-items:center;gap:22px;margin-top:38px;
+      padding:16px 20px 16px 24px;border:1px solid rgba(255,255,255,.15);
+      border-radius:999px;background:rgba(255,255,255,.035);
+      font-size:11px;font-weight:800;letter-spacing:.5px;
+      transition:background .3s ease,border-color .3s ease,transform .3s ease;
     }
-
-    .cta-button:hover{
-      transform:translateY(-4px);
-
-      box-shadow:
-        0 20px 55px rgba(10,37,64,.22);
-    }
-
-    .cta-button span{
-      display:block;
-    }
-
     .cta-button b{
-      color:var(--mint);
-
-      font-size:15px;
+      display:grid;place-items:center;width:34px;height:34px;border-radius:50%;
+      background:var(--mint);color:var(--navy);font-size:15px;
     }
+    .cta-button:hover{background:rgba(255,255,255,.08);border-color:rgba(158,219,209,.35);transform:translateY(-3px)}
 
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer{
-      padding:80px 0 25px;
-
-      background:var(--black);
-
-      color:#fff;
-    }
-
-    .footer-main{
-      display:flex;
-
-      justify-content:space-between;
-      align-items:flex-start;
-
-      gap:70px;
-
-      padding-bottom:60px;
-
-      border-bottom:1px solid var(--dark-line);
-    }
-
-    .footer-logo{
-      width:145px;
-
-      padding:9px;
-
-      border-radius:10px;
-
-      background:#fff;
-    }
-
-    .footer-brand p{
-      margin-top:16px;
-
-      color:rgba(255,255,255,.35);
-
-      font-size:11px;
-    }
-
-    .footer-links{
-      display:flex;
-
-      gap:90px;
-    }
-
-    .footer-column{
-      display:flex;
-      flex-direction:column;
-
-      gap:13px;
-
-      min-width:110px;
-    }
-
-    .footer-column span{
-      margin-bottom:5px;
-
-      color:var(--mint);
-
-      font-size:8px;
-      font-weight:800;
-
-      letter-spacing:2px;
-    }
-
-    .footer-column a{
-      width:max-content;
-
-      color:rgba(255,255,255,.47);
-
-      font-size:11px;
-
-      transition:
-        color .25s ease,
-        transform .25s ease;
-    }
-
-    .footer-column a:hover{
-      color:#fff;
-
-      transform:translateX(4px);
-    }
-
+    /* Footer */
+    footer{background:#02070b;border-top:1px solid rgba(255,255,255,.07);padding:70px 0 25px}
+    .footer-main{display:flex;justify-content:space-between;gap:80px}
+    .footer-logo{width:145px}
+    .footer-brand p{margin-top:15px;color:rgba(255,255,255,.32);font-size:12px}
+    .footer-links{display:flex;gap:90px}
+    .footer-column{display:flex;flex-direction:column;gap:12px;min-width:90px}
+    .footer-column span{margin-bottom:5px;color:var(--mint);font-size:8px;font-weight:800;letter-spacing:2px}
+    .footer-column a{color:rgba(255,255,255,.42);font-size:11px;transition:color .25s ease}
+    .footer-column a:hover{color:#fff}
     .footer-bottom{
-      display:flex;
-
-      justify-content:space-between;
-
-      gap:20px;
-
-      padding-top:22px;
-
-      color:rgba(255,255,255,.23);
-
-      font-size:8px;
-
-      letter-spacing:1.5px;
+      display:flex;justify-content:space-between;gap:30px;margin-top:65px;padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.07);
+      color:rgba(255,255,255,.22);font-size:8px;font-weight:700;letter-spacing:2px;
     }
 
-
-    /* =========================================================
-       RESPONSIVE — TABLET
-    ========================================================= */
-
-    @media(max-width:1050px){
-
-      .orbit-system{
-        right:-180px;
-
-        opacity:.55;
-      }
-
-      .intro-grid{
-        gap:60px;
-      }
-
+    /* Responsive */
+    @media (max-width:1100px){
+      .orbit-system{right:-210px;opacity:.8}
+      .intro-grid{gap:60px}
+      .values-header{gap:45px}
     }
 
-
-    /* =========================================================
-       RESPONSIVE — MOBILE NAV
-    ========================================================= */
-
-    @media(max-width:900px){
-
-      .nav{
-        padding:17px 6vw;
-      }
-
-      .brand img{
-        width:122px;
-      }
-
-      .menu{
-        display:block;
-      }
-
+    @media (max-width:900px){
+      .nav{padding:18px 6vw}
+      .nav.scrolled{padding-top:11px;padding-bottom:11px}
       .nav-links{
-        position:fixed;
-
-        inset:0;
-
-        z-index:6000;
-
-        padding:115px 10vw 50px;
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:22px;
-
-        background:rgba(3,9,14,.98);
-
-        transform:translateX(100%);
-
-        transition:transform .45s var(--ease);
-
-        overflow-y:auto;
+        position:fixed;inset:0;z-index:6000;
+        display:flex;flex-direction:column;justify-content:center;align-items:center;gap:25px;
+        background:rgba(3,9,14,.97);backdrop-filter:blur(20px);
+        opacity:0;visibility:hidden;pointer-events:none;
+        transform:translateY(-10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease;
       }
-
-      .nav-links.open{
-        transform:none;
-      }
-
-      .nav-links a{
-        font-size:30px;
-      }
-
-
-      /* HERO */
-
-      .hero{
-        min-height:900px;
-
-        align-items:flex-start;
-
-        padding-top:145px;
-      }
-
-      .hero-content{
-        text-align:center;
-      }
-
-      .hero-kicker{
-        justify-content:center;
-      }
-
-      .hero-description{
-        margin-inline:auto;
-      }
-
-      .hero-bottom{
-        justify-content:center;
-      }
-
-      .hero-scroll{
-        display:none;
-      }
-
-      .orbit-system{
-        width:430px;
-        height:430px;
-
-        right:50%;
-        top:auto;
-        bottom:-100px;
-
-        transform:translateX(50%);
-
-        opacity:.40;
-      }
-
-      .orbit.one{
-        width:420px;
-        height:420px;
-      }
-
-      .orbit.two{
-        width:300px;
-        height:300px;
-      }
-
-      .orbit.three{
-        width:195px;
-        height:195px;
-      }
-
-      .orbit-core{
-        width:120px;
-        height:120px;
-
-        padding:20px;
-      }
-
-
-      /* SECTIONS */
-
-      .section{
-        padding:110px 0;
-      }
-
-      .intro-grid{
-        grid-template-columns:1fr;
-
-        gap:50px;
-      }
-
-      .principle-grid{
-        grid-template-columns:1fr;
-      }
-
-      .principle{
-        border-right:0;
-
-        border-bottom:1px solid var(--line);
-      }
-
-      .principle:last-child{
-        border-bottom:0;
-      }
-
-      .mission-grid{
-        grid-template-columns:1fr;
-      }
-
-      .values-header{
-        flex-direction:column;
-
-        align-items:flex-start;
-      }
-
-      .timeline::before{
-        left:5px;
-      }
-
-      .timeline-item,
-      .timeline-item:nth-child(even){
-        width:100%;
-
-        margin-left:0;
-
-        padding:
-          0
-          0
-          75px
-          40px;
-      }
-
-      .timeline-item:nth-child(odd) .timeline-dot,
-      .timeline-item:nth-child(even) .timeline-dot{
-        left:0;
-        right:auto;
-      }
-
-      .future-orbit{
-        right:-390px;
-      }
-
-      .footer-main{
-        flex-direction:column;
-      }
-
+      .nav-links.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+      .nav-links a{font-size:20px}
+      .menu{display:block}
+      .hero{min-height:850px}
+      .hero-content{padding-top:120px}
+      .orbit-system{width:500px;height:500px;right:-250px;top:65%;opacity:.55}
+      .orbit.one{width:500px;height:500px}
+      .orbit.two{width:355px;height:355px}
+      .orbit.three{width:225px;height:225px}
+      .orbit-core{width:135px;height:135px;padding:22px}
+      .hero-description{max-width:500px}
+      .intro-grid{grid-template-columns:1fr;gap:45px}
+      .principle-grid{grid-template-columns:1fr}
+      .principle{border-right:0;border-bottom:1px solid var(--line)}
+      .principle:last-child{border-bottom:0}
+      .mission-grid{grid-template-columns:1fr}
+      .values-header{grid-template-columns:1fr;gap:30px}
+      .value{grid-template-columns:70px 1fr}
+      .value p{grid-column:2}
+      .future{min-height:620px}
+      .future-orbit{right:-360px}
+      .footer-main{flex-direction:column}
     }
 
-
-    /* =========================================================
-       RESPONSIVE — MOBILE
-    ========================================================= */
-
-    @media(max-width:600px){
-
-      :root{
-        --container:88vw;
-      }
-
-      .hero-title{
-        font-size:clamp(52px,15vw,76px);
-
-        letter-spacing:-.07em;
-      }
-
-      .hero-description{
-        font-size:14px;
-      }
-
-      .hero-bottom{
-        flex-wrap:wrap;
-
-        justify-content:flex-start;
-
-        text-align:left;
-
-        gap:22px 30px;
-      }
-
-      .section{
-        padding:95px 0;
-      }
-
-      .intro-heading,
-      .mission-heading,
-      .values-heading,
-      .journey-heading,
-      .future-heading,
-      .cta-heading{
-        letter-spacing:-.06em;
-      }
-
-      .intro-heading{
-        font-size:clamp(51px,14vw,75px);
-      }
-
-      .intro-copy{
-        font-size:14px;
-      }
-
-      .intro-highlight{
-        font-size:18px;
-
-        padding:23px;
-      }
-
-      .principle{
-        min-height:185px;
-      }
-
-      .mission-card{
-        min-height:300px;
-
-        padding:28px;
-      }
-
-      .mission-card h3{
-        margin-top:70px;
-
-        font-size:32px;
-      }
-
-      .value{
-        grid-template-columns:40px 1fr;
-
-        gap:18px;
-
-        padding:34px 0;
-      }
-
-      .value p{
-        grid-column:2;
-
-        font-size:12px;
-      }
-
-      .value h3{
-        font-size:30px;
-      }
-
-      .timeline-item h3{
-        font-size:29px;
-      }
-
-      .future{
-        min-height:650px;
-      }
-
-      .future-orbit{
-        width:600px;
-        height:600px;
-
-        right:-440px;
-      }
-
-      .cta{
-        min-height:560px;
-
-        padding:80px 0;
-      }
-
-      .cta-heading{
-        font-size:clamp(59px,16vw,78px);
-      }
-
-      .footer-links{
-        width:100%;
-
-        justify-content:space-between;
-
-        gap:30px;
-      }
-
-      .footer-bottom{
-        flex-direction:column;
-
-        gap:10px;
-      }
-
+    @media (max-width:600px){
+      :root{--container:min(100% - 38px,1240px)}
+      .section{padding:100px 0}
+      .brand img{width:122px}
+      .hero{min-height:780px}
+      .hero-content{padding-top:115px}
+      .hero-title{font-size:clamp(56px,17vw,92px)}
+      .hero-description{font-size:14px;margin-top:28px}
+      .hero-bottom{gap:25px;flex-wrap:wrap;margin-top:30px}
+      .hero-scroll{left:19px;bottom:22px}
+      .orbit-system{width:360px;height:360px;right:-210px;top:69%;opacity:.42}
+      .orbit.one{width:360px;height:360px}
+      .orbit.two{width:255px;height:255px}
+      .orbit.three{width:165px;height:165px}
+      .orbit-core{width:100px;height:100px;padding:16px}
+      .intro-heading,.mission-heading,.journey-heading,.future-heading{font-size:clamp(52px,16vw,78px)}
+      .principle{padding:38px 0}
+      .principle h3{margin-top:30px;font-size:35px}
+      .mission-card{min-height:260px;padding:30px 25px}
+      .mission-card h3{margin-top:42px;font-size:32px}
+      .value{grid-template-columns:55px 1fr;gap:18px;padding:30px 0}
+      .value h3{font-size:32px}
+      .value p{grid-column:2}
+      .timeline{padding-left:20px;margin-top:70px}
+      .timeline-item{padding-left:38px}
+      .footer-links{gap:45px}
+      .footer-bottom{flex-direction:column;gap:12px}
+      .cta{min-height:540px}
     }
 
-
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
-
-    @media(prefers-reduced-motion:reduce){
-
-      html{
-        scroll-behavior:auto;
-      }
-
-      *,
-      *::before,
-      *::after{
-        animation-duration:.01ms!important;
-        animation-iteration-count:1!important;
-
-        transition-duration:.01ms!important;
-      }
-
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+      .reveal{opacity:1;transform:none}
     }
-
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Arovia Pharma Pvt. Ltd.",
-    "url": "https://aroviapharma.in/",
-    "logo": "https://aroviapharma.in/logo%202.jpeg",
-    "description": "Arovia Pharma Pvt. Ltd. is committed to delivering high-quality pharmaceutical products and healthcare solutions."
-  }
-  </script>
 </head>
-
 
 <body class="loading">
 
-  <!-- =======================================================
-       LOADER
-  ======================================================== -->
-
   <div class="loader" id="loader">
-
     <div class="loader-content">
-
-      <div class="loader-logo">
-        <img src="logo%202.jpeg" alt="Arovia Pharma">
-      </div>
-
+      <div class="loader-logo"><img src="logo%202.jpeg" alt="Arovia Pharma"></div>
       <div class="loader-line"></div>
-
-      <div class="loader-text">
-        AROVIA PHARMA
-      </div>
-
+      <div class="loader-text">AROVIA PHARMA</div>
     </div>
-
   </div>
 
-
-  <!-- =======================================================
-       ACCESSIBILITY
-  ======================================================== -->
-
-  <a href="#main-content" class="skip-link">
-    Skip to content
-  </a>
-
-
-  <!-- =======================================================
-       CURSOR
-  ======================================================== -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <div class="cursor" aria-hidden="true"></div>
-
   <div class="cursor-ring" aria-hidden="true"></div>
 
-
-  <!-- =======================================================
-       SCROLL PROGRESS
-  ======================================================== -->
-
-  <div class="scroll-progress" aria-hidden="true">
-    <span></span>
-  </div>
-
-
-  <!-- =======================================================
-       NAVIGATION
-  ======================================================== -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="nav" id="siteNav">
-
-    <a
-      href="index.html"
-      class="brand"
-      aria-label="Arovia Pharma Home"
-    >
-      <img
-        src="logo%20(1).jpeg"
-        alt="Arovia Pharma"
-      >
+    <a href="index.html" class="brand" aria-label="Arovia Pharma Home">
+      <img src="logo%20(1).jpeg" alt="Arovia Pharma">
     </a>
 
-
-    <nav
-      class="nav-links"
-      id="navLinks"
-      aria-label="Primary navigation"
-    >
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a
-        href="about.html"
-        class="active"
-        aria-current="page"
-      >
-        About
-      </a>
-
-      <a href="products.html">
-        Products
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
+    <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active" aria-current="page">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
-
-    <button
-      class="menu"
-      id="menu"
-      type="button"
-      aria-label="Open navigation"
-      aria-controls="navLinks"
-      aria-expanded="false"
-    >
-
-      <span></span>
-      <span></span>
-
+    <button class="menu" id="menu" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
+      <span></span><span></span>
     </button>
-
   </header>
-
-
-  <!-- =======================================================
-       MAIN
-  ======================================================== -->
 
   <main id="main-content">
 
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
     <section class="hero" id="top">
-
-      <canvas
-        id="particleCanvas"
-        aria-hidden="true"
-      ></canvas>
-
-      <div
-        class="hero-grid"
-        aria-hidden="true"
-      ></div>
-
-      <div
-        class="hero-light"
-        aria-hidden="true"
-      ></div>
-
+      <canvas id="particleCanvas" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-light" aria-hidden="true"></div>
 
       <div class="hero-content">
-
-        <div class="hero-kicker">
-          THE AROVIA STORY
-        </div>
-
+        <div class="hero-kicker">THE AROVIA STORY</div>
 
         <h1 class="hero-title">
-
-          <span class="outline">
-            BEYOND
-          </span>
-
-          <span class="accent">
-            MEDICINE.
-          </span>
-
+          <span class="outline">BEYOND</span>
+          <span class="accent">MEDICINE.</span>
         </h1>
 
-
         <p class="hero-description">
-
-          Arovia Pharma is built around a simple idea —
+          Arovia Pharma is built around a simple idea:
           healthcare should always move forward with
           quality, responsibility and purpose.
-
         </p>
-
 
         <div class="hero-bottom">
-
           <div class="hero-info">
-
-            <small>
-              PURPOSE
-            </small>
-
-            <strong>
-              Healthcare with meaning
-            </strong>
-
+            <small>PURPOSE</small>
+            <strong>Healthcare with meaning</strong>
           </div>
-
-
           <div class="hero-info">
-
-            <small>
-              APPROACH
-            </small>
-
-            <strong>
-              Quality · Trust · Progress
-            </strong>
-
+            <small>APPROACH</small>
+            <strong>Quality · Trust · Progress</strong>
           </div>
-
         </div>
-
       </div>
 
-
-      <!-- ORBITS -->
-
-      <div
-        class="orbit-system"
-        aria-hidden="true"
-      >
-
+      <div class="orbit-system" aria-hidden="true">
         <div class="orbit one"></div>
-
         <div class="orbit two"></div>
-
         <div class="orbit three"></div>
-
-        <div class="orbit-core">
-
-          <img
-            src="logo%202.jpeg"
-            alt=""
-          >
-
-        </div>
-
+        <div class="orbit-core"><img src="logo%202.jpeg" alt=""></div>
       </div>
-
 
       <div class="hero-scroll">
-
         <span class="hero-scroll-line"></span>
-
         SCROLL TO EXPLORE
-
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         INTRODUCTION
-    ====================================================== -->
-
-    <section
-      class="section intro"
-      id="begin"
-    >
-
+    <section class="section intro" id="begin">
       <div class="container">
-
         <div class="intro-grid">
-
-
           <div class="reveal">
-
-            <div class="section-number">
-              01
-            </div>
-
-            <span class="eyebrow">
-              WHO WE ARE
-            </span>
-
-            <h2 class="intro-heading">
-
-              A company
-
-              <span>
-                with purpose.
-              </span>
-
-            </h2>
-
+            <div class="section-number">01</div>
+            <span class="eyebrow">WHO WE ARE</span>
+            <h2 class="intro-heading">A company <span>with purpose.</span></h2>
           </div>
-
 
           <div class="intro-copy reveal">
-
-            <p>
-              Arovia Pharma Pvt. Ltd. is a pharmaceutical
-              company focused on the development and
-              delivery of dependable healthcare solutions.
-            </p>
-
-            <p>
-              Our philosophy is straightforward:
-              understand the responsibility behind every
-              product, maintain a commitment to quality,
-              and continue looking for better ways forward.
-            </p>
-
+            <p>Arovia Pharma Pvt. Ltd. is a pharmaceutical company focused on the development and delivery of dependable healthcare solutions.</p>
+            <p>Our philosophy is straightforward: understand the responsibility behind every product, maintain a commitment to quality, and continue looking for better ways forward.</p>
             <div class="intro-highlight">
-
-              Better healthcare isn't just about
-              what we create.
-
-              <br>
-
+              Better healthcare isn't just about what we create.<br>
               It's about why we create it.
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- =====================================================
-         PRINCIPLES
-    ====================================================== -->
 
     <section class="principles">
-
       <div class="container">
-
         <div class="principle-grid">
-
-
           <article class="principle reveal">
-
-            <div class="principle-number">
-              01
-            </div>
-
-            <h3>
-              Quality
-            </h3>
-
-            <p>
-              A commitment to dependable standards
-              and responsible work.
-            </p>
-
+            <div class="principle-number">01</div>
+            <h3>Quality</h3>
+            <p>A commitment to dependable standards and responsible work.</p>
           </article>
-
-
           <article class="principle reveal">
-
-            <div class="principle-number">
-              02
-            </div>
-
-            <h3>
-              Trust
-            </h3>
-
-            <p>
-              Building meaningful relationships through
-              consistency and accountability.
-            </p>
-
+            <div class="principle-number">02</div>
+            <h3>Trust</h3>
+            <p>Building meaningful relationships through consistency and accountability.</p>
           </article>
-
-
           <article class="principle reveal">
-
-            <div class="principle-number">
-              03
-            </div>
-
-            <h3>
-              Progress
-            </h3>
-
-            <p>
-              Continuing to learn, improve and adapt
-              as healthcare evolves.
-            </p>
-
+            <div class="principle-number">03</div>
+            <h3>Progress</h3>
+            <p>Continuing to learn, improve and adapt as healthcare evolves.</p>
           </article>
-
-
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         MISSION
-    ====================================================== -->
-
-    <section
-      class="section mission dark"
-      id="mission"
-    >
-
+    <section class="section mission dark" id="mission">
       <div class="container">
+        <div class="section-number">02</div>
+        <span class="eyebrow">OUR MISSION</span>
 
-        <div class="section-number">
-          02
-        </div>
-
-        <span class="eyebrow">
-          OUR MISSION
-        </span>
-
-
-        <h2 class="mission-heading reveal">
-
-          Make healthcare
-
-          <span>
-            more meaningful.
-          </span>
-
-        </h2>
-
+        <h2 class="mission-heading reveal">Make healthcare <span>more meaningful.</span></h2>
 
         <p class="mission-description reveal">
-
-          Our mission is to contribute to healthcare
-          through pharmaceutical solutions shaped by
-          quality, reliability, responsibility and
-          continuous improvement.
-
+          Our mission is to contribute to healthcare through pharmaceutical solutions shaped by
+          quality, reliability, responsibility and continuous improvement.
         </p>
-
 
         <div class="mission-grid">
-
-
           <article class="mission-card reveal">
-
-            <div class="mission-card-number">
-              01 / QUALITY
-            </div>
-
-            <h3>
-              Do it right.
-            </h3>
-
-            <p>
-              Quality is more than a target.
-              It is a responsibility that guides
-              the way we approach our work.
-            </p>
-
-            <div class="mission-card-arrow">
-              ↗
-            </div>
-
+            <div class="mission-card-number">01 / QUALITY</div>
+            <h3>Do it right.</h3>
+            <p>Quality is more than a target. It is a responsibility that guides the way we approach our work.</p>
+            <div class="mission-card-arrow">↗</div>
           </article>
 
-
           <article class="mission-card reveal">
-
-            <div class="mission-card-number">
-              02 / PEOPLE
-            </div>
-
-            <h3>
-              People first.
-            </h3>
-
-            <p>
-              Every healthcare product ultimately
-              connects back to people and the
-              communities they belong to.
-            </p>
-
-            <div class="mission-card-arrow">
-              ↗
-            </div>
-
+            <div class="mission-card-number">02 / PEOPLE</div>
+            <h3>People first.</h3>
+            <p>Every healthcare product ultimately connects back to people and the communities they belong to.</p>
+            <div class="mission-card-arrow">↗</div>
           </article>
 
-
           <article class="mission-card reveal">
-
-            <div class="mission-card-number">
-              03 / PROGRESS
-            </div>
-
-            <h3>
-              Keep moving.
-            </h3>
-
-            <p>
-              Healthcare never stays still.
-              Our mindset must evolve with it.
-            </p>
-
-            <div class="mission-card-arrow">
-              ↗
-            </div>
-
+            <div class="mission-card-number">03 / PROGRESS</div>
+            <h3>Keep moving.</h3>
+            <p>Healthcare never stays still. Our mindset must evolve with it.</p>
+            <div class="mission-card-arrow">↗</div>
           </article>
 
-
           <article class="mission-card reveal">
-
-            <div class="mission-card-number">
-              04 / TRUST
-            </div>
-
-            <h3>
-              Earn it.
-            </h3>
-
-            <p>
-              Trust grows through reliability,
-              transparency and responsible action.
-            </p>
-
-            <div class="mission-card-arrow">
-              ↗
-            </div>
-
+            <div class="mission-card-number">04 / TRUST</div>
+            <h3>Earn it.</h3>
+            <p>Trust grows through reliability, transparency and responsible action.</p>
+            <div class="mission-card-arrow">↗</div>
           </article>
-
-
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         VALUES
-    ====================================================== -->
-
-    <section
-      class="section values"
-      id="values"
-    >
-
+    <section class="section values" id="values">
       <div class="container">
-
-
         <div class="values-header">
-
           <div class="reveal">
-
-            <div class="section-number">
-              03
-            </div>
-
-            <span class="eyebrow">
-              OUR VALUES
-            </span>
-
-            <h2 class="values-heading">
-
-              Three principles.
-
-              <span>
-                One direction.
-              </span>
-
-            </h2>
-
+            <div class="section-number">03</div>
+            <span class="eyebrow">OUR VALUES</span>
+            <h2 class="values-heading">Three principles. <span>One direction.</span></h2>
           </div>
-
-
-          <p class="values-intro reveal">
-
-            The principles that influence
-            how we think, work and grow.
-
-          </p>
-
+          <p class="values-intro reveal">The principles that influence how we think, work and grow.</p>
         </div>
-
 
         <div class="value-list">
-
-
           <article class="value reveal">
-
-            <div class="value-number">
-              01
-            </div>
-
-            <h3>
-              Quality
-            </h3>
-
-            <p>
-              Delivering dependable pharmaceutical
-              solutions through consistency,
-              discipline and responsibility.
-            </p>
-
+            <div class="value-number">01</div>
+            <h3>Quality</h3>
+            <p>Delivering dependable pharmaceutical solutions through consistency, discipline and responsibility.</p>
           </article>
-
-
           <article class="value reveal">
-
-            <div class="value-number">
-              02
-            </div>
-
-            <h3>
-              Trust
-            </h3>
-
-            <p>
-              Building relationships through integrity,
-              reliability and accountability.
-            </p>
-
+            <div class="value-number">02</div>
+            <h3>Trust</h3>
+            <p>Building relationships through integrity, reliability and accountability.</p>
           </article>
-
-
           <article class="value reveal">
-
-            <div class="value-number">
-              03
-            </div>
-
-            <h3>
-              Innovation
-            </h3>
-
-            <p>
-              Remaining open to better ideas,
-              better approaches and new possibilities.
-            </p>
-
+            <div class="value-number">03</div>
+            <h3>Innovation</h3>
+            <p>Remaining open to better ideas, better approaches and new possibilities.</p>
           </article>
-
-
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         JOURNEY
-    ====================================================== -->
-
-    <section
-      class="section journey dark"
-      id="journey"
-    >
-
+    <section class="section journey dark" id="journey">
       <div class="container">
-
-
         <div class="reveal">
-
-          <div class="section-number">
-            04
-          </div>
-
-          <span class="eyebrow">
-            OUR JOURNEY
-          </span>
-
-          <h2 class="journey-heading">
-
-            Starting small.
-
-            <span>
-              Thinking ahead.
-            </span>
-
-          </h2>
-
+          <div class="section-number">04</div>
+          <span class="eyebrow">OUR JOURNEY</span>
+          <h2 class="journey-heading">Starting small. <span>Thinking ahead.</span></h2>
         </div>
-
 
         <div class="timeline">
-
-
           <article class="timeline-item reveal">
-
-            <div
-              class="timeline-dot"
-              aria-hidden="true"
-            ></div>
-
-            <div class="timeline-label">
-              BEGIN
-            </div>
-
-            <h3>
-              A clear purpose.
-            </h3>
-
-            <p>
-              Arovia begins with an ambition to
-              contribute to healthcare while
-              staying grounded in quality,
-              responsibility and purpose.
-            </p>
-
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-label">BEGIN</div>
+            <h3>A clear purpose.</h3>
+            <p>Arovia begins with an ambition to contribute to healthcare while staying grounded in quality, responsibility and purpose.</p>
           </article>
 
-
           <article class="timeline-item reveal">
-
-            <div
-              class="timeline-dot"
-              aria-hidden="true"
-            ></div>
-
-            <div class="timeline-label">
-              BUILD
-            </div>
-
-            <h3>
-              Create the foundation.
-            </h3>
-
-            <p>
-              Building the foundations of the
-              company, its portfolio and its
-              relationships with a long-term mindset.
-            </p>
-
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-label">BUILD</div>
+            <h3>Create the foundation.</h3>
+            <p>Building the foundations of the company, its portfolio and its relationships with a long-term mindset.</p>
           </article>
 
-
           <article class="timeline-item reveal">
-
-            <div
-              class="timeline-dot"
-              aria-hidden="true"
-            ></div>
-
-            <div class="timeline-label">
-              GROW
-            </div>
-
-            <h3>
-              Expand the path.
-            </h3>
-
-            <p>
-              Strengthening capabilities and
-              continuing to develop while remaining
-              connected to our core principles.
-            </p>
-
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-label">GROW</div>
+            <h3>Expand the path.</h3>
+            <p>Strengthening capabilities and continuing to develop while remaining connected to our core principles.</p>
           </article>
 
-
           <article class="timeline-item reveal">
-
-            <div
-              class="timeline-dot"
-              aria-hidden="true"
-            ></div>
-
-            <div class="timeline-label">
-              FUTURE
-            </div>
-
-            <h3>
-              Bigger possibilities.
-            </h3>
-
-            <p>
-              Looking ahead with a focus on
-              continuous improvement, responsible
-              growth and meaningful contribution.
-            </p>
-
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-label">FUTURE</div>
+            <h3>Bigger possibilities.</h3>
+            <p>Looking ahead with a focus on continuous improvement, responsible growth and meaningful contribution.</p>
           </article>
-
-
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         FUTURE
-    ====================================================== -->
-
-    <section
-      class="future"
-      id="future"
-    >
-
-      <div
-        class="future-orbit"
-        aria-hidden="true"
-      ></div>
-
-
+    <section class="future" id="future">
+      <div class="future-orbit" aria-hidden="true"></div>
       <div class="container future-content">
+        <div class="section-number">05</div>
+        <span class="eyebrow">LOOKING AHEAD</span>
 
-        <div class="section-number">
-          05
-        </div>
-
-        <span class="eyebrow">
-          LOOKING AHEAD
-        </span>
-
-
-        <h2 class="future-heading reveal">
-
-          The future is
-
-          <span>
-            still unfolding.
-          </span>
-
-        </h2>
-
+        <h2 class="future-heading reveal">The future is <span>still unfolding.</span></h2>
 
         <p class="future-description reveal">
-
-          Where Arovia is today is only one part
-          of the story.
-
+          Where Arovia is today is only one part of the story.
           <br><br>
-
-          The bigger opportunity lies in what comes next:
-          learning more, improving continuously and
-          building a stronger path forward.
-
+          The bigger opportunity lies in what comes next: learning more, improving continuously and building a stronger path forward.
         </p>
-
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         CTA
-    ====================================================== -->
-
     <section class="cta">
-
       <div class="cta-content reveal">
-
-        <span class="eyebrow">
-          THE NEXT CHAPTER
-        </span>
-
-
-        <h2 class="cta-heading">
-
-          Discover
-
-          <span>
-            Arovia.
-          </span>
-
-        </h2>
-
-
-        <p class="cta-description">
-          Explore our pharmaceutical portfolio.
-        </p>
-
-
-        <a
-          href="products.html"
-          class="cta-button"
-        >
-
-          <span>
-            Explore Products
-          </span>
-
-          <b>
-            ↗
-          </b>
-
+        <span class="eyebrow">THE NEXT CHAPTER</span>
+        <h2 class="cta-heading">Discover <span>Arovia.</span></h2>
+        <p class="cta-description">Explore our pharmaceutical portfolio.</p>
+        <a href="products.html" class="cta-button">
+          <span>Explore Products</span>
+          <b>↗</b>
         </a>
-
       </div>
-
     </section>
 
   </main>
 
-
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
-
   <footer>
-
     <div class="container">
-
       <div class="footer-main">
-
-
         <div class="footer-brand">
-
-          <img
-            src="logo%202.jpeg"
-            alt="Arovia Pharma"
-            class="footer-logo"
-          >
-
-          <p>
-            The Path To Health.
-          </p>
-
+          <img src="logo%202.jpeg" alt="Arovia Pharma" class="footer-logo">
+          <p>The Path To Health.</p>
         </div>
-
 
         <div class="footer-links">
-
-
           <div class="footer-column">
-
-            <span>
-              EXPLORE
-            </span>
-
-            <a href="index.html">
-              Home
-            </a>
-
-            <a href="about.html">
-              About
-            </a>
-
-            <a href="products.html">
-              Products
-            </a>
-
-            <a href="contact.html">
-              Contact
-            </a>
-
+            <span>EXPLORE</span>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
           </div>
 
-
           <div class="footer-column">
-
-            <span>
-              ABOUT
-            </span>
-
-            <a href="#mission">
-              Mission
-            </a>
-
-            <a href="#values">
-              Values
-            </a>
-
-            <a href="#journey">
-              Journey
-            </a>
-
-            <a href="#future">
-              Future
-            </a>
-
+            <span>ABOUT</span>
+            <a href="#mission">Mission</a>
+            <a href="#values">Values</a>
+            <a href="#journey">Journey</a>
+            <a href="#future">Future</a>
           </div>
-
-
         </div>
-
       </div>
-
 
       <div class="footer-bottom">
-
-        <span>
-          © 2026 Arovia Pharma Pvt. Ltd.
-        </span>
-
-        <span>
-          THE PATH TO HEALTH
-        </span>
-
+        <span>© 2026 Arovia Pharma Pvt. Ltd.</span>
+        <span>THE PATH TO HEALTH</span>
       </div>
-
     </div>
-
   </footer>
 
-
-  <!-- =======================================================
-       JAVASCRIPT
-  ======================================================== -->
-
   <script>
-
     (() => {
-
       "use strict";
 
+      const body = document.body;
+      const loader = document.getElementById("loader");
+      const nav = document.getElementById("siteNav");
+      const menu = document.getElementById("menu");
+      const navLinks = document.getElementById("navLinks");
+      const progress = document.querySelector(".scroll-progress span");
+      const cursor = document.querySelector(".cursor");
+      const cursorRing = document.querySelector(".cursor-ring");
+      const canvas = document.getElementById("particleCanvas");
+      const hero = document.querySelector(".hero");
+      const heroContent = document.querySelector(".hero-content");
+      const orbitSystem = document.querySelector(".orbit-system");
+      const heroLight = document.querySelector(".hero-light");
+      const futureOrbit = document.querySelector(".future-orbit");
 
-      /* =====================================================
-         ELEMENTS
-      ====================================================== */
-
-      const body =
-        document.body;
-
-      const loader =
-        document.getElementById("loader");
-
-      const nav =
-        document.getElementById("siteNav");
-
-      const menu =
-        document.getElementById("menu");
-
-      const navLinks =
-        document.getElementById("navLinks");
-
-      const progress =
-        document.querySelector(
-          ".scroll-progress span"
-        );
-
-      const cursor =
-        document.querySelector(".cursor");
-
-      const cursorRing =
-        document.querySelector(".cursor-ring");
-
-      const canvas =
-        document.getElementById("particleCanvas");
-
-      const hero =
-        document.querySelector(".hero");
-
-      const heroContent =
-        document.querySelector(".hero-content");
-
-      const orbitSystem =
-        document.querySelector(".orbit-system");
-
-      const heroLight =
-        document.querySelector(".hero-light");
-
-      const futureOrbit =
-        document.querySelector(".future-orbit");
-
-
-      /* =====================================================
-         MOTION SETTINGS
-      ====================================================== */
-
-      const reducedMotion =
-        window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-      const finePointer =
-        window.matchMedia(
-          "(hover:hover) and (pointer:fine)"
-        ).matches;
-
-
-      /* =====================================================
-         LOADER
-      ====================================================== */
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const finePointer = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
 
       const hideLoader = () => {
-
         body.classList.remove("loading");
-
         loader.classList.add("hidden");
-
       };
 
+      window.addEventListener("load", () => setTimeout(hideLoader, 450), {once:true});
+      setTimeout(hideLoader, 2200);
 
-      window.addEventListener(
-        "load",
-        () => {
-
-          setTimeout(
-            hideLoader,
-            450
-          );
-
-        },
-        { once:true }
-      );
-
-
-      /* FAILSAFE */
-
-      setTimeout(
-        hideLoader,
-        2200
-      );
-
-
-      /* =====================================================
-         NAVIGATION
-      ====================================================== */
-
-      const updateNav = () => {
-
-        nav.classList.toggle(
-          "scrolled",
-          window.scrollY > 45
-        );
-
-      };
-
-
+      const updateNav = () => nav.classList.toggle("scrolled", window.scrollY > 45);
       updateNav();
-
-
-      window.addEventListener(
-        "scroll",
-        updateNav,
-        { passive:true }
-      );
-
-
-      /* MOBILE MENU */
+      window.addEventListener("scroll", updateNav, {passive:true});
 
       const closeMenu = () => {
-
         navLinks.classList.remove("open");
-
         menu.classList.remove("open");
-
-        menu.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menu.setAttribute(
-          "aria-label",
-          "Open navigation"
-        );
-
-        body.classList.remove(
-          "menu-open"
-        );
-
+        menu.setAttribute("aria-expanded","false");
+        menu.setAttribute("aria-label","Open navigation");
+        body.classList.remove("menu-open");
       };
 
-
-      menu.addEventListener(
-        "click",
-        () => {
-
-          const isOpen =
-            navLinks.classList.contains("open");
-
-
-          if(isOpen){
-
-            closeMenu();
-
-          }else{
-
-            navLinks.classList.add("open");
-
-            menu.classList.add("open");
-
-            menu.setAttribute(
-              "aria-expanded",
-              "true"
-            );
-
-            menu.setAttribute(
-              "aria-label",
-              "Close navigation"
-            );
-
-            body.classList.add(
-              "menu-open"
-            );
-
-          }
-
+      menu.addEventListener("click", () => {
+        const open = navLinks.classList.contains("open");
+        if(open) closeMenu();
+        else{
+          navLinks.classList.add("open");
+          menu.classList.add("open");
+          menu.setAttribute("aria-expanded","true");
+          menu.setAttribute("aria-label","Close navigation");
+          body.classList.add("menu-open");
         }
-      );
+      });
 
-
-      navLinks
-        .querySelectorAll("a")
-        .forEach(link => {
-
-          link.addEventListener(
-            "click",
-            closeMenu
-          );
-
-        });
-
-
-      document.addEventListener(
-        "keydown",
-        event => {
-
-          if(event.key === "Escape"){
-
-            closeMenu();
-
-          }
-
-        }
-      );
-
-
-      window.addEventListener(
-        "resize",
-        () => {
-
-          if(window.innerWidth > 900){
-
-            closeMenu();
-
-          }
-
-        }
-      );
-
-
-      /* =====================================================
-         SCROLL PROGRESS
-      ====================================================== */
+      navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", e => { if(e.key === "Escape") closeMenu(); });
+      window.addEventListener("resize", () => { if(window.innerWidth > 900) closeMenu(); });
 
       const updateProgress = () => {
-
-        const documentHeight =
-          document.documentElement.scrollHeight;
-
-        const viewportHeight =
-          window.innerHeight;
-
-        const maxScroll =
-          documentHeight - viewportHeight;
-
-        const percentage =
-          maxScroll > 0
-            ? window.scrollY / maxScroll
-            : 0;
-
-
-        progress.style.width =
-          `${percentage * 100}%`;
-
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
       };
-
-
       updateProgress();
+      window.addEventListener("scroll", updateProgress, {passive:true});
+      window.addEventListener("resize", updateProgress);
 
-
-      window.addEventListener(
-        "scroll",
-        updateProgress,
-        { passive:true }
-      );
-
-
-      window.addEventListener(
-        "resize",
-        updateProgress
-      );
-
-
-      /* =====================================================
-         REVEAL ANIMATION
-      ====================================================== */
-
-      const reveals =
-        document.querySelectorAll(".reveal");
-
-
-      if(
-        reducedMotion ||
-        !("IntersectionObserver" in window)
-      ){
-
-        reveals.forEach(
-          element =>
-            element.classList.add("visible")
-        );
-
+      const reveals = document.querySelectorAll(".reveal");
+      if(reducedMotion || !("IntersectionObserver" in window)){
+        reveals.forEach(el => el.classList.add("visible"));
       }else{
-
-        const observer =
-          new IntersectionObserver(
-            entries => {
-
-              entries.forEach(entry => {
-
-                if(!entry.isIntersecting)
-                  return;
-
-
-                entry.target.classList.add(
-                  "visible"
-                );
-
-
-                observer.unobserve(
-                  entry.target
-                );
-
-              });
-
-            },
-            {
-              threshold:.12,
-
-              rootMargin:
-                "0px 0px -40px"
-            }
-          );
-
-
-        reveals.forEach(
-          element =>
-            observer.observe(element)
-        );
-
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if(!entry.isIntersecting) return;
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          });
+        }, {threshold:.12, rootMargin:"0px 0px -40px"});
+        reveals.forEach(el => observer.observe(el));
       }
 
+      if(finePointer && !reducedMotion){
+        let mouseX = innerWidth / 2, mouseY = innerHeight / 2;
+        let ringX = mouseX, ringY = mouseY;
 
-      /* =====================================================
-         CUSTOM CURSOR
-      ====================================================== */
-
-      if(
-        finePointer &&
-        !reducedMotion
-      ){
-
-        let mouseX =
-          window.innerWidth / 2;
-
-        let mouseY =
-          window.innerHeight / 2;
-
-        let ringX =
-          mouseX;
-
-        let ringY =
-          mouseY;
-
-
-        window.addEventListener(
-          "pointermove",
-          event => {
-
-            mouseX =
-              event.clientX;
-
-            mouseY =
-              event.clientY;
-
-
-            cursor.style.left =
-              `${mouseX}px`;
-
-            cursor.style.top =
-              `${mouseY}px`;
-
-          },
-          { passive:true }
-        );
-
+        window.addEventListener("pointermove", e => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          cursor.style.left = `${mouseX}px`;
+          cursor.style.top = `${mouseY}px`;
+        }, {passive:true});
 
         const animateCursor = () => {
-
-          ringX +=
-            (mouseX - ringX) * .14;
-
-          ringY +=
-            (mouseY - ringY) * .14;
-
-
-          cursorRing.style.left =
-            `${ringX}px`;
-
-          cursorRing.style.top =
-            `${ringY}px`;
-
-
-          requestAnimationFrame(
-            animateCursor
-          );
-
+          ringX += (mouseX - ringX) * .14;
+          ringY += (mouseY - ringY) * .14;
+          cursorRing.style.left = `${ringX}px`;
+          cursorRing.style.top = `${ringY}px`;
+          requestAnimationFrame(animateCursor);
         };
-
-
         animateCursor();
 
-
-        document
-          .querySelectorAll(
-            "a,button,.mission-card,.value"
-          )
-          .forEach(element => {
-
-            element.addEventListener(
-              "mouseenter",
-              () => {
-
-                cursorRing.classList.add(
-                  "large"
-                );
-
-              }
-            );
-
-
-            element.addEventListener(
-              "mouseleave",
-              () => {
-
-                cursorRing.classList.remove(
-                  "large"
-                );
-
-              }
-            );
-
-          });
-
+        document.querySelectorAll("a,button,.mission-card,.value,.principle").forEach(el => {
+          el.addEventListener("mouseenter", () => cursorRing.classList.add("large"));
+          el.addEventListener("mouseleave", () => cursorRing.classList.remove("large"));
+        });
       }
 
-
-      /* =====================================================
-         HERO PARALLAX
-      ====================================================== */
-
-      if(
-        finePointer &&
-        !reducedMotion
-      ){
-
+      if(finePointer && !reducedMotion){
         let frame = 0;
-
-
-        window.addEventListener(
-          "pointermove",
-          event => {
-
-            if(frame)
-              return;
-
-
-            frame =
-              requestAnimationFrame(
-                () => {
-
-                  const x =
-                    event.clientX /
-                    window.innerWidth -
-                    .5;
-
-                  const y =
-                    event.clientY /
-                    window.innerHeight -
-                    .5;
-
-
-                  orbitSystem.style.marginLeft =
-                    `${x * 20}px`;
-
-                  orbitSystem.style.marginTop =
-                    `${y * 20}px`;
-
-
-                  heroLight.style.marginLeft =
-                    `${x * -30}px`;
-
-                  heroLight.style.marginTop =
-                    `${y * -30}px`;
-
-
-                  frame = 0;
-
-                }
-              );
-
-          },
-          { passive:true }
-        );
-
+        window.addEventListener("pointermove", event => {
+          if(frame) return;
+          frame = requestAnimationFrame(() => {
+            const x = event.clientX / innerWidth - .5;
+            const y = event.clientY / innerHeight - .5;
+            orbitSystem.style.marginLeft = `${x * 20}px`;
+            orbitSystem.style.marginTop = `${y * 20}px`;
+            heroLight.style.marginLeft = `${x * -30}px`;
+            heroLight.style.marginTop = `${y * -30}px`;
+            frame = 0;
+          });
+        }, {passive:true});
       }
-
-
-      /* =====================================================
-         HERO SCROLL
-      ====================================================== */
 
       const updateHero = () => {
-
-        if(reducedMotion)
-          return;
-
-
-        const heroHeight =
-          Math.max(
-            1,
-            hero.offsetHeight * .72
-          );
-
-
-        const amount =
-          Math.min(
-            1,
-            window.scrollY / heroHeight
-          );
-
-
-        heroContent.style.opacity =
-          String(1 - amount);
-
-
-        heroContent.style.transform =
-          `translateY(${-amount * 90}px)`;
-
-
-        orbitSystem.style.opacity =
-          String(
-            Math.max(
-              .15,
-              1 - amount * .75
-            )
-          );
-
+        if(reducedMotion) return;
+        const amount = Math.min(1, window.scrollY / Math.max(1, hero.offsetHeight * .72));
+        heroContent.style.opacity = String(1 - amount);
+        heroContent.style.transform = `translateY(${-amount * 90}px)`;
+        orbitSystem.style.opacity = String(Math.max(.15, 1 - amount * .75));
       };
-
-
       updateHero();
+      window.addEventListener("scroll", updateHero, {passive:true});
 
-
-      window.addEventListener(
-        "scroll",
-        updateHero,
-        { passive:true }
-      );
-
-
-      /* =====================================================
-         FUTURE ORBIT
-      ====================================================== */
-
-      if(
-        !reducedMotion &&
-        futureOrbit
-      ){
-
+      if(!reducedMotion && futureOrbit){
         const updateFutureOrbit = () => {
-
-          const rect =
-            futureOrbit.getBoundingClientRect();
-
-
-          const center =
-            window.innerHeight / 2;
-
-
-          const distance =
-            (
-              rect.top +
-              rect.height / 2 -
-              center
-            ) /
-            window.innerHeight;
-
-
-          futureOrbit.style.transform =
-            `rotate(${distance * 120}deg)`;
-
+          const rect = futureOrbit.getBoundingClientRect();
+          const distance = (rect.top + rect.height / 2 - innerHeight / 2) / innerHeight;
+          futureOrbit.style.transform = `translateY(-50%) rotate(${distance * 120}deg)`;
         };
-
-
         updateFutureOrbit();
-
-
-        window.addEventListener(
-          "scroll",
-          updateFutureOrbit,
-          { passive:true }
-        );
-
+        window.addEventListener("scroll", updateFutureOrbit, {passive:true});
       }
 
+      const context = canvas ? canvas.getContext("2d", {alpha:true}) : null;
 
-      /* =====================================================
-         PARTICLE CANVAS
-      ====================================================== */
-
-      const context =
-        canvas
-          ? canvas.getContext(
-              "2d",
-              { alpha:true }
-            )
-          : null;
-
-
-      if(
-        !context ||
-        reducedMotion
-      ){
-
-        if(canvas){
-
-          canvas.style.display =
-            "none";
-
-        }
-
+      if(!context || reducedMotion){
+        if(canvas) canvas.style.display = "none";
       }else{
-
         let particles = [];
-
-        let particleCount =
-          window.innerWidth < 700
-            ? 38
-            : 75;
-
+        let particleCount = innerWidth < 700 ? 38 : 75;
         let animationFrame;
 
-
         const resizeCanvas = () => {
-
-          const ratio =
-            Math.min(
-              window.devicePixelRatio || 1,
-              2
-            );
-
-
-          canvas.width =
-            Math.floor(
-              window.innerWidth * ratio
-            );
-
-
-          canvas.height =
-            Math.floor(
-              window.innerHeight * ratio
-            );
-
-
-          canvas.style.width =
-            `${window.innerWidth}px`;
-
-          canvas.style.height =
-            `${window.innerHeight}px`;
-
-
-          context.setTransform(
-            ratio,
-            0,
-            0,
-            ratio,
-            0,
-            0
-          );
-
+          const ratio = Math.min(devicePixelRatio || 1, 2);
+          canvas.width = Math.floor(innerWidth * ratio);
+          canvas.height = Math.floor(innerHeight * ratio);
+          canvas.style.width = `${innerWidth}px`;
+          canvas.style.height = `${innerHeight}px`;
+          context.setTransform(ratio,0,0,ratio,0,0);
         };
-
 
         const createParticles = () => {
-
-          particles =
-            Array.from(
-              {
-                length:particleCount
-              },
-              () => ({
-
-                x:
-                  Math.random() *
-                  window.innerWidth,
-
-                y:
-                  Math.random() *
-                  window.innerHeight,
-
-                vx:
-                  (Math.random()-.5)
-                  * .22,
-
-                vy:
-                  (Math.random()-.5)
-                  * .22,
-
-                size:
-                  Math.random() * 1.3
-                  + .35
-
-              })
-            );
-
+          particles = Array.from({length:particleCount}, () => ({
+            x:Math.random()*innerWidth,
+            y:Math.random()*innerHeight,
+            vx:(Math.random()-.5)*.22,
+            vy:(Math.random()-.5)*.22,
+            size:Math.random()*1.3+.35
+          }));
         };
-
 
         const drawParticles = () => {
+          context.clearRect(0,0,innerWidth,innerHeight);
 
-          context.clearRect(
-            0,
-            0,
-            window.innerWidth,
-            window.innerHeight
-          );
+          particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if(p.x < -5 || p.x > innerWidth+5) p.vx *= -1;
+            if(p.y < -5 || p.y > innerHeight+5) p.vy *= -1;
 
-
-          /* PARTICLES */
-
-          particles.forEach(
-            particle => {
-
-              particle.x +=
-                particle.vx;
-
-              particle.y +=
-                particle.vy;
-
-
-              if(
-                particle.x < -5 ||
-                particle.x >
-                  window.innerWidth + 5
-              ){
-
-                particle.vx *= -1;
-
-              }
-
-
-              if(
-                particle.y < -5 ||
-                particle.y >
-                  window.innerHeight + 5
-              ){
-
-                particle.vy *= -1;
-
-              }
-
-
-              context.beginPath();
-
-
-              context.arc(
-                particle.x,
-                particle.y,
-                particle.size,
-                0,
-                Math.PI * 2
-              );
-
-
-              context.fillStyle =
-                "rgba(158,219,209,.60)";
-
-
-              context.fill();
-
-            }
-          );
-
-
-          /* CONNECTIONS */
+            context.beginPath();
+            context.arc(p.x,p.y,p.size,0,Math.PI*2);
+            context.fillStyle = "rgba(158,219,209,.60)";
+            context.fill();
+          });
 
           const maxDistance = 125;
+          for(let i=0;i<particles.length;i++){
+            for(let j=i+1;j<particles.length;j++){
+              const a = particles[i], b = particles[j];
+              const dx = a.x-b.x, dy = a.y-b.y;
+              const d2 = dx*dx + dy*dy;
 
-          const maxDistanceSquared =
-            maxDistance *
-            maxDistance;
-
-
-          for(
-            let i = 0;
-            i < particles.length;
-            i++
-          ){
-
-            for(
-              let j = i + 1;
-              j < particles.length;
-              j++
-            ){
-
-              const a =
-                particles[i];
-
-              const b =
-                particles[j];
-
-
-              const dx =
-                a.x - b.x;
-
-              const dy =
-                a.y - b.y;
-
-
-              const distanceSquared =
-                dx * dx +
-                dy * dy;
-
-
-              if(
-                distanceSquared <
-                maxDistanceSquared
-              ){
-
-                const distance =
-                  Math.sqrt(
-                    distanceSquared
-                  );
-
-
-                const opacity =
-                  (
-                    1 -
-                    distance / maxDistance
-                  ) * .13;
-
-
+              if(d2 < maxDistance*maxDistance){
+                const distance = Math.sqrt(d2);
+                const opacity = (1-distance/maxDistance)*.13;
                 context.beginPath();
-
-
-                context.moveTo(
-                  a.x,
-                  a.y
-                );
-
-
-                context.lineTo(
-                  b.x,
-                  b.y
-                );
-
-
-                context.strokeStyle =
-                  `rgba(0,184,217,${opacity})`;
-
-
-                context.lineWidth =
-                  .65;
-
-
+                context.moveTo(a.x,a.y);
+                context.lineTo(b.x,b.y);
+                context.strokeStyle = `rgba(0,184,217,${opacity})`;
+                context.lineWidth = .65;
                 context.stroke();
-
               }
-
             }
-
           }
 
-
-          animationFrame =
-            requestAnimationFrame(
-              drawParticles
-            );
-
+          animationFrame = requestAnimationFrame(drawParticles);
         };
-
 
         const rebuildParticles = () => {
-
-          cancelAnimationFrame(
-            animationFrame
-          );
-
-
-          particleCount =
-            window.innerWidth < 700
-              ? 38
-              : 75;
-
-
+          cancelAnimationFrame(animationFrame);
+          particleCount = innerWidth < 700 ? 38 : 75;
           resizeCanvas();
-
           createParticles();
-
           drawParticles();
-
         };
 
-
         rebuildParticles();
-
-
-        window.addEventListener(
-          "resize",
-          rebuildParticles
-        );
-
+        window.addEventListener("resize", rebuildParticles);
       }
-
-
     })();
-
   </script>
-
 </body>
 </html>
